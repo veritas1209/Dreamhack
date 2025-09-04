@@ -1,0 +1,67 @@
+# .gitignore 파일에 큰 파일 패턴 추가
+cat >> .gitignore << EOF
+# Large binary files
+*.jar
+*/lib/modules
+*/lib/
+**/Oracle_JDK*/lib/
+**/Oracle_JDK*/
+# JDK 관련 큰 파일들
+**/jdk*/
+**/openjdk*/
+# 기타 큰 바이너리 파일들
+*.zip
+*.tar.gz
+*.exe
+*.msi
+*.dmg
+# 컴파일된 파일들
+*.class
+*.o
+*.so
+*.dll
+EOF
+# 10MB 이상 파일 찾아서 .gitignore에 추가
+find solved/ -type f -size +10M | while read file; do
+    echo "$file" >> .gitignore
+    git rm --cached "$file" 2>/dev/null || true
+done# Large binary files
+*.jar
+*/lib/modules
+*/lib/
+**/Oracle_JDK*/lib/
+**/Oracle_JDK*/
+# JDK 관련 큰 파일들
+**/jdk*/
+**/openjdk*/
+# 기타 큰 바이너리 파일들
+*.zip
+*.tar.gz
+*.exe
+*.msi
+*.dmg
+# 컴파일된 파일들
+*.class
+*.o
+*.so
+*.dll
+# Large binary files
+*.jar
+*/lib/modules
+*/lib/
+**/Oracle_JDK*/lib/
+**/Oracle_JDK*/
+# JDK 관련 큰 파일들
+**/jdk*/
+**/openjdk*/
+# 기타 큰 바이너리 파일들
+*.zip
+*.tar.gz
+*.exe
+*.msi
+*.dmg
+# 컴파일된 파일들
+*.class
+*.o
+*.so
+*.dll

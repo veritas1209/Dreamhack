@@ -1,0 +1,3 @@
+This is nothing, but if you want to read it, you can.
+
+My name is Cro. I'm a second-year middle school student. I was having a hard time solving Blitz CTF, so I made a problem. It might be awkward because it's my first problem, but please make it fun. (I expect the problem itself won't be fun. Who will solve it the fastest?)

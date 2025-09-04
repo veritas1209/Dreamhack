@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Pixel Art Analyzer</title>
+    <style>
+        body {
+            font-family: monospace;
+            background: #1a1a1a;
+            color: #0f0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        canvas {
+            border: 2px solid #0f0;
+            image-rendering: pixelated;
+            margin: 10px;
+        }
+        #output {
+            background: #000;
+            padding: 15px;
+            border: 1px solid #0f0;
+            margin: 20px 0;
+            white-space: pre-wrap;
+            font-size: 12px;
+            line-height: 1.2;
+        }
+        .pixel-grid {
+            font-family: monospace;
+            font-size: 10px;
+            line-height: 1;
+            letter-spacing: 0px;
+        }
+        h2 {
+            color: #0f0;
+            text-shadow: 0 0 10px #0f0;
+        }
+        button {
+            background: #0f0;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #0a0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Pixel ♥ CTF Solver</h1>
+        
+        <div style="display: flex; gap: 20px;">
+            <div>
+                <h2>원본 이미지 (50x50)</h2>
+                <canvas id="original" width="50" height="50"></canvas>
+                <canvas id="scaled" width="500" height="500"></canvas>
+            </div>
+            
+            <div style="flex: 1;">
+                <h2>분석 결과</h2>
+                <button onclick="analyzePixels()">픽셀 분석</button>
+                <button onclick="convertToBinary()">이진 변환</button>
+                <button onclick="extractPattern()">패턴 추출</button>
+                <button onclick="tryBraille()">점자 해석</button>
+                <button onclick="tryASCII()">ASCII 아트</button>
+                <div id="output"></div>
+            </div>
+        </div>
+        
+        <h2>픽셀 그리드</h2>
+        <div id="pixelGrid" class="pixel-grid"></div>
+    </div>
+
+    <script>
+        // PNG 바이너리 데이터
+        const hexString = `89 50 4E 47 0D 0A 1A 0A 00 00 00 0D 49 48 44 52 00 00 00 32 00 00 00 32 08 06 00 00 00 1E 3F 88 B1 00 00 00 01 73 52 47 42 00 AE CE 1C E9 00 00 00 04 67 41 4D 41 00 00 B1 8F 0B FC 61 05 00 00 00 09 70 48 59 73 00 00 16 25 00 00 16 25 01 49 52 24 F0 00 00 02 00 49 44 41 54 68 43 ED 98 6B AE 83 20 10 85 ED DD 9A 7F DC 90 AB E8 86 FC E3 DA 7A 73 0C 43 C6 01 0A C3 C3 4E 1B BF 84 60 6C C5 39 1C 86 87 D3 AF F0 70 75 2B 2F 57 F7 42 1D 57 E9 03 45 81 EE FB EE AE EA 98 E7 D9 5D 79 8A 05 FD B9 DA 04 E8 08 94 75 5D DD 9D 72 72 8A 4F 4E B4 F6 B8 86 6D DB A6 E7 F3 89 CB 22 57 52 8E 40 40 30 9C 60 3D 5E 70 15 1A 67 DE 0E 2D 34 C4 CB 55 88 CE 2A CA CF 98 10 FF E0 B2 2C 47 21 20 C6 D9 6D 8E A2 64 97 82 46 0F 2F FE AE 52 A2 42 D0 F3 57 26 76 0A 8D FB 49 47 AE 4C EA 18 5A 57 A2 42 A8 27 72 62 30 8B D1 22 C6 AF 41 EC B7 58 E1 BF 4B 34 13 4C 6C 8E F6 C9 8E 86 A8 67 48 14 44 F2 FB 23 C1 3B 4B D7 92 98 23 A7 87 D0 18 17 C1 91 3D 29 7B 98 FF 2E EB DE A8 56 76 E2 5B 1C E1 A0 01 59 4C 92 13 F2 35 DC 42 AC 51 2D 84 66 32 2B A8 85 68 16 A9 2B 31 3B B4 B4 8E AB 85 C8 45 D1 0A A6 93 BD 74 31 04 35 42 1E 16 5D A9 11 F2 BA 38 E1 8B 8E BA 35 5B 8E A3 E1 D1 07 2F B1 51 CD C6 59 95 23 16 4E 8F 12 B3 C9 DE E5 84 98 C3 DA AA 0E CC 3A A2 E5 16 62 8D 5B 88 35 6E 21 D6 A8 DA A2 D0 5E 2B B5 68 95 7E BB CA ED 10 34 9F 83 9A 84 00 2E 46 0A 48 05 DA E1 23 5D 10 77 95 10 57 FB 63 6F 4A CC 88 3D 99 E8 04 1F 7F 73 8E C8 E1 F5 A9 33 7D 8D 90 93 8B 18 C7 72 EF 45 62 3A 0C A1 80 94 CB 4D 8E C4 4E 8A 70 08 65 A4 18 86 1F E6 35 39 C2 39 1A 4A 25 3F CD 3A A3 CE 2F AE 93 0E 0D AD 39 72 34 82 60 A5 3B 23 B7 FA 10 20 9D 6E 75 04 04 B3 18 41 E2 E0 08 17 26 27 08 20 85 E3 3F B1 CE C0 7D 21 E2 D0 D0 43 08 F0 62 24 23 66 31 E6 BE 8F BF 97 10 22 10 A4 15 82 20 53 CE 32 82 B8 7B 0B 91 24 9D 7A 03 62 4A 3D 37 3A DE 4F 33 4D FF 00 23 D7 22 87 9E AA FE 00 00 00 00 49 45 4E 44 AE 42 60 82`;
+        
+        let imageData;
+        
+        // 헥스를 바이트 배열로 변환
+        function hexToBytes(hex) {
+            const bytes = [];
+            const hexArray = hex.split(' ');
+            for (let i = 0; i < hexArray.length; i++) {
+                bytes.push(parseInt(hexArray[i], 16));
+            }
+            return new Uint8Array(bytes);
+        }
+        
+        // 이미지 로드
+        function loadImage() {
+            const bytes = hexToBytes(hexString);
+            const blob = new Blob([bytes], { type: 'image/png' });
+            const url = URL.createObjectURL(blob);
+            
+            const img = new Image();
+            img.onload = function() {
+                // 원본 캔버스에 그리기
+                const canvas = document.getElementById('original');
+                const ctx = canvas.getContext('2d');
+                ctx.imageSmoothingEnabled = false;
+                ctx.drawImage(img, 0, 0);
+                
+                // 확대 캔버스에 그리기
+                const scaledCanvas = document.getElementById('scaled');
+                const scaledCtx = scaledCanvas.getContext('2d');
+                scaledCtx.imageSmoothingEnabled = false;
+                scaledCtx.drawImage(img, 0, 0, 500, 500);
+                
+                // 이미지 데이터 저장
+                imageData = ctx.getImageData(0, 0, 50, 50);
+                
+                document.getElementById('output').textContent = '이미지 로드 완료! 분석 버튼을 클릭하세요.';
+                
+                // 자동으로 첫 분석 실행
+                analyzePixels();
+            };
+            img.src = url;
+        }
+        
+        // 픽셀 분석
+        function analyzePixels() {
+            if (!imageData) return;
+            
+            const data = imageData.data;
+            const width = 50;
+            const height = 50;
+            
+            let output = '=== 픽셀 색상 분석 ===\n\n';
+            
+            // 색상 통계
+            const colors = new Map();
+            for (let i = 0; i < data.length; i += 4) {
+                const r = data[i];
+                const g = data[i + 1];
+                const b = data[i + 2];
+                const a = data[i + 3];
+                const color = `${r},${g},${b},${a}`;
+                colors.set(color, (colors.get(color) || 0) + 1);
+            }
+            
+            output += `고유 색상 수: ${colors.size}\n\n`;
+            output += '색상 분포:\n';
+            for (const [color, count] of colors) {
+                const [r, g, b, a] = color.split(',').map(Number);
+                const isBlack = r === 0 && g === 0 && b === 0;
+                const isWhite = r === 255 && g === 255 && b === 255;
+                const label = isBlack ? ' (검정)' : isWhite ? ' (흰색)' : '';
+                output += `RGB(${r},${g},${b}) Alpha:${a} - ${count}픽셀${label}\n`;
+            }
+            
+            document.getElementById('output').textContent = output;
+        }
+        
+        // 이진 변환
+        function convertToBinary() {
+            if (!imageData) return;
+            
+            const data = imageData.data;
+            let grid = '';
+            let binaryString = '';
+            
+            for (let y = 0; y < 50; y++) {
+                for (let x = 0; x < 50; x++) {
+                    const idx = (y * 50 + x) * 4;
+                    const r = data[idx];
+                    const g = data[idx + 1];
+                    const b = data[idx + 2];
+                    
+                    // 밝기 계산
+                    const brightness = (r + g + b) / 3;
+                    const bit = brightness > 128 ? '1' : '0';
+                    
+                    grid += bit;
+                    binaryString += bit;
+                }
+                grid += '\n';
+            }
+            
+            let output = '=== 이진 패턴 (흰색=1, 검정=0) ===\n\n';
+            output += grid;
+            
+            // 8비트씩 그룹화하여 ASCII 변환 시도
+            output += '\n\n=== ASCII 변환 시도 ===\n';
+            let ascii = '';
+            for (let i = 0; i < binaryString.length; i += 8) {
+                const byte = binaryString.substr(i, 8);
+                if (byte.length === 8) {
+                    const charCode = parseInt(byte, 2);
+                    if (charCode >= 32 && charCode <= 126) {
+                        ascii += String.fromCharCode(charCode);
+                    }
+                }
+            }
+            if (ascii) {
+                output += `발견된 텍스트: ${ascii}\n`;
+            }
+            
+            document.getElementById('output').textContent = output;
+            document.getElementById('pixelGrid').textContent = grid;
+        }
+        
+        // 패턴 추출
+        function extractPattern() {
+            if (!imageData) return;
+            
+            const data = imageData.data;
+            let grid = [];
+            
+            // 50x50 그리드 생성
+            for (let y = 0; y < 50; y++) {
+                let row = [];
+                for (let x = 0; x < 50; x++) {
+                    const idx = (y * 50 + x) * 4;
+                    const r = data[idx];
+                    const g = data[idx + 1];
+                    const b = data[idx + 2];
+                    
+                    const brightness = (r + g + b) / 3;
+                    row.push(brightness > 128 ? '█' : ' ');
+                }
+                grid.push(row);
+            }
+            
+            // 5x10 블록으로 나누기 (10x5 = 50개 문자)
+            let output = '=== 5x10 블록 패턴 분석 ===\n\n';
+            let message = '';
+            
+            for (let blockY = 0; blockY < 5; blockY++) {
+                for (let blockX = 0; blockX < 10; blockX++) {
+                    output += `블록 [${blockY},${blockX}]:\n`;
+                    let blockPattern = '';
+                    
+                    for (let y = 0; y < 10; y++) {
+                        for (let x = 0; x < 5; x++) {
+                            const pixelY = blockY * 10 + y;
+                            const pixelX = blockX * 5 + x;
+                            blockPattern += grid[pixelY][pixelX];
+                        }
+                        blockPattern += '\n';
+                    }
+                    
+                    output += blockPattern;
+                    
+                    // 패턴을 문자로 인식 시도
+                    const char = recognizeCharacter(blockPattern);
+                    if (char) {
+                        message += char;
+                        output += `인식된 문자: ${char}\n`;
+                    }
+                    output += '\n';
+                }
+            }
+            
+            if (message) {
+                output += `\n=== 메시지 ===\n${message}\n`;
+            }
+            
+            document.getElementById('output').textContent = output;
+        }
+        
+        // 문자 인식 (간단한 패턴 매칭)
+        function recognizeCharacter(pattern) {
+            // 여기에 알려진 문자 패턴을 추가
+            const patterns = {
+                'H': '█   █\n█   █\n█████\n█   █\n█   █',
+                'I': '█████\n  █  \n  █  \n  █  \n█████',
+                'L': '█    \n█    \n█    \n█    \n█████',
+                'O': ' ███ \n█   █\n█   █\n█   █\n ███ ',
+                // 더 많은 패턴 추가 필요
+            };
+            
+            // 패턴 매칭 로직
+            // 실제 구현은 더 복잡할 수 있음
+            return null;
+        }
+        
+        // 점자 해석 시도
+        function tryBraille() {
+            if (!imageData) return;
+            
+            const data = imageData.data;
+            let output = '=== 점자 패턴 분석 ===\n\n';
+            
+            // 3x2 점자 셀로 분석
+            // 점자는 3행 2열의 점으로 구성
+            
+            output += '점자 해석은 이미지의 패턴에 따라 다릅니다.\n';
+            output += '일반적으로 검은 점이 있는 위치를 확인합니다.\n';
+            
+            document.getElementById('output').textContent = output;
+        }
+        
+        // ASCII 아트 변환
+        function tryASCII() {
+            if (!imageData) return;
+            
+            const data = imageData.data;
+            let ascii = '';
+            
+            const chars = ' .:-=+*#%@';
+            
+            for (let y = 0; y < 50; y++) {
+                for (let x = 0; x < 50; x++) {
+                    const idx = (y * 50 + x) * 4;
+                    const r = data[idx];
+                    const g = data[idx + 1];
+                    const b = data[idx + 2];
+                    
+                    const brightness = (r + g + b) / 3;
+                    const charIndex = Math.floor((brightness / 255) * (chars.length - 1));
+                    ascii += chars[charIndex];
+                }
+                ascii += '\n';
+            }
+            
+            document.getElementById('output').textContent = '=== ASCII Art ===\n\n' + ascii;
+        }
+        
+        // 페이지 로드 시 이미지 로드
+        window.onload = loadImage;
+    </script>
+</body>
+</html>
