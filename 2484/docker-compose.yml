@@ -1,0 +1,8 @@
+services:
+  umm:
+    build: .
+    container_name: ummmmm
+    ports:
+      - "8080:8080"
+    environment:
+      - FLASK_ENV=production
