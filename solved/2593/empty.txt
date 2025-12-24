@@ -1,0 +1,6 @@
+(●'◡'●)
+
+
+http://host8.dreamhack.games:16910/
+
+숫자 입력하면 index에 맞게 반환, 링크 주소에서 redteam을 조합하여 플래그 획득

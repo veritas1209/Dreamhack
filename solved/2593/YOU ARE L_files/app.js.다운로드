@@ -1,0 +1,6 @@
+(() => {
+  const el = document.getElementById("flash");
+  if (!el) return;
+  const msg = (el.dataset.msg || "").trim();
+  if (msg) alert(msg);
+})();
