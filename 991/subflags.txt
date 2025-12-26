@@ -1,0 +1,11 @@
+This text file can be used to save subflags.
+
+A: AH{bAbybAbyRSA}
+B: BH{No puzzle is complete without puzzle pieces}
+C: CH{Cody promises not to share Dreamy's private information from their September 12, 2023 meeting.}
+P: PH{Once upon a time, the exponent 3 was quite prevalent.  Today, e=65537 is standard.}
+Q: QH{Euclidean algorithm is super fast}
+R: RH{The Extended Euclidean algorithm operates rapidly}
+X: XH{9f30f2a1}
+Y: YH{Coppersmith's method employs LLL}
+Z: sample_flag
