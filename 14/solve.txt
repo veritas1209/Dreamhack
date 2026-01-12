@@ -1,0 +1,11 @@
+bool FUN_140001000(char *param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = strcmp(param_1,"Compar3_the_str1ng");
+  return iVar1 == 0;
+}
+
+
+DH{Compar3_the_str1ng}
