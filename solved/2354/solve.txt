@@ -1,0 +1,9 @@
+cat /etc/shadow
+root:$1$Kwf1c48i$qZea9m9.ho/iZZfIvVU0s1:20371:0:99999:7:::
+
+md5-crypt 크랙
+
+비번은 apple
+
+cat flag.txt
+DH{root_c4n_read_P4ssw0rd_hashes_at_/etc/shadow}
