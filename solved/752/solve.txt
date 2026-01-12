@@ -1,0 +1,21 @@
+tring�"_ENc_ECrypt"��������‰PNG
+
+���
+IHDR��·
+
+_ENc_ECrypt
+
+
+s�����������_yo}IDATx^íÝ1RIàæ?*o�å`#B
+
+_yo}
+
+
+DH{HOW_ENc_ECrypt_yo}
+
+기드라로 Enc뜯어서 노오오오력 했더니
+그냥 hxd로 뜯어보면 되는 문제였다
+
+Enc를 exe파일로 확장자를 변환하여 실행
+실행해서 나온 이미지 파일에서 FF D9을 제거
+대놓고 플래그 값이라고 자랑하는 "_ENc_ECrypt", _yo} 이부분을 합쳐주면 된다
