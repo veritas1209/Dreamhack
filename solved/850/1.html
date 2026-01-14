@@ -1,0 +1,57 @@
+
+<html>
+<head>
+  <title>Web</title>
+</head>
+<body>
+  <div id="box">
+  </div>
+
+  <style type="text/css">
+    body{
+      display: flex;
+      width: 100vw;
+      height:100vh;
+      padding: 0px;
+
+    }
+    #box{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 90%;
+      height:100%;
+    }
+  </style>
+
+  <script type="text/javascript">
+    const img_files = ["/static/images/10.png", "/static/images/17.png", "/static/images/13.png", "/static/images/7.png","/static/images/16.png", "/static/images/8.png", "/static/images/14.png", "/static/images/2.png", "/static/images/9.png", "/static/images/5.png", "/static/images/11.png", "/static/images/6.png", "/static/images/12.png", "/static/images/3.png", "/static/images/0.png", "/static/images/19.png", "/static/images/4.png", "/static/images/15.png", "/static/images/18.png", "/static/images/1.png"];
+    var imgs = [];
+    for (var i = 0; i < img_files.length; i++){
+      imgs[i] = document.createElement('img');
+      imgs[i].src = img_files[i]; 
+      imgs[i].style.display = 'block';
+      imgs[i].style.width = '10px';
+      imgs[i].style.height = '10px';
+      document.getElementById('box').appendChild(imgs[i]);
+    }
+
+    const max_pos = self.innerWidth;
+    function anim(elem, pos, dis){
+      function move() {
+        pos += dis;
+        if (pos > max_pos) {
+          pos = 0;
+        }
+        elem.style.transform = `translateX(${pos}px)`;
+        requestAnimationFrame(move);
+      }
+      move();
+    }
+
+    for(var i = 0; i < 20; i++){
+      anim(imgs[i], 0, Math.random()*60+20);
+    }
+  </script>
+</body>
+</html>
