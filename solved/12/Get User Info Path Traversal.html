@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://host8.dreamhack.games:23022/get_info -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="./Get User Info Path Traversal_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./Get User Info Path Traversal_files/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./Get User Info Path Traversal_files/non-responsive.css">
+    <title>Get User Info Path Traversal</title>
+    
+  
+
+  </head>
+<body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="http://host8.dreamhack.games:23022/">Path Traversal</a>
+        </div>
+        <div id="navbar">
+          <ul class="nav navbar-nav">
+            <li><a href="http://host8.dreamhack.games:23022/">Home</a></li>
+            <li><a href="http://host8.dreamhack.games:23022/get_info#about">About</a></li>
+            <li><a href="http://host8.dreamhack.games:23022/get_info#contact">Contact</a></li>
+          </ul>
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      
+<h1>Get User Info</h1><br>
+
+  <pre>{}</pre>
+
+<form method="POST" id="form">
+  <div class="form-group">
+    <label for="userid">userid</label>
+    <input type="text" class="form-control" id="userid" placeholder="userid" name="userid" value="guest" required="">
+  </div>
+  <button type="submit" class="btn btn-default">View</button>
+</form>
+<script>
+  const users = {
+    'guest': 0,
+    'admin': 1
+  }
+  function user(evt){
+  	document.getElementById('userid').value = users[document.getElementById('userid').value];
+    return true;
+  }
+  window.onload = function() {
+    document.getElementById('form').addEventListener('submit', user);
+  }
+</script>
+
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="./Get User Info Path Traversal_files/jquery.min.js.다운로드"></script>
+    <script src="./Get User Info Path Traversal_files/bootstrap.min.js.다운로드"></script> 
+
+</body></html>
