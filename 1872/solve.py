@@ -1,83 +1,39 @@
 import struct
 
-def solve():
-    # 1. 스택에 하드코딩된 암호화 데이터 (Little Endian)
-    # 기드라 FUN_00101576에서 추출한 값들입니다.
-    # Stack Layout: local_298 (Low Addr) -> ... -> local_248 (High Addr)
-    encrypted_chunks = [
-        0x24243a52447c3b48, # local_298
-        0x3936453678377c24, # local_290
-        0x5125262c27362469, # local_288
-        0x42656a47403f2424, # local_280
-        0x3f43247a646f566d, # local_278
-        0x3e2e7b6837632424, # local_270
-        0x2424512539673c6a, # local_268
-        0x2424244626303851, # local_260
-        0x3d404c3524553566, # local_258
-        0x7c3a323953385461, # local_250
-    ]
-    
-    # 마지막 조각은 5바이트 (MOV RAX, 0x21432e2631)
-    last_chunk = 0x21432e2631
-    
-    # 데이터를 바이트열로 결합
-    payload = b''
-    for chunk in encrypted_chunks:
-        payload += struct.pack('<Q', chunk) # 64-bit Little Endian
-    payload += struct.pack('<Q', last_chunk)[:5] # 5 bytes only
+def find_constants(filename):
+    with open(filename, 'rb') as f:
+        data = f.read()
 
-    print(f"[+] Encrypted Payload Size: {len(payload)} bytes")
-    print(f"[+] Payload Preview: {payload[:20]}...")
-
-    # 2. Decoding Logic (Reversed from FUN_00101180)
-    # Custom Base91 Decoder
+    print(f"[*] Scanning {len(data)} bytes for 'imul' constants...")
     
-    decoded_data = bytearray()
-    state = 0x1f  # Initial State (local_1c)
+    candidates = set()
     
-    ptr = 0
-    while ptr < len(payload):
-        # Null bytes skip logic (from assembly)
-        while ptr < len(payload) and payload[ptr] == 0:
-            ptr += 1
-        if ptr >= len(payload): break
+    # x86-64 imul opcode patterns
+    # 69 [ModR/M] [Imm32] : imul reg, reg, imm32
+    # 6B [ModR/M] [Imm8]  : imul reg, reg, imm8
+    
+    for i in range(len(data) - 6):
+        # 0x69: imul with 32-bit immediate
+        if data[i] == 0x69:
+            # 4바이트 상수 추출 (Little Endian)
+            val = struct.unpack('<I', data[i+2:i+6])[0]
             
-        c1 = payload[ptr]
-        if c1 <= 0x23: # Terminates if char <= '#' (0x23)
-            break
-        ptr += 1
-        
-        # Get next non-null char
-        while ptr < len(payload) and payload[ptr] == 0:
-            ptr += 1
-        if ptr >= len(payload): break
-            
-        c2 = payload[ptr]
-        ptr += 1
-        
-        # Calculation: 
-        # local_1c = (local_1c << 13) + (c2 * 91) + c1 - 0xcf0
-        state = (state << 13) + (c2 * 91) + c1 - 0xcf0
-        
-        # Output Loop
-        # while ((state & 0x1000) != 0)
-        while (state & 0x1000) != 0:
-            byte_out = state & 0xff
-            decoded_data.append(byte_out)
-            state >>= 8
-            
-    print(f"[+] Decoded Data Size: {len(decoded_data)} bytes")
+            # 노이즈 필터링 (너무 작거나 뻔한 값 제외)
+            if val > 100 and val < 0xFFFFF000: 
+                candidates.add(val)
+                
+        # 0x48 0x69: 64-bit imul with 32-bit immediate
+        if data[i] == 0x48 and data[i+1] == 0x69:
+            val = struct.unpack('<I', data[i+3:i+7])[0]
+            if val > 100 and val < 0xFFFFF000:
+                candidates.add(val)
+
+    print("\n[+] Found Potential Constants (Candidate C):")
+    sorted_cands = sorted(list(candidates))
     
-    # 3. 결과 저장
-    with open('vm_bytecode.bin', 'wb') as f:
-        f.write(decoded_data)
-    print("[+] Saved to 'vm_bytecode.bin'")
+    for c in sorted_cands:
+        # A = 4*C - 2
+        A = 4 * c - 2
+        print(f"  C = {c:<10} (Hex: {hex(c):<10}) -> A = {A}")
 
-    # Hex view for quick check
-    print("\n[Dump Head]")
-    for i in range(min(16, len(decoded_data))):
-        print(f"{decoded_data[i]:02x}", end=' ')
-    print()
-
-if __name__ == '__main__':
-    solve()
+find_constants("jit_code.bin")
