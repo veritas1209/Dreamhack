@@ -1,0 +1,4 @@
+(sage) hajin@HAJIN-LAPTOP:~$ ./trust_me
+Trust me, I'll only show you a harmless digest.
+Token> bT9_7xQp4nL2zHkM
+Digest: DH{.}

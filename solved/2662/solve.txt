@@ -1,0 +1,2415 @@
+                             //
+                             // segment_2.1 
+                             // Loadable segment  [0x0 - 0x737]
+                             // ram:00100000-ram:00100317
+                             //
+             assume DF = 0x0  (Default)
+        00100000 7f  45  4c       Elf64_Eh
+                 46  02  01 
+                 01  00  00 
+           00100000 7f              db        7Fh                     e_ident_magi
+           00100001 45  4c  46       ds        "ELF"                   e_ident_magi
+           00100004 02              db        2h                      e_ident_class
+           00100005 01              db        1h                      e_ident_data
+           00100006 01              db        1h                      e_ident_vers
+           00100007 00              db        0h                      e_ident_osabi
+           00100008 00              db        0h                      e_ident_abiv
+           00100009 00  00  00  00  00  db[7]                             e_ident_pad
+                    00  00
+           00100010 03  00           dw        3h                      e_type
+           00100012 3e  00           dw        3Eh                     e_machine
+           00100014 01  00  00  00    ddw       1h                      e_version
+           00100018 40  14  00  00  00  dq        entry                   e_entry
+                    00  00  00
+           00100020 40  00  00  00  00  dq        Elf64_Phdr_ARRAY_00100  e_phoff
+                    00  00  00
+           00100028 48  31  00  00  00  dq        Elf64_Shdr_ARRAY__elfS  e_shoff
+                    00  00  00
+           00100030 00  00  00  00    ddw       0h                      e_flags
+           00100034 40  00           dw        40h                     e_ehsize
+           00100036 38  00           dw        38h                     e_phentsize
+           00100038 0d  00           dw        Dh                      e_phnum
+           0010003a 40  00           dw        40h                     e_shentsize
+           0010003c 1d  00           dw        1Dh                     e_shnum
+           0010003e 1c  00           dw        1Ch                     e_shstrndx
+                             Elf64_Phdr_ARRAY_00100040                       XREF[2]:     00100020 (*) , 00100050 (*)   
+        00100040 06  00  00       Elf64_Ph                                                    PT_PHDR - Program header table
+                 00  04  00 
+                 00  00  40 
+                             //
+                             // .interp 
+                             // SHT_PROGBITS  [0x318 - 0x333]
+                             // ram:00100318-ram:00100333
+                             //
+                             s_/lib64/ld-linux-x86-64.so.2_00100318          XREF[2]:     00100088 (*) , 
+                                                                                          _elfSectionHeaders::00000050 (*)   
+        00100318 2f  6c  69       ds         "/lib64/ld-linux-x86-64.so.2"                    Initial Elf program interpreter
+                 62  36  34 
+                 2f  6c  64 
+                             //
+                             // .note.gnu.property 
+                             // SHT_NOTE  [0x338 - 0x367]
+                             // ram:00100338-ram:00100367
+                             //
+                             NoteGnuProperty_4_00100338                      XREF[3]:     001001d8 (*) , 00100248 (*) , 
+                                                                                          _elfSectionHeaders::00000090 (*)   
+        00100338 04  00  00       NoteGnuP                                                    Length of name field
+                 00  20  00 
+                 00  00  05 
+        00100348 02  00  00       NoteGnuP                                                    processor opt 0xc0000002=03 00 0
+                 c0  04  00 
+                 00  00  03 
+        00100354 00  00  00       NoteGnuP                                                    processor opt 0xc0008002=01 00 0
+                 00  02  80 
+                 00  c0  04 
+        00100360 01              ??         01h
+        00100361 00              ??         00h
+        00100362 00              ??         00h
+        00100363 00              ??         00h
+        00100364 00              ??         00h
+        00100365 00              ??         00h
+        00100366 00              ??         00h
+        00100367 00              ??         00h
+                             //
+                             // .note.gnu.build-id 
+                             // SHT_NOTE  [0x368 - 0x38b]
+                             // ram:00100368-ram:0010038b
+                             //
+                             GnuBuildId_00100368                             XREF[2]:     00100210 (*) , 
+                                                                                          _elfSectionHeaders::000000d0 (*)   
+        00100368 04  00  00       GnuBuild                                                    Length of name field
+                 00  14  00 
+                 00  00  03 
+                             //
+                             // .note.ABI-tag 
+                             // SHT_NOTE  [0x38c - 0x3ab]
+                             // ram:0010038c-ram:001003ab
+                             //
+                             NoteAbiTag_0010038c                             XREF[1]:     _elfSectionHeaders::00000110 (*)   
+        0010038c 04  00  00       NoteAbiT                                                    Length of name field
+                 00  10  00 
+                 00  00  01 
+                             //
+                             // .gnu.hash 
+                             // SHT_GNU_HASH  [0x3b0 - 0x3d3]
+                             // ram:001003b0-ram:001003d3
+                             //
+                             __DT_GNU_HASH                                   XREF[2]:     00103e20 (*) , 
+                                                                                          _elfSectionHeaders::00000150 (*)   
+        001003b0 02  00  00  00    ddw        2h                                               GNU Hash Table - nbucket
+        001003b4 0a  00  00  00    ddw        Ah                                               GNU Hash Table - symbase
+        001003b8 01  00  00  00    ddw        1h                                               GNU Hash Table - bloom_size
+        001003bc 06  00  00  00    ddw        6h                                               GNU Hash Table - bloom_shift
+        001003c0 00  00  81       dq[1]                                                       GNU Hash Table - bloom
+                 00  00  00 
+                 00  00
+        001003c8 0a  00  00       ddw[2]                                                      GNU Hash Table - buckets
+                 00  00  00 
+                 00  00
+        001003d0 d1  65  ce  6d    ddw[1]                                                      GNU Hash Table - chain
+                             //
+                             // .dynsym 
+                             // SHT_DYNSYM  [0x3d8 - 0x4df]
+                             // ram:001003d8-ram:001004df
+                             //
+                             __DT_SYMTAB                                     XREF[2]:     00103e40 (*) , 
+                                                                                          _elfSectionHeaders::00000190 (*)   
+        001003d8 00  00  00       Elf64_Sy
+                 00  00  00 
+                 00  00  00 
+                             //
+                             // .dynstr 
+                             // SHT_STRTAB  [0x4e0 - 0x5a5]
+                             // ram:001004e0-ram:001005a5
+                             //
+                             __DT_STRTAB                                     XREF[2]:     00103e30 (*) , 
+                                                                                          _elfSectionHeaders::000001d0 (*)   
+        001004e0 00              ??         00h
+        001004e1 5f  5f  73       ds         "__stack_chk_fail"
+                 74  61  63 
+                 6b  5f  63 
+        001004f2 72  65  61       ds         "read"
+                 64  00
+        001004f7 70  74  72       ds         "ptrace"
+                 61  63  65  00
+        001004fe 5f  5f  6c       ds         "__libc_start_main"
+                 69  62  63 
+                 5f  73  74 
+        00100510 5f  5f  63       ds         "__cxa_finalize"
+                 78  61  5f 
+                 66  69  6e 
+        0010051f 5f  5f  65       ds         "__errno_location"
+                 72  72  6e 
+                 6f  5f  6c 
+        00100530 77  72  69       ds         "write"
+                 74  65  00
+        00100536 6c  69  62       ds         "libc.so.6"
+                 63  2e  73 
+                 6f  2e  36  00
+        00100540 47  4c  49       ds         "GLIBC_2.4"
+                 42  43  5f 
+                 32  2e  34  00
+        0010054a 47  4c  49       ds         "GLIBC_2.2.5"
+                 42  43  5f 
+                 32  2e  32 
+        00100556 47  4c  49       ds         "GLIBC_2.34"
+                 42  43  5f 
+                 32  2e  33 
+        00100561 5f  49  54       ds         "_ITM_deregisterTMCloneTable"
+                 4d  5f  64 
+                 65  72  65 
+        0010057d 5f  5f  67       ds         "__gmon_start__"
+                 6d  6f  6e 
+                 5f  73  74 
+        0010058c 5f  49  54       ds         "_ITM_registerTMCloneTable"
+                 4d  5f  72 
+                 65  67  69 
+                             //
+                             // .gnu.version 
+                             // SHT_GNU_versym  [0x5a6 - 0x5bb]
+                             // ram:001005a6-ram:001005bb
+                             //
+                             __DT_VERSYM                                     XREF[2]:     00103f30 (*) , 
+                                                                                          _elfSectionHeaders::00000210 (*)   
+        001005a6 00  00           dw         0h                                               0
+        001005a8 02  00           dw         2h                                               __libc_start_main
+        001005aa 03  00           dw         3h                                               __errno_location
+        001005ac 01  00           dw         1h                                               _ITM_deregisterTMCloneTable
+        001005ae 03  00           dw         3h                                               write
+        001005b0 04  00           dw         4h                                               __stack_chk_fail
+        001005b2 03  00           dw         3h                                               read
+        001005b4 01  00           dw         1h                                               __gmon_start__
+        001005b6 03  00           dw         3h                                               ptrace
+        001005b8 01  00           dw         1h                                               _ITM_registerTMCloneTable
+        001005ba 03  00           dw         3h                                               __cxa_finalize
+                             //
+                             // .gnu.version_r 
+                             // SHT_GNU_verneed  [0x5c0 - 0x5ff]
+                             // ram:001005c0-ram:001005ff
+                             //
+                             __DT_VERNEED                                    XREF[2]:     00103f10 (*) , 
+                                                                                          _elfSectionHeaders::00000250 (*)   
+        001005c0 01              ??         01h
+        001005c1 00              ??         00h
+        001005c2 03              ??         03h
+        001005c3 00              ??         00h
+        001005c4 56              ??         56h    V
+        001005c5 00              ??         00h
+        001005c6 00              ??         00h                                              ?  ->  00100000
+        001005c7 00              ??         00h
+        001005c8 10              ??         10h
+        001005c9 00              ??         00h
+        001005ca 00              ??         00h
+        001005cb 00              ??         00h
+        001005cc 00              ??         00h
+        001005cd 00              ??         00h
+        001005ce 00              ??         00h
+        001005cf 00              ??         00h
+        001005d0 14              ??         14h
+        001005d1 69              ??         69h    i
+        001005d2 69              ??         69h    i
+        001005d3 0d              ??         0Dh
+        001005d4 00              ??         00h
+        001005d5 00              ??         00h
+        001005d6 04              ??         04h
+        001005d7 00              ??         00h
+        001005d8 60              ??         60h    `
+        001005d9 00              ??         00h
+        001005da 00              ??         00h
+        001005db 00              ??         00h
+        001005dc 10              ??         10h
+        001005dd 00              ??         00h
+        001005de 00              ??         00h
+        001005df 00              ??         00h
+        001005e0 75              ??         75h    u
+        001005e1 1a              ??         1Ah
+        001005e2 69              ??         69h    i
+        001005e3 09              ??         09h
+        001005e4 00              ??         00h
+        001005e5 00              ??         00h
+        001005e6 03              ??         03h
+        001005e7 00              ??         00h
+        001005e8 6a              ??         6Ah    j
+        001005e9 00              ??         00h
+        001005ea 00              ??         00h
+        001005eb 00              ??         00h
+        001005ec 10              ??         10h
+        001005ed 00              ??         00h
+        001005ee 00              ??         00h
+        001005ef 00              ??         00h
+        001005f0 b4              ??         B4h
+        001005f1 91              ??         91h
+        001005f2 96              ??         96h
+        001005f3 06              ??         06h
+        001005f4 00              ??         00h
+        001005f5 00              ??         00h
+        001005f6 02              ??         02h
+        001005f7 00              ??         00h
+        001005f8 76              ??         76h    v
+        001005f9 00              ??         00h
+        001005fa 00              ??         00h
+        001005fb 00              ??         00h
+        001005fc 00              ??         00h
+        001005fd 00              ??         00h
+        001005fe 00              ??         00h
+        001005ff 00              ??         00h
+                             //
+                             // .rela.dyn 
+                             // SHT_RELA  [0x600 - 0x6bf]
+                             // ram:00100600-ram:001006bf
+                             //
+                             __DT_RELA                                       XREF[2]:     00103ec0 (*) , 
+                                                                                          _elfSectionHeaders::00000290 (*)   
+        00100600 98  3d  00       Elf64_Re                                                    location to apply the relocation
+                 00  00  00 
+                 00  00  08 
+                             //
+                             // .rela.plt 
+                             // SHT_RELA  [0x6c0 - 0x737]
+                             // ram:001006c0-ram:00100737
+                             //
+                             __DT_JMPREL                                     XREF[2]:     00103eb0 (*) , 
+                                                                                          _elfSectionHeaders::000002d0 (*)   
+        001006c0 b0  3f  00       Elf64_Re                                                    location to apply the relocation
+                 00  00  00 
+                 00  00  07 
+                             //
+                             // .init 
+                             // SHT_PROGBITS  [0x1000 - 0x101a]
+                             // ram:00101000-ram:0010101a
+                             //
+                             *************************************************************
+                             *                           FUNCTION                          
+                             *************************************************************
+                             undefined  _DT_INIT ()
+             undefined         AL:1           <RETURN>
+                             __DT_INIT                                       XREF[4]:     Entry Point (*) , 001000f8 (*) , 
+                             _DT_INIT                                                     00103dc0 (*) , 
+                                                                                          _elfSectionHeaders::00000310 (*)   
+        00101000 f3  0f  1e  fa    ENDBR64
+        00101004 48  83  ec  08    SUB        RSP ,0x8
+        00101008 48  8b  05       MOV        RAX =><EXTERNAL>::__gmon_start__ ,qword ptr [-><  = ??
+                 d9  2f  00  00                                                                = 00105030
+        0010100f 48  85  c0       TEST       RAX ,RAX
+        00101012 74  02           JZ         LAB_00101016
+        00101014 ff  d0           CALL       RAX =><EXTERNAL>::__gmon_start__                 undefined __gmon_start__()
+                             LAB_00101016                                    XREF[1]:     00101012 (j)   
+        00101016 48  83  c4  08    ADD        RSP ,0x8
+        0010101a c3              RET
+                             //
+                             // .plt 
+                             // SHT_PROGBITS  [0x1020 - 0x107f]
+                             // ram:00101020-ram:0010107f
+                             //
+                             *************************************************************
+                             *                           FUNCTION                          
+                             *************************************************************
+                             undefined  FUN_00101020 ()
+             undefined         AL:1           <RETURN>
+                             FUN_00101020                                    XREF[8]:     00101039 (c) , 00101049 (c) , 
+                                                                                          00101059 (c) , 00101069 (c) , 
+                                                                                          00101079 (c) , 0010210c , 
+                                                                                          00102188 (*) , 
+                                                                                          _elfSectionHeaders::00000350 (*)   
+        00101020 ff  35  7a       PUSH       qword ptr [PTR_00103fa0 ]                        = 00000000
+                 2f  00  00
+        00101026 ff  25  7c       JMP        qword ptr [PTR_00103fa8 ]
+                 2f  00  00
+        0010102c 0f              ??         0Fh
+        0010102d 1f              ??         1Fh
+        0010102e 40              ??         40h    @
+        0010102f 00              ??         00h
+        00101030 f3  0f  1e  fa    ENDBR64
+        00101034 68  00  00       PUSH       0x0
+                 00  00
+        00101039 e9  e2  ff       JMP        FUN_00101020                                     undefined FUN_00101020()
+                 ff  ff
+                             -- Flow Override: CALL_RETURN (CALL_TERMINATOR)
+        0010103e 66  90           NOP
+        00101040 f3  0f  1e  fa    ENDBR64
+        00101044 68  01  00       PUSH       0x1
+                 00  00
+        00101049 e9  d2  ff       JMP        FUN_00101020                                     undefined FUN_00101020()
+                 ff  ff
+                             -- Flow Override: CALL_RETURN (CALL_TERMINATOR)
+        0010104e 66  90           NOP
+        00101050 f3  0f  1e  fa    ENDBR64
+        00101054 68  02  00       PUSH       0x2
+                 00  00
+        00101059 e9  c2  ff       JMP        FUN_00101020                                     undefined FUN_00101020()
+                 ff  ff
+                             -- Flow Override: CALL_RETURN (CALL_TERMINATOR)
+        0010105e 66  90           NOP
+        00101060 f3  0f  1e  fa    ENDBR64
+        00101064 68  03  00       PUSH       0x3
+                 00  00
+        00101069 e9  b2  ff       JMP        FUN_00101020                                     undefined FUN_00101020()
+                 ff  ff
+                             -- Flow Override: CALL_RETURN (CALL_TERMINATOR)
+        0010106e 66  90           NOP
+        00101070 f3  0f  1e  fa    ENDBR64
+        00101074 68  04  00       PUSH       0x4
+                 00  00
+        00101079 e9  a2  ff       JMP        FUN_00101020                                     undefined FUN_00101020()
+                 ff  ff
+                             -- Flow Override: CALL_RETURN (CALL_TERMINATOR)
+        0010107e 66  90           NOP
+                             //
+                             // .plt.got 
+                             // SHT_PROGBITS  [0x1080 - 0x108f]
+                             // ram:00101080-ram:0010108f
+                             //
+                             *************************************************************
+                             *                        THUNK FUNCTION                       
+                             *************************************************************
+                             thunk  undefined  __cxa_finalize ()
+                               Thunked-Function:  <EXTERNAL>::__cxa_fina
+             undefined         AL:1           <RETURN>
+                             <EXTERNAL>::__cxa_finalize                      XREF[4]:     _FINI_0:00101502 (c) , 00102114 , 
+                                                                                          001021b0 (*) , 
+                                                                                          _elfSectionHeaders::00000390 (*)   
+        00101080 f3  0f  1e  fa    ENDBR64
+        00101084 ff  25  6e       JMP        qword ptr [-><EXTERNAL>::__cxa_finalize ]        undefined __cxa_finalize()
+                 2f  00  00
+                             -- Flow Override: CALL_RETURN (COMPUTED_CALL_TERMINATOR)
+        0010108a 66              ??         66h    f
+        0010108b 0f              ??         0Fh
+        0010108c 1f              ??         1Fh
+        0010108d 44              ??         44h    D
+        0010108e 00              ??         00h
+        0010108f 00              ??         00h
+                             //
+                             // .plt.sec 
+                             // SHT_PROGBITS  [0x1090 - 0x10df]
+                             // ram:00101090-ram:001010df
+                             //
+                             *************************************************************
+                             *                        THUNK FUNCTION                       
+                             *************************************************************
+                             thunk  int *  __errno_location (void )
+                               Thunked-Function:  <EXTERNAL>::__errno_lo
+             int *             RAX:8          <RETURN>
+                             <EXTERNAL>::__errno_location                    XREF[4]:     FUN_001010e0:00101106 (c) , 
+                                                                                          0010211c , 001021c8 (*) , 
+                                                                                          _elfSectionHeaders::000003d0 (*)   
+        00101090 f3  0f  1e  fa    ENDBR64
+        00101094 ff  25  16       JMP        qword ptr [-><EXTERNAL>::__errno_location ]      int * __errno_location(void)
+                 2f  00  00
+                             -- Flow Override: CALL_RETURN (COMPUTED_CALL_TERMINATOR)
+        0010109a 66              ??         66h    f
+        0010109b 0f              ??         0Fh
+        0010109c 1f              ??         1Fh
+        0010109d 44              ??         44h    D
+        0010109e 00              ??         00h
+        0010109f 00              ??         00h
+                             *************************************************************
+                             *                        THUNK FUNCTION                       
+                             *************************************************************
+                             thunk  ssize_t  write (int  __fd , void *  __buf , size_t  __n )
+                               Thunked-Function:  <EXTERNAL>::write
+             ssize_t           RAX:8          <RETURN>
+             int               EDI:4          __fd
+             void *            RSI:8          __buf
+             size_t            RDX:8          __n
+                             <EXTERNAL>::write                               XREF[5]:     FUN_001010e0:001012ae (c) , 
+                                                                                          FUN_001010e0:001012e0 (c) , 
+                                                                                          FUN_001010e0:001013df (c) , 
+                                                                                          FUN_001010e0:001013f5 (c) , 
+                                                                                          FUN_00101530:0010158d (c)   
+        001010a0 f3  0f  1e  fa    ENDBR64
+        001010a4 ff  25  0e       JMP        qword ptr [-><EXTERNAL>::write ]                 ssize_t write(int __fd, void * _
+                 2f  00  00
+                             -- Flow Override: CALL_RETURN (COMPUTED_CALL_TERMINATOR)
+        001010aa 66              ??         66h    f
+        001010ab 0f              ??         0Fh
+        001010ac 1f              ??         1Fh
+        001010ad 44              ??         44h    D
+        001010ae 00              ??         00h
+        001010af 00              ??         00h
+                             *************************************************************
+                             *                        THUNK FUNCTION                       
+                             *************************************************************
+                             thunk  noreturn  undefined  __stack_chk_fail ()
+                               Thunked-Function:  <EXTERNAL>::__stack_ch
+             undefined         AL:1           <RETURN>
+                             <EXTERNAL>::__stack_chk_fail                    XREF[3]:     FUN_001010e0:00101435 (c) , 
+                                                                                          FUN_00101530:001015d8 (c) , 
+                                                                                          FUN_00101620:001018e1 (c)   
+        001010b0 f3  0f  1e  fa    ENDBR64
+        001010b4 ff  25  06       JMP        qword ptr [-><EXTERNAL>::__stack_chk_fail ]      undefined __stack_chk_fail()
+                 2f  00  00
+                             -- Flow Override: CALL_RETURN (COMPUTED_CALL_TERMINATOR)
+        001010ba 66              ??         66h    f
+        001010bb 0f              ??         0Fh
+        001010bc 1f              ??         1Fh
+        001010bd 44              ??         44h    D
+        001010be 00              ??         00h
+        001010bf 00              ??         00h
+                             *************************************************************
+                             *                        THUNK FUNCTION                       
+                             *************************************************************
+                             thunk  ssize_t  read (int  __fd , void *  __buf , size_t  __nby
+                               Thunked-Function:  <EXTERNAL>::read
+             ssize_t           RAX:8          <RETURN>
+             int               EDI:4          __fd
+             void *            RSI:8          __buf
+             size_t            RDX:8          __nbytes
+                             <EXTERNAL>::read                                XREF[1]:     FUN_001010e0:00101165 (c)   
+        001010c0 f3  0f  1e  fa    ENDBR64
+        001010c4 ff  25  fe       JMP        qword ptr [-><EXTERNAL>::read ]                  ssize_t read(int __fd, void * __
+                 2e  00  00
+                             -- Flow Override: CALL_RETURN (COMPUTED_CALL_TERMINATOR)
+        001010ca 66              ??         66h    f
+        001010cb 0f              ??         0Fh
+        001010cc 1f              ??         1Fh
+        001010cd 44              ??         44h    D
+        001010ce 00              ??         00h
+        001010cf 00              ??         00h
+                             *************************************************************
+                             *                        THUNK FUNCTION                       
+                             *************************************************************
+                             thunk  long  ptrace (__ptrace_request  __request , ... )
+                               Thunked-Function:  <EXTERNAL>::ptrace
+             long              RAX:8          <RETURN>
+             __ptrace_reque    EDI:4          __request
+                             <EXTERNAL>::ptrace                              XREF[1]:     FUN_001010e0:0010111b (c)   
+        001010d0 f3  0f  1e  fa    ENDBR64
+        001010d4 ff  25  f6       JMP        qword ptr [-><EXTERNAL>::ptrace ]                long ptrace(__ptrace_request __r
+                 2e  00  00
+                             -- Flow Override: CALL_RETURN (COMPUTED_CALL_TERMINATOR)
+        001010da 66              ??         66h    f
+        001010db 0f              ??         0Fh
+        001010dc 1f              ??         1Fh
+        001010dd 44              ??         44h    D
+        001010de 00              ??         00h
+        001010df 00              ??         00h
+                             //
+                             // .text 
+                             // SHT_PROGBITS  [0x10e0 - 0x18e5]
+                             // ram:001010e0-ram:001018e5
+                             //
+                             *************************************************************
+                             *                           FUNCTION                          
+                             *************************************************************
+                             undefined  FUN_001010e0 ()
+             undefined         AL:1           <RETURN>
+             undefined8        Stack[-0x30]:8 local_30                                XREF[2]:     001010fc (W) , 
+                                                                                                   0010133f (R)   
+             undefined1        Stack[-0x73]:1 local_73                                XREF[1]:     001013fd (*)   
+             undefined1        Stack[-0x74]:1 local_74                                XREF[1]:     001013d7 (W)   
+             undefined1        Stack[-0x78]:1 local_78                                XREF[1]:     001012b6 (*)   
+             undefined2        Stack[-0xb8]:2 local_b8                                XREF[7]:     001011b0 (*) , 
+                                                                                                   00101265 (*) , 
+                                                                                                   00101291 (*) , 
+                                                                                                   001012c7 (*) , 
+                                                                                                   00101385 (*) , 
+                                                                                                   001013c0 (*) , 
+                                                                                                   0010140f (*)   
+             undefined1[16]    Stack[-0x138   local_138                               XREF[4]:     00101134 (*) , 
+                                                                                                   0010118b (W) , 
+                                                                                                   001011c8 (R) , 
+                                                                                                   00101337 (*)   
+             undefined1        Stack[-0x158   local_158                               XREF[6]:     001011ab (*) , 
+                                                                                                   0010120a (*) , 
+                                                                                                   00101255 (*) , 
+                                                                                                   00101278 (*) , 
+                                                                                                   001012f7 (*) , 
+                                                                                                   0010141c (*)   
+             undefined1[16]    Stack[-0x168   local_168                               XREF[4]:     001011a6 (*) , 
+                                                                                                   001011ce (*) , 
+                                                                                                   001011d6 (W) , 
+                                                                                                   00101327 (*)   
+             undefined1        Stack[-0x169   local_169                               XREF[2]:     0010130e (W) , 
+                                                                                                   0010142b (W)   
+             undefined1        Stack[-0x16a   local_16a                               XREF[2]:     00101309 (W) , 
+                                                                                                   00101426 (W)   
+             undefined1        Stack[-0x16b   local_16b                               XREF[2]:     00101304 (W) , 
+                                                                                                   00101421 (W)   
+             undefined1        Stack[-0x16c   local_16c                               XREF[2]:     001012ff (W) , 
+                                                                                                   00101417 (W)   
+                             FUN_001010e0                                    XREF[4]:     entry:00101458 (*) , 00102124 , 
+                                                                                          00102260 (*) , 
+                                                                                          _elfSectionHeaders::00000410 (*)   
+        001010e0 f3  0f  1e  fa    ENDBR64
+        001010e4 41  56           PUSH       R14
+        001010e6 41  55           PUSH       R13
+        001010e8 41  54           PUSH       R12
+        001010ea 55              PUSH       RBP
+        001010eb 53              PUSH       RBX
+        001010ec 48  81  ec       SUB        RSP ,0x150
+                 50  01  00  00
+        001010f3 64  48  8b       MOV        RAX ,qword ptr FS:[0x28 ]
+                 04  25  28 
+                 00  00  00
+        001010fc 48  89  84       MOV        qword ptr [RSP  + local_30 ],RAX
+                 24  48  01 
+                 00  00
+        00101104 31  c0           XOR        EAX ,EAX
+        00101106 e8  85  ff       CALL       <EXTERNAL>::__errno_location                     int * __errno_location(void)
+                 ff  ff
+        0010110b 31  c9           XOR        ECX ,ECX
+        0010110d 31  d2           XOR        EDX ,EDX
+        0010110f 31  f6           XOR        ESI ,ESI
+        00101111 c7  00  00       MOV        dword ptr [RAX ],0x0
+                 00  00  00
+        00101117 31  ff           XOR        EDI ,EDI
+        00101119 31  c0           XOR        EAX ,EAX
+        0010111b e8  b0  ff       CALL       <EXTERNAL>::ptrace                               long ptrace(__ptrace_request __r
+                 ff  ff
+        00101120 48  83  f8  ff    CMP        RAX ,-0x1
+        00101124 0f  84  3e       JZ         LAB_00101368
+                 02  00  00
+        0010112a ba  30  00       MOV        EDX ,0x30
+                 00  00
+        0010112f bf  df  9b       MOV        EDI ,0x13579bdf
+                 57  13
+        00101134 48  8d  6c       LEA        RBP =>local_138 ,[RSP  + 0x40 ]
+                 24  40
+        00101139 48  8d  35       LEA        RSI ,[DAT_00102040 ]                              = BDh
+                 00  0f  00  00
+        00101140 e8  eb  03       CALL       FUN_00101530                                     undefined FUN_00101530()
+                 00  00
+        00101145 ba  07  00       MOV        EDX ,0x7
+                 00  00
+        0010114a bf  e1  ac       MOV        EDI ,0x2468ace1
+                 68  24
+        0010114f 48  8d  35       LEA        RSI ,[DAT_00102026 ]                              = 2Fh    /
+                 d0  0e  00  00
+        00101156 e8  d5  03       CALL       FUN_00101530                                     undefined FUN_00101530()
+                 00  00
+        0010115b 31  ff           XOR        EDI ,EDI
+        0010115d ba  7f  00       MOV        EDX ,0x7f
+                 00  00
+        00101162 48  89  ee       MOV        RSI ,RBP
+        00101165 e8  56  ff       CALL       <EXTERNAL>::read                                 ssize_t read(int __fd, void * __
+                 ff  ff
+        0010116a 48  85  c0       TEST       RAX ,RAX
+        0010116d 7e  21           JLE        LAB_00101190
+        0010116f 90              NOP
+                             LAB_00101170                                    XREF[1]:     00101189 (j)   
+        00101170 48  89  c1       MOV        RCX ,RAX
+        00101173 48  83  e8  01    SUB        RAX ,0x1
+        00101177 0f  b6  54       MOVZX      EDX ,byte ptr [RBP  + RAX *0x1 ]
+                 05  00
+        0010117c 80  fa  0d       CMP        DL,0xd
+        0010117f 74  05           JZ         LAB_00101186
+        00101181 80  fa  0a       CMP        DL,0xa
+        00101184 75  37           JNZ        LAB_001011bd
+                             LAB_00101186                                    XREF[1]:     0010117f (j)   
+        00101186 48  85  c0       TEST       RAX ,RAX
+        00101189 75  e5           JNZ        LAB_00101170
+        0010118b c6  44  24       MOV        byte ptr [RSP  + local_138[0] ],0x0
+                 40  00
+                             LAB_00101190                                    XREF[2]:     0010116d (j) , 001011c6 (j)   
+        00101190 ba  06  00       MOV        EDX ,0x6
+                 00  00
+        00101195 bf  3c  2d       MOV        EDI ,0xf1e2d3c
+                 1e  0f
+        0010119a 48  8d  35       LEA        RSI ,[DAT_00102020 ]                              = 2Eh    .
+                 7f  0e  00  00
+        001011a1 e8  8a  03       CALL       FUN_00101530                                     undefined FUN_00101530()
+                 00  00
+        001011a6 4c  8d  74       LEA        R14 =>local_168 ,[RSP  + 0x10 ]
+                 24  10
+        001011ab 4c  8d  64       LEA        R12 =>local_158 ,[RSP  + 0x20 ]
+                 24  20
+        001011b0 4c  8d  ac       LEA        R13 =>local_b8 ,[RSP  + 0xc0 ]
+                 24  c0  00 
+                 00  00
+        001011b8 e9  56  01       JMP        LAB_00101313
+                 00  00
+                             LAB_001011bd                                    XREF[1]:     00101184 (j)   
+        001011bd c6  44  0c       MOV        byte ptr [RSP  + RCX *0x1  + 0x40 ],0x0
+                 40  00
+        001011c2 48  83  f9  10    CMP        RCX ,0x10
+        001011c6 75  c8           JNZ        LAB_00101190
+        001011c8 66  0f  6f       MOVDQA     XMM0 ,xmmword ptr [RSP  + local_138[0] ]
+                 44  24  40
+        001011ce 4c  8d  74       LEA        R14 =>local_168 ,[RSP  + 0x10 ]
+                 24  10
+        001011d3 4c  89  f7       MOV        RDI ,R14
+        001011d6 0f  29  44       MOVAPS     xmmword ptr [RSP  + local_168[0] ],XMM0
+                 24  10
+        001011db e8  40  04       CALL       FUN_00101620                                     undefined FUN_00101620()
+                 00  00
+        001011e0 bf  fe  0f       MOV        EDI ,0xddc0ffe
+                 dc  0d
+        001011e5 ba  08  00       MOV        EDX ,0x8
+                 00  00
+        001011ea 48  8d  35       LEA        RSI ,[DAT_001020c8 ]                              = 4Bh    K
+                 d7  0e  00  00
+        001011f1 41  89  c4       MOV        R12D ,EAX
+        001011f4 e8  37  03       CALL       FUN_00101530                                     undefined FUN_00101530()
+                 00  00
+        001011f9 4c  89  f7       MOV        RDI ,R14
+        001011fc 45  84  e4       TEST       R12B ,R12B
+        001011ff 0f  85  7b       JNZ        LAB_00101380
+                 01  00  00
+        00101205 e8  d6  03       CALL       FUN_001015e0                                     undefined FUN_001015e0()
+                 00  00
+        0010120a 4c  8d  64       LEA        R12 =>local_158 ,[RSP  + 0x20 ]
+                 24  20
+        0010120f 31  ff           XOR        EDI ,EDI
+        00101211 31  c9           XOR        ECX ,ECX
+        00101213 35  ef  be       XOR        EAX ,0xdeadbeef
+                 ad  de
+        00101218 89  c2           MOV        EDX ,EAX
+        0010121a 66  0f  1f       NOP        word ptr [RAX  + RAX *0x1 ]
+                 44  00  00
+                             LAB_00101220                                    XREF[1]:     00101261 (j)   
+        00101220 89  d0           MOV        EAX ,EDX
+        00101222 c1  e0  0d       SHL        EAX ,0xd
+        00101225 31  c2           XOR        EDX ,EAX
+        00101227 89  d0           MOV        EAX ,EDX
+        00101229 c1  e8  11       SHR        EAX ,0x11
+        0010122c 31  d0           XOR        EAX ,EDX
+        0010122e 89  c2           MOV        EDX ,EAX
+        00101230 c1  e2  05       SHL        EDX ,0x5
+        00101233 31  c2           XOR        EDX ,EAX
+        00101235 89  d6           MOV        ESI ,EDX
+        00101237 d3  c6           ROL        ESI ,CL
+        00101239 31  d6           XOR        ESI ,EDX
+        0010123b 89  f0           MOV        EAX ,ESI
+        0010123d 41  89  f0       MOV        R8D ,ESI
+        00101240 89  f3           MOV        EBX ,ESI
+        00101242 c1  e8  18       SHR        EAX ,0x18
+        00101245 41  c1  e8  10    SHR        R8D ,0x10
+        00101249 44  31  c0       XOR        EAX ,R8D
+        0010124c 31  f0           XOR        EAX ,ESI
+        0010124e 30  f8           XOR        AL,BH
+        00101250 01  f8           ADD        EAX ,EDI
+        00101252 83  c7  0d       ADD        EDI ,0xd
+        00101255 41  88  04  0c    MOV        byte ptr [R12  + RCX *0x1 ]=>local_158 ,AL
+        00101259 48  83  c1  01    ADD        RCX ,0x1
+        0010125d 48  83  f9  20    CMP        RCX ,0x20
+        00101261 75  bd           JNZ        LAB_00101220
+        00101263 31  c0           XOR        EAX ,EAX
+        00101265 4c  8d  ac       LEA        R13 =>local_b8 ,[RSP  + 0xc0 ]
+                 24  c0  00 
+                 00  00
+        0010126d 48  8d  3d       LEA        RDI ,[DAT_001020f0 ]                              = 30h    0
+                 7c  0e  00  00
+        00101274 0f  1f  40  00    NOP        dword ptr [RAX ]
+                             LAB_00101278                                    XREF[1]:     0010129f (j)   
+        00101278 41  0f  b6       MOVZX      EDX ,byte ptr [R12  + RAX *0x1 ]=>local_158
+                 14  04
+        0010127d 31  c9           XOR        ECX ,ECX
+        0010127f 89  d6           MOV        ESI ,EDX
+        00101281 83  e2  0f       AND        EDX ,0xf
+        00101284 40  c0  ee  04    SHR        SIL ,0x4
+        00101288 83  e6  0f       AND        ESI ,0xf
+        0010128b 8a  0c  37       MOV        CL,byte ptr [RDI  + RSI *0x1 ]=>DAT_001020f0       = 30h    0
+        0010128e 8a  2c  17       MOV        CH,byte ptr [RDI  + RDX *0x1 ]=>DAT_001020f0       = 30h    0
+        00101291 66  41  89       MOV        word ptr [R13  + RAX *0x2 ]=>local_b8 ,CX
+                 4c  45  00
+        00101297 48  83  c0  01    ADD        RAX ,0x1
+        0010129b 48  83  f8  20    CMP        RAX ,0x20
+        0010129f 75  d7           JNZ        LAB_00101278
+        001012a1 ba  40  00       MOV        EDX ,0x40
+                 00  00
+        001012a6 4c  89  ee       MOV        RSI ,R13
+        001012a9 bf  01  00       MOV        EDI ,0x1
+                 00  00
+        001012ae e8  ed  fd       CALL       <EXTERNAL>::write                                ssize_t write(int __fd, void * _
+                 ff  ff
+        001012b3 4c  89  e8       MOV        RAX ,R13
+        001012b6 48  8d  8c       LEA        RCX =>local_78 ,[RSP  + 0x100 ]
+                 24  00  01 
+                 00  00
+        001012be 66  90           NOP
+                             LAB_001012c0                                    XREF[1]:     001012cd (j)   
+        001012c0 48  89  c2       MOV        RDX ,RAX
+        001012c3 48  83  c0  01    ADD        RAX ,0x1
+        001012c7 c6  02  00       MOV        byte ptr [RDX ]=>local_b8 ,0x0
+        001012ca 48  39  c8       CMP        RAX ,RCX
+        001012cd 75  f1           JNZ        LAB_001012c0
+        001012cf ba  01  00       MOV        EDX ,0x1
+                 00  00
+        001012d4 48  8d  35       LEA        RSI ,[DAT_00102004 ]                              = 0Ah
+                 29  0d  00  00
+        001012db bf  01  00       MOV        EDI ,0x1
+                 00  00
+        001012e0 e8  bb  fd       CALL       <EXTERNAL>::write                                ssize_t write(int __fd, void * _
+                 ff  ff
+        001012e5 4c  89  e0       MOV        RAX ,R12
+        001012e8 0f  1f  84       NOP        dword ptr [RAX  + RAX *0x1 ]
+                 00  00  00 
+                 00  00
+                             LAB_001012f0                                    XREF[1]:     001012fd (j)   
+        001012f0 48  89  c2       MOV        RDX ,RAX
+        001012f3 48  83  c0  01    ADD        RAX ,0x1
+        001012f7 c6  02  00       MOV        byte ptr [RDX ]=>local_158 ,0x0
+        001012fa 48  39  e8       CMP        RAX ,RBP
+        001012fd 75  f1           JNZ        LAB_001012f0
+        001012ff c6  44  24       MOV        byte ptr [RSP  + local_16c ],0x0
+                 0c  00
+        00101304 c6  44  24       MOV        byte ptr [RSP  + local_16b ],0x0
+                 0d  00
+        00101309 c6  44  24       MOV        byte ptr [RSP  + local_16a ],0x0
+                 0e  00
+        0010130e c6  44  24       MOV        byte ptr [RSP  + local_169 ],0x0
+                 0f  00
+                             LAB_00101313                                    XREF[2]:     001011b8 (j) , 00101430 (j)   
+        00101313 4c  89  f3       MOV        RBX ,R14
+        00101316 66  2e  0f       NOP        word ptr CS:[RAX  + RAX *0x1 ]
+                 1f  84  00 
+                 00  00  00  00
+                             LAB_00101320                                    XREF[1]:     0010132d (j)   
+        00101320 48  89  d8       MOV        RAX ,RBX
+        00101323 48  83  c3  01    ADD        RBX ,0x1
+        00101327 c6  00  00       MOV        byte ptr [RAX ]=>local_168 ,0x0
+        0010132a 4c  39  e3       CMP        RBX ,R12
+        0010132d 75  f1           JNZ        LAB_00101320
+        0010132f 90              NOP
+                             LAB_00101330                                    XREF[1]:     0010133d (j)   
+        00101330 48  89  e8       MOV        RAX ,RBP
+        00101333 48  83  c5  01    ADD        RBP ,0x1
+        00101337 c6  00  00       MOV        byte ptr [RAX ]=>local_138 ,0x0
+        0010133a 4c  39  ed       CMP        RBP ,R13
+        0010133d 75  f1           JNZ        LAB_00101330
+                             LAB_0010133f                                    XREF[1]:     0010137e (j)   
+        0010133f 48  8b  84       MOV        RAX ,qword ptr [RSP  + local_30 ]
+                 24  48  01 
+                 00  00
+        00101347 64  48  2b       SUB        RAX ,qword ptr FS:[0x28 ]
+                 04  25  28 
+                 00  00  00
+        00101350 0f  85  df       JNZ        LAB_00101435
+                 00  00  00
+        00101356 48  81  c4       ADD        RSP ,0x150
+                 50  01  00  00
+        0010135d 31  c0           XOR        EAX ,EAX
+        0010135f 5b              POP        RBX
+        00101360 5d              POP        RBP
+        00101361 41  5c           POP        R12
+        00101363 41  5d           POP        R13
+        00101365 41  5e           POP        R14
+        00101367 c3              RET
+                             LAB_00101368                                    XREF[1]:     00101124 (j)   
+        00101368 ba  10  00       MOV        EDX ,0x10
+                 00  00
+        0010136d 48  8d  35       LEA        RSI ,[DAT_00102070 ]                              = CBh
+                 fc  0c  00  00
+        00101374 bf  fe  0f       MOV        EDI ,0xbadc0ffe
+                 dc  ba
+        00101379 e8  b2  01       CALL       FUN_00101530                                     undefined FUN_00101530()
+                 00  00
+        0010137e eb  bf           JMP        LAB_0010133f
+                             LAB_00101380                                    XREF[1]:     001011ff (j)   
+        00101380 e8  5b  02       CALL       FUN_001015e0                                     undefined FUN_001015e0()
+                 00  00
+        00101385 4c  8d  ac       LEA        R13 =>local_b8 ,[RSP  + 0xc0 ]
+                 24  c0  00 
+                 00  00
+        0010138d 31  d2           XOR        EDX ,EDX
+        0010138f be  77  00       MOV        ESI ,0x77
+                 00  00
+        00101394 48  8d  3d       LEA        RDI ,[DAT_00102080 ]                              = F7h
+                 e5  0c  00  00
+        0010139b 0f  1f  44       NOP        dword ptr [RAX  + RAX *0x1 ]
+                 00  00
+                             LAB_001013a0                                    XREF[1]:     001013cd (j)   
+        001013a0 89  c1           MOV        ECX ,EAX
+        001013a2 c1  e1  0d       SHL        ECX ,0xd
+        001013a5 31  c8           XOR        EAX ,ECX
+        001013a7 89  c1           MOV        ECX ,EAX
+        001013a9 c1  e9  11       SHR        ECX ,0x11
+        001013ac 31  c1           XOR        ECX ,EAX
+        001013ae 89  c8           MOV        EAX ,ECX
+        001013b0 c1  e0  05       SHL        EAX ,0x5
+        001013b3 31  c8           XOR        EAX ,ECX
+        001013b5 0f  b6  0c  17    MOVZX      ECX ,byte ptr [RDI  + RDX *0x1 ]=>DAT_00102080      = F7h
+                                                                                             = C6h
+        001013b9 31  f1           XOR        ECX ,ESI
+        001013bb 83  c6  1f       ADD        ESI ,0x1f
+        001013be 31  c1           XOR        ECX ,EAX
+        001013c0 41  88  4c       MOV        byte ptr [R13  + RDX *0x1 ]=>local_b8 ,CL
+                 15  00
+        001013c5 48  83  c2  01    ADD        RDX ,0x1
+        001013c9 48  83  fa  44    CMP        RDX ,0x44
+        001013cd 75  d1           JNZ        LAB_001013a0
+        001013cf 4c  89  ee       MOV        RSI ,R13
+        001013d2 bf  01  00       MOV        EDI ,0x1
+                 00  00
+        001013d7 c6  84  24       MOV        byte ptr [RSP  + local_74 ],0x0
+                 04  01  00 
+                 00  00
+        001013df e8  bc  fc       CALL       <EXTERNAL>::write                                ssize_t write(int __fd, void * _
+                 ff  ff
+        001013e4 ba  01  00       MOV        EDX ,0x1
+                 00  00
+        001013e9 bf  01  00       MOV        EDI ,0x1
+                 00  00
+        001013ee 48  8d  35       LEA        RSI ,[DAT_00102004 ]                              = 0Ah
+                 0f  0c  00  00
+        001013f5 e8  a6  fc       CALL       <EXTERNAL>::write                                ssize_t write(int __fd, void * _
+                 ff  ff
+        001013fa 4c  89  e8       MOV        RAX ,R13
+        001013fd 48  8d  8c       LEA        RCX =>local_73 ,[RSP  + 0x105 ]
+                 24  05  01 
+                 00  00
+        00101405 0f  1f  00       NOP        dword ptr [RAX ]
+                             LAB_00101408                                    XREF[1]:     00101415 (j)   
+        00101408 48  89  c2       MOV        RDX ,RAX
+        0010140b 48  83  c0  01    ADD        RAX ,0x1
+        0010140f c6  02  00       MOV        byte ptr [RDX ]=>local_b8 ,0x0
+        00101412 48  39  c8       CMP        RAX ,RCX
+        00101415 75  f1           JNZ        LAB_00101408
+        00101417 c6  44  24       MOV        byte ptr [RSP  + local_16c ],0x0
+                 0c  00
+        0010141c 4c  8d  64       LEA        R12 =>local_158 ,[RSP  + 0x20 ]
+                 24  20
+        00101421 c6  44  24       MOV        byte ptr [RSP  + local_16b ],0x0
+                 0d  00
+        00101426 c6  44  24       MOV        byte ptr [RSP  + local_16a ],0x0
+                 0e  00
+        0010142b c6  44  24       MOV        byte ptr [RSP  + local_169 ],0x0
+                 0f  00
+        00101430 e9  de  fe       JMP        LAB_00101313
+                 ff  ff
+                             LAB_00101435                                    XREF[1]:     00101350 (j)   
+        00101435 e8  76  fc       CALL       <EXTERNAL>::__stack_chk_fail                     undefined __stack_chk_fail()
+                 ff  ff
+                             -- Flow Override: CALL_RETURN (CALL_TERMINATOR)
+        0010143a 66              ??         66h    f
+        0010143b 0f              ??         0Fh
+        0010143c 1f              ??         1Fh
+        0010143d 44              ??         44h    D
+        0010143e 00              ??         00h
+        0010143f 00              ??         00h
+                             *************************************************************
+                             *                           FUNCTION                          
+                             *************************************************************
+                             undefined  processEntry  entry ()
+             undefined         AL:1           <RETURN>
+             undefined8        Stack[-0x10]:8 local_10                                XREF[1]:     00101452 (*)   
+                             entry                                           XREF[4]:     Entry Point (*) , 00100018 (*) , 
+                                                                                          0010212c , 00102170 (*)   
+        00101440 f3  0f  1e  fa    ENDBR64
+        00101444 31  ed           XOR        EBP ,EBP
+        00101446 49  89  d1       MOV        R9,RDX
+        00101449 5e              POP        RSI
+        0010144a 48  89  e2       MOV        RDX ,RSP
+        0010144d 48  83  e4  f0    AND        RSP ,-0x10
+        00101451 50              PUSH       RAX
+        00101452 54              PUSH       RSP =>local_10
+        00101453 45  31  c0       XOR        R8D ,R8D
+        00101456 31  c9           XOR        ECX ,ECX
+        00101458 48  8d  3d       LEA        RDI ,[FUN_001010e0 ]
+                 81  fc  ff  ff
+        0010145f ff  15  73       CALL       qword ptr [-><EXTERNAL>::__libc_start_main ]     undefined __libc_start_main()
+                 2b  00  00                                                                   = 00105000
+        00101465 f4              HLT
+        00101466 66              ??         66h    f
+        00101467 2e              ??         2Eh    .
+        00101468 0f              ??         0Fh
+        00101469 1f              ??         1Fh
+        0010146a 84              ??         84h
+        0010146b 00              ??         00h
+        0010146c 00              ??         00h
+        0010146d 00              ??         00h
+        0010146e 00              ??         00h
+        0010146f 00              ??         00h
+                             *************************************************************
+                             *                           FUNCTION                          
+                             *************************************************************
+                             undefined  FUN_00101470 ()
+             undefined         AL:1           <RETURN>
+                             FUN_00101470                                    XREF[1]:     _FINI_0:00101507 (c)   
+        00101470 48  8d  3d       LEA        RDI ,[DAT_00104010 ]                              = ??
+                 99  2b  00  00
+        00101477 48  8d  05       LEA        RAX ,[DAT_00104010 ]                              = ??
+                 92  2b  00  00
+        0010147e 48  39  f8       CMP        RAX ,RDI
+        00101481 74  15           JZ         LAB_00101498
+        00101483 48  8b  05       MOV        RAX =><EXTERNAL>::_ITM_deregisterTMCloneTable ,  = ??
+                 56  2b  00  00                                                                = 00105010
+        0010148a 48  85  c0       TEST       RAX ,RAX
+        0010148d 74  09           JZ         LAB_00101498
+        0010148f ff  e0           JMP        RAX =><EXTERNAL>::_ITM_deregisterTMCloneTable    undefined _ITM_deregisterTMClone
+                             -- Flow Override: CALL_RETURN (COMPUTED_CALL_TERMINATOR)
+        00101491 0f              ??         0Fh
+        00101492 1f              ??         1Fh
+        00101493 80              ??         80h
+        00101494 00              ??         00h
+        00101495 00              ??         00h
+        00101496 00              ??         00h
+        00101497 00              ??         00h
+                             LAB_00101498                                    XREF[2]:     00101481 (j) , 0010148d (j)   
+        00101498 c3              RET
+        00101499 0f              ??         0Fh
+        0010149a 1f              ??         1Fh
+        0010149b 80              ??         80h
+        0010149c 00              ??         00h
+        0010149d 00              ??         00h
+        0010149e 00              ??         00h
+        0010149f 00              ??         00h
+                             *************************************************************
+                             *                           FUNCTION                          
+                             *************************************************************
+                             undefined  FUN_001014a0 ()
+             undefined         AL:1           <RETURN>
+                             FUN_001014a0                                    XREF[1]:     _INIT_0:00101520 (T) , 
+                                                                                          _INIT_0:00101524 (c)   
+        001014a0 48  8d  3d       LEA        RDI ,[DAT_00104010 ]                              = ??
+                 69  2b  00  00
+        001014a7 48  8d  35       LEA        RSI ,[DAT_00104010 ]                              = ??
+                 62  2b  00  00
+        001014ae 48  29  fe       SUB        RSI ,RDI
+        001014b1 48  89  f0       MOV        RAX ,RSI
+        001014b4 48  c1  ee  3f    SHR        RSI ,0x3f
+        001014b8 48  c1  f8  03    SAR        RAX ,0x3
+        001014bc 48  01  c6       ADD        RSI ,RAX
+        001014bf 48  d1  fe       SAR        RSI ,0x1
+        001014c2 74  14           JZ         LAB_001014d8
+        001014c4 48  8b  05       MOV        RAX =><EXTERNAL>::_ITM_registerTMCloneTable ,qw  = ??
+                 25  2b  00  00                                                                = 00105040
+        001014cb 48  85  c0       TEST       RAX ,RAX
+        001014ce 74  08           JZ         LAB_001014d8
+        001014d0 ff  e0           JMP        RAX =><EXTERNAL>::_ITM_registerTMCloneTable      undefined _ITM_registerTMCloneTa
+                             -- Flow Override: CALL_RETURN (COMPUTED_CALL_TERMINATOR)
+        001014d2 66              ??         66h    f
+        001014d3 0f              ??         0Fh
+        001014d4 1f              ??         1Fh
+        001014d5 44              ??         44h    D
+        001014d6 00              ??         00h
+        001014d7 00              ??         00h
+                             LAB_001014d8                                    XREF[2]:     001014c2 (j) , 001014ce (j)   
+        001014d8 c3              RET
+        001014d9 0f              ??         0Fh
+        001014da 1f              ??         1Fh
+        001014db 80              ??         80h
+        001014dc 00              ??         00h
+        001014dd 00              ??         00h
+        001014de 00              ??         00h
+        001014df 00              ??         00h
+                             *************************************************************
+                             *                           FUNCTION                          
+                             *************************************************************
+                             undefined  _FINI_0 ()
+             undefined         AL:1           <RETURN>
+                             _FINI_0                                         XREF[2]:     Entry Point (*) , 00103da0 (*)   
+        001014e0 f3  0f  1e  fa    ENDBR64
+        001014e4 80  3d  25       CMP        byte ptr [DAT_00104010 ],0x0                     = ??
+                 2b  00  00  00
+        001014eb 75  2b           JNZ        LAB_00101518
+        001014ed 55              PUSH       RBP
+        001014ee 48  83  3d       CMP        qword ptr [-><EXTERNAL>::__cxa_finalize ],0x0    = 00105048
+                 02  2b  00 
+                 00  00
+        001014f6 48  89  e5       MOV        RBP ,RSP
+        001014f9 74  0c           JZ         LAB_00101507
+        001014fb 48  8b  3d       MOV        RDI ,qword ptr [PTR_LOOP_00104008 ]               = 00104008
+                 06  2b  00  00
+        00101502 e8  79  fb       CALL       <EXTERNAL>::__cxa_finalize                       undefined __cxa_finalize()
+                 ff  ff
+                             LAB_00101507                                    XREF[1]:     001014f9 (j)   
+        00101507 e8  64  ff       CALL       FUN_00101470                                     undefined FUN_00101470()
+                 ff  ff
+        0010150c c6  05  fd       MOV        byte ptr [DAT_00104010 ],0x1                     = ??
+                 2a  00  00  01
+        00101513 5d              POP        RBP
+        00101514 c3              RET
+        00101515 0f              ??         0Fh
+        00101516 1f              ??         1Fh
+        00101517 00              ??         00h
+                             LAB_00101518                                    XREF[1]:     001014eb (j)   
+        00101518 c3              RET
+        00101519 0f              ??         0Fh
+        0010151a 1f              ??         1Fh
+        0010151b 80              ??         80h
+        0010151c 00              ??         00h
+        0010151d 00              ??         00h
+        0010151e 00              ??         00h
+        0010151f 00              ??         00h
+                             *************************************************************
+                             *                        THUNK FUNCTION                       
+                             *************************************************************
+                             thunk  undefined  _INIT_0 ()
+                               Thunked-Function:  FUN_001014a0
+             undefined         AL:1           <RETURN>
+                             _INIT_0                                         XREF[2]:     Entry Point (*) , 00103d98 (*)   
+        00101520 f3  0f  1e  fa    ENDBR64
+        00101524 e9  77  ff       JMP        FUN_001014a0                                     undefined FUN_001014a0()
+                 ff  ff
+                             -- Flow Override: CALL_RETURN (CALL_TERMINATOR)
+        00101529 0f              ??         0Fh
+        0010152a 1f              ??         1Fh
+        0010152b 80              ??         80h
+        0010152c 00              ??         00h
+        0010152d 00              ??         00h
+        0010152e 00              ??         00h
+        0010152f 00              ??         00h
+                             *************************************************************
+                             *                           FUNCTION                          
+                             *************************************************************
+                             undefined  FUN_00101530 ()
+             undefined         AL:1           <RETURN>
+             undefined8        Stack[-0x20]:8 local_20                                XREF[2]:     00101545 (W) , 
+                                                                                                   001015bb (R)   
+             undefined1        Stack[-0x128   local_128                               XREF[3]:     0010154f (*) , 
+                                                                                                   00101573 (*) , 
+                                                                                                   0010159f (*)   
+             undefined1        Stack[-0x129   local_129                               XREF[1]:     001015b6 (W)   
+             undefined1        Stack[-0x12a   local_12a                               XREF[1]:     001015b1 (W)   
+             undefined1        Stack[-0x12b   local_12b                               XREF[1]:     001015ac (W)   
+             undefined1        Stack[-0x12c   local_12c                               XREF[1]:     001015a7 (W)   
+                             FUN_00101530                                    XREF[7]:     FUN_001010e0:00101140 (c) , 
+                                                                                          FUN_001010e0:00101156 (c) , 
+                                                                                          FUN_001010e0:001011a1 (c) , 
+                                                                                          FUN_001010e0:001011f4 (c) , 
+                                                                                          FUN_001010e0:00101379 (c) , 
+                                                                                          00102134 , 001021e0 (*)   
+        00101530 55              PUSH       RBP
+        00101531 48  89  d5       MOV        RBP ,RDX
+        00101534 53              PUSH       RBX
+        00101535 48  81  ec       SUB        RSP ,0x128
+                 28  01  00  00
+        0010153c 64  48  8b       MOV        RAX ,qword ptr FS:[0x28 ]
+                 04  25  28 
+                 00  00  00
+        00101545 48  89  84       MOV        qword ptr [RSP  + local_20 ],RAX
+                 24  18  01 
+                 00  00
+        0010154d 31  c0           XOR        EAX ,EAX
+        0010154f 48  8d  5c       LEA        RBX =>local_128 ,[RSP  + 0x10 ]
+                 24  10
+        00101554 0f  1f  40  00    NOP        dword ptr [RAX ]
+                             LAB_00101558                                    XREF[1]:     0010157d (j)   
+        00101558 89  f9           MOV        ECX ,EDI
+        0010155a 0f  b6  14  06    MOVZX      EDX ,byte ptr [RSI  + RAX *0x1 ]
+        0010155e c1  e1  0d       SHL        ECX ,0xd
+        00101561 31  cf           XOR        EDI ,ECX
+        00101563 89  f9           MOV        ECX ,EDI
+        00101565 c1  e9  11       SHR        ECX ,0x11
+        00101568 31  f9           XOR        ECX ,EDI
+        0010156a 89  cf           MOV        EDI ,ECX
+        0010156c c1  e7  05       SHL        EDI ,0x5
+        0010156f 31  cf           XOR        EDI ,ECX
+        00101571 31  fa           XOR        EDX ,EDI
+        00101573 88  14  03       MOV        byte ptr [RBX  + RAX *0x1 ]=>local_128 ,DL
+        00101576 48  83  c0  01    ADD        RAX ,0x1
+        0010157a 48  39  c5       CMP        RBP ,RAX
+        0010157d 75  d9           JNZ        LAB_00101558
+        0010157f 48  89  ea       MOV        RDX ,RBP
+        00101582 48  89  de       MOV        RSI ,RBX
+        00101585 bf  01  00       MOV        EDI ,0x1
+                 00  00
+        0010158a 48  01  dd       ADD        RBP ,RBX
+        0010158d e8  0e  fb       CALL       <EXTERNAL>::write                                ssize_t write(int __fd, void * _
+                 ff  ff
+        00101592 48  89  d8       MOV        RAX ,RBX
+        00101595 0f  1f  00       NOP        dword ptr [RAX ]
+                             LAB_00101598                                    XREF[1]:     001015a5 (j)   
+        00101598 48  89  c2       MOV        RDX ,RAX
+        0010159b 48  83  c0  01    ADD        RAX ,0x1
+        0010159f c6  02  00       MOV        byte ptr [RDX ]=>local_128 ,0x0
+        001015a2 48  39  e8       CMP        RAX ,RBP
+        001015a5 75  f1           JNZ        LAB_00101598
+        001015a7 c6  44  24       MOV        byte ptr [RSP  + local_12c ],0x0
+                 0c  00
+        001015ac c6  44  24       MOV        byte ptr [RSP  + local_12b ],0x0
+                 0d  00
+        001015b1 c6  44  24       MOV        byte ptr [RSP  + local_12a ],0x0
+                 0e  00
+        001015b6 c6  44  24       MOV        byte ptr [RSP  + local_129 ],0x0
+                 0f  00
+        001015bb 48  8b  84       MOV        RAX ,qword ptr [RSP  + local_20 ]
+                 24  18  01 
+                 00  00
+        001015c3 64  48  2b       SUB        RAX ,qword ptr FS:[0x28 ]
+                 04  25  28 
+                 00  00  00
+        001015cc 75  0a           JNZ        LAB_001015d8
+        001015ce 48  81  c4       ADD        RSP ,0x128
+                 28  01  00  00
+        001015d5 5b              POP        RBX
+        001015d6 5d              POP        RBP
+        001015d7 c3              RET
+                             LAB_001015d8                                    XREF[1]:     001015cc (j)   
+        001015d8 e8  d3  fa       CALL       <EXTERNAL>::__stack_chk_fail                     undefined __stack_chk_fail()
+                 ff  ff
+                             -- Flow Override: CALL_RETURN (CALL_TERMINATOR)
+        001015dd 0f  1f  00       NOP        dword ptr [RAX ]
+                             *************************************************************
+                             *                           FUNCTION                          
+                             *************************************************************
+                             undefined  FUN_001015e0 ()
+             undefined         AL:1           <RETURN>
+                             FUN_001015e0                                    XREF[4]:     FUN_001010e0:00101205 (c) , 
+                                                                                          FUN_001010e0:00101380 (c) , 
+                                                                                          0010213c , 0010220c (*)   
+        001015e0 48  8d  77  10    LEA        RSI ,[RDI  + 0x10 ]
+        001015e4 b8  11  ee       MOV        EAX ,0xc0ffee11
+                 ff  c0
+        001015e9 0f  1f  80       NOP        dword ptr [RAX ]
+                 00  00  00  00
+                             LAB_001015f0                                    XREF[1]:     00101612 (j)   
+        001015f0 0f  b6  0f       MOVZX      ECX ,byte ptr [RDI ]
+        001015f3 48  83  c7  01    ADD        RDI ,0x1
+        001015f7 83  c1  3d       ADD        ECX ,0x3d
+        001015fa 0f  b6  d1       MOVZX      EDX ,CL
+        001015fd 31  c2           XOR        EDX ,EAX
+        001015ff c1  c2  05       ROL        EDX ,0x5
+        00101602 69  c2  3b       IMUL       EAX ,EDX ,0x45d9f3b
+                 9f  5d  04
+        00101608 89  c2           MOV        EDX ,EAX
+        0010160a c1  ea  10       SHR        EDX ,0x10
+        0010160d 31  d0           XOR        EAX ,EDX
+        0010160f 48  39  fe       CMP        RSI ,RDI
+        00101612 75  dc           JNZ        LAB_001015f0
+        00101614 c3              RET
+        00101615 66              ??         66h    f
+        00101616 66              ??         66h    f
+        00101617 2e              ??         2Eh    .
+        00101618 0f              ??         0Fh
+        00101619 1f              ??         1Fh
+        0010161a 84              ??         84h
+        0010161b 00              ??         00h
+        0010161c 00              ??         00h
+        0010161d 00              ??         00h
+        0010161e 00              ??         00h
+        0010161f 00              ??         00h
+                             *************************************************************
+                             *                           FUNCTION                          
+                             *************************************************************
+                             undefined  FUN_00101620 ()
+             undefined         AL:1           <RETURN>
+             undefined8        Stack[-0x30]:8 local_30                                XREF[2]:     00101646 (W) , 
+                                                                                                   001018a3 (R)   
+             undefined1        Stack[-0x38]:1 local_38                                XREF[1]:     0010181e (*)   
+             undefined1[16]    Stack[-0x48]   local_48                                XREF[7,3]:   0010164d (*) , 
+                                                                                                   00101652 (W) , 
+                                                                                                   00101664 (*) , 
+                                                                                                   001016aa (W) , 
+                                                                                                   001016c2 (R) , 
+                                                                                                   001016d6 (R) , 
+                                                                                                   0010182f (*) , 
+                                                                                                   001016c8 (R) , 
+                                                                                                   001016b6 (R) , 
+                                                                                                   001016b2 (R)   
+             undefined1[16]    Stack[-0x58]   local_58                                XREF[2,1]:   001017b6 (W) , 
+                                                                                                   0010185f (*) , 
+                                                                                                   001017c5 (*)   
+             undefined4        Stack[-0x5c]:4 local_5c                                XREF[1]:     001018d5 (R)   
+             undefined4        Stack[-0x60]:4 local_60                                XREF[1]:     001018ca (R)   
+             undefined4        Stack[-0x64]:4 local_64                                XREF[1]:     001018c0 (R)   
+             undefined4        Stack[-0x68]:4 local_68                                XREF[3]:     001016e1 (*) , 
+                                                                                                   0010171a (*) , 
+                                                                                                   00101811 (R)   
+             undefined4        Stack[-0x6c]:4 local_6c                                XREF[1]:     001017b0 (R)   
+             undefined4        Stack[-0x74]:4 local_74                                XREF[1]:     0010176a (*)   
+             undefined4        Stack[-0x78]:4 local_78                                XREF[3]:     001016d1 (*) , 
+                                                                                                   00101700 (*) , 
+                                                                                                   001017a9 (R)   
+             undefined1[16]    Stack[-0x88]   local_88                                XREF[3,3]:   001016e6 (W) , 
+                                                                                                   00101837 (*) , 
+                                                                                                   00101847 (*) , 
+                                                                                                   00101857 (*) , 
+                                                                                                   0010186f (*) , 
+                                                                                                   00101887 (*)   
+             undefined4        Stack[-0x8c]:4 local_8c                                XREF[7,3]:   0010172a (W) , 
+                                                                                                   00101732 (R) , 
+                                                                                                   0010173f (W) , 
+                                                                                                   00101743 (R) , 
+                                                                                                   00101747 (R) , 
+                                                                                                   00101750 (W) , 
+                                                                                                   0010188f (W) , 
+                                                                                                   00101894 (W) , 
+                                                                                                   00101899 (W) , 
+                                                                                                   0010189e (W)   
+                             FUN_00101620                                    XREF[4]:     FUN_001010e0:001011db (c) , 
+                                                                                          00101736 (*) , 00102144 , 
+                                                                                          00102220 (*)   
+        00101620 f3  0f  1e  fa    ENDBR64
+        00101624 41  55           PUSH       R13
+        00101626 45  31  d2       XOR        R10D ,R10D
+        00101629 41  b9  a5       MOV        R9D ,0xffffffa5
+                 ff  ff  ff
+        0010162f 31  f6           XOR        ESI ,ESI
+        00101631 41  54           PUSH       R12
+        00101633 55              PUSH       RBP
+        00101634 53              PUSH       RBX
+        00101635 48  83  ec  78    SUB        RSP ,0x78
+        00101639 f3  0f  6f  0f    MOVDQU     XMM1 ,xmmword ptr [RDI ]
+        0010163d 64  48  8b       MOV        RAX ,qword ptr FS:[0x28 ]
+                 04  25  28 
+                 00  00  00
+        00101646 48  89  44       MOV        qword ptr [RSP  + local_30 ],RAX
+                 24  68
+        0010164b 31  c0           XOR        EAX ,EAX
+        0010164d 4c  8d  44       LEA        R8=>local_48 ,[RSP  + 0x50 ]
+                 24  50
+        00101652 0f  29  4c       MOVAPS     xmmword ptr [RSP  + local_48[0] ],XMM1
+                 24  50
+        00101657 4c  89  c7       MOV        RDI ,R8
+        0010165a 66  0f  1f       NOP        word ptr [RAX  + RAX *0x1 ]
+                 44  00  00
+                             LAB_00101660                                    XREF[1]:     001016b0 (j)   
+        00101660 89  f2           MOV        EDX ,ESI
+        00101662 89  f0           MOV        EAX ,ESI
+        00101664 44  0f  b6  1f    MOVZX      R11D ,byte ptr [RDI ]=>local_48
+        00101668 89  f1           MOV        ECX ,ESI
+        0010166a 48  69  d2       IMUL       RDX ,RDX ,0x24924925
+                 25  49  92  24
+        00101671 83  c6  01       ADD        ESI ,0x1
+        00101674 48  83  c7  01    ADD        RDI ,0x1
+        00101678 45  31  cb       XOR        R11D ,R9D
+        0010167b 41  83  c1  0b    ADD        R9D ,0xb
+        0010167f 48  c1  ea  20    SHR        RDX ,0x20
+        00101683 29  d0           SUB        EAX ,EDX
+        00101685 d1  e8           SHR        EAX ,0x1
+        00101687 01  d0           ADD        EAX ,EDX
+        00101689 c1  e8  02       SHR        EAX ,0x2
+        0010168c 8d  14  c5       LEA        EDX ,[RAX *0x8 ]
+                 00  00  00  00
+        00101693 29  c2           SUB        EDX ,EAX
+        00101695 44  89  d0       MOV        EAX ,R10D
+        00101698 41  83  c2  07    ADD        R10D ,0x7
+        0010169c 29  d1           SUB        ECX ,EDX
+        0010169e 83  f0  3d       XOR        EAX ,0x3d
+        001016a1 83  c1  01       ADD        ECX ,0x1
+        001016a4 41  d2  c3       ROL        R11B ,CL
+        001016a7 44  01  d8       ADD        EAX ,R11D
+        001016aa 88  47  ff       MOV        byte ptr [RDI  + local_48[0] ],AL
+        001016ad 83  fe  10       CMP        ESI ,0x10
+        001016b0 75  ae           JNZ        LAB_00101660
+        001016b2 8b  5c  24  5c    MOV        EBX ,dword ptr [RSP  + local_48[12] ]
+        001016b6 44  8b  4c       MOV        R9D ,dword ptr [RSP  + local_48[8] ]
+                 24  58
+        001016bb 31  d2           XOR        EDX ,EDX
+        001016bd b9  03  00       MOV        ECX ,0x3
+                 00  00
+        001016c2 66  0f  6f       MOVDQA     XMM2 ,xmmword ptr [RSP  + local_48[0] ]
+                 54  24  50
+        001016c8 8b  7c  24  54    MOV        EDI ,dword ptr [RSP  + local_48[4] ]
+        001016cc bd  11  11       MOV        EBP ,0x11111111
+                 11  11
+        001016d1 4c  8d  5c       LEA        R11 =>local_78 ,[RSP  + 0x20 ]
+                 24  20
+        001016d6 8b  74  24  50    MOV        ESI ,dword ptr [RSP  + local_48[0] ]
+        001016da 4c  8d  2d       LEA        R13 ,[DAT_001020e0 ]                              = 4E3D5B57h
+                 ff  09  00  00
+        001016e1 4c  8d  54       LEA        R10 =>local_68 ,[RSP  + 0x30 ]
+                 24  30
+        001016e6 0f  29  54       MOVAPS     xmmword ptr [RSP  + local_88[0] ],XMM2
+                 24  10
+        001016eb 4c  8d  25       LEA        R12 ,[DAT_001020d0 ]                              = 37389135h
+                 de  09  00  00
+                             LAB_001016f2                                    XREF[1]:     00101728 (j)   
+        001016f2 41  8b  44       MOV        EAX ,dword ptr [R13  + RDX *0x1 ]=>DAT_001020e0     = 4E3D5B57h
+                 15  00                                                                       = FA3D63D1h
+        001016f7 29  e8           SUB        EAX ,EBP
+        001016f9 d3  c8           ROR        EAX ,CL
+        001016fb 35  a5  a5       XOR        EAX ,0xa5a5a5a5
+                 a5  a5
+        00101700 41  89  04  13    MOV        dword ptr [R11  + RDX *0x1 ]=>local_78 ,EAX
+        00101704 41  8b  04  14    MOV        EAX ,dword ptr [R12  + RDX *0x1 ]=>DAT_001020d0     = 37389135h
+                                                                                             = D79003AFh
+        00101708 29  e8           SUB        EAX ,EBP
+        0010170a 81  c5  11       ADD        EBP ,0x11111111
+                 11  11  11
+        00101710 d3  c8           ROR        EAX ,CL
+        00101712 83  c1  07       ADD        ECX ,0x7
+        00101715 35  a5  a5       XOR        EAX ,0xa5a5a5a5
+                 a5  a5
+        0010171a 41  89  04  12    MOV        dword ptr [R10  + RDX *0x1 ]=>local_68 ,EAX
+        0010171e 48  83  c2  04    ADD        RDX ,0x4
+        00101722 81  fd  55       CMP        EBP ,0x55555555
+                 55  55  55
+        00101728 75  c8           JNZ        LAB_001016f2
+        0010172a c7  44  24       MOV        dword ptr [RSP  + local_8c ],0x9e3779b9
+                 0c  b9  79 
+                 37  9e
+        00101732 8b  44  24  0c    MOV        EAX ,dword ptr [RSP  + local_8c ]
+        00101736 48  8d  15       LEA        RDX ,[FUN_00101620 ]
+                 e3  fe  ff  ff
+        0010173d 31  d0           XOR        EAX ,EDX
+        0010173f 89  44  24  0c    MOV        dword ptr [RSP  + local_8c ],EAX
+        00101743 8b  44  24  0c    MOV        EAX ,dword ptr [RSP  + local_8c ]
+        00101747 8b  54  24  0c    MOV        EDX ,dword ptr [RSP  + local_8c ]
+        0010174b c1  e0  07       SHL        EAX ,0x7
+        0010174e 31  d0           XOR        EAX ,EDX
+        00101750 89  44  24  0c    MOV        dword ptr [RSP  + local_8c ],EAX
+        00101754 31  c0           XOR        EAX ,EAX
+        00101756 66  2e  0f       NOP        word ptr CS:[RAX  + RAX *0x1 ]
+                 1f  84  00 
+                 00  00  00  00
+                             LAB_00101760                                    XREF[1]:     001017a7 (j)   
+        00101760 89  c2           MOV        EDX ,EAX
+        00101762 89  fd           MOV        EBP ,EDI
+        00101764 83  e2  03       AND        EDX ,0x3
+        00101767 c1  ed  05       SHR        EBP ,0x5
+        0010176a 8b  4c  94  20    MOV        ECX ,dword ptr [RSP  + RDX *0x4  + local_74 ]
+        0010176e 89  fa           MOV        EDX ,EDI
+        00101770 c1  e2  04       SHL        EDX ,0x4
+        00101773 31  ea           XOR        EDX ,EBP
+        00101775 01  c1           ADD        ECX ,EAX
+        00101777 2d  47  86       SUB        EAX ,0x61c88647
+                 c8  61
+        0010177c 01  fa           ADD        EDX ,EDI
+        0010177e 31  ca           XOR        EDX ,ECX
+        00101780 01  d6           ADD        ESI ,EDX
+        00101782 89  c2           MOV        EDX ,EAX
+        00101784 c1  ea  0b       SHR        EDX ,0xb
+        00101787 89  f5           MOV        EBP ,ESI
+        00101789 83  e2  03       AND        EDX ,0x3
+        0010178c c1  ed  05       SHR        EBP ,0x5
+        0010178f 8b  4c  94  20    MOV        ECX ,dword ptr [RSP  + RDX *0x4  + 0x20 ]
+        00101793 89  f2           MOV        EDX ,ESI
+        00101795 c1  e2  04       SHL        EDX ,0x4
+        00101798 31  ea           XOR        EDX ,EBP
+        0010179a 01  c1           ADD        ECX ,EAX
+        0010179c 01  f2           ADD        EDX ,ESI
+        0010179e 31  ca           XOR        EDX ,ECX
+        001017a0 01  d7           ADD        EDI ,EDX
+        001017a2 3d  20  37       CMP        EAX ,0xc6ef3720
+                 ef  c6
+        001017a7 75  b7           JNZ        LAB_00101760
+        001017a9 66  0f  70       PSHUFD     XMM0 ,xmmword ptr [RSP  + local_78 ],0x1b
+                 44  24  20  1b
+        001017b0 8b  4c  24  2c    MOV        ECX ,dword ptr [RSP  + local_6c ]
+        001017b4 31  d2           XOR        EDX ,EDX
+        001017b6 0f  29  44       MOVAPS     xmmword ptr [RSP  + local_58[0] ],XMM0
+                 24  40
+        001017bb eb  0c           JMP        LAB_001017c9
+        001017bd 0f              ??         0Fh
+        001017be 1f              ??         1Fh
+        001017bf 00              ??         00h
+                             LAB_001017c0                                    XREF[1]:     0010180d (j)   
+        001017c0 89  d0           MOV        EAX ,EDX
+        001017c2 83  e0  03       AND        EAX ,0x3
+        001017c5 8b  4c  84  40    MOV        ECX ,dword ptr [RSP  + RAX *0x4  + local_58[4] ]
+                             LAB_001017c9                                    XREF[1]:     001017bb (j)   
+        001017c9 89  d8           MOV        EAX ,EBX
+        001017cb 89  dd           MOV        EBP ,EBX
+        001017cd 01  d1           ADD        ECX ,EDX
+        001017cf 81  c2  15       ADD        EDX ,0x7f4a7c15
+                 7c  4a  7f
+        001017d5 c1  ed  05       SHR        EBP ,0x5
+        001017d8 c1  e0  04       SHL        EAX ,0x4
+        001017db 31  e8           XOR        EAX ,EBP
+        001017dd 01  d8           ADD        EAX ,EBX
+        001017df 31  c8           XOR        EAX ,ECX
+        001017e1 41  01  c1       ADD        R9D ,EAX
+        001017e4 89  d0           MOV        EAX ,EDX
+        001017e6 c1  e8  0b       SHR        EAX ,0xb
+        001017e9 44  89  cd       MOV        EBP ,R9D
+        001017ec 83  e0  03       AND        EAX ,0x3
+        001017ef c1  ed  05       SHR        EBP ,0x5
+        001017f2 8b  4c  84  40    MOV        ECX ,dword ptr [RSP  + RAX *0x4  + 0x40 ]
+        001017f6 44  89  c8       MOV        EAX ,R9D
+        001017f9 c1  e0  04       SHL        EAX ,0x4
+        001017fc 31  e8           XOR        EAX ,EBP
+        001017fe 01  d1           ADD        ECX ,EDX
+        00101800 44  01  c8       ADD        EAX ,R9D
+        00101803 31  c8           XOR        EAX ,ECX
+        00101805 01  c3           ADD        EBX ,EAX
+        00101807 81  fa  a0       CMP        EDX ,0xe94f82a0
+                 82  4f  e9
+        0010180d 75  b1           JNZ        LAB_001017c0
+        0010180f 31  c9           XOR        ECX ,ECX
+        00101811 39  74  24  30    CMP        dword ptr [RSP  + local_68 ],ESI
+        00101815 0f  84  a5       JZ         LAB_001018c0
+                 00  00  00
+                             LAB_0010181b                                    XREF[3]:     001018c4 (j) , 001018cf (j) , 
+                                                                                          001018dc (j)   
+        0010181b 4c  89  c0       MOV        RAX ,R8
+        0010181e 48  8d  74       LEA        RSI =>local_38 ,[RSP  + 0x60 ]
+                 24  60
+        00101823 0f  1f  44       NOP        dword ptr [RAX  + RAX *0x1 ]
+                 00  00
+                             LAB_00101828                                    XREF[1]:     00101835 (j)   
+        00101828 48  89  c2       MOV        RDX ,RAX
+        0010182b 48  83  c0  01    ADD        RAX ,0x1
+        0010182f c6  02  00       MOV        byte ptr [RDX ]=>local_48 ,0x0
+        00101832 48  39  f0       CMP        RAX ,RSI
+        00101835 75  f1           JNZ        LAB_00101828
+        00101837 48  8d  44       LEA        RAX =>local_88 ,[RSP  + 0x10 ]
+                 24  10
+        0010183c 0f  1f  40  00    NOP        dword ptr [RAX ]
+                             LAB_00101840                                    XREF[1]:     0010184d (j)   
+        00101840 48  89  c2       MOV        RDX ,RAX
+        00101843 48  83  c0  01    ADD        RAX ,0x1
+        00101847 c6  02  00       MOV        byte ptr [RDX ]=>local_88 ,0x0
+        0010184a 4c  39  d8       CMP        RAX ,R11
+        0010184d 75  f1           JNZ        LAB_00101840
+        0010184f 90              NOP
+                             LAB_00101850                                    XREF[1]:     0010185d (j)   
+        00101850 48  89  c2       MOV        RDX ,RAX
+        00101853 48  83  c0  01    ADD        RAX ,0x1
+        00101857 c6  02  00       MOV        byte ptr [RDX ]=>local_88[1] ,0x0
+        0010185a 4c  39  d0       CMP        RAX ,R10
+        0010185d 75  f1           JNZ        LAB_00101850
+        0010185f 48  8d  74       LEA        RSI =>local_58 ,[RSP  + 0x40 ]
+                 24  40
+        00101864 0f  1f  40  00    NOP        dword ptr [RAX ]
+                             LAB_00101868                                    XREF[1]:     00101875 (j)   
+        00101868 48  89  c2       MOV        RDX ,RAX
+        0010186b 48  83  c0  01    ADD        RAX ,0x1
+        0010186f c6  02  00       MOV        byte ptr [RDX ]=>local_88[2] ,0x0
+        00101872 48  39  f0       CMP        RAX ,RSI
+        00101875 75  f1           JNZ        LAB_00101868
+        00101877 66  0f  1f       NOP        word ptr [RAX  + RAX *0x1 ]
+                 84  00  00 
+                 00  00  00
+                             LAB_00101880                                    XREF[1]:     0010188d (j)   
+        00101880 48  89  c2       MOV        RDX ,RAX
+        00101883 48  83  c0  01    ADD        RAX ,0x1
+        00101887 c6  02  00       MOV        byte ptr [RDX ]=>local_88[3] ,0x0
+        0010188a 4c  39  c0       CMP        RAX ,R8
+        0010188d 75  f1           JNZ        LAB_00101880
+        0010188f c6  44  24       MOV        byte ptr [RSP  + local_8c ],0x0
+                 0c  00
+        00101894 c6  44  24       MOV        byte ptr [RSP  + local_8c +0x1 ],0x0
+                 0d  00
+        00101899 c6  44  24       MOV        byte ptr [RSP  + local_8c +0x2 ],0x0
+                 0e  00
+        0010189e c6  44  24       MOV        byte ptr [RSP  + local_8c +0x3 ],0x0
+                 0f  00
+        001018a3 48  8b  44       MOV        RAX ,qword ptr [RSP  + local_30 ]
+                 24  68
+        001018a8 64  48  2b       SUB        RAX ,qword ptr FS:[0x28 ]
+                 04  25  28 
+                 00  00  00
+        001018b1 75  2e           JNZ        LAB_001018e1
+        001018b3 48  83  c4  78    ADD        RSP ,0x78
+        001018b7 89  c8           MOV        EAX ,ECX
+        001018b9 5b              POP        RBX
+        001018ba 5d              POP        RBP
+        001018bb 41  5c           POP        R12
+        001018bd 41  5d           POP        R13
+        001018bf c3              RET
+                             LAB_001018c0                                    XREF[1]:     00101815 (j)   
+        001018c0 39  7c  24  34    CMP        dword ptr [RSP  + local_64 ],EDI
+        001018c4 0f  85  51       JNZ        LAB_0010181b
+                 ff  ff  ff
+        001018ca 44  39  4c       CMP        dword ptr [RSP  + local_60 ],R9D
+                 24  38
+        001018cf 0f  85  46       JNZ        LAB_0010181b
+                 ff  ff  ff
+        001018d5 39  5c  24  3c    CMP        dword ptr [RSP  + local_5c ],EBX
+        001018d9 0f  94  c1       SETZ       CL
+        001018dc e9  3a  ff       JMP        LAB_0010181b
+                 ff  ff
+                             LAB_001018e1                                    XREF[1]:     001018b1 (j)   
+        001018e1 e8  ca  f7       CALL       <EXTERNAL>::__stack_chk_fail                     undefined __stack_chk_fail()
+                 ff  ff
+                             -- Flow Override: CALL_RETURN (CALL_TERMINATOR)
+                             //
+                             // .fini 
+                             // SHT_PROGBITS  [0x18e8 - 0x18f4]
+                             // ram:001018e8-ram:001018f4
+                             //
+                             *************************************************************
+                             *                           FUNCTION                          
+                             *************************************************************
+                             undefined  _DT_FINI ()
+             undefined         AL:1           <RETURN>
+                             __DT_FINI                                       XREF[3]:     Entry Point (*) , 00103dd0 (*) , 
+                             _DT_FINI                                                     _elfSectionHeaders::00000450 (*)   
+        001018e8 f3  0f  1e  fa    ENDBR64
+        001018ec 48  83  ec  08    SUB        RSP ,0x8
+        001018f0 48  83  c4  08    ADD        RSP ,0x8
+        001018f4 c3              RET
+                             //
+                             // .rodata 
+                             // SHT_PROGBITS  [0x2000 - 0x20ff]
+                             // ram:00102000-ram:001020ff
+                             //
+                             DAT_00102000                                    XREF[2]:     00100130 (*) , 
+                                                                                          _elfSectionHeaders::00000490 (*)   
+        00102000 01              ??         01h
+        00102001 00              ??         00h
+        00102002 02              ??         02h
+        00102003 00              ??         00h
+                             DAT_00102004                                    XREF[2]:     FUN_001010e0:001012d4 (*) , 
+                                                                                          FUN_001010e0:001013ee (*)   
+        00102004 0a              ??         0Ah
+        00102005 00              ??         00h
+        00102006 00              ??         00h
+        00102007 00              ??         00h
+        00102008 00              ??         00h
+        00102009 00              ??         00h
+        0010200a 00              ??         00h
+        0010200b 00              ??         00h
+        0010200c 00              ??         00h
+        0010200d 00              ??         00h
+        0010200e 00              ??         00h
+        0010200f 00              ??         00h
+        00102010 00              ??         00h
+        00102011 00              ??         00h
+        00102012 00              ??         00h
+        00102013 00              ??         00h
+        00102014 00              ??         00h
+        00102015 00              ??         00h
+        00102016 00              ??         00h
+        00102017 00              ??         00h
+        00102018 00              ??         00h
+        00102019 00              ??         00h
+        0010201a 00              ??         00h
+        0010201b 00              ??         00h
+        0010201c 00              ??         00h
+        0010201d 00              ??         00h
+        0010201e 00              ??         00h
+        0010201f 00              ??         00h
+                             DAT_00102020                                    XREF[1]:     FUN_001010e0:0010119a (*)   
+        00102020 2e              ??         2Eh    .
+        00102021 49              ??         49h    I
+        00102022 fa              ??         FAh
+        00102023 87              ??         87h
+        00102024 ba              ??         BAh
+        00102025 76              ??         76h    v
+                             DAT_00102026                                    XREF[1]:     FUN_001010e0:0010114f (*)   
+        00102026 2f              ??         2Fh    /
+        00102027 30              ??         30h    0
+        00102028 e4              ??         E4h
+        00102029 ce              ??         CEh
+        0010202a 8c              ??         8Ch
+        0010202b 82              ??         82h
+        0010202c 66              ??         66h    f
+        0010202d 00              ??         00h
+        0010202e 00              ??         00h
+        0010202f 00              ??         00h
+        00102030 00              ??         00h
+        00102031 00              ??         00h
+        00102032 00              ??         00h
+        00102033 00              ??         00h
+        00102034 00              ??         00h
+        00102035 00              ??         00h
+        00102036 00              ??         00h
+        00102037 00              ??         00h
+        00102038 00              ??         00h
+        00102039 00              ??         00h
+        0010203a 00              ??         00h
+        0010203b 00              ??         00h
+        0010203c 00              ??         00h
+        0010203d 00              ??         00h
+        0010203e 00              ??         00h
+        0010203f 00              ??         00h
+                             DAT_00102040                                    XREF[1]:     FUN_001010e0:00101139 (*)   
+        00102040 bd              ??         BDh
+        00102041 43              ??         43h    C
+        00102042 48              ??         48h    H
+        00102043 fd              ??         FDh
+        00102044 8a              ??         8Ah
+        00102045 65              ??         65h    e
+        00102046 b6              ??         B6h
+        00102047 0c              ??         0Ch
+        00102048 6a              ??         6Ah    j
+        00102049 25              ??         25h    %
+        0010204a e7              ??         E7h
+        0010204b 09              ??         09h
+        0010204c da              ??         DAh
+        0010204d 06              ??         06h
+        0010204e 17              ??         17h
+        0010204f 5b              ??         5Bh    [
+        00102050 6d              ??         6Dh    m
+        00102051 5f              ??         5Fh    _
+        00102052 cc              ??         CCh
+        00102053 d5              ??         D5h
+        00102054 7a              ??         7Ah    z
+        00102055 42              ??         42h    B
+        00102056 15              ??         15h
+        00102057 a4              ??         A4h
+        00102058 b9              ??         B9h
+        00102059 56              ??         56h    V
+        0010205a 45              ??         45h    E
+        0010205b 29              ??         29h    )
+        0010205c 37              ??         37h    7
+        0010205d 1e              ??         1Eh
+        0010205e fa              ??         FAh
+        0010205f 90              ??         90h
+        00102060 05              ??         05h
+        00102061 aa              ??         AAh
+        00102062 77              ??         77h    w
+        00102063 c4              ??         C4h
+        00102064 2a              ??         2Ah    *
+        00102065 e6              ??         E6h
+        00102066 1a              ??         1Ah
+        00102067 a7              ??         A7h
+        00102068 be              ??         BEh
+        00102069 63              ??         63h    c
+        0010206a 9f              ??         9Fh
+        0010206b 5a              ??         5Ah    Z
+        0010206c cd              ??         CDh
+        0010206d 5e              ??         5Eh    ^
+        0010206e 5d              ??         5Dh    ]
+        0010206f 69              ??         69h    i
+                             DAT_00102070                                    XREF[1]:     FUN_001010e0:0010136d (*)   
+        00102070 cb              ??         CBh
+        00102071 d4              ??         D4h
+        00102072 2e              ??         2Eh    .
+        00102073 ef              ??         EFh
+        00102074 9d              ??         9Dh
+        00102075 e2              ??         E2h
+        00102076 2c              ??         2Ch    ,
+        00102077 85              ??         85h
+        00102078 71              ??         71h    q
+        00102079 93              ??         93h
+        0010207a d3              ??         D3h
+        0010207b 7d              ??         7Dh    }
+        0010207c 12              ??         12h
+        0010207d 95              ??         95h
+        0010207e 2d              ??         2Dh    -
+        0010207f b9              ??         B9h
+                             DAT_00102080                                    XREF[2]:     FUN_001010e0:00101394 (*) , 
+                                                                                          FUN_001010e0:001013b5 (R)   
+        00102080 f7              undefine   F7h
+                             DAT_00102081                                    XREF[1]:     FUN_001010e0:001013b5 (R)   
+        00102081 c6              undefine   C6h
+        00102082 55              ??         55h    U
+        00102083 ea              ??         EAh
+        00102084 c9              ??         C9h
+        00102085 43              ??         43h    C
+        00102086 a8              ??         A8h
+        00102087 3e              ??         3Eh    >
+        00102088 c6              ??         C6h
+        00102089 48              ??         48h    H
+        0010208a 74              ??         74h    t
+        0010208b 7f              ??         7Fh    
+        0010208c 28              ??         28h    (
+        0010208d 7e              ??         7Eh    ~
+        0010208e 27              ??         27h    '
+        0010208f 79              ??         79h    y
+        00102090 fd              ??         FDh
+        00102091 17              ??         17h
+        00102092 2b              ??         2Bh    +
+        00102093 63              ??         63h    c
+        00102094 93              ??         93h
+        00102095 4b              ??         4Bh    K
+        00102096 71              ??         71h    q
+        00102097 82              ??         82h
+        00102098 9b              ??         9Bh
+        00102099 58              ??         58h    X
+        0010209a a6              ??         A6h
+        0010209b 4d              ??         4Dh    M
+        0010209c 6e              ??         6Eh    n
+        0010209d d9              ??         D9h
+        0010209e 02              ??         02h
+        0010209f 1d              ??         1Dh
+        001020a0 27              ??         27h    '
+        001020a1 61              ??         61h    a
+        001020a2 15              ??         15h
+        001020a3 ca              ??         CAh
+        001020a4 6d              ??         6Dh    m
+        001020a5 e0              ??         E0h
+        001020a6 90              ??         90h
+        001020a7 0f              ??         0Fh
+        001020a8 fa              ??         FAh
+        001020a9 6a              ??         6Ah    j
+        001020aa ba              ??         BAh
+        001020ab 0e              ??         0Eh
+        001020ac 17              ??         17h
+        001020ad cd              ??         CDh
+        001020ae f1              ??         F1h
+        001020af e6              ??         E6h
+        001020b0 b8              ??         B8h
+        001020b1 e7              ??         E7h
+        001020b2 08              ??         08h
+        001020b3 ce              ??         CEh
+        001020b4 72              ??         72h    r
+        001020b5 8f              ??         8Fh
+        001020b6 1d              ??         1Dh
+        001020b7 e4              ??         E4h
+        001020b8 17              ??         17h
+        001020b9 f4              ??         F4h
+        001020ba f9              ??         F9h
+        001020bb a8              ??         A8h
+        001020bc 5f              ??         5Fh    _
+        001020bd 80              ??         80h
+        001020be f0              ??         F0h
+        001020bf 5f              ??         5Fh    _
+        001020c0 7d              ??         7Dh    }
+        001020c1 64              ??         64h    d
+        001020c2 c1              ??         C1h
+        001020c3 36              ??         36h    6
+        001020c4 00              ??         00h
+        001020c5 00              ??         00h
+        001020c6 00              ??         00h
+        001020c7 00              ??         00h
+                             DAT_001020c8                                    XREF[1]:     FUN_001010e0:001011ea (*)   
+        001020c8 4b              ??         4Bh    K
+        001020c9 cf              ??         CFh
+        001020ca a5              ??         A5h
+        001020cb a2              ??         A2h
+        001020cc 89              ??         89h
+        001020cd e9              ??         E9h
+        001020ce 56              ??         56h    V
+        001020cf 5f              ??         5Fh    _
+                             DAT_001020d0                                    XREF[2]:     FUN_00101620:001016eb (*) , 
+                                                                                          FUN_00101620:00101704 (R)   
+        001020d0 35  91  38  37    undefine   37389135h
+                             DAT_001020d4                                    XREF[1]:     FUN_00101620:00101704 (R)   
+        001020d4 af  03  90  d7    undefine   D79003AFh
+        001020d8 22              ??         22h    "
+        001020d9 11              ??         11h
+        001020da bb              ??         BBh
+        001020db ea              ??         EAh
+        001020dc ac              ??         ACh
+        001020dd fb              ??         FBh
+        001020de 0f              ??         0Fh
+        001020df 21              ??         21h    !
+                             DAT_001020e0                                    XREF[2]:     FUN_00101620:001016da (*) , 
+                                                                                          FUN_00101620:001016f2 (R)   
+        001020e0 57  5b  3d  4e    undefine   4E3D5B57h
+                             DAT_001020e4                                    XREF[1]:     FUN_00101620:001016f2 (R)   
+        001020e4 d1  63  3d  fa    undefine   FA3D63D1h
+        001020e8 1c              ??         1Ch
+        001020e9 e7              ??         E7h
+        001020ea 1e              ??         1Eh
+        001020eb 21              ??         21h    !
+        001020ec 04              ??         04h
+        001020ed 33              ??         33h    3
+        001020ee 41              ??         41h    A
+        001020ef fb              ??         FBh
+                             DAT_001020f0                                    XREF[3]:     FUN_001010e0:0010126d (*) , 
+                                                                                          FUN_001010e0:0010128b (*) , 
+                                                                                          FUN_001010e0:0010128e (*)   
+        001020f0 30              ??         30h    0
+        001020f1 31              ??         31h    1
+        001020f2 32              ??         32h    2
+        001020f3 33              ??         33h    3
+        001020f4 34              ??         34h    4
+        001020f5 35              ??         35h    5
+        001020f6 36              ??         36h    6
+        001020f7 37              ??         37h    7
+        001020f8 38              ??         38h    8
+        001020f9 39              ??         39h    9
+        001020fa 61              ??         61h    a
+        001020fb 62              ??         62h    b
+        001020fc 63              ??         63h    c
+        001020fd 64              ??         64h    d
+        001020fe 65              ??         65h    e
+        001020ff 66              ??         66h    f
+                             //
+                             // .eh_frame_hdr 
+                             // SHT_PROGBITS  [0x2100 - 0x214b]
+                             // ram:00102100-ram:0010214b
+                             //
+                             *************************************************************
+                             * Exception Handler Frame Header                             
+                             *************************************************************
+                             eh_frame_hdr_00102100                           XREF[2]:     00100280 (*) , 
+                                                                                          _elfSectionHeaders::000004d0 (*)   
+        00102100 01  1b  03  3b    eh_frame                                                    Exception Handler Frame Header V
+        00102104 4c  00  00  00    ddw        cie_00102150                                     Encoded eh_frame_ptr
+        00102108 08  00  00  00    ddw        8h                                               Encoded FDE count
+                             *************************************************************
+                             * Frame Description Entry Table                              
+                             *************************************************************
+        0010210c 20  ef  ff       fde_tabl                                                    Initial Location
+                 ff  80  00 
+                 00  00
+        00102114 80  ef  ff       fde_tabl                                                    Initial Location
+                 ff  a8  00 
+                 00  00
+        0010211c 90  ef  ff       fde_tabl                                                    Initial Location
+                 ff  c0  00 
+                 00  00
+        00102124 e0  ef  ff       fde_tabl                                                    Initial Location
+                 ff  58  01 
+                 00  00
+        0010212c 40  f3  ff       fde_tabl                                                    Initial Location
+                 ff  68  00 
+                 00  00
+        00102134 30  f4  ff       fde_tabl                                                    Initial Location
+                 ff  d8  00 
+                 00  00
+        0010213c e0  f4  ff       fde_tabl                                                    Initial Location
+                 ff  04  01 
+                 00  00
+        00102144 20  f5  ff       fde_tabl                                                    Initial Location
+                 ff  18  01 
+                 00  00
+                             //
+                             // .eh_frame 
+                             // SHT_PROGBITS  [0x2150 - 0x22a3]
+                             // ram:00102150-ram:001022a3
+                             //
+                             *************************************************************
+                             * Common Information Entry                                   
+                             *************************************************************
+                             cie_00102150                                    XREF[10]:    00102104 (*) , 0010216c (*) , 
+                                                                                          00102184 (*) , 001021ac (*) , 
+                                                                                          001021c4 (*) , 001021dc (*) , 
+                                                                                          00102208 (*) , 0010221c (*) , 
+                                                                                          0010225c (*) , 
+                                                                                          _elfSectionHeaders::00000510 (*)   
+        00102150 14  00  00  00    ddw        14h                                              (CIE) Length
+        00102154 00  00  00  00    ddw        0h                                               (CIE) ID
+        00102158 01              db         1h                                               (CIE) Version
+        00102159 7a  52  00       ds         "zR"                                             (CIE) Augmentation String
+        0010215c 01              uleb128    1h                                               (CIE) Code Alignment
+        0010215d 78              sleb128    -8h                                              (CIE) Data Alignment
+        0010215e 10              db         10h                                              (CIE) Return Address Register Co
+        0010215f 01              uleb128    1h                                               (CIE) Augmentation Data Length
+        00102160 1b              dwfenc     DW_EH_PE_sdata4 | DW_EH_PE_pcrel                 (CIE Augmentation Data) FDE Enco
+        00102161 0c  07  08       db[7]                                                       (CIE) Initial Instructions
+                 90  01  00  00
+                             *************************************************************
+                             * Frame Descriptor Entry                                     
+                             *************************************************************
+                             fde_00102168                                    XREF[1]:     00102130 (*)   
+        00102168 14  00  00  00    ddw        14h                                              (FDE) Length
+        0010216c 1c  00  00  00    ddw        cie_00102150                                     (FDE) CIE Reference Pointer 
+        00102170 d0  f2  ff  ff    ddw        entry                                            (FDE) PcBegin
+        00102174 26  00  00  00    ddw        26h                                              (FDE) PcRange
+        00102178 00              uleb128    0h                                               (FDE) Augmentation Data Length
+        00102179 44  07  10       db[7]                                                       (FDE) Call Frame Instructions
+                 00  00  00  00
+                             *************************************************************
+                             * Frame Descriptor Entry                                     
+                             *************************************************************
+                             fde_00102180                                    XREF[1]:     00102110 (*)   
+        00102180 24  00  00  00    ddw        24h                                              (FDE) Length
+        00102184 34  00  00  00    ddw        cie_00102150                                     (FDE) CIE Reference Pointer 
+        00102188 98  ee  ff  ff    ddw        FUN_00101020                                     (FDE) PcBegin
+        0010218c 60  00  00  00    ddw        60h                                              (FDE) PcRange
+        00102190 00              uleb128    0h                                               (FDE) Augmentation Data Length
+        00102191 0e  10  46       db[23]                                                      (FDE) Call Frame Instructions
+                 0e  18  4a 
+                 0f  0b  77 
+                             *************************************************************
+                             * Frame Descriptor Entry                                     
+                             *************************************************************
+                             fde_001021a8                                    XREF[1]:     00102118 (*)   
+        001021a8 14  00  00  00    ddw        14h                                              (FDE) Length
+        001021ac 5c  00  00  00    ddw        cie_00102150                                     (FDE) CIE Reference Pointer 
+        001021b0 d0  ee  ff  ff    ddw        <EXTERNAL>::__cxa_finalize                       (FDE) PcBegin
+        001021b4 10  00  00       dq         10h                                              (FDE) PcRange
+                 00  00  00 
+                 00  00
+        001021bc 00              uleb128    0h                                               (FDE) Augmentation Data Length
+        001021bd 00  00  00       db[3]                                                       (FDE) Call Frame Instructions
+                             *************************************************************
+                             * Frame Descriptor Entry                                     
+                             *************************************************************
+                             fde_001021c0                                    XREF[1]:     00102120 (*)   
+        001021c0 14  00  00  00    ddw        14h                                              (FDE) Length
+        001021c4 74  00  00  00    ddw        cie_00102150                                     (FDE) CIE Reference Pointer 
+        001021c8 c8  ee  ff  ff    ddw        <EXTERNAL>::__errno_location                     (FDE) PcBegin
+        001021cc 50  00  00       dq         50h                                              (FDE) PcRange
+                 00  00  00 
+                 00  00
+        001021d4 00              uleb128    0h                                               (FDE) Augmentation Data Length
+        001021d5 00  00  00       db[3]                                                       (FDE) Call Frame Instructions
+                             *************************************************************
+                             * Frame Descriptor Entry                                     
+                             *************************************************************
+                             fde_001021d8                                    XREF[1]:     00102138 (*)   
+        001021d8 28  00  00  00    ddw        28h                                              (FDE) Length
+        001021dc 8c  00  00  00    ddw        cie_00102150                                     (FDE) CIE Reference Pointer 
+        001021e0 50  f3  ff  ff    ddw        FUN_00101530                                     (FDE) PcBegin
+        001021e4 ad  00  00  00    ddw        ADh                                              (FDE) PcRange
+        001021e8 00              uleb128    0h                                               (FDE) Augmentation Data Length
+        001021e9 41  0e  10       db[27]                                                      (FDE) Call Frame Instructions
+                 86  02  44 
+                 0e  18  83 
+                             *************************************************************
+                             * Frame Descriptor Entry                                     
+                             *************************************************************
+                             fde_00102204                                    XREF[1]:     00102140 (*)   
+        00102204 10  00  00  00    ddw        10h                                              (FDE) Length
+        00102208 b8  00  00  00    ddw        cie_00102150                                     (FDE) CIE Reference Pointer 
+        0010220c d4  f3  ff  ff    ddw        FUN_001015e0                                     (FDE) PcBegin
+        00102210 35  00  00       dq         35h                                              (FDE) PcRange
+                 00  00  00 
+                 00  00
+                             *************************************************************
+                             * Frame Descriptor Entry                                     
+                             *************************************************************
+                             fde_00102218                                    XREF[1]:     00102148 (*)   
+        00102218 3c  00  00  00    ddw        3Ch                                              (FDE) Length
+        0010221c cc  00  00  00    ddw        cie_00102150                                     (FDE) CIE Reference Pointer 
+        00102220 00  f4  ff  ff    ddw        FUN_00101620                                     (FDE) PcBegin
+        00102224 c6  02  00  00    ddw        2C6h                                             (FDE) PcRange
+        00102228 00              uleb128    0h                                               (FDE) Augmentation Data Length
+        00102229 46  0e  10       db[47]                                                      (FDE) Call Frame Instructions
+                 8d  02  4d 
+                 0e  18  8c 
+                             *************************************************************
+                             * Frame Descriptor Entry                                     
+                             *************************************************************
+                             fde_00102258                                    XREF[1]:     00102128 (*)   
+        00102258 44  00  00  00    ddw        44h                                              (FDE) Length
+        0010225c 0c  01  00  00    ddw        cie_00102150                                     (FDE) CIE Reference Pointer 
+        00102260 80  ee  ff  ff    ddw        FUN_001010e0                                     (FDE) PcBegin
+        00102264 5a  03  00  00    ddw        35Ah                                             (FDE) PcRange
+        00102268 00              uleb128    0h                                               (FDE) Augmentation Data Length
+        00102269 46  0e  10       db[55]                                                      (FDE) Call Frame Instructions
+                 8e  02  42 
+                 0e  18  8d 
+                             *************************************************************
+                             * END OF FRAME                                               
+                             *************************************************************
+        001022a0 00  00  00  00    ddw        0h                                               End of Frame
+                             //
+                             // .init_array 
+                             // SHT_INIT_ARRAY  [0x3d98 - 0x3d9f]
+                             // ram:00103d98-ram:00103d9f
+                             //
+                             __DT_INIT_ARRAY                                 XREF[4]:     00100168 (*) , 001002f0 (*) , 
+                                                                                          00103de0 (*) , 
+                                                                                          _elfSectionHeaders::00000550 (*)   
+        00103d98 20  15  10       addr       _INIT_0
+                 00  00  00 
+                 00  00
+                             //
+                             // .fini_array 
+                             // SHT_FINI_ARRAY  [0x3da0 - 0x3da7]
+                             // ram:00103da0-ram:00103da7
+                             //
+                             __DT_FINI_ARRAY                                 XREF[2]:     00103e00 (*) , 
+                                                                                          _elfSectionHeaders::00000590 (*)   
+        00103da0 e0  14  10       addr       _FINI_0
+                 00  00  00 
+                 00  00
+                             //
+                             // .dynamic 
+                             // SHT_DYNAMIC  [0x3da8 - 0x3f97]
+                             // ram:00103da8-ram:00103f97
+                             //
+                             _DYNAMIC                                        XREF[3]:     001001a0 (*) , 00103f98 (*) , 
+                                                                                          _elfSectionHeaders::000005d0 (*)   
+        00103da8 01  00  00       Elf64_Dy                                                    DT_NEEDED - Name of needed libra
+                 00  00  00 
+                 00  00  56 
+        00103f58 00              ??         00h
+        00103f59 00              ??         00h
+        00103f5a 00              ??         00h
+        00103f5b 00              ??         00h
+        00103f5c 00              ??         00h
+        00103f5d 00              ??         00h
+        00103f5e 00              ??         00h
+        00103f5f 00              ??         00h
+        00103f60 00              ??         00h
+        00103f61 00              ??         00h
+        00103f62 00              ??         00h
+        00103f63 00              ??         00h
+        00103f64 00              ??         00h
+        00103f65 00              ??         00h
+        00103f66 00              ??         00h
+        00103f67 00              ??         00h
+        00103f68 00              ??         00h
+        00103f69 00              ??         00h
+        00103f6a 00              ??         00h
+        00103f6b 00              ??         00h
+        00103f6c 00              ??         00h
+        00103f6d 00              ??         00h
+        00103f6e 00              ??         00h
+        00103f6f 00              ??         00h
+        00103f70 00              ??         00h
+        00103f71 00              ??         00h
+        00103f72 00              ??         00h
+        00103f73 00              ??         00h
+        00103f74 00              ??         00h
+        00103f75 00              ??         00h
+        00103f76 00              ??         00h
+        00103f77 00              ??         00h
+        00103f78 00              ??         00h
+        00103f79 00              ??         00h
+        00103f7a 00              ??         00h
+        00103f7b 00              ??         00h
+        00103f7c 00              ??         00h
+        00103f7d 00              ??         00h
+        00103f7e 00              ??         00h
+        00103f7f 00              ??         00h
+        00103f80 00              ??         00h
+        00103f81 00              ??         00h
+        00103f82 00              ??         00h
+        00103f83 00              ??         00h
+        00103f84 00              ??         00h
+        00103f85 00              ??         00h
+        00103f86 00              ??         00h
+        00103f87 00              ??         00h
+        00103f88 00              ??         00h
+        00103f89 00              ??         00h
+        00103f8a 00              ??         00h
+        00103f8b 00              ??         00h
+        00103f8c 00              ??         00h
+        00103f8d 00              ??         00h
+        00103f8e 00              ??         00h
+        00103f8f 00              ??         00h
+        00103f90 00              ??         00h
+        00103f91 00              ??         00h
+        00103f92 00              ??         00h
+        00103f93 00              ??         00h
+        00103f94 00              ??         00h
+        00103f95 00              ??         00h
+        00103f96 00              ??         00h
+        00103f97 00              ??         00h
+                             //
+                             // .got 
+                             // SHT_PROGBITS  [0x3f98 - 0x3fff]
+                             // ram:00103f98-ram:00103fff
+                             //
+                             __DT_PLTGOT                                     XREF[2]:     00103e80 (*) , 
+                                                                                          _elfSectionHeaders::00000610 (*)   
+        00103f98 a8  3d  10       addr       _DYNAMIC
+                 00  00  00 
+                 00  00
+                             PTR_00103fa0                                    XREF[1]:     FUN_00101020:00101020 (R)   
+        00103fa0 00  00  00       addr       00000000
+                 00  00  00 
+                 00  00
+                             PTR_00103fa8                                    XREF[1]:     FUN_00101020:00101026   
+        00103fa8 00  00  00       addr       00000000
+                 00  00  00 
+                 00  00
+                             PTR___errno_location_00103fb0                   XREF[1]:     __errno_location:00101094   
+        00103fb0 08  50  10       addr       <EXTERNAL>::__errno_location                     = ??
+                 00  00  00 
+                 00  00
+                             PTR_write_00103fb8                              XREF[1]:     write:001010a4   
+        00103fb8 18  50  10       addr       <EXTERNAL>::write                                = ??
+                 00  00  00 
+                 00  00
+                             PTR___stack_chk_fail_00103fc0                   XREF[1]:     __stack_chk_fail:001010b4   
+        00103fc0 20  50  10       addr       <EXTERNAL>::__stack_chk_fail                     = ??
+                 00  00  00 
+                 00  00
+                             PTR_read_00103fc8                               XREF[1]:     read:001010c4   
+        00103fc8 28  50  10       addr       <EXTERNAL>::read                                 = ??
+                 00  00  00 
+                 00  00
+                             PTR_ptrace_00103fd0                             XREF[1]:     ptrace:001010d4   
+        00103fd0 38  50  10       addr       <EXTERNAL>::ptrace                               = ??
+                 00  00  00 
+                 00  00
+                             PTR___libc_start_main_00103fd8                  XREF[1]:     entry:0010145f (R)   
+        00103fd8 00  50  10       addr       <EXTERNAL>::__libc_start_main                    = ??
+                 00  00  00 
+                 00  00
+                             PTR__ITM_deregisterTMCloneTable_00103fe0        XREF[1]:     FUN_00101470:00101483 (R)   
+        00103fe0 10  50  10       addr       <EXTERNAL>::_ITM_deregisterTMCloneTable          = ??
+                 00  00  00 
+                 00  00
+                             PTR___gmon_start___00103fe8                     XREF[1]:     _DT_INIT:00101008 (R)   
+        00103fe8 30  50  10       addr       <EXTERNAL>::__gmon_start__                       = ??
+                 00  00  00 
+                 00  00
+                             PTR__ITM_registerTMCloneTable_00103ff0          XREF[1]:     FUN_001014a0:001014c4 (R)   
+        00103ff0 40  50  10       addr       <EXTERNAL>::_ITM_registerTMCloneTable            = ??
+                 00  00  00 
+                 00  00
+                             PTR___cxa_finalize_00103ff8                     XREF[2]:     __cxa_finalize:00101084 , 
+                                                                                          _FINI_0:001014ee (R)   
+        00103ff8 48  50  10       addr       <EXTERNAL>::__cxa_finalize                       = ??
+                 00  00  00 
+                 00  00
+                             //
+                             // .data 
+                             // SHT_PROGBITS  [0x4000 - 0x400f]
+                             // ram:00104000-ram:0010400f
+                             //
+                             DAT_00104000                                    XREF[1]:     _elfSectionHeaders::00000650 (*)   
+        00104000 00              ??         00h
+        00104001 00              ??         00h
+        00104002 00              ??         00h
+        00104003 00              ??         00h
+        00104004 00              ??         00h
+        00104005 00              ??         00h
+        00104006 00              ??         00h
+        00104007 00              ??         00h
+                             PTR_LOOP_00104008                               XREF[2]:     _FINI_0:001014fb (R) , 
+                                                                                          00104008 (*)   
+        00104008 08  40  10       addr       PTR_LOOP_00104008                                = 00104008
+                 00  00  00 
+                 00  00
+                             //
+                             // .bss 
+                             // SHT_NOBITS  [0x4010 - 0x4017]
+                             // ram:00104010-ram:00104017
+                             //
+                             DAT_00104010                                    XREF[7]:     FUN_00101470:00101470 (*) , 
+                                                                                          FUN_00101470:00101477 (*) , 
+                                                                                          FUN_001014a0:001014a0 (*) , 
+                                                                                          FUN_001014a0:001014a7 (*) , 
+                                                                                          _FINI_0:001014e4 (R) , 
+                                                                                          _FINI_0:0010150c (W) , 
+                                                                                          _elfSectionHeaders::00000690 (*)   
+        00104010                 ??         ??
+        00104011                 ??         ??
+        00104012                 ??         ??
+        00104013                 ??         ??
+        00104014                 ??         ??
+        00104015                 ??         ??
+        00104016                 ??         ??
+        00104017                 ??         ??
+                             //
+                             // EXTERNAL 
+                             // NOTE: This block is artificial and allows ELF Relocations 
+                             // ram:00105000-ram:0010504f
+                             //
+                             *************************************************************
+                             *                        THUNK FUNCTION                       
+                             *************************************************************
+                             thunk  undefined  __libc_start_main ()
+                               Thunked-Function:  <EXTERNAL>::__libc_sta
+             undefined         AL:1           <RETURN>
+                             <EXTERNAL>::__libc_start_main                   XREF[2]:     entry:0010145f (c) , 00103fd8 (*)   
+        00105000                 ??         ??
+        00105001                 ??         ??
+        00105002                 ??         ??
+        00105003                 ??         ??
+        00105004                 ??         ??
+        00105005                 ??         ??
+        00105006                 ??         ??
+        00105007                 ??         ??
+                             *************************************************************
+                             *                        THUNK FUNCTION                       
+                             *************************************************************
+                             thunk  int *  __errno_location (void )
+                               Thunked-Function:  <EXTERNAL>::__errno_lo
+             int *             RAX:8          <RETURN>
+                             <EXTERNAL>::__errno_location                    XREF[2]:     __errno_location:00101090 (T) , 
+                                                                                          __errno_location:00101094 (c) , 
+                                                                                          00103fb0 (*)   
+        00105008                 ??         ??
+        00105009                 ??         ??
+        0010500a                 ??         ??
+        0010500b                 ??         ??
+        0010500c                 ??         ??
+        0010500d                 ??         ??
+        0010500e                 ??         ??
+        0010500f                 ??         ??
+                             *************************************************************
+                             *                        THUNK FUNCTION                       
+                             *************************************************************
+                             thunk  undefined  _ITM_deregisterTMCloneTable ()
+                               Thunked-Function:  <EXTERNAL>::_ITM_dereg
+             undefined         AL:1           <RETURN>
+                             <EXTERNAL>::_ITM_deregisterTMCloneTable         XREF[3]:     FUN_00101470:00101483 (*) , 
+                                                                                          FUN_00101470:0010148f (c) , 
+                                                                                          00103fe0 (*)   
+        00105010                 ??         ??
+        00105011                 ??         ??
+        00105012                 ??         ??
+        00105013                 ??         ??
+        00105014                 ??         ??
+        00105015                 ??         ??
+        00105016                 ??         ??
+        00105017                 ??         ??
+                             *************************************************************
+                             *                        THUNK FUNCTION                       
+                             *************************************************************
+                             thunk  ssize_t  write (int  __fd , void *  __buf , size_t  __n )
+                               Thunked-Function:  <EXTERNAL>::write
+             ssize_t           RAX:8          <RETURN>
+             int               EDI:4          __fd
+             void *            RSI:8          __buf
+             size_t            RDX:8          __n
+                             <EXTERNAL>::write                               XREF[2]:     write:001010a0 (T) , 
+                                                                                          write:001010a4 (c) , 00103fb8 (*)   
+        00105018                 ??         ??
+        00105019                 ??         ??
+        0010501a                 ??         ??
+        0010501b                 ??         ??
+        0010501c                 ??         ??
+        0010501d                 ??         ??
+        0010501e                 ??         ??
+        0010501f                 ??         ??
+                             *************************************************************
+                             *                        THUNK FUNCTION                       
+                             *************************************************************
+                             thunk  noreturn  undefined  __stack_chk_fail ()
+                               Thunked-Function:  <EXTERNAL>::__stack_ch
+             undefined         AL:1           <RETURN>
+                             <EXTERNAL>::__stack_chk_fail                    XREF[2]:     __stack_chk_fail:001010b0 (T) , 
+                                                                                          __stack_chk_fail:001010b4 (c) , 
+                                                                                          00103fc0 (*)   
+        00105020                 ??         ??
+        00105021                 ??         ??
+        00105022                 ??         ??
+        00105023                 ??         ??
+        00105024                 ??         ??
+        00105025                 ??         ??
+        00105026                 ??         ??
+        00105027                 ??         ??
+                             *************************************************************
+                             *                        THUNK FUNCTION                       
+                             *************************************************************
+                             thunk  ssize_t  read (int  __fd , void *  __buf , size_t  __nby
+                               Thunked-Function:  <EXTERNAL>::read
+             ssize_t           RAX:8          <RETURN>
+             int               EDI:4          __fd
+             void *            RSI:8          __buf
+             size_t            RDX:8          __nbytes
+                             <EXTERNAL>::read                                XREF[2]:     read:001010c0 (T) , 
+                                                                                          read:001010c4 (c) , 00103fc8 (*)   
+        00105028                 ??         ??
+        00105029                 ??         ??
+        0010502a                 ??         ??
+        0010502b                 ??         ??
+        0010502c                 ??         ??
+        0010502d                 ??         ??
+        0010502e                 ??         ??
+        0010502f                 ??         ??
+                             *************************************************************
+                             *                        THUNK FUNCTION                       
+                             *************************************************************
+                             thunk  undefined  __gmon_start__ ()
+                               Thunked-Function:  <EXTERNAL>::__gmon_sta
+             undefined         AL:1           <RETURN>
+                             <EXTERNAL>::__gmon_start__                      XREF[3]:     _DT_INIT:00101008 (*) , 
+                                                                                          _DT_INIT:00101014 (c) , 
+                                                                                          00103fe8 (*)   
+        00105030                 ??         ??
+        00105031                 ??         ??
+        00105032                 ??         ??
+        00105033                 ??         ??
+        00105034                 ??         ??
+        00105035                 ??         ??
+        00105036                 ??         ??
+        00105037                 ??         ??
+                             *************************************************************
+                             *                        THUNK FUNCTION                       
+                             *************************************************************
+                             thunk  long  ptrace (__ptrace_request  __request , ... )
+                               Thunked-Function:  <EXTERNAL>::ptrace
+             long              RAX:8          <RETURN>
+             __ptrace_reque    EDI:4          __request
+                             <EXTERNAL>::ptrace                              XREF[2]:     ptrace:001010d0 (T) , 
+                                                                                          ptrace:001010d4 (c) , 00103fd0 (*)   
+        00105038                 ??         ??
+        00105039                 ??         ??
+        0010503a                 ??         ??
+        0010503b                 ??         ??
+        0010503c                 ??         ??
+        0010503d                 ??         ??
+        0010503e                 ??         ??
+        0010503f                 ??         ??
+                             *************************************************************
+                             *                        THUNK FUNCTION                       
+                             *************************************************************
+                             thunk  undefined  _ITM_registerTMCloneTable ()
+                               Thunked-Function:  <EXTERNAL>::_ITM_regis
+             undefined         AL:1           <RETURN>
+                             <EXTERNAL>::_ITM_registerTMCloneTable           XREF[3]:     FUN_001014a0:001014c4 (*) , 
+                                                                                          FUN_001014a0:001014d0 (c) , 
+                                                                                          00103ff0 (*)   
+        00105040                 ??         ??
+        00105041                 ??         ??
+        00105042                 ??         ??
+        00105043                 ??         ??
+        00105044                 ??         ??
+        00105045                 ??         ??
+        00105046                 ??         ??
+        00105047                 ??         ??
+                             *************************************************************
+                             *                        THUNK FUNCTION                       
+                             *************************************************************
+                             thunk  undefined  __cxa_finalize ()
+                               Thunked-Function:  <EXTERNAL>::__cxa_fina
+             undefined         AL:1           <RETURN>
+                             <EXTERNAL>::__cxa_finalize                      XREF[2]:     __cxa_finalize:00101080 (T) , 
+                                                                                          __cxa_finalize:00101084 (c) , 
+                                                                                          00103ff8 (*)   
+        00105048                 ??         ??
+        00105049                 ??         ??
+        0010504a                 ??         ??
+        0010504b                 ??         ??
+        0010504c                 ??         ??
+        0010504d                 ??         ??
+        0010504e                 ??         ??
+        0010504f                 ??         ??
+                             //
+                             // .comment 
+                             // SHT_PROGBITS [not-loaded]
+                             // .comment::00000000-.comment::0000002a
+                             //
+             assume DF = <UNKNOWN>
+                             ElfComment[0]                                   XREF[1]:     _elfSectionHeaders::000006d0 (*)   
+      ::00000000 47  43  43       utf8       u8"GCC: (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0"
+                 3a  20  28 
+                 55  62  75 
+                             //
+                             // .shstrtab 
+                             // SHT_STRTAB [not-loaded]
+                             // .shstrtab::00000000-.shstrtab::00000109
+                             //
+                             DAT_.shstrtab__00000000                         XREF[1]:     _elfSectionHeaders::00000710 (*)   
+      ::00000000 00              ??         00h
+      ::00000001 2e  73  68       ds         ".shstrtab"
+                 73  74  72 
+                 74  61  62  00
+      ::0000000b 2e  69  6e       ds         ".interp"
+                 74  65  72 
+                 70  00
+      ::00000013 2e  6e  6f       ds         ".note.gnu.property"
+                 74  65  2e 
+                 67  6e  75 
+      ::00000026 2e  6e  6f       ds         ".note.gnu.build-id"
+                 74  65  2e 
+                 67  6e  75 
+      ::00000039 2e  6e  6f       ds         ".note.ABI-tag"
+                 74  65  2e 
+                 41  42  49 
+      ::00000047 2e  67  6e       ds         ".gnu.hash"
+                 75  2e  68 
+                 61  73  68  00
+      ::00000051 2e  64  79       ds         ".dynsym"
+                 6e  73  79 
+                 6d  00
+      ::00000059 2e  64  79       ds         ".dynstr"
+                 6e  73  74 
+                 72  00
+      ::00000061 2e  67  6e       ds         ".gnu.version"
+                 75  2e  76 
+                 65  72  73 
+      ::0000006e 2e  67  6e       ds         ".gnu.version_r"
+                 75  2e  76 
+                 65  72  73 
+      ::0000007d 2e  72  65       ds         ".rela.dyn"
+                 6c  61  2e 
+                 64  79  6e  00
+      ::00000087 2e  72  65       ds         ".rela.plt"
+                 6c  61  2e 
+                 70  6c  74  00
+      ::00000091 2e  69  6e       ds         ".init"
+                 69  74  00
+      ::00000097 2e  70  6c       ds         ".plt.got"
+                 74  2e  67 
+                 6f  74  00
+      ::000000a0 2e  70  6c       ds         ".plt.sec"
+                 74  2e  73 
+                 65  63  00
+      ::000000a9 2e  74  65       ds         ".text"
+                 78  74  00
+      ::000000af 2e  66  69       ds         ".fini"
+                 6e  69  00
+      ::000000b5 2e  72  6f       ds         ".rodata"
+                 64  61  74 
+                 61  00
+      ::000000bd 2e  65  68       ds         ".eh_frame_hdr"
+                 5f  66  72 
+                 61  6d  65 
+      ::000000cb 2e  65  68       ds         ".eh_frame"
+                 5f  66  72 
+                 61  6d  65  00
+      ::000000d5 2e  69  6e       ds         ".init_array"
+                 69  74  5f 
+                 61  72  72 
+      ::000000e1 2e  66  69       ds         ".fini_array"
+                 6e  69  5f 
+                 61  72  72 
+      ::000000ed 2e  64  79       ds         ".dynamic"
+                 6e  61  6d 
+                 69  63  00
+      ::000000f6 2e  64  61       ds         ".data"
+                 74  61  00
+      ::000000fc 2e  62  73       ds         ".bss"
+                 73  00
+      ::00000101 2e  63  6f       ds         ".comment"
+                 6d  6d  65 
+                 6e  74  00
+                             //
+                             // _elfSectionHeaders 
+                             // Elf Section Headers
+                             // _elfSectionHeaders::00000000-_elfSectionHeaders::0000073f
+                             //
+                             Elf64_Shdr_ARRAY__elfSectionHeaders__00000000   XREF[1]:     00100028 (*)   
+      ::00000000 00  00  00       Elf64_Sh                                                    SECTION0 - SHT_NULL
+                 00  00  00 
+                 00  00  00 
