@@ -1,0 +1,1164 @@
+[*] Analyzing ROP Chain...
+[*] Opcode Base: 0x1224000
+Chain[000]: 0xdeadbeef (Data/External)
+Chain[001]: 0x1224003 -> pop rax ; ret 
+Chain[002]: 0x0 (Data/External)
+Chain[003]: 0x1224005 -> pop rdi ; ret 
+Chain[004]: 0x0 (Data/External)
+Chain[005]: 0x1224007 -> pop rsi ; ret 
+Chain[006]: 0x1224800 -> add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al
+Chain[007]: 0x1224009 -> pop rdx ; ret 
+Chain[008]: 0x100 (Data/External)
+Chain[009]: 0x122400b -> syscall  ; ret 
+Chain[010]: 0x122402e -> xor rcx, rcx ; ret 
+Chain[011]: 0x1224003 -> pop rax ; ret 
+Chain[012]: 0x8 (Data/External)
+Chain[013]: 0x122401f -> add rsp, rax ; ret 
+Chain[014]: 0xdeadbeef (Data/External)
+Chain[015]: 0x1224003 -> pop rax ; ret 
+Chain[016]: 0x1224800 -> add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al
+Chain[017]: 0x1224032 -> add rax, rcx ; ret 
+Chain[018]: 0x1224036 -> mov rdi, rax ; ret 
+Chain[019]: 0x122400e -> xor rax, rax ; mov al, byte ptr [rdi] ; ret 
+Chain[020]: 0x1224005 -> pop rdi ; ret 
+Chain[021]: 0x0 (Data/External)
+Chain[022]: 0x1224014 -> sub al, dil ; ret 
+Chain[023]: 0x1224005 -> pop rdi ; ret 
+Chain[024]: 0x8 (Data/External)
+Chain[025]: 0x122401a -> imul rax, rdi ; ret 
+Chain[026]: 0x122401f -> add rsp, rax ; ret 
+Chain[027]: 0x1224018 -> pop rbp ; ret 
+Chain[028]: 0x1225930 (Data/External)
+Chain[029]: 0x1224001 -> leave  ; ret 
+Chain[030]: 0x1224000 -> ret 
+Chain[031]: 0x1224000 -> ret 
+Chain[032]: 0x1224000 -> ret 
+Chain[033]: 0x1224000 -> ret 
+Chain[034]: 0x1224000 -> ret 
+Chain[035]: 0x1224000 -> ret 
+Chain[036]: 0x1224000 -> ret 
+Chain[037]: 0x1224000 -> ret 
+Chain[038]: 0x1224000 -> ret 
+Chain[039]: 0x1224000 -> ret 
+Chain[040]: 0x1224000 -> ret 
+Chain[041]: 0x1224000 -> ret 
+Chain[042]: 0x1224000 -> ret 
+Chain[043]: 0x1224000 -> ret 
+Chain[044]: 0x1224000 -> ret 
+Chain[045]: 0x1224000 -> ret 
+Chain[046]: 0x1224000 -> ret 
+Chain[047]: 0x1224000 -> ret 
+Chain[048]: 0x1224000 -> ret 
+Chain[049]: 0x1224000 -> ret 
+Chain[050]: 0x1224000 -> ret 
+Chain[051]: 0x1224000 -> ret 
+Chain[052]: 0x1224000 -> ret 
+Chain[053]: 0x1224000 -> ret 
+Chain[054]: 0x1224000 -> ret 
+Chain[055]: 0x1224000 -> ret 
+Chain[056]: 0x1224000 -> ret 
+Chain[057]: 0x1224000 -> ret 
+Chain[058]: 0x1224000 -> ret 
+Chain[059]: 0x1224000 -> ret 
+Chain[060]: 0x1224000 -> ret 
+Chain[061]: 0x1224000 -> ret 
+Chain[062]: 0x1224000 -> ret 
+Chain[063]: 0x1224000 -> ret 
+Chain[064]: 0x1224000 -> ret 
+Chain[065]: 0x1224000 -> ret 
+Chain[066]: 0x1224000 -> ret 
+Chain[067]: 0x1224000 -> ret 
+Chain[068]: 0x1224000 -> ret 
+Chain[069]: 0x1224000 -> ret 
+Chain[070]: 0x1224000 -> ret 
+Chain[071]: 0x1224000 -> ret 
+Chain[072]: 0x1224000 -> ret 
+Chain[073]: 0x1224000 -> ret 
+Chain[074]: 0x1224000 -> ret 
+Chain[075]: 0x1224000 -> ret 
+Chain[076]: 0x1224000 -> ret 
+Chain[077]: 0x1224000 -> ret 
+Chain[078]: 0x1224000 -> ret 
+Chain[079]: 0x1224000 -> ret 
+Chain[080]: 0x1224000 -> ret 
+Chain[081]: 0x1224000 -> ret 
+Chain[082]: 0x1224000 -> ret 
+Chain[083]: 0x1224000 -> ret 
+Chain[084]: 0x1224000 -> ret 
+Chain[085]: 0x1224000 -> ret 
+Chain[086]: 0x1224000 -> ret 
+Chain[087]: 0x1224000 -> ret 
+Chain[088]: 0x1224000 -> ret 
+Chain[089]: 0x1224000 -> ret 
+Chain[090]: 0x1224000 -> ret 
+Chain[091]: 0x1224000 -> ret 
+Chain[092]: 0x1224000 -> ret 
+Chain[093]: 0x1224000 -> ret 
+Chain[094]: 0x1224000 -> ret 
+Chain[095]: 0x1224000 -> ret 
+Chain[096]: 0x1224000 -> ret 
+Chain[097]: 0x1224000 -> ret 
+Chain[098]: 0x1224000 -> ret 
+Chain[099]: 0x1224000 -> ret 
+Chain[100]: 0x1224000 -> ret 
+Chain[101]: 0x1224000 -> ret 
+Chain[102]: 0x1224000 -> ret 
+Chain[103]: 0x1224000 -> ret 
+Chain[104]: 0x1224000 -> ret 
+Chain[105]: 0x1224000 -> ret 
+Chain[106]: 0x1224000 -> ret 
+Chain[107]: 0x1224000 -> ret 
+Chain[108]: 0x1224000 -> ret 
+Chain[109]: 0x1224000 -> ret 
+Chain[110]: 0x1224000 -> ret 
+Chain[111]: 0x1224000 -> ret 
+Chain[112]: 0x1224000 -> ret 
+Chain[113]: 0x1224000 -> ret 
+Chain[114]: 0x1224000 -> ret 
+Chain[115]: 0x1224000 -> ret 
+Chain[116]: 0x1224000 -> ret 
+Chain[117]: 0x1224000 -> ret 
+Chain[118]: 0x1224000 -> ret 
+Chain[119]: 0x1224000 -> ret 
+Chain[120]: 0x1224000 -> ret 
+Chain[121]: 0x1224000 -> ret 
+Chain[122]: 0x1224000 -> ret 
+Chain[123]: 0x1224000 -> ret 
+Chain[124]: 0x1224000 -> ret 
+Chain[125]: 0x1224000 -> ret 
+Chain[126]: 0x1224000 -> ret 
+Chain[127]: 0x1224000 -> ret 
+Chain[128]: 0x1224000 -> ret 
+Chain[129]: 0x1224000 -> ret 
+Chain[130]: 0x1224000 -> ret 
+Chain[131]: 0x1224000 -> ret 
+Chain[132]: 0x1224000 -> ret 
+Chain[133]: 0x1224000 -> ret 
+Chain[134]: 0x1224000 -> ret 
+Chain[135]: 0x1224000 -> ret 
+Chain[136]: 0x1224000 -> ret 
+Chain[137]: 0x1224000 -> ret 
+Chain[138]: 0x1224000 -> ret 
+Chain[139]: 0x1224000 -> ret 
+Chain[140]: 0x1224000 -> ret 
+Chain[141]: 0x1224000 -> ret 
+Chain[142]: 0x1224000 -> ret 
+Chain[143]: 0x1224000 -> ret 
+Chain[144]: 0x1224000 -> ret 
+Chain[145]: 0x1224000 -> ret 
+Chain[146]: 0x1224000 -> ret 
+Chain[147]: 0x1224000 -> ret 
+Chain[148]: 0x1224000 -> ret 
+Chain[149]: 0x1224000 -> ret 
+Chain[150]: 0x1224000 -> ret 
+Chain[151]: 0x1224000 -> ret 
+Chain[152]: 0x1224000 -> ret 
+Chain[153]: 0x1224000 -> ret 
+Chain[154]: 0x1224000 -> ret 
+Chain[155]: 0x1224000 -> ret 
+Chain[156]: 0x1224000 -> ret 
+Chain[157]: 0x1224000 -> ret 
+Chain[158]: 0x1224000 -> ret 
+Chain[159]: 0x1224000 -> ret 
+Chain[160]: 0x1224000 -> ret 
+Chain[161]: 0x1224000 -> ret 
+Chain[162]: 0x1224000 -> ret 
+Chain[163]: 0x1224000 -> ret 
+Chain[164]: 0x1224000 -> ret 
+Chain[165]: 0x1224000 -> ret 
+Chain[166]: 0x1224000 -> ret 
+Chain[167]: 0x1224000 -> ret 
+Chain[168]: 0x1224000 -> ret 
+Chain[169]: 0x1224000 -> ret 
+Chain[170]: 0x1224000 -> ret 
+Chain[171]: 0x1224000 -> ret 
+Chain[172]: 0x1224000 -> ret 
+Chain[173]: 0x1224000 -> ret 
+Chain[174]: 0x1224000 -> ret 
+Chain[175]: 0x1224000 -> ret 
+Chain[176]: 0x1224000 -> ret 
+Chain[177]: 0x1224000 -> ret 
+Chain[178]: 0x1224000 -> ret 
+Chain[179]: 0x1224000 -> ret 
+Chain[180]: 0x1224000 -> ret 
+Chain[181]: 0x1224000 -> ret 
+Chain[182]: 0x1224000 -> ret 
+Chain[183]: 0x1224000 -> ret 
+Chain[184]: 0x1224000 -> ret 
+Chain[185]: 0x1224000 -> ret 
+Chain[186]: 0x1224000 -> ret 
+Chain[187]: 0x1224000 -> ret 
+Chain[188]: 0x1224000 -> ret 
+Chain[189]: 0x1224000 -> ret 
+Chain[190]: 0x1224000 -> ret 
+Chain[191]: 0x1224000 -> ret 
+Chain[192]: 0x1224000 -> ret 
+Chain[193]: 0x1224000 -> ret 
+Chain[194]: 0x1224000 -> ret 
+Chain[195]: 0x1224000 -> ret 
+Chain[196]: 0x1224000 -> ret 
+Chain[197]: 0x1224000 -> ret 
+Chain[198]: 0x1224000 -> ret 
+Chain[199]: 0x1224000 -> ret 
+Chain[200]: 0x1224000 -> ret 
+Chain[201]: 0x1224000 -> ret 
+Chain[202]: 0x1224000 -> ret 
+Chain[203]: 0x1224000 -> ret 
+Chain[204]: 0x1224000 -> ret 
+Chain[205]: 0x1224000 -> ret 
+Chain[206]: 0x1224000 -> ret 
+Chain[207]: 0x1224000 -> ret 
+Chain[208]: 0x1224000 -> ret 
+Chain[209]: 0x1224000 -> ret 
+Chain[210]: 0x1224000 -> ret 
+Chain[211]: 0x1224000 -> ret 
+Chain[212]: 0x1224000 -> ret 
+Chain[213]: 0x1224000 -> ret 
+Chain[214]: 0x1224000 -> ret 
+Chain[215]: 0x1224000 -> ret 
+Chain[216]: 0x1224000 -> ret 
+Chain[217]: 0x1224000 -> ret 
+Chain[218]: 0x1224000 -> ret 
+Chain[219]: 0x1224000 -> ret 
+Chain[220]: 0x1224000 -> ret 
+Chain[221]: 0x1224000 -> ret 
+Chain[222]: 0x1224000 -> ret 
+Chain[223]: 0x1224000 -> ret 
+Chain[224]: 0x1224000 -> ret 
+Chain[225]: 0x1224000 -> ret 
+Chain[226]: 0x1224000 -> ret 
+Chain[227]: 0x1224000 -> ret 
+Chain[228]: 0x1224000 -> ret 
+Chain[229]: 0x1224000 -> ret 
+Chain[230]: 0x1224000 -> ret 
+Chain[231]: 0x1224000 -> ret 
+Chain[232]: 0x1224000 -> ret 
+Chain[233]: 0x1224000 -> ret 
+Chain[234]: 0x1224000 -> ret 
+Chain[235]: 0x1224000 -> ret 
+Chain[236]: 0x1224000 -> ret 
+Chain[237]: 0x1224000 -> ret 
+Chain[238]: 0x1224000 -> ret 
+Chain[239]: 0x1224000 -> ret 
+Chain[240]: 0x1224000 -> ret 
+Chain[241]: 0x1224000 -> ret 
+Chain[242]: 0x1224000 -> ret 
+Chain[243]: 0x1224000 -> ret 
+Chain[244]: 0x1224000 -> ret 
+Chain[245]: 0x1224000 -> ret 
+Chain[246]: 0x1224000 -> ret 
+Chain[247]: 0x1224000 -> ret 
+Chain[248]: 0x1224000 -> ret 
+Chain[249]: 0x1224000 -> ret 
+Chain[250]: 0x1224000 -> ret 
+Chain[251]: 0x1224000 -> ret 
+Chain[252]: 0x1224000 -> ret 
+Chain[253]: 0x1224000 -> ret 
+Chain[254]: 0x1224000 -> ret 
+Chain[255]: 0x1224000 -> ret 
+Chain[256]: 0x1224000 -> ret 
+Chain[257]: 0x1224000 -> ret 
+Chain[258]: 0x1224000 -> ret 
+Chain[259]: 0x1224000 -> ret 
+Chain[260]: 0x1224000 -> ret 
+Chain[261]: 0x1224000 -> ret 
+Chain[262]: 0x1224000 -> ret 
+Chain[263]: 0x1224000 -> ret 
+Chain[264]: 0x1224000 -> ret 
+Chain[265]: 0x1224000 -> ret 
+Chain[266]: 0x1224000 -> ret 
+Chain[267]: 0x1224000 -> ret 
+Chain[268]: 0x1224000 -> ret 
+Chain[269]: 0x1224000 -> ret 
+Chain[270]: 0x1224000 -> ret 
+Chain[271]: 0x1224000 -> ret 
+Chain[272]: 0x1224000 -> ret 
+Chain[273]: 0x1224000 -> ret 
+Chain[274]: 0x1224000 -> ret 
+Chain[275]: 0x1224000 -> ret 
+Chain[276]: 0x1224000 -> ret 
+Chain[277]: 0x1224000 -> ret 
+Chain[278]: 0x1224000 -> ret 
+Chain[279]: 0x1224000 -> ret 
+Chain[280]: 0x1224000 -> ret 
+Chain[281]: 0x1224000 -> ret 
+Chain[282]: 0x1224000 -> ret 
+Chain[283]: 0x1224000 -> ret 
+Chain[284]: 0x1224000 -> ret 
+Chain[285]: 0x1224000 -> ret 
+Chain[286]: 0x122403e -> mov rax, rcx ; ret 
+Chain[287]: 0x1224042 -> pop rcx ; ret 
+Chain[288]: 0x1 (Data/External)
+Chain[289]: 0x1224032 -> add rax, rcx ; ret 
+Chain[290]: 0x122403a -> mov rcx, rax ; ret 
+Chain[291]: 0x1224018 -> pop rbp ; ret 
+Chain[292]: 0x1225070 (Data/External)
+Chain[293]: 0x1224001 -> leave  ; ret 
+Chain[294]: 0xdeadbeef (Data/External)
+Chain[295]: 0x122403e -> mov rax, rcx ; ret 
+Chain[296]: 0x1224005 -> pop rdi ; ret 
+Chain[297]: 0x24 (Data/External)
+Chain[298]: 0x1224014 -> sub al, dil ; ret 
+Chain[299]: 0x1224005 -> pop rdi ; ret 
+Chain[300]: 0x8 (Data/External)
+Chain[301]: 0x122401a -> imul rax, rdi ; ret 
+Chain[302]: 0x122401f -> add rsp, rax ; ret 
+Chain[303]: 0x1224018 -> pop rbp ; ret 
+Chain[304]: 0x1226190 (Data/External)
+Chain[305]: 0x1224001 -> leave  ; ret 
+Chain[306]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[307]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[308]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[309]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[310]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[311]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[312]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[313]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[314]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[315]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[316]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[317]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[318]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[319]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[320]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[321]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[322]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[323]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[324]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[325]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[326]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[327]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[328]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[329]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[330]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[331]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[332]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[333]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[334]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[335]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[336]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[337]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[338]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[339]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[340]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[341]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[342]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[343]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[344]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[345]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[346]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[347]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[348]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[349]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[350]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[351]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[352]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[353]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[354]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[355]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[356]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[357]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[358]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[359]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[360]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[361]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[362]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[363]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[364]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[365]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[366]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[367]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[368]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[369]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[370]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[371]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[372]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[373]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[374]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[375]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[376]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[377]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[378]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[379]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[380]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[381]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[382]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[383]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[384]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[385]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[386]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[387]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[388]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[389]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[390]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[391]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[392]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[393]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[394]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[395]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[396]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[397]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[398]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[399]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[400]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[401]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[402]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[403]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[404]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[405]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[406]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[407]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[408]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[409]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[410]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[411]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[412]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[413]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[414]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[415]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[416]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[417]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[418]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[419]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[420]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[421]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[422]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[423]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[424]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[425]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[426]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[427]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[428]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[429]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[430]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[431]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[432]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[433]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[434]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[435]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[436]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[437]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[438]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[439]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[440]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[441]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[442]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[443]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[444]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[445]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[446]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[447]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[448]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[449]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[450]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[451]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[452]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[453]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[454]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[455]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[456]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[457]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[458]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[459]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[460]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[461]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[462]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[463]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[464]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[465]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[466]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[467]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[468]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[469]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[470]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[471]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[472]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[473]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[474]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[475]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[476]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[477]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[478]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[479]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[480]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[481]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[482]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[483]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[484]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[485]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[486]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[487]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[488]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[489]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[490]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[491]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[492]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[493]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[494]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[495]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[496]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[497]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[498]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[499]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[500]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[501]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[502]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[503]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[504]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[505]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[506]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[507]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[508]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[509]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[510]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[511]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[512]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[513]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[514]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[515]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[516]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[517]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[518]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[519]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[520]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[521]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[522]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[523]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[524]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[525]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[526]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[527]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[528]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[529]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[530]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[531]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[532]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[533]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[534]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[535]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[536]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[537]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[538]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[539]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[540]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[541]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[542]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[543]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[544]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[545]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[546]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[547]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[548]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[549]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[550]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[551]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[552]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[553]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[554]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[555]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[556]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[557]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[558]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[559]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[560]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[561]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[562]: 0xdeadbeef (Data/External)
+Chain[563]: 0x1224003 -> pop rax ; ret 
+Chain[564]: 0x1224800 -> add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al
+Chain[565]: 0x1224032 -> add rax, rcx ; ret 
+Chain[566]: 0x1224042 -> pop rcx ; ret 
+Chain[567]: 0xffffffffffffffff (Data/External)
+Chain[568]: 0x1224032 -> add rax, rcx ; ret 
+Chain[569]: 0x1224036 -> mov rdi, rax ; ret 
+Chain[570]: 0x1224003 -> pop rax ; ret 
+Chain[571]: 0x0 (Data/External)
+Chain[572]: 0x1224044 -> mov byte ptr [rdi], al ; ret 
+Chain[573]: 0x1224005 -> pop rdi ; ret 
+Chain[574]: 0x1224900 -> add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al
+Chain[575]: 0x1224003 -> pop rax ; ret 
+Chain[576]: 0xfb (Data/External)
+Chain[577]: 0x1224044 -> mov byte ptr [rdi], al ; ret 
+Chain[578]: 0x122402e -> xor rcx, rcx ; ret 
+Chain[579]: 0x1224003 -> pop rax ; ret 
+Chain[580]: 0x8 (Data/External)
+Chain[581]: 0x122401f -> add rsp, rax ; ret 
+Chain[582]: 0xdeadbeef (Data/External)
+Chain[583]: 0x1224003 -> pop rax ; ret 
+Chain[584]: 0x1224800 -> add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al
+Chain[585]: 0x1224032 -> add rax, rcx ; ret 
+Chain[586]: 0x1224036 -> mov rdi, rax ; ret 
+Chain[587]: 0x122400e -> xor rax, rax ; mov al, byte ptr [rdi] ; ret 
+Chain[588]: 0x1224005 -> pop rdi ; ret 
+Chain[589]: 0x0 (Data/External)
+Chain[590]: 0x1224014 -> sub al, dil ; ret 
+Chain[591]: 0x1224005 -> pop rdi ; ret 
+Chain[592]: 0x8 (Data/External)
+Chain[593]: 0x122401a -> imul rax, rdi ; ret 
+Chain[594]: 0x122401f -> add rsp, rax ; ret 
+Chain[595]: 0x1224018 -> pop rbp ; ret 
+Chain[596]: 0x12273d8 (Data/External)
+Chain[597]: 0x1224001 -> leave  ; ret 
+Chain[598]: 0x1224000 -> ret 
+Chain[599]: 0x1224000 -> ret 
+Chain[600]: 0x1224000 -> ret 
+Chain[601]: 0x1224000 -> ret 
+Chain[602]: 0x1224000 -> ret 
+Chain[603]: 0x1224000 -> ret 
+Chain[604]: 0x1224000 -> ret 
+Chain[605]: 0x1224000 -> ret 
+Chain[606]: 0x1224000 -> ret 
+Chain[607]: 0x1224000 -> ret 
+Chain[608]: 0x1224000 -> ret 
+Chain[609]: 0x1224000 -> ret 
+Chain[610]: 0x1224000 -> ret 
+Chain[611]: 0x1224000 -> ret 
+Chain[612]: 0x1224000 -> ret 
+Chain[613]: 0x1224000 -> ret 
+Chain[614]: 0x1224000 -> ret 
+Chain[615]: 0x1224000 -> ret 
+Chain[616]: 0x1224000 -> ret 
+Chain[617]: 0x1224000 -> ret 
+Chain[618]: 0x1224000 -> ret 
+Chain[619]: 0x1224000 -> ret 
+Chain[620]: 0x1224000 -> ret 
+Chain[621]: 0x1224000 -> ret 
+Chain[622]: 0x1224000 -> ret 
+Chain[623]: 0x1224000 -> ret 
+Chain[624]: 0x1224000 -> ret 
+Chain[625]: 0x1224000 -> ret 
+Chain[626]: 0x1224000 -> ret 
+Chain[627]: 0x1224000 -> ret 
+Chain[628]: 0x1224000 -> ret 
+Chain[629]: 0x1224000 -> ret 
+Chain[630]: 0x1224000 -> ret 
+Chain[631]: 0x1224000 -> ret 
+Chain[632]: 0x1224000 -> ret 
+Chain[633]: 0x1224000 -> ret 
+Chain[634]: 0x1224000 -> ret 
+Chain[635]: 0x1224000 -> ret 
+Chain[636]: 0x1224000 -> ret 
+Chain[637]: 0x1224000 -> ret 
+Chain[638]: 0x1224000 -> ret 
+Chain[639]: 0x1224000 -> ret 
+Chain[640]: 0x1224000 -> ret 
+Chain[641]: 0x1224000 -> ret 
+Chain[642]: 0x1224000 -> ret 
+Chain[643]: 0x1224000 -> ret 
+Chain[644]: 0x1224000 -> ret 
+Chain[645]: 0x1224000 -> ret 
+Chain[646]: 0x1224000 -> ret 
+Chain[647]: 0x1224000 -> ret 
+Chain[648]: 0x1224000 -> ret 
+Chain[649]: 0x1224000 -> ret 
+Chain[650]: 0x1224000 -> ret 
+Chain[651]: 0x1224000 -> ret 
+Chain[652]: 0x1224000 -> ret 
+Chain[653]: 0x1224000 -> ret 
+Chain[654]: 0x1224000 -> ret 
+Chain[655]: 0x1224000 -> ret 
+Chain[656]: 0x1224000 -> ret 
+Chain[657]: 0x1224000 -> ret 
+Chain[658]: 0x1224000 -> ret 
+Chain[659]: 0x1224000 -> ret 
+Chain[660]: 0x1224000 -> ret 
+Chain[661]: 0x1224000 -> ret 
+Chain[662]: 0x1224000 -> ret 
+Chain[663]: 0x1224000 -> ret 
+Chain[664]: 0x1224000 -> ret 
+Chain[665]: 0x1224000 -> ret 
+Chain[666]: 0x1224000 -> ret 
+Chain[667]: 0x1224000 -> ret 
+Chain[668]: 0x1224000 -> ret 
+Chain[669]: 0x1224000 -> ret 
+Chain[670]: 0x1224000 -> ret 
+Chain[671]: 0x1224000 -> ret 
+Chain[672]: 0x1224000 -> ret 
+Chain[673]: 0x1224000 -> ret 
+Chain[674]: 0x1224000 -> ret 
+Chain[675]: 0x1224000 -> ret 
+Chain[676]: 0x1224000 -> ret 
+Chain[677]: 0x1224000 -> ret 
+Chain[678]: 0x1224000 -> ret 
+Chain[679]: 0x1224000 -> ret 
+Chain[680]: 0x1224000 -> ret 
+Chain[681]: 0x1224000 -> ret 
+Chain[682]: 0x1224000 -> ret 
+Chain[683]: 0x1224000 -> ret 
+Chain[684]: 0x1224000 -> ret 
+Chain[685]: 0x1224000 -> ret 
+Chain[686]: 0x1224000 -> ret 
+Chain[687]: 0x1224000 -> ret 
+Chain[688]: 0x1224000 -> ret 
+Chain[689]: 0x1224000 -> ret 
+Chain[690]: 0x1224000 -> ret 
+Chain[691]: 0x1224000 -> ret 
+Chain[692]: 0x1224000 -> ret 
+Chain[693]: 0x1224000 -> ret 
+Chain[694]: 0x1224000 -> ret 
+Chain[695]: 0x1224000 -> ret 
+Chain[696]: 0x1224000 -> ret 
+Chain[697]: 0x1224000 -> ret 
+Chain[698]: 0x1224000 -> ret 
+Chain[699]: 0x1224000 -> ret 
+Chain[700]: 0x1224000 -> ret 
+Chain[701]: 0x1224000 -> ret 
+Chain[702]: 0x1224000 -> ret 
+Chain[703]: 0x1224000 -> ret 
+Chain[704]: 0x1224000 -> ret 
+Chain[705]: 0x1224000 -> ret 
+Chain[706]: 0x1224000 -> ret 
+Chain[707]: 0x1224000 -> ret 
+Chain[708]: 0x1224000 -> ret 
+Chain[709]: 0x1224000 -> ret 
+Chain[710]: 0x1224000 -> ret 
+Chain[711]: 0x1224000 -> ret 
+Chain[712]: 0x1224000 -> ret 
+Chain[713]: 0x1224000 -> ret 
+Chain[714]: 0x1224000 -> ret 
+Chain[715]: 0x1224000 -> ret 
+Chain[716]: 0x1224000 -> ret 
+Chain[717]: 0x1224000 -> ret 
+Chain[718]: 0x1224000 -> ret 
+Chain[719]: 0x1224000 -> ret 
+Chain[720]: 0x1224000 -> ret 
+Chain[721]: 0x1224000 -> ret 
+Chain[722]: 0x1224000 -> ret 
+Chain[723]: 0x1224000 -> ret 
+Chain[724]: 0x1224000 -> ret 
+Chain[725]: 0x1224000 -> ret 
+Chain[726]: 0x1224000 -> ret 
+Chain[727]: 0x1224000 -> ret 
+Chain[728]: 0x1224000 -> ret 
+Chain[729]: 0x1224000 -> ret 
+Chain[730]: 0x1224000 -> ret 
+Chain[731]: 0x1224000 -> ret 
+Chain[732]: 0x1224000 -> ret 
+Chain[733]: 0x1224000 -> ret 
+Chain[734]: 0x1224000 -> ret 
+Chain[735]: 0x1224000 -> ret 
+Chain[736]: 0x1224000 -> ret 
+Chain[737]: 0x1224000 -> ret 
+Chain[738]: 0x1224000 -> ret 
+Chain[739]: 0x1224000 -> ret 
+Chain[740]: 0x1224000 -> ret 
+Chain[741]: 0x1224000 -> ret 
+Chain[742]: 0x1224000 -> ret 
+Chain[743]: 0x1224000 -> ret 
+Chain[744]: 0x1224000 -> ret 
+Chain[745]: 0x1224000 -> ret 
+Chain[746]: 0x1224000 -> ret 
+Chain[747]: 0x1224000 -> ret 
+Chain[748]: 0x1224000 -> ret 
+Chain[749]: 0x1224000 -> ret 
+Chain[750]: 0x1224000 -> ret 
+Chain[751]: 0x1224000 -> ret 
+Chain[752]: 0x1224000 -> ret 
+Chain[753]: 0x1224000 -> ret 
+Chain[754]: 0x1224000 -> ret 
+Chain[755]: 0x1224000 -> ret 
+Chain[756]: 0x1224000 -> ret 
+Chain[757]: 0x1224000 -> ret 
+Chain[758]: 0x1224000 -> ret 
+Chain[759]: 0x1224000 -> ret 
+Chain[760]: 0x1224000 -> ret 
+Chain[761]: 0x1224000 -> ret 
+Chain[762]: 0x1224000 -> ret 
+Chain[763]: 0x1224000 -> ret 
+Chain[764]: 0x1224000 -> ret 
+Chain[765]: 0x1224000 -> ret 
+Chain[766]: 0x1224000 -> ret 
+Chain[767]: 0x1224000 -> ret 
+Chain[768]: 0x1224000 -> ret 
+Chain[769]: 0x1224000 -> ret 
+Chain[770]: 0x1224000 -> ret 
+Chain[771]: 0x1224000 -> ret 
+Chain[772]: 0x1224000 -> ret 
+Chain[773]: 0x1224000 -> ret 
+Chain[774]: 0x1224000 -> ret 
+Chain[775]: 0x1224000 -> ret 
+Chain[776]: 0x1224000 -> ret 
+Chain[777]: 0x1224000 -> ret 
+Chain[778]: 0x1224000 -> ret 
+Chain[779]: 0x1224000 -> ret 
+Chain[780]: 0x1224000 -> ret 
+Chain[781]: 0x1224000 -> ret 
+Chain[782]: 0x1224000 -> ret 
+Chain[783]: 0x1224000 -> ret 
+Chain[784]: 0x1224000 -> ret 
+Chain[785]: 0x1224000 -> ret 
+Chain[786]: 0x1224000 -> ret 
+Chain[787]: 0x1224000 -> ret 
+Chain[788]: 0x1224000 -> ret 
+Chain[789]: 0x1224000 -> ret 
+Chain[790]: 0x1224000 -> ret 
+Chain[791]: 0x1224000 -> ret 
+Chain[792]: 0x1224000 -> ret 
+Chain[793]: 0x1224000 -> ret 
+Chain[794]: 0x1224000 -> ret 
+Chain[795]: 0x1224000 -> ret 
+Chain[796]: 0x1224000 -> ret 
+Chain[797]: 0x1224000 -> ret 
+Chain[798]: 0x1224000 -> ret 
+Chain[799]: 0x1224000 -> ret 
+Chain[800]: 0x1224000 -> ret 
+Chain[801]: 0x1224000 -> ret 
+Chain[802]: 0x1224000 -> ret 
+Chain[803]: 0x1224000 -> ret 
+Chain[804]: 0x1224000 -> ret 
+Chain[805]: 0x1224000 -> ret 
+Chain[806]: 0x1224000 -> ret 
+Chain[807]: 0x1224000 -> ret 
+Chain[808]: 0x1224000 -> ret 
+Chain[809]: 0x1224000 -> ret 
+Chain[810]: 0x1224000 -> ret 
+Chain[811]: 0x1224000 -> ret 
+Chain[812]: 0x1224000 -> ret 
+Chain[813]: 0x1224000 -> ret 
+Chain[814]: 0x1224000 -> ret 
+Chain[815]: 0x1224000 -> ret 
+Chain[816]: 0x1224000 -> ret 
+Chain[817]: 0x1224000 -> ret 
+Chain[818]: 0x1224000 -> ret 
+Chain[819]: 0x1224000 -> ret 
+Chain[820]: 0x1224000 -> ret 
+Chain[821]: 0x1224000 -> ret 
+Chain[822]: 0x1224000 -> ret 
+Chain[823]: 0x1224000 -> ret 
+Chain[824]: 0x1224000 -> ret 
+Chain[825]: 0x1224000 -> ret 
+Chain[826]: 0x1224000 -> ret 
+Chain[827]: 0x1224000 -> ret 
+Chain[828]: 0x1224000 -> ret 
+Chain[829]: 0x1224000 -> ret 
+Chain[830]: 0x1224000 -> ret 
+Chain[831]: 0x1224000 -> ret 
+Chain[832]: 0x1224000 -> ret 
+Chain[833]: 0x1224000 -> ret 
+Chain[834]: 0x1224000 -> ret 
+Chain[835]: 0x1224000 -> ret 
+Chain[836]: 0x1224000 -> ret 
+Chain[837]: 0x1224000 -> ret 
+Chain[838]: 0x1224000 -> ret 
+Chain[839]: 0x1224000 -> ret 
+Chain[840]: 0x1224000 -> ret 
+Chain[841]: 0x1224000 -> ret 
+Chain[842]: 0x1224000 -> ret 
+Chain[843]: 0x1224000 -> ret 
+Chain[844]: 0x1224000 -> ret 
+Chain[845]: 0x1224000 -> ret 
+Chain[846]: 0x1224000 -> ret 
+Chain[847]: 0x1224000 -> ret 
+Chain[848]: 0x1224000 -> ret 
+Chain[849]: 0x1224000 -> ret 
+Chain[850]: 0x1224000 -> ret 
+Chain[851]: 0x1224000 -> ret 
+Chain[852]: 0x1224000 -> ret 
+Chain[853]: 0x1224000 -> ret 
+Chain[854]: 0x1224003 -> pop rax ; ret 
+Chain[855]: 0x1224800 -> add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al
+Chain[856]: 0x1224032 -> add rax, rcx ; ret 
+Chain[857]: 0x1224036 -> mov rdi, rax ; ret 
+Chain[858]: 0x122400e -> xor rax, rax ; mov al, byte ptr [rdi] ; ret 
+Chain[859]: 0x122404c -> mov rdx, rax ; ret 
+Chain[860]: 0x1224003 -> pop rax ; ret 
+Chain[861]: 0x1224950 -> xchg esi, eax ; pop rbx ; and eax, 0x25598c47 ; xchg edx, eax ; pop rdx ; and eax, 0x2744f041
+Chain[862]: 0x1224032 -> add rax, rcx ; ret 
+Chain[863]: 0x1224036 -> mov rdi, rax ; ret 
+Chain[864]: 0x122400e -> xor rax, rax ; mov al, byte ptr [rdi] ; ret 
+Chain[865]: 0x1224047 -> imul rax, rdx ; ret 
+Chain[866]: 0x1224005 -> pop rdi ; ret 
+Chain[867]: 0x1224900 -> add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al ; add byte ptr [rax], al
+Chain[868]: 0x1224009 -> pop rdx ; ret 
+Chain[869]: 0x0 (Data/External)
+Chain[870]: 0x1224054 -> idiv dword ptr [rdi] ; ret 
+Chain[871]: 0x1224050 -> mov rax, rdx ; ret 
+Chain[872]: 0x1224005 -> pop rdi ; ret 
+Chain[873]: 0x1 (Data/External)
+Chain[874]: 0x1224014 -> sub al, dil ; ret 
+Chain[875]: 0x1224005 -> pop rdi ; ret 
+Chain[876]: 0x8 (Data/External)
+Chain[877]: 0x122401a -> imul rax, rdi ; ret 
+Chain[878]: 0x122401f -> add rsp, rax ; ret 
+Chain[879]: 0x1224018 -> pop rbp ; ret 
+Chain[880]: 0x1227390 (Data/External)
+Chain[881]: 0x1224001 -> leave  ; ret 
+Chain[882]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[883]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[884]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[885]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[886]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[887]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[888]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[889]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[890]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[891]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[892]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[893]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[894]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[895]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[896]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[897]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[898]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[899]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[900]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[901]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[902]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[903]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[904]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[905]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[906]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[907]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[908]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[909]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[910]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[911]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[912]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[913]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[914]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[915]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[916]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[917]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[918]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[919]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[920]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[921]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[922]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[923]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[924]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[925]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[926]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[927]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[928]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[929]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[930]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[931]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[932]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[933]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[934]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[935]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[936]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[937]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[938]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[939]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[940]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[941]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[942]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[943]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[944]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[945]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[946]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[947]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[948]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[949]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[950]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[951]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[952]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[953]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[954]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[955]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[956]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[957]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[958]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[959]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[960]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[961]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[962]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[963]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[964]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[965]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[966]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[967]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[968]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[969]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[970]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[971]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[972]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[973]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[974]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[975]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[976]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[977]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[978]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[979]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[980]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[981]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[982]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[983]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[984]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[985]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[986]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[987]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[988]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[989]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[990]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[991]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[992]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[993]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[994]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[995]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[996]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[997]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[998]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[999]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1000]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1001]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1002]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1003]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1004]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1005]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1006]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1007]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1008]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1009]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1010]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1011]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1012]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1013]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1014]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1015]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1016]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1017]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1018]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1019]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1020]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1021]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1022]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1023]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1024]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1025]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1026]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1027]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1028]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1029]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1030]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1031]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1032]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1033]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1034]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1035]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1036]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1037]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1038]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1039]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1040]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1041]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1042]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1043]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1044]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1045]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1046]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1047]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1048]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1049]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1050]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1051]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1052]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1053]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1054]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1055]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1056]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1057]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1058]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1059]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1060]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1061]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1062]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1063]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1064]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1065]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1066]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1067]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1068]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1069]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1070]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1071]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1072]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1073]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1074]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1075]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1076]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1077]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1078]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1079]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1080]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1081]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1082]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1083]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1084]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1085]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1086]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1087]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1088]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1089]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1090]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1091]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1092]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1093]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1094]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1095]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1096]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1097]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1098]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1099]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1100]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1101]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1102]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1103]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1104]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1105]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1106]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1107]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1108]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1109]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1110]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1111]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1112]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1113]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1114]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1115]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1116]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1117]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1118]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1119]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1120]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1121]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1122]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1123]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1124]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1125]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1126]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1127]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1128]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1129]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1130]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1131]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1132]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1133]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1134]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1135]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1136]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1137]: 0x1224023 -> mov rax, 0 ; mov rax, qword ptr [rax] ; ret 
+Chain[1138]: 0xdeadbeef (Data/External)
+Chain[1139]: 0x122403e -> mov rax, rcx ; ret 
+Chain[1140]: 0x1224042 -> pop rcx ; ret 
+Chain[1141]: 0x1 (Data/External)
+Chain[1142]: 0x1224032 -> add rax, rcx ; ret 
+Chain[1143]: 0x122403a -> mov rcx, rax ; ret 
+Chain[1144]: 0x1224018 -> pop rbp ; ret 
+Chain[1145]: 0x1226230 (Data/External)
+Chain[1146]: 0x1224001 -> leave  ; ret 
+Chain[1147]: 0xdeadbeef (Data/External)
+Chain[1148]: 0x1224003 -> pop rax ; ret 
+Chain[1149]: 0x1 (Data/External)
+Chain[1150]: 0x1224005 -> pop rdi ; ret 
+Chain[1151]: 0x1 (Data/External)
+Chain[1152]: 0x1224007 -> pop rsi ; ret 
+Chain[1153]: 0x1224980 -> outsd dx, dword ptr [rsi] ; outsb dx, byte ptr [rsi] ; jb 0x12249e7 ; je 0x1224a02 ; and dword ptr [rcx], esp ; and byte ptr [rcx + 0x6f], bl ; jne 0x12249af
+Chain[1154]: 0x1224009 -> pop rdx ; ret 
+Chain[1155]: 0x1c (Data/External)
+Chain[1156]: 0x122400b -> syscall  ; ret 
+Chain[1157]: 0x1224003 -> pop rax ; ret 
+Chain[1158]: 0x3c (Data/External)
+Chain[1159]: 0x1224005 -> pop rdi ; ret 
+Chain[1160]: 0x0 (Data/External)
+Chain[1161]: 0x122400b -> syscall  ; ret 
