@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Casino</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Dream Casino</h1>
+            <p class="subtitle">Feeling Lucky?</p>
+
+            <div class="stats-row">
+                <div class="stat-item">
+                    <span class="stat-label">Your Points</span>
+                    <span class="stat-value" id="points">Loading...</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Flag Price</span>
+                    <span class="stat-value" id="price">1,000,000,000</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <input type="number" id="guess" placeholder="Enter prediction (0 ~ 2^32-1)" min="0" max="4294967295">
+            </div>
+
+            <button class="btn btn-primary" onclick="makeBet()">Place Bet</button>
+            <button class="btn btn-secondary" onclick="buyFlag()">Buy Flag</button>
+
+            <div id="result-area"></div>
+            <div id="flag-display"></div>
+        </div>
+    </div>
+
+    <script>
+        async function updateInfo() {
+            try {
+                const res = await fetch('/api/me');
+                const data = await res.json();
+                document.getElementById('points').innerText = data.points.toLocaleString();
+                document.getElementById('price').innerText = data.flag_price.toLocaleString();
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        async function makeBet() {
+            const guessInput = document.getElementById('guess');
+            const resultArea = document.getElementById('result-area');
+            const guessVal = parseInt(guessInput.value);
+
+            if (isNaN(guessVal)) {
+                alert("Please enter a valid number.");
+                return;
+            }
+
+            resultArea.style.display = 'block';
+            resultArea.className = '';
+            resultArea.style.background = '#F0F4F9';
+            resultArea.innerHTML = 'Rolling... 🎲';
+
+            try {
+                const res = await fetch('/api/bet', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ guess: guessVal })
+                });
+                const data = await res.json();
+
+                if (!data.ok) {
+                    resultArea.innerHTML = `Error: ${data.error}`;
+                    resultArea.className = 'lose';
+                    return;
+                }
+
+                if (data.win) {
+                    resultArea.className = 'win';
+                    resultArea.innerHTML = `
+                        <strong>JACKPOT!</strong><br>
+                        Roll: <span class="code-snippet">${data.roll}</span><br>
+                        Result: You win!
+                    `;
+                } else {
+                    resultArea.className = 'lose';
+                    resultArea.innerHTML = `
+                        <strong>Missed...</strong><br>
+                        Roll: <span class="code-snippet">${data.roll}</span><br>
+                        Bet No: ${data.bet_no}
+                    `;
+                }
+                updateInfo();
+
+            } catch (e) {
+                resultArea.innerHTML = "Network Error";
+            }
+        }
+
+        async function buyFlag() {
+            const flagDisplay = document.getElementById('flag-display');
+            
+            if(!confirm("Are you sure you want to buy the flag?")) return;
+
+            try {
+                const res = await fetch('/api/buy_flag', { method: 'POST' });
+                const data = await res.json();
+
+                if (data.ok) {
+                    flagDisplay.style.display = 'block';
+                    flagDisplay.innerText = data.flag;
+                } else {
+                    alert(data.error || "Not enough points!");
+                }
+                updateInfo();
+            } catch (e) {
+                alert("Error buying flag");
+            }
+        }
+
+        updateInfo();
+    </script>
+</body>
+</html>

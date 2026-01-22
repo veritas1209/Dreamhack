@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap');
+
+:root {
+    --primary-color: #1A73E8;
+    --primary-light: #D3E3FD;
+    --accent-purple: #E8DEF8;
+    --bg-gradient-1: #F0F4F9;
+    --bg-gradient-2: #E1E9F4;
+    --bg-gradient-3: #F3E5F5;
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.8);
+    --text-main: #1F1F1F;
+    --text-sub: #444746;
+    --radius-lg: 32px;
+    --radius-pill: 9999px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Google Sans', sans-serif;
+    background: var(--bg-gradient-1);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, var(--bg-gradient-3), var(--bg-gradient-2), var(--bg-gradient-1));
+    animation: aurora 20s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+@keyframes aurora {
+    0% { transform: translate(-20%, -20%) rotate(0deg); }
+    100% { transform: translate(0%, 0%) rotate(10deg); }
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 40px 32px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+h1 {
+    font-size: 28px;
+    background: linear-gradient(90deg, #4285F4, #9C27B0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: var(--text-sub);
+    font-size: 14px;
+    margin-bottom: 32px;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--text-sub);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--primary-color);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: var(--radius-pill);
+    background: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-sizing: border-box;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+
+input[type="number"]:focus {
+    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.2);
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4285F4, #7B42F4);
+    color: white;
+    box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(66, 133, 244, 0.4);
+}
+
+.btn-secondary {
+    margin-top: 12px;
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#result-area {
+    margin-top: 24px;
+    padding: 16px;
+    border-radius: 16px;
+    font-size: 14px;
+    display: none;
+}
+
+.win {
+    background: #E6F4EA;
+    color: #137333;
+}
+
+.lose {
+    background: #FCE8E6;
+    color: #C5221F;
+}
+
+.code-snippet {
+    font-family: 'Roboto Mono', monospace;
+    background: rgba(0,0,0,0.05);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+#flag-display {
+    margin-top: 20px;
+    padding: 20px;
+    background: #333;
+    color: #0F0;
+    font-family: 'Roboto Mono', monospace;
+    border-radius: 12px;
+    word-break: break-all;
+    display: none;
+}
