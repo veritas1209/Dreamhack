@@ -1,0 +1,3989 @@
+root@7b35b88d6432:/app# python3 parse_rela.py
+[*] Analyzing Relocation Logic in main...
+[+] Found .rela.tivity at offset 0x9b8
+[+] Entries: 3980
+[+] Logic dumped to 'rela_logic_dump.txt'
+[*] Check lines referencing 'environ', 'argv', or modifying relocation table offsets.
+root@7b35b88d6432:/app# ls
+flag.png  main  parse_rela.py  rela_logic_dump.txt
+root@7b35b88d6432:/app# cat rela_logic_dump.txt
+[0000] PATCH_32: *[0xa00] = (None + 0x23948) - PC
+[0001] PATCH_32: *[0xa08] = (None + 0xa0a) - PC
+[0002] PATCH_32: *[0xa10] = (None + 0x79680) - PC
+[0003] OP_0: Sym=None, Addend=0x0
+[0004] PATCH_32: *[0xa60] = (None + 0x802c9) - PC
+[0005] PATCH_32: *[0xa68] = (None + 0xa6a) - PC
+[0006] PATCH_32: *[0xa70] = (None + 0xd5869) - PC
+[0007] OP_0: Sym=None, Addend=0x0
+[0008] PATCH_32: *[0xac0] = (None + 0xdcc4a) - PC
+[0009] PATCH_32: *[0xac8] = (None + 0xaca) - PC
+[0010] PATCH_32: *[0xad0] = (None + 0x13242a) - PC
+[0011] OP_0: Sym=None, Addend=0x0
+[0012] PATCH_32: *[0xb20] = (None + 0x1395cb) - PC
+[0013] PATCH_32: *[0xb28] = (None + 0xb2a) - PC
+[0014] PATCH_32: *[0xb30] = (None + 0x19015b) - PC
+[0015] OP_0: Sym=None, Addend=0x0
+[0016] PATCH_32: *[0xb80] = (None + 0x196f4c) - PC
+[0017] PATCH_32: *[0xb88] = (None + 0xb8a) - PC
+[0018] PATCH_32: *[0xb90] = (None + 0x1ec654) - PC
+[0019] OP_0: Sym=None, Addend=0x0
+[0020] PATCH_32: *[0xbe0] = (None + 0x1f38cd) - PC
+[0021] PATCH_32: *[0xbe8] = (None + 0xbea) - PC
+[0022] PATCH_32: *[0xbf0] = (None + 0x249fdd) - PC
+[0023] OP_0: Sym=None, Addend=0x0
+[0024] PATCH_32: *[0xc40] = (None + 0x25124e) - PC
+[0025] PATCH_32: *[0xc48] = (None + 0xc4a) - PC
+[0026] PATCH_32: *[0xc50] = (None + 0x2a7ac6) - PC
+[0027] OP_0: Sym=None, Addend=0x0
+[0028] PATCH_32: *[0xca0] = (None + 0x2aebcf) - PC
+[0029] PATCH_32: *[0xca8] = (None + 0xcaa) - PC
+[0030] PATCH_32: *[0xcb0] = (None + 0x304757) - PC
+[0031] OP_0: Sym=None, Addend=0x0
+[0032] PATCH_32: *[0xd00] = (None + 0x30b550) - PC
+[0033] PATCH_32: *[0xd08] = (None + 0xd0a) - PC
+[0034] PATCH_32: *[0xd10] = (None + 0x360c10) - PC
+[0035] OP_0: Sym=None, Addend=0x0
+[0036] PATCH_32: *[0xd60] = (None + 0x367ed1) - PC
+[0037] PATCH_32: *[0xd68] = (None + 0xd6a) - PC
+[0038] PATCH_32: *[0xd70] = (None + 0x3bd8f1) - PC
+[0039] OP_0: Sym=None, Addend=0x0
+[0040] PATCH_32: *[0xdc0] = (None + 0x3c4852) - PC
+[0041] PATCH_32: *[0xdc8] = (None + 0xdca) - PC
+[0042] PATCH_32: *[0xdd0] = (None + 0x41a4fa) - PC
+[0043] OP_0: Sym=None, Addend=0x0
+[0044] PATCH_32: *[0xe20] = (None + 0x4211d3) - PC
+[0045] PATCH_32: *[0xe28] = (None + 0xe2a) - PC
+[0046] PATCH_32: *[0xe30] = (None + 0x4774f3) - PC
+[0047] OP_0: Sym=None, Addend=0x0
+[0048] PATCH_32: *[0xe80] = (None + 0x47eb54) - PC
+[0049] PATCH_32: *[0xe88] = (None + 0xe8a) - PC
+[0050] PATCH_32: *[0xe90] = (None + 0x4d4b5c) - PC
+[0051] OP_0: Sym=None, Addend=0x0
+[0052] PATCH_32: *[0xee0] = (None + 0x4db4d5) - PC
+[0053] PATCH_32: *[0xee8] = (None + 0xeea) - PC
+[0054] PATCH_32: *[0xef0] = (None + 0x530fcd) - PC
+[0055] OP_0: Sym=None, Addend=0x0
+[0056] PATCH_32: *[0xf40] = (None + 0x537e56) - PC
+[0057] PATCH_32: *[0xf48] = (None + 0xf4a) - PC
+[0058] PATCH_32: *[0xf50] = (None + 0x58dd86) - PC
+[0059] OP_0: Sym=None, Addend=0x0
+[0060] PATCH_32: *[0xfa0] = (None + 0x5947d7) - PC
+[0061] PATCH_32: *[0xfa8] = (None + 0xfaa) - PC
+[0062] PATCH_32: *[0xfb0] = (None + 0x5ea5e7) - PC
+[0063] OP_0: Sym=None, Addend=0x0
+[0064] PATCH_32: *[0x1000] = (None + 0x5f1158) - PC
+[0065] PATCH_32: *[0x1008] = (None + 0x100a) - PC
+[0066] PATCH_32: *[0x1010] = (None + 0x647748) - PC
+[0067] OP_0: Sym=None, Addend=0x0
+[0068] PATCH_32: *[0x1060] = (None + 0x64ead9) - PC
+[0069] PATCH_32: *[0x1068] = (None + 0x106a) - PC
+[0070] PATCH_32: *[0x1070] = (None + 0x6a4db1) - PC
+[0071] OP_0: Sym=None, Addend=0x0
+[0072] PATCH_32: *[0x10c0] = (None + 0x6ac45a) - PC
+[0073] PATCH_32: *[0x10c8] = (None + 0x10ca) - PC
+[0074] PATCH_32: *[0x10d0] = (None + 0x701e32) - PC
+[0075] OP_0: Sym=None, Addend=0x0
+[0076] PATCH_32: *[0x1120] = (None + 0x708ddb) - PC
+[0077] PATCH_32: *[0x1128] = (None + 0x112a) - PC
+[0078] PATCH_32: *[0x1130] = (None + 0x75defb) - PC
+[0079] OP_0: Sym=None, Addend=0x0
+[0080] PATCH_32: *[0x1180] = (None + 0x76575c) - PC
+[0081] PATCH_32: *[0x1188] = (None + 0x118a) - PC
+[0082] PATCH_32: *[0x1190] = (None + 0x7bacfc) - PC
+[0083] OP_0: Sym=None, Addend=0x0
+[0084] PATCH_32: *[0x11e0] = (None + 0x7c20dd) - PC
+[0085] PATCH_32: *[0x11e8] = (None + 0x11ea) - PC
+[0086] PATCH_32: *[0x11f0] = (None + 0x81812d) - PC
+[0087] OP_0: Sym=None, Addend=0x0
+[0088] PATCH_32: *[0x1240] = (None + 0x81fa5e) - PC
+[0089] PATCH_32: *[0x1248] = (None + 0x124a) - PC
+[0090] PATCH_32: *[0x1250] = (None + 0x875a1e) - PC
+[0091] OP_0: Sym=None, Addend=0x0
+[0092] PATCH_32: *[0x12a0] = (None + 0x87c3df) - PC
+[0093] PATCH_32: *[0x12a8] = (None + 0x12aa) - PC
+[0094] PATCH_32: *[0x12b0] = (None + 0x8d2627) - PC
+[0095] OP_0: Sym=None, Addend=0x0
+[0096] PATCH_32: *[0x1300] = (None + 0x8d9d60) - PC
+[0097] PATCH_32: *[0x1308] = (None + 0x130a) - PC
+[0098] PATCH_32: *[0x1310] = (None + 0x92f078) - PC
+[0099] OP_0: Sym=None, Addend=0x0
+[0100] PATCH_32: *[0x1360] = (None + 0x9366e1) - PC
+[0101] PATCH_32: *[0x1368] = (None + 0x136a) - PC
+[0102] PATCH_32: *[0x1370] = (None + 0x98c221) - PC
+[0103] OP_0: Sym=None, Addend=0x0
+[0104] PATCH_32: *[0x13c0] = (None + 0x993062) - PC
+[0105] PATCH_32: *[0x13c8] = (None + 0x13ca) - PC
+[0106] PATCH_32: *[0x13d0] = (None + 0x9e91d2) - PC
+[0107] OP_0: Sym=None, Addend=0x0
+[0108] PATCH_32: *[0x1420] = (None + 0x9f09e3) - PC
+[0109] PATCH_32: *[0x1428] = (None + 0x142a) - PC
+[0110] PATCH_32: *[0x1430] = (None + 0xa45ef3) - PC
+[0111] OP_0: Sym=None, Addend=0x0
+[0112] PATCH_32: *[0x1480] = (None + 0xa4d364) - PC
+[0113] PATCH_32: *[0x1488] = (None + 0x148a) - PC
+[0114] PATCH_32: *[0x1490] = (None + 0xaa2904) - PC
+[0115] OP_0: Sym=None, Addend=0x0
+[0116] PATCH_32: *[0x14e0] = (None + 0xaa9ce5) - PC
+[0117] PATCH_32: *[0x14e8] = (None + 0x14ea) - PC
+[0118] PATCH_32: *[0x14f0] = (None + 0xb0043d) - PC
+[0119] OP_0: Sym=None, Addend=0x0
+[0120] PATCH_32: *[0x1540] = (None + 0xb07666) - PC
+[0121] PATCH_32: *[0x1548] = (None + 0x154a) - PC
+[0122] PATCH_32: *[0x1550] = (None + 0xb5daa6) - PC
+[0123] OP_0: Sym=None, Addend=0x0
+[0124] PATCH_32: *[0x15a0] = (None + 0xb64fe7) - PC
+[0125] PATCH_32: *[0x15a8] = (None + 0x15aa) - PC
+[0126] PATCH_32: *[0x15b0] = (None + 0xbbb277) - PC
+[0127] OP_0: Sym=None, Addend=0x0
+[0128] PATCH_32: *[0x1600] = (None + 0xbc2968) - PC
+[0129] PATCH_32: *[0x1608] = (None + 0x160a) - PC
+[0130] PATCH_32: *[0x1610] = (None + 0xc19198) - PC
+[0131] OP_0: Sym=None, Addend=0x0
+[0132] PATCH_32: *[0x1660] = (None + 0xc202e9) - PC
+[0133] PATCH_32: *[0x1668] = (None + 0x166a) - PC
+[0134] PATCH_32: *[0x1670] = (None + 0xc75cc1) - PC
+[0135] OP_0: Sym=None, Addend=0x0
+[0136] PATCH_32: *[0x16c0] = (None + 0xc7cc6a) - PC
+[0137] PATCH_32: *[0x16c8] = (None + 0x16ca) - PC
+[0138] PATCH_32: *[0x16d0] = (None + 0xcd32ea) - PC
+[0139] OP_0: Sym=None, Addend=0x0
+[0140] PATCH_32: *[0x1720] = (None + 0xcda5eb) - PC
+[0141] PATCH_32: *[0x1728] = (None + 0x172a) - PC
+[0142] PATCH_32: *[0x1730] = (None + 0xd30abb) - PC
+[0143] OP_0: Sym=None, Addend=0x0
+[0144] PATCH_32: *[0x1780] = (None + 0xd37f6c) - PC
+[0145] PATCH_32: *[0x1788] = (None + 0x178a) - PC
+[0146] PATCH_32: *[0x1790] = (None + 0xd8e244) - PC
+[0147] OP_0: Sym=None, Addend=0x0
+[0148] PATCH_32: *[0x17e0] = (None + 0xd958ed) - PC
+[0149] PATCH_32: *[0x17e8] = (None + 0x17ea) - PC
+[0150] PATCH_32: *[0x17f0] = (None + 0xdeb54d) - PC
+[0151] OP_0: Sym=None, Addend=0x0
+[0152] PATCH_32: *[0x1840] = (None + 0xdf226e) - PC
+[0153] PATCH_32: *[0x1848] = (None + 0x184a) - PC
+[0154] PATCH_32: *[0x1850] = (None + 0xe48ae6) - PC
+[0155] OP_0: Sym=None, Addend=0x0
+[0156] PATCH_32: *[0x18a0] = (None + 0xe4fbef) - PC
+[0157] PATCH_32: *[0x18a8] = (None + 0x18aa) - PC
+[0158] PATCH_32: *[0x18b0] = (None + 0xea5ccf) - PC
+[0159] OP_0: Sym=None, Addend=0x0
+[0160] PATCH_32: *[0x1900] = (None + 0xead570) - PC
+[0161] PATCH_32: *[0x1908] = (None + 0x190a) - PC
+[0162] PATCH_32: *[0x1910] = (None + 0xf02f00) - PC
+[0163] OP_0: Sym=None, Addend=0x0
+[0164] PATCH_32: *[0x1960] = (None + 0xf09ef1) - PC
+[0165] PATCH_32: *[0x1968] = (None + 0x196a) - PC
+[0166] PATCH_32: *[0x1970] = (None + 0xf609f1) - PC
+[0167] OP_0: Sym=None, Addend=0x0
+[0168] PATCH_32: *[0x19c0] = (None + 0xf67872) - PC
+[0169] PATCH_32: *[0x19c8] = (None + 0x19ca) - PC
+[0170] PATCH_32: *[0x19d0] = (None + 0xfbd562) - PC
+[0171] OP_0: Sym=None, Addend=0x0
+[0172] PATCH_32: *[0x1a20] = (None + 0xfc41f3) - PC
+[0173] PATCH_32: *[0x1a28] = (None + 0x1a2a) - PC
+[0174] PATCH_32: *[0x1a30] = (None + 0x101a16b) - PC
+[0175] OP_0: Sym=None, Addend=0x0
+[0176] PATCH_32: *[0x1a80] = (None + 0x1020b74) - PC
+[0177] PATCH_32: *[0x1a88] = (None + 0x1a8a) - PC
+[0178] PATCH_32: *[0x1a90] = (None + 0x1076dbc) - PC
+[0179] OP_0: Sym=None, Addend=0x0
+[0180] PATCH_32: *[0x1ae0] = (None + 0x107e4f5) - PC
+[0181] PATCH_32: *[0x1ae8] = (None + 0x1aea) - PC
+[0182] PATCH_32: *[0x1af0] = (None + 0x10d4425) - PC
+[0183] OP_0: Sym=None, Addend=0x0
+[0184] PATCH_32: *[0x1b40] = (None + 0x10dae76) - PC
+[0185] PATCH_32: *[0x1b48] = (None + 0x1b4a) - PC
+[0186] PATCH_32: *[0x1b50] = (None + 0x113096e) - PC
+[0187] OP_0: Sym=None, Addend=0x0
+[0188] PATCH_32: *[0x1ba0] = (None + 0x11377f7) - PC
+[0189] PATCH_32: *[0x1ba8] = (None + 0x1baa) - PC
+[0190] PATCH_32: *[0x1bb0] = (None + 0x118ebf7) - PC
+[0191] OP_0: Sym=None, Addend=0x0
+[0192] PATCH_32: *[0x1c00] = (None + 0x1196178) - PC
+[0193] PATCH_32: *[0x1c08] = (None + 0x1c0a) - PC
+[0194] PATCH_32: *[0x1c10] = (None + 0x11ec1c8) - PC
+[0195] OP_0: Sym=None, Addend=0x0
+[0196] PATCH_32: *[0x1c60] = (None + 0x11f3af9) - PC
+[0197] PATCH_32: *[0x1c68] = (None + 0x1c6a) - PC
+[0198] PATCH_32: *[0x1c70] = (None + 0x1249f39) - PC
+[0199] OP_0: Sym=None, Addend=0x0
+[0200] PATCH_32: *[0x1cc0] = (None + 0x125147a) - PC
+[0201] PATCH_32: *[0x1cc8] = (None + 0x1cca) - PC
+[0202] PATCH_32: *[0x1cd0] = (None + 0x12a79da) - PC
+[0203] OP_0: Sym=None, Addend=0x0
+[0204] PATCH_32: *[0x1d20] = (None + 0x12aedfb) - PC
+[0205] PATCH_32: *[0x1d28] = (None + 0x1d2a) - PC
+[0206] PATCH_32: *[0x1d30] = (None + 0x1304863) - PC
+[0207] OP_0: Sym=None, Addend=0x0
+[0208] PATCH_32: *[0x1d80] = (None + 0x130b77c) - PC
+[0209] PATCH_32: *[0x1d88] = (None + 0x1d8a) - PC
+[0210] PATCH_32: *[0x1d90] = (None + 0x1361a54) - PC
+[0211] OP_0: Sym=None, Addend=0x0
+[0212] PATCH_32: *[0x1de0] = (None + 0x13690fd) - PC
+[0213] PATCH_32: *[0x1de8] = (None + 0x1dea) - PC
+[0214] PATCH_32: *[0x1df0] = (None + 0x13bee35) - PC
+[0215] OP_0: Sym=None, Addend=0x0
+[0216] PATCH_32: *[0x1e40] = (None + 0x13c5a7e) - PC
+[0217] PATCH_32: *[0x1e48] = (None + 0x1e4a) - PC
+[0218] PATCH_32: *[0x1e50] = (None + 0x141bcc6) - PC
+[0219] OP_0: Sym=None, Addend=0x0
+[0220] PATCH_32: *[0x1ea0] = (None + 0x14233ff) - PC
+[0221] PATCH_32: *[0x1ea8] = (None + 0x1eaa) - PC
+[0222] PATCH_32: *[0x1eb0] = (None + 0x14799ef) - PC
+[0223] OP_0: Sym=None, Addend=0x0
+[0224] PATCH_32: *[0x1f00] = (None + 0x1480d80) - PC
+[0225] PATCH_32: *[0x1f08] = (None + 0x1f0a) - PC
+[0226] PATCH_32: *[0x1f10] = (None + 0x14d6488) - PC
+[0227] OP_0: Sym=None, Addend=0x0
+[0228] PATCH_32: *[0x1f60] = (None + 0x14dd701) - PC
+[0229] PATCH_32: *[0x1f68] = (None + 0x1f6a) - PC
+[0230] PATCH_32: *[0x1f70] = (None + 0x1532f29) - PC
+[0231] OP_0: Sym=None, Addend=0x0
+[0232] PATCH_32: *[0x1fc0] = (None + 0x153a082) - PC
+[0233] PATCH_32: *[0x1fc8] = (None + 0x1fca) - PC
+[0234] PATCH_32: *[0x1fd0] = (None + 0x158f2c2) - PC
+[0235] OP_0: Sym=None, Addend=0x0
+[0236] PATCH_32: *[0x2020] = (None + 0x1596a03) - PC
+[0237] PATCH_32: *[0x2028] = (None + 0x202a) - PC
+[0238] PATCH_32: *[0x2030] = (None + 0x15ec8eb) - PC
+[0239] OP_0: Sym=None, Addend=0x0
+[0240] PATCH_32: *[0x2080] = (None + 0x15f3384) - PC
+[0241] PATCH_32: *[0x2088] = (None + 0x208a) - PC
+[0242] PATCH_32: *[0x2090] = (None + 0x16496ec) - PC
+[0243] OP_0: Sym=None, Addend=0x0
+[0244] PATCH_32: *[0x20e0] = (None + 0x1650d05) - PC
+[0245] PATCH_32: *[0x20e8] = (None + 0x20ea) - PC
+[0246] PATCH_32: *[0x20f0] = (None + 0x16a601d) - PC
+[0247] OP_0: Sym=None, Addend=0x0
+[0248] PATCH_32: *[0x2140] = (None + 0x16ad686) - PC
+[0249] PATCH_32: *[0x2148] = (None + 0x214a) - PC
+[0250] PATCH_32: *[0x2150] = (None + 0x1703f8e) - PC
+[0251] OP_0: Sym=None, Addend=0x0
+[0252] PATCH_32: *[0x21a0] = (None + 0x170b007) - PC
+[0253] PATCH_32: *[0x21a8] = (None + 0x21aa) - PC
+[0254] PATCH_32: *[0x21b0] = (None + 0x17612df) - PC
+[0255] OP_0: Sym=None, Addend=0x0
+[0256] PATCH_32: *[0x2200] = (None + 0x1768988) - PC
+[0257] PATCH_32: *[0x2208] = (None + 0x220a) - PC
+[0258] PATCH_32: *[0x2210] = (None + 0x17bedc8) - PC
+[0259] OP_0: Sym=None, Addend=0x0
+[0260] PATCH_32: *[0x2260] = (None + 0x17c6309) - PC
+[0261] PATCH_32: *[0x2268] = (None + 0x226a) - PC
+[0262] PATCH_32: *[0x2270] = (None + 0x181caf1) - PC
+[0263] OP_0: Sym=None, Addend=0x0
+[0264] PATCH_32: *[0x22c0] = (None + 0x1823c8a) - PC
+[0265] PATCH_32: *[0x22c8] = (None + 0x22ca) - PC
+[0266] PATCH_32: *[0x22d0] = (None + 0x1879392) - PC
+[0267] OP_0: Sym=None, Addend=0x0
+[0268] PATCH_32: *[0x2320] = (None + 0x188060b) - PC
+[0269] PATCH_32: *[0x2328] = (None + 0x232a) - PC
+[0270] PATCH_32: *[0x2330] = (None + 0x18d6dab) - PC
+[0271] OP_0: Sym=None, Addend=0x0
+[0272] PATCH_32: *[0x2380] = (None + 0x18ddf8c) - PC
+[0273] PATCH_32: *[0x2388] = (None + 0x238a) - PC
+[0274] PATCH_32: *[0x2390] = (None + 0x1933d54) - PC
+[0275] OP_0: Sym=None, Addend=0x0
+[0276] PATCH_32: *[0x23e0] = (None + 0x193a90d) - PC
+[0277] PATCH_32: *[0x23e8] = (None + 0x23ea) - PC
+[0278] PATCH_32: *[0x23f0] = (None + 0x19909ed) - PC
+[0279] OP_0: Sym=None, Addend=0x0
+[0280] PATCH_32: *[0x2440] = (None + 0x199828e) - PC
+[0281] PATCH_32: *[0x2448] = (None + 0x244a) - PC
+[0282] PATCH_32: *[0x2450] = (None + 0x19ee686) - PC
+[0283] OP_0: Sym=None, Addend=0x0
+[0284] PATCH_32: *[0x24a0] = (None + 0x19f5c0f) - PC
+[0285] PATCH_32: *[0x24a8] = (None + 0x24aa) - PC
+[0286] PATCH_32: *[0x24b0] = (None + 0x1a4bf2f) - PC
+[0287] OP_0: Sym=None, Addend=0x0
+[0288] PATCH_32: *[0x2500] = (None + 0x1a53590) - PC
+[0289] PATCH_32: *[0x2508] = (None + 0x250a) - PC
+[0290] PATCH_32: *[0x2510] = (None + 0x1aa93a0) - PC
+[0291] OP_0: Sym=None, Addend=0x0
+[0292] PATCH_32: *[0x2560] = (None + 0x1aaff11) - PC
+[0293] PATCH_32: *[0x2568] = (None + 0x256a) - PC
+[0294] PATCH_32: *[0x2570] = (None + 0x1b06231) - PC
+[0295] OP_0: Sym=None, Addend=0x0
+[0296] PATCH_32: *[0x25c0] = (None + 0x1b0d892) - PC
+[0297] PATCH_32: *[0x25c8] = (None + 0x25ca) - PC
+[0298] PATCH_32: *[0x25d0] = (None + 0x1b63bfa) - PC
+[0299] OP_0: Sym=None, Addend=0x0
+[0300] PATCH_32: *[0x2620] = (None + 0x1b6b213) - PC
+[0301] PATCH_32: *[0x2628] = (None + 0x262a) - PC
+[0302] PATCH_32: *[0x2630] = (None + 0x1bc1b1b) - PC
+[0303] OP_0: Sym=None, Addend=0x0
+[0304] PATCH_32: *[0x2680] = (None + 0x1bc8b94) - PC
+[0305] PATCH_32: *[0x2688] = (None + 0x268a) - PC
+[0306] PATCH_32: *[0x2690] = (None + 0x1c1ecbc) - PC
+[0307] OP_0: Sym=None, Addend=0x0
+[0308] PATCH_32: *[0x26e0] = (None + 0x1c26515) - PC
+[0309] PATCH_32: *[0x26e8] = (None + 0x26ea) - PC
+[0310] PATCH_32: *[0x26f0] = (None + 0x1c7d015) - PC
+[0311] OP_0: Sym=None, Addend=0x0
+[0312] PATCH_32: *[0x2740] = (None + 0x1c83e96) - PC
+[0313] PATCH_32: *[0x2748] = (None + 0x274a) - PC
+[0314] PATCH_32: *[0x2750] = (None + 0x1cd9ee6) - PC
+[0315] OP_0: Sym=None, Addend=0x0
+[0316] PATCH_32: *[0x27a0] = (None + 0x1ce1817) - PC
+[0317] PATCH_32: *[0x27a8] = (None + 0x27aa) - PC
+[0318] PATCH_32: *[0x27b0] = (None + 0x1d37867) - PC
+[0319] OP_0: Sym=None, Addend=0x0
+[0320] PATCH_32: *[0x2800] = (None + 0x1d3f198) - PC
+[0321] PATCH_32: *[0x2808] = (None + 0x280a) - PC
+[0322] PATCH_32: *[0x2810] = (None + 0x1d954b8) - PC
+[0323] OP_0: Sym=None, Addend=0x0
+[0324] PATCH_32: *[0x2860] = (None + 0x1d9cb19) - PC
+[0325] PATCH_32: *[0x2868] = (None + 0x286a) - PC
+[0326] PATCH_32: *[0x2870] = (None + 0x1df3469) - PC
+[0327] OP_0: Sym=None, Addend=0x0
+[0328] PATCH_32: *[0x28c0] = (None + 0x1dfa49a) - PC
+[0329] PATCH_32: *[0x28c8] = (None + 0x28ca) - PC
+[0330] PATCH_32: *[0x28d0] = (None + 0x1e4f88a) - PC
+[0331] OP_0: Sym=None, Addend=0x0
+[0332] PATCH_32: *[0x2920] = (None + 0x1e56e1b) - PC
+[0333] PATCH_32: *[0x2928] = (None + 0x292a) - PC
+[0334] PATCH_32: *[0x2930] = (None + 0x1eac0a3) - PC
+[0335] OP_0: Sym=None, Addend=0x0
+[0336] PATCH_32: *[0x2980] = (None + 0x1eb379c) - PC
+[0337] PATCH_32: *[0x2988] = (None + 0x298a) - PC
+[0338] PATCH_32: *[0x2990] = (None + 0x1f09444) - PC
+[0339] OP_0: Sym=None, Addend=0x0
+[0340] PATCH_32: *[0x29e0] = (None + 0x1f1011d) - PC
+[0341] PATCH_32: *[0x29e8] = (None + 0x29ea) - PC
+[0342] PATCH_32: *[0x29f0] = (None + 0x1f65e0d) - PC
+[0343] OP_0: Sym=None, Addend=0x0
+[0344] PATCH_32: *[0x2a40] = (None + 0x1f6ca9e) - PC
+[0345] PATCH_32: *[0x2a48] = (None + 0x2a4a) - PC
+[0346] PATCH_32: *[0x2a50] = (None + 0x1fc3166) - PC
+[0347] OP_0: Sym=None, Addend=0x0
+[0348] PATCH_32: *[0x2aa0] = (None + 0x1fca41f) - PC
+[0349] PATCH_32: *[0x2aa8] = (None + 0x2aaa) - PC
+[0350] PATCH_32: *[0x2ab0] = (None + 0x202022f) - PC
+[0351] OP_0: Sym=None, Addend=0x0
+[0352] PATCH_32: *[0x2b00] = (None + 0x2026da0) - PC
+[0353] PATCH_32: *[0x2b08] = (None + 0x2b0a) - PC
+[0354] PATCH_32: *[0x2b10] = (None + 0x207cb68) - PC
+[0355] OP_0: Sym=None, Addend=0x0
+[0356] PATCH_32: *[0x2b60] = (None + 0x2083721) - PC
+[0357] PATCH_32: *[0x2b68] = (None + 0x2b6a) - PC
+[0358] PATCH_32: *[0x2b70] = (None + 0x20d8ba1) - PC
+[0359] OP_0: Sym=None, Addend=0x0
+[0360] PATCH_32: *[0x2bc0] = (None + 0x20e00a2) - PC
+[0361] PATCH_32: *[0x2bc8] = (None + 0x2bca) - PC
+[0362] PATCH_32: *[0x2bd0] = (None + 0x2135b52) - PC
+[0363] OP_0: Sym=None, Addend=0x0
+[0364] PATCH_32: *[0x2c20] = (None + 0x213ca23) - PC
+[0365] PATCH_32: *[0x2c28] = (None + 0x2c2a) - PC
+[0366] PATCH_32: *[0x2c30] = (None + 0x219287b) - PC
+[0367] OP_0: Sym=None, Addend=0x0
+[0368] PATCH_32: *[0x2c80] = (None + 0x21993a4) - PC
+[0369] PATCH_32: *[0x2c88] = (None + 0x2c8a) - PC
+[0370] PATCH_32: *[0x2c90] = (None + 0x21ef874) - PC
+[0371] OP_0: Sym=None, Addend=0x0
+[0372] PATCH_32: *[0x2ce0] = (None + 0x21f6d25) - PC
+[0373] PATCH_32: *[0x2ce8] = (None + 0x2cea) - PC
+[0374] PATCH_32: *[0x2cf0] = (None + 0x224c8ad) - PC
+[0375] OP_0: Sym=None, Addend=0x0
+[0376] PATCH_32: *[0x2d40] = (None + 0x22536a6) - PC
+[0377] PATCH_32: *[0x2d48] = (None + 0x2d4a) - PC
+[0378] PATCH_32: *[0x2d50] = (None + 0x22a889e) - PC
+[0379] OP_0: Sym=None, Addend=0x0
+[0380] PATCH_32: *[0x2da0] = (None + 0x22b0027) - PC
+[0381] PATCH_32: *[0x2da8] = (None + 0x2daa) - PC
+[0382] PATCH_32: *[0x2db0] = (None + 0x230677f) - PC
+[0383] OP_0: Sym=None, Addend=0x0
+[0384] PATCH_32: *[0x2e00] = (None + 0x230d9a8) - PC
+[0385] PATCH_32: *[0x2e08] = (None + 0x2e0a) - PC
+[0386] PATCH_32: *[0x2e10] = (None + 0x2363f98) - PC
+[0387] OP_0: Sym=None, Addend=0x0
+[0388] PATCH_32: *[0x2e60] = (None + 0x236b329) - PC
+[0389] PATCH_32: *[0x2e68] = (None + 0x2e6a) - PC
+[0390] PATCH_32: *[0x2e70] = (None + 0x23c1c79) - PC
+[0391] OP_0: Sym=None, Addend=0x0
+[0392] PATCH_32: *[0x2ec0] = (None + 0x23c8caa) - PC
+[0393] PATCH_32: *[0x2ec8] = (None + 0x2eca) - PC
+[0394] PATCH_32: *[0x2ed0] = (None + 0x241e7a2) - PC
+[0395] OP_0: Sym=None, Addend=0x0
+[0396] PATCH_32: *[0x2f20] = (None + 0x242562b) - PC
+[0397] PATCH_32: *[0x2f28] = (None + 0x2f2a) - PC
+[0398] PATCH_32: *[0x2f30] = (None + 0x247aaab) - PC
+[0399] OP_0: Sym=None, Addend=0x0
+[0400] PATCH_32: *[0x2f80] = (None + 0x2481fac) - PC
+[0401] PATCH_32: *[0x2f88] = (None + 0x2f8a) - PC
+[0402] PATCH_32: *[0x2f90] = (None + 0x24d8314) - PC
+[0403] OP_0: Sym=None, Addend=0x0
+[0404] PATCH_32: *[0x2fe0] = (None + 0x24df92d) - PC
+[0405] PATCH_32: *[0x2fe8] = (None + 0x2fea) - PC
+[0406] PATCH_32: *[0x2ff0] = (None + 0x2534d65) - PC
+[0407] OP_0: Sym=None, Addend=0x0
+[0408] PATCH_32: *[0x3040] = (None + 0x253c2ae) - PC
+[0409] PATCH_32: *[0x3048] = (None + 0x304a) - PC
+[0410] PATCH_32: *[0x3050] = (None + 0x259253e) - PC
+[0411] OP_0: Sym=None, Addend=0x0
+[0412] PATCH_32: *[0x30a0] = (None + 0x2599c2f) - PC
+[0413] PATCH_32: *[0x30a8] = (None + 0x30aa) - PC
+[0414] PATCH_32: *[0x30b0] = (None + 0x25ee377) - PC
+[0415] OP_0: Sym=None, Addend=0x0
+[0416] PATCH_32: *[0x3100] = (None + 0x25f55b0) - PC
+[0417] PATCH_32: *[0x3108] = (None + 0x310a) - PC
+[0418] PATCH_32: *[0x3110] = (None + 0x264afd0) - PC
+[0419] OP_0: Sym=None, Addend=0x0
+[0420] PATCH_32: *[0x3160] = (None + 0x2651f31) - PC
+[0421] PATCH_32: *[0x3168] = (None + 0x316a) - PC
+[0422] PATCH_32: *[0x3170] = (None + 0x26a7561) - PC
+[0423] OP_0: Sym=None, Addend=0x0
+[0424] PATCH_32: *[0x31c0] = (None + 0x26ae8b2) - PC
+[0425] PATCH_32: *[0x31c8] = (None + 0x31ca) - PC
+[0426] PATCH_32: *[0x31d0] = (None + 0x27045ea) - PC
+[0427] OP_0: Sym=None, Addend=0x0
+[0428] PATCH_32: *[0x3220] = (None + 0x270b233) - PC
+[0429] PATCH_32: *[0x3228] = (None + 0x322a) - PC
+[0430] PATCH_32: *[0x3230] = (None + 0x2760bc3) - PC
+[0431] OP_0: Sym=None, Addend=0x0
+[0432] PATCH_32: *[0x3280] = (None + 0x2767bb4) - PC
+[0433] PATCH_32: *[0x3288] = (None + 0x328a) - PC
+[0434] PATCH_32: *[0x3290] = (None + 0x27bd8a4) - PC
+[0435] OP_0: Sym=None, Addend=0x0
+[0436] PATCH_32: *[0x32e0] = (None + 0x27c4535) - PC
+[0437] PATCH_32: *[0x32e8] = (None + 0x32ea) - PC
+[0438] PATCH_32: *[0x32f0] = (None + 0x281a53d) - PC
+[0439] OP_0: Sym=None, Addend=0x0
+[0440] PATCH_32: *[0x3340] = (None + 0x2820eb6) - PC
+[0441] PATCH_32: *[0x3348] = (None + 0x334a) - PC
+[0442] PATCH_32: *[0x3350] = (None + 0x2876606) - PC
+[0443] OP_0: Sym=None, Addend=0x0
+[0444] PATCH_32: *[0x33a0] = (None + 0x287d837) - PC
+[0445] PATCH_32: *[0x33a8] = (None + 0x33aa) - PC
+[0446] PATCH_32: *[0x33b0] = (None + 0x28d37af) - PC
+[0447] OP_0: Sym=None, Addend=0x0
+[0448] PATCH_32: *[0x3400] = (None + 0x28da1b8) - PC
+[0449] PATCH_32: *[0x3408] = (None + 0x340a) - PC
+[0450] PATCH_32: *[0x3410] = (None + 0x292fe60) - PC
+[0451] OP_0: Sym=None, Addend=0x0
+[0452] PATCH_32: *[0x3460] = (None + 0x2936b39) - PC
+[0453] PATCH_32: *[0x3468] = (None + 0x346a) - PC
+[0454] PATCH_32: *[0x3470] = (None + 0x298c709) - PC
+[0455] OP_0: Sym=None, Addend=0x0
+[0456] PATCH_32: *[0x34c0] = (None + 0x29934ba) - PC
+[0457] PATCH_32: *[0x34c8] = (None + 0x34ca) - PC
+[0458] PATCH_32: *[0x34d0] = (None + 0x29e9042) - PC
+[0459] OP_0: Sym=None, Addend=0x0
+[0460] PATCH_32: *[0x3520] = (None + 0x29efe3b) - PC
+[0461] PATCH_32: *[0x3528] = (None + 0x352a) - PC
+[0462] PATCH_32: *[0x3530] = (None + 0x2a458a3) - PC
+[0463] OP_0: Sym=None, Addend=0x0
+[0464] PATCH_32: *[0x3580] = (None + 0x2a4c7bc) - PC
+[0465] PATCH_32: *[0x3588] = (None + 0x358a) - PC
+[0466] PATCH_32: *[0x3590] = (None + 0x2aa22b4) - PC
+[0467] OP_0: Sym=None, Addend=0x0
+[0468] PATCH_32: *[0x35e0] = (None + 0x2aa913d) - PC
+[0469] PATCH_32: *[0x35e8] = (None + 0x35ea) - PC
+[0470] PATCH_32: *[0x35f0] = (None + 0x2afe52d) - PC
+[0471] OP_0: Sym=None, Addend=0x0
+[0472] PATCH_32: *[0x3640] = (None + 0x2b05abe) - PC
+[0473] PATCH_32: *[0x3648] = (None + 0x364a) - PC
+[0474] PATCH_32: *[0x3650] = (None + 0x2b5bf8e) - PC
+[0475] OP_0: Sym=None, Addend=0x0
+[0476] PATCH_32: *[0x36a0] = (None + 0x2b6343f) - PC
+[0477] PATCH_32: *[0x36a8] = (None + 0x36aa) - PC
+[0478] PATCH_32: *[0x36b0] = (None + 0x2bb8e17) - PC
+[0479] OP_0: Sym=None, Addend=0x0
+[0480] PATCH_32: *[0x3700] = (None + 0x2bbfdc0) - PC
+[0481] PATCH_32: *[0x3708] = (None + 0x370a) - PC
+[0482] PATCH_32: *[0x3710] = (None + 0x2c15e58) - PC
+[0483] OP_0: Sym=None, Addend=0x0
+[0484] PATCH_32: *[0x3760] = (None + 0x2c1d741) - PC
+[0485] PATCH_32: *[0x3768] = (None + 0x376a) - PC
+[0486] PATCH_32: *[0x3770] = (None + 0x2c74169) - PC
+[0487] OP_0: Sym=None, Addend=0x0
+[0488] PATCH_32: *[0x37c0] = (None + 0x2c7b0c2) - PC
+[0489] PATCH_32: *[0x37c8] = (None + 0x37ca) - PC
+[0490] PATCH_32: *[0x37d0] = (None + 0x2cd1862) - PC
+[0491] OP_0: Sym=None, Addend=0x0
+[0492] PATCH_32: *[0x3820] = (None + 0x2cd8a43) - PC
+[0493] PATCH_32: *[0x3828] = (None + 0x382a) - PC
+[0494] PATCH_32: *[0x3830] = (None + 0x2d2f7cb) - PC
+[0495] OP_0: Sym=None, Addend=0x0
+[0496] PATCH_32: *[0x3880] = (None + 0x2d363c4) - PC
+[0497] PATCH_32: *[0x3888] = (None + 0x388a) - PC
+[0498] PATCH_32: *[0x3890] = (None + 0x2d8c1d4) - PC
+[0499] OP_0: Sym=None, Addend=0x0
+[0500] PATCH_32: *[0x38e0] = (None + 0x2d92d45) - PC
+[0501] PATCH_32: *[0x38e8] = (None + 0x38ea) - PC
+[0502] PATCH_32: *[0x38f0] = (None + 0x2de85fd) - PC
+[0503] OP_0: Sym=None, Addend=0x0
+[0504] PATCH_32: *[0x3940] = (None + 0x2def6c6) - PC
+[0505] PATCH_32: *[0x3948] = (None + 0x394a) - PC
+[0506] PATCH_32: *[0x3950] = (None + 0x2e456ce) - PC
+[0507] OP_0: Sym=None, Addend=0x0
+[0508] PATCH_32: *[0x39a0] = (None + 0x2e4c047) - PC
+[0509] PATCH_32: *[0x39a8] = (None + 0x39aa) - PC
+[0510] PATCH_32: *[0x39b0] = (None + 0x2ea2b47) - PC
+[0511] OP_0: Sym=None, Addend=0x0
+[0512] PATCH_32: *[0x3a00] = (None + 0x2ea99c8) - PC
+[0513] PATCH_32: *[0x3a08] = (None + 0x3a0a) - PC
+[0514] PATCH_32: *[0x3a10] = (None + 0x2efeff8) - PC
+[0515] OP_0: Sym=None, Addend=0x0
+[0516] PATCH_32: *[0x3a60] = (None + 0x2f06349) - PC
+[0517] PATCH_32: *[0x3a68] = (None + 0x3a6a) - PC
+[0518] PATCH_32: *[0x3a70] = (None + 0x2f5cae9) - PC
+[0519] OP_0: Sym=None, Addend=0x0
+[0520] PATCH_32: *[0x3ac0] = (None + 0x2f63cca) - PC
+[0521] PATCH_32: *[0x3ac8] = (None + 0x3aca) - PC
+[0522] PATCH_32: *[0x3ad0] = (None + 0x2fb9852) - PC
+[0523] OP_0: Sym=None, Addend=0x0
+[0524] PATCH_32: *[0x3b20] = (None + 0x2fc064b) - PC
+[0525] PATCH_32: *[0x3b28] = (None + 0x3b2a) - PC
+[0526] PATCH_32: *[0x3b30] = (None + 0x30166e3) - PC
+[0527] OP_0: Sym=None, Addend=0x0
+[0528] PATCH_32: *[0x3b80] = (None + 0x301dfcc) - PC
+[0529] PATCH_32: *[0x3b88] = (None + 0x3b8a) - PC
+[0530] PATCH_32: *[0x3b90] = (None + 0x307440c) - PC
+[0531] OP_0: Sym=None, Addend=0x0
+[0532] PATCH_32: *[0x3be0] = (None + 0x307b94d) - PC
+[0533] PATCH_32: *[0x3be8] = (None + 0x3bea) - PC
+[0534] PATCH_32: *[0x3bf0] = (None + 0x30d205d) - PC
+[0535] OP_0: Sym=None, Addend=0x0
+[0536] PATCH_32: *[0x3c40] = (None + 0x30d92ce) - PC
+[0537] PATCH_32: *[0x3c48] = (None + 0x3c4a) - PC
+[0538] PATCH_32: *[0x3c50] = (None + 0x312f67e) - PC
+[0539] OP_0: Sym=None, Addend=0x0
+[0540] PATCH_32: *[0x3ca0] = (None + 0x3136c4f) - PC
+[0541] PATCH_32: *[0x3ca8] = (None + 0x3caa) - PC
+[0542] PATCH_32: *[0x3cb0] = (None + 0x318ca17) - PC
+[0543] OP_0: Sym=None, Addend=0x0
+[0544] PATCH_32: *[0x3d00] = (None + 0x31935d0) - PC
+[0545] PATCH_32: *[0x3d08] = (None + 0x3d0a) - PC
+[0546] PATCH_32: *[0x3d10] = (None + 0x31e8e40) - PC
+[0547] OP_0: Sym=None, Addend=0x0
+[0548] PATCH_32: *[0x3d60] = (None + 0x31eff51) - PC
+[0549] PATCH_32: *[0x3d68] = (None + 0x3d6a) - PC
+[0550] PATCH_32: *[0x3d70] = (None + 0x3246859) - PC
+[0551] OP_0: Sym=None, Addend=0x0
+[0552] PATCH_32: *[0x3dc0] = (None + 0x324d8d2) - PC
+[0553] PATCH_32: *[0x3dc8] = (None + 0x3dca) - PC
+[0554] PATCH_32: *[0x3dd0] = (None + 0x32a28d2) - PC
+[0555] OP_0: Sym=None, Addend=0x0
+[0556] PATCH_32: *[0x3e20] = (None + 0x32a9253) - PC
+[0557] PATCH_32: *[0x3e28] = (None + 0x3e2a) - PC
+[0558] PATCH_32: *[0x3e30] = (None + 0x32ff8d3) - PC
+[0559] OP_0: Sym=None, Addend=0x0
+[0560] PATCH_32: *[0x3e80] = (None + 0x3306bd4) - PC
+[0561] PATCH_32: *[0x3e88] = (None + 0x3e8a) - PC
+[0562] PATCH_32: *[0x3e90] = (None + 0x335c5ac) - PC
+[0563] OP_0: Sym=None, Addend=0x0
+[0564] PATCH_32: *[0x3ee0] = (None + 0x3363555) - PC
+[0565] PATCH_32: *[0x3ee8] = (None + 0x3eea) - PC
+[0566] PATCH_32: *[0x3ef0] = (None + 0x33b93f5) - PC
+[0567] OP_0: Sym=None, Addend=0x0
+[0568] PATCH_32: *[0x3f40] = (None + 0x33bfed6) - PC
+[0569] PATCH_32: *[0x3f48] = (None + 0x3f4a) - PC
+[0570] PATCH_32: *[0x3f50] = (None + 0x34159ce) - PC
+[0571] OP_0: Sym=None, Addend=0x0
+[0572] PATCH_32: *[0x3fa0] = (None + 0x341c857) - PC
+[0573] PATCH_32: *[0x3fa8] = (None + 0x3faa) - PC
+[0574] PATCH_32: *[0x3fb0] = (None + 0x34733e7) - PC
+[0575] OP_0: Sym=None, Addend=0x0
+[0576] PATCH_32: *[0x4000] = (None + 0x347a1d8) - PC
+[0577] PATCH_32: *[0x4008] = (None + 0x400a) - PC
+[0578] PATCH_32: *[0x4010] = (None + 0x34d0d20) - PC
+[0579] OP_0: Sym=None, Addend=0x0
+[0580] PATCH_32: *[0x4060] = (None + 0x34d7b59) - PC
+[0581] PATCH_32: *[0x4068] = (None + 0x406a) - PC
+[0582] PATCH_32: *[0x4070] = (None + 0x352d771) - PC
+[0583] OP_0: Sym=None, Addend=0x0
+[0584] PATCH_32: *[0x40c0] = (None + 0x35344da) - PC
+[0585] PATCH_32: *[0x40c8] = (None + 0x40ca) - PC
+[0586] PATCH_32: *[0x40d0] = (None + 0x3589d4a) - PC
+[0587] OP_0: Sym=None, Addend=0x0
+[0588] PATCH_32: *[0x4120] = (None + 0x3590e5b) - PC
+[0589] PATCH_32: *[0x4128] = (None + 0x412a) - PC
+[0590] PATCH_32: *[0x4130] = (None + 0x35e756b) - PC
+[0591] OP_0: Sym=None, Addend=0x0
+[0592] PATCH_32: *[0x4180] = (None + 0x35ee7dc) - PC
+[0593] PATCH_32: *[0x4188] = (None + 0x418a) - PC
+[0594] PATCH_32: *[0x4190] = (None + 0x3644fc4) - PC
+[0595] OP_0: Sym=None, Addend=0x0
+[0596] PATCH_32: *[0x41e0] = (None + 0x364c15d) - PC
+[0597] PATCH_32: *[0x41e8] = (None + 0x41ea) - PC
+[0598] PATCH_32: *[0x41f0] = (None + 0x36a2d35) - PC
+[0599] OP_0: Sym=None, Addend=0x0
+[0600] PATCH_32: *[0x4240] = (None + 0x36a9ade) - PC
+[0601] PATCH_32: *[0x4248] = (None + 0x424a) - PC
+[0602] PATCH_32: *[0x4250] = (None + 0x36fef5e) - PC
+[0603] OP_0: Sym=None, Addend=0x0
+[0604] PATCH_32: *[0x42a0] = (None + 0x370645f) - PC
+[0605] PATCH_32: *[0x42a8] = (None + 0x42aa) - PC
+[0606] PATCH_32: *[0x42b0] = (None + 0x375cfef) - PC
+[0607] OP_0: Sym=None, Addend=0x0
+[0608] PATCH_32: *[0x4300] = (None + 0x3763de0) - PC
+[0609] PATCH_32: *[0x4308] = (None + 0x430a) - PC
+[0610] PATCH_32: *[0x4310] = (None + 0x37b92a8) - PC
+[0611] OP_0: Sym=None, Addend=0x0
+[0612] PATCH_32: *[0x4360] = (None + 0x37c0761) - PC
+[0613] PATCH_32: *[0x4368] = (None + 0x436a) - PC
+[0614] PATCH_32: *[0x4370] = (None + 0x38169f1) - PC
+[0615] OP_0: Sym=None, Addend=0x0
+[0616] PATCH_32: *[0x43c0] = (None + 0x381e0e2) - PC
+[0617] PATCH_32: *[0x43c8] = (None + 0x43ca) - PC
+[0618] PATCH_32: *[0x43d0] = (None + 0x3874522) - PC
+[0619] OP_0: Sym=None, Addend=0x0
+[0620] PATCH_32: *[0x4420] = (None + 0x387ba63) - PC
+[0621] PATCH_32: *[0x4428] = (None + 0x442a) - PC
+[0622] PATCH_32: *[0x4430] = (None + 0x38d1e5b) - PC
+[0623] OP_0: Sym=None, Addend=0x0
+[0624] PATCH_32: *[0x4480] = (None + 0x38d93e4) - PC
+[0625] PATCH_32: *[0x4488] = (None + 0x448a) - PC
+[0626] PATCH_32: *[0x4490] = (None + 0x392faf4) - PC
+[0627] OP_0: Sym=None, Addend=0x0
+[0628] PATCH_32: *[0x44e0] = (None + 0x3936d65) - PC
+[0629] PATCH_32: *[0x44e8] = (None + 0x44ea) - PC
+[0630] PATCH_32: *[0x44f0] = (None + 0x398c97d) - PC
+[0631] OP_0: Sym=None, Addend=0x0
+[0632] PATCH_32: *[0x4540] = (None + 0x39936e6) - PC
+[0633] PATCH_32: *[0x4548] = (None + 0x454a) - PC
+[0634] PATCH_32: *[0x4550] = (None + 0x39e95ce) - PC
+[0635] OP_0: Sym=None, Addend=0x0
+[0636] PATCH_32: *[0x45a0] = (None + 0x39f0067) - PC
+[0637] PATCH_32: *[0x45a8] = (None + 0x45aa) - PC
+[0638] PATCH_32: *[0x45b0] = (None + 0x3a45b5f) - PC
+[0639] OP_0: Sym=None, Addend=0x0
+[0640] PATCH_32: *[0x4600] = (None + 0x3a4c9e8) - PC
+[0641] PATCH_32: *[0x4608] = (None + 0x460a) - PC
+[0642] PATCH_32: *[0x4610] = (None + 0x3aa3698) - PC
+[0643] OP_0: Sym=None, Addend=0x0
+[0644] PATCH_32: *[0x4660] = (None + 0x3aaa369) - PC
+[0645] PATCH_32: *[0x4668] = (None + 0x466a) - PC
+[0646] PATCH_32: *[0x4670] = (None + 0x3aff879) - PC
+[0647] OP_0: Sym=None, Addend=0x0
+[0648] PATCH_32: *[0x46c0] = (None + 0x3b06cea) - PC
+[0649] PATCH_32: *[0x46c8] = (None + 0x46ca) - PC
+[0650] PATCH_32: *[0x46d0] = (None + 0x3b5d172) - PC
+[0651] OP_0: Sym=None, Addend=0x0
+[0652] PATCH_32: *[0x4720] = (None + 0x3b6466b) - PC
+[0653] PATCH_32: *[0x4728] = (None + 0x472a) - PC
+[0654] PATCH_32: *[0x4730] = (None + 0x3bb9593) - PC
+[0655] OP_0: Sym=None, Addend=0x0
+[0656] PATCH_32: *[0x4780] = (None + 0x3bbffec) - PC
+[0657] PATCH_32: *[0x4788] = (None + 0x478a) - PC
+[0658] PATCH_32: *[0x4790] = (None + 0x3c15c94) - PC
+[0659] OP_0: Sym=None, Addend=0x0
+[0660] PATCH_32: *[0x47e0] = (None + 0x3c1c96d) - PC
+[0661] PATCH_32: *[0x47e8] = (None + 0x47ea) - PC
+[0662] PATCH_32: *[0x47f0] = (None + 0x3c72bfd) - PC
+[0663] OP_0: Sym=None, Addend=0x0
+[0664] PATCH_32: *[0x4840] = (None + 0x3c7a2ee) - PC
+[0665] PATCH_32: *[0x4848] = (None + 0x484a) - PC
+[0666] PATCH_32: *[0x4850] = (None + 0x3cd06e6) - PC
+[0667] OP_0: Sym=None, Addend=0x0
+[0668] PATCH_32: *[0x48a0] = (None + 0x3cd7c6f) - PC
+[0669] PATCH_32: *[0x48a8] = (None + 0x48aa) - PC
+[0670] PATCH_32: *[0x48b0] = (None + 0x3d2d4df) - PC
+[0671] OP_0: Sym=None, Addend=0x0
+[0672] PATCH_32: *[0x4900] = (None + 0x3d345f0) - PC
+[0673] PATCH_32: *[0x4908] = (None + 0x490a) - PC
+[0674] PATCH_32: *[0x4910] = (None + 0x3d8af40) - PC
+[0675] OP_0: Sym=None, Addend=0x0
+[0676] PATCH_32: *[0x4960] = (None + 0x3d91f71) - PC
+[0677] PATCH_32: *[0x4968] = (None + 0x496a) - PC
+[0678] PATCH_32: *[0x4970] = (None + 0x3de8fc9) - PC
+[0679] OP_0: Sym=None, Addend=0x0
+[0680] PATCH_32: *[0x49c0] = (None + 0x3df08f2) - PC
+[0681] PATCH_32: *[0x49c8] = (None + 0x49ca) - PC
+[0682] PATCH_32: *[0x49d0] = (None + 0x3e4686a) - PC
+[0683] OP_0: Sym=None, Addend=0x0
+[0684] PATCH_32: *[0x4a20] = (None + 0x3e4d273) - PC
+[0685] PATCH_32: *[0x4a28] = (None + 0x4a2a) - PC
+[0686] PATCH_32: *[0x4a30] = (None + 0x3ea2783) - PC
+[0687] OP_0: Sym=None, Addend=0x0
+[0688] PATCH_32: *[0x4a80] = (None + 0x3ea9bf4) - PC
+[0689] PATCH_32: *[0x4a88] = (None + 0x4a8a) - PC
+[0690] PATCH_32: *[0x4a90] = (None + 0x3eff344) - PC
+[0691] OP_0: Sym=None, Addend=0x0
+[0692] PATCH_32: *[0x4ae0] = (None + 0x3f06575) - PC
+[0693] PATCH_32: *[0x4ae8] = (None + 0x4aea) - PC
+[0694] PATCH_32: *[0x4af0] = (None + 0x3f5ce7d) - PC
+[0695] OP_0: Sym=None, Addend=0x0
+[0696] PATCH_32: *[0x4b40] = (None + 0x3f63ef6) - PC
+[0697] PATCH_32: *[0x4b48] = (None + 0x4b4a) - PC
+[0698] PATCH_32: *[0x4b50] = (None + 0x3fba25e) - PC
+[0699] OP_0: Sym=None, Addend=0x0
+[0700] PATCH_32: *[0x4ba0] = (None + 0x3fc1877) - PC
+[0701] PATCH_32: *[0x4ba8] = (None + 0x4baa) - PC
+[0702] PATCH_32: *[0x4bb0] = (None + 0x4017687) - PC
+[0703] OP_0: Sym=None, Addend=0x0
+[0704] PATCH_32: *[0x4c00] = (None + 0x401e1f8) - PC
+[0705] PATCH_32: *[0x4c08] = (None + 0x4c0a) - PC
+[0706] PATCH_32: *[0x4c10] = (None + 0x4074b90) - PC
+[0707] OP_0: Sym=None, Addend=0x0
+[0708] PATCH_32: *[0x4c60] = (None + 0x407bb79) - PC
+[0709] PATCH_32: *[0x4c68] = (None + 0x4c6a) - PC
+[0710] PATCH_32: *[0x4c70] = (None + 0x40d1b81) - PC
+[0711] OP_0: Sym=None, Addend=0x0
+[0712] PATCH_32: *[0x4cc0] = (None + 0x40d84fa) - PC
+[0713] PATCH_32: *[0x4cc8] = (None + 0x4cca) - PC
+[0714] PATCH_32: *[0x4cd0] = (None + 0x412db2a) - PC
+[0715] OP_0: Sym=None, Addend=0x0
+[0716] PATCH_32: *[0x4d20] = (None + 0x4134e7b) - PC
+[0717] PATCH_32: *[0x4d28] = (None + 0x4d2a) - PC
+[0718] PATCH_32: *[0x4d30] = (None + 0x418b543) - PC
+[0719] OP_0: Sym=None, Addend=0x0
+[0720] PATCH_32: *[0x4d80] = (None + 0x41927fc) - PC
+[0721] PATCH_32: *[0x4d88] = (None + 0x4d8a) - PC
+[0722] PATCH_32: *[0x4d90] = (None + 0x41e7f04) - PC
+[0723] OP_0: Sym=None, Addend=0x0
+[0724] PATCH_32: *[0x4de0] = (None + 0x41ef17d) - PC
+[0725] PATCH_32: *[0x4de8] = (None + 0x4dea) - PC
+[0726] PATCH_32: *[0x4df0] = (None + 0x4244eb5) - PC
+[0727] OP_0: Sym=None, Addend=0x0
+[0728] PATCH_32: *[0x4e40] = (None + 0x424bafe) - PC
+[0729] PATCH_32: *[0x4e48] = (None + 0x4e4a) - PC
+[0730] PATCH_32: *[0x4e50] = (None + 0x42a1716) - PC
+[0731] OP_0: Sym=None, Addend=0x0
+[0732] PATCH_32: *[0x4ea0] = (None + 0x42a847f) - PC
+[0733] PATCH_32: *[0x4ea8] = (None + 0x4eaa) - PC
+[0734] PATCH_32: *[0x4eb0] = (None + 0x42fe367) - PC
+[0735] OP_0: Sym=None, Addend=0x0
+[0736] PATCH_32: *[0x4f00] = (None + 0x4304e00) - PC
+[0737] PATCH_32: *[0x4f08] = (None + 0x4f0a) - PC
+[0738] PATCH_32: *[0x4f10] = (None + 0x435b288) - PC
+[0739] OP_0: Sym=None, Addend=0x0
+[0740] PATCH_32: *[0x4f60] = (None + 0x4362781) - PC
+[0741] PATCH_32: *[0x4f68] = (None + 0x4f6a) - PC
+[0742] PATCH_32: *[0x4f70] = (None + 0x43b83e1) - PC
+[0743] OP_0: Sym=None, Addend=0x0
+[0744] PATCH_32: *[0x4fc0] = (None + 0x43bf102) - PC
+[0745] PATCH_32: *[0x4fc8] = (None + 0x4fca) - PC
+[0746] PATCH_32: *[0x4fd0] = (None + 0x441597a) - PC
+[0747] OP_0: Sym=None, Addend=0x0
+[0748] PATCH_32: *[0x5020] = (None + 0x441ca83) - PC
+[0749] PATCH_32: *[0x5028] = (None + 0x502a) - PC
+[0750] PATCH_32: *[0x5030] = (None + 0x44730bb) - PC
+[0751] OP_0: Sym=None, Addend=0x0
+[0752] PATCH_32: *[0x5080] = (None + 0x447a404) - PC
+[0753] PATCH_32: *[0x5088] = (None + 0x508a) - PC
+[0754] PATCH_32: *[0x5090] = (None + 0x44cfe6c) - PC
+[0755] OP_0: Sym=None, Addend=0x0
+[0756] PATCH_32: *[0x50e0] = (None + 0x44d6d85) - PC
+[0757] PATCH_32: *[0x50e8] = (None + 0x50ea) - PC
+[0758] PATCH_32: *[0x50f0] = (None + 0x452c2dd) - PC
+[0759] OP_0: Sym=None, Addend=0x0
+[0760] PATCH_32: *[0x5140] = (None + 0x4533706) - PC
+[0761] PATCH_32: *[0x5148] = (None + 0x514a) - PC
+[0762] PATCH_32: *[0x5150] = (None + 0x4589126) - PC
+[0763] OP_0: Sym=None, Addend=0x0
+[0764] PATCH_32: *[0x51a0] = (None + 0x4590087) - PC
+[0765] PATCH_32: *[0x51a8] = (None + 0x51aa) - PC
+[0766] PATCH_32: *[0x51b0] = (None + 0x45e593f) - PC
+[0767] OP_0: Sym=None, Addend=0x0
+[0768] PATCH_32: *[0x5200] = (None + 0x45eca08) - PC
+[0769] PATCH_32: *[0x5208] = (None + 0x520a) - PC
+[0770] PATCH_32: *[0x5210] = (None + 0x46423e0) - PC
+[0771] OP_0: Sym=None, Addend=0x0
+[0772] PATCH_32: *[0x5260] = (None + 0x4649389) - PC
+[0773] PATCH_32: *[0x5268] = (None + 0x526a) - PC
+[0774] PATCH_32: *[0x5270] = (None + 0x469e779) - PC
+[0775] OP_0: Sym=None, Addend=0x0
+[0776] PATCH_32: *[0x52c0] = (None + 0x46a5d0a) - PC
+[0777] PATCH_32: *[0x52c8] = (None + 0x52ca) - PC
+[0778] PATCH_32: *[0x52d0] = (None + 0x46fb7ba) - PC
+[0779] OP_0: Sym=None, Addend=0x0
+[0780] PATCH_32: *[0x5320] = (None + 0x470268b) - PC
+[0781] PATCH_32: *[0x5328] = (None + 0x532a) - PC
+[0782] PATCH_32: *[0x5330] = (None + 0x4758e2b) - PC
+[0783] OP_0: Sym=None, Addend=0x0
+[0784] PATCH_32: *[0x5380] = (None + 0x476000c) - PC
+[0785] PATCH_32: *[0x5388] = (None + 0x538a) - PC
+[0786] PATCH_32: *[0x5390] = (None + 0x47b6884) - PC
+[0787] OP_0: Sym=None, Addend=0x0
+[0788] PATCH_32: *[0x53e0] = (None + 0x47bd98d) - PC
+[0789] PATCH_32: *[0x53e8] = (None + 0x53ea) - PC
+[0790] PATCH_32: *[0x53f0] = (None + 0x48130dd) - PC
+[0791] OP_0: Sym=None, Addend=0x0
+[0792] PATCH_32: *[0x5440] = (None + 0x481a30e) - PC
+[0793] PATCH_32: *[0x5448] = (None + 0x544a) - PC
+[0794] PATCH_32: *[0x5450] = (None + 0x486f626) - PC
+[0795] OP_0: Sym=None, Addend=0x0
+[0796] PATCH_32: *[0x54a0] = (None + 0x4876c8f) - PC
+[0797] PATCH_32: *[0x54a8] = (None + 0x54aa) - PC
+[0798] PATCH_32: *[0x54b0] = (None + 0x48cc037) - PC
+[0799] OP_0: Sym=None, Addend=0x0
+[0800] PATCH_32: *[0x5500] = (None + 0x48d3610) - PC
+[0801] PATCH_32: *[0x5508] = (None + 0x550a) - PC
+[0802] PATCH_32: *[0x5510] = (None + 0x4929540) - PC
+[0803] OP_0: Sym=None, Addend=0x0
+[0804] PATCH_32: *[0x5560] = (None + 0x492ff91) - PC
+[0805] PATCH_32: *[0x5568] = (None + 0x556a) - PC
+[0806] PATCH_32: *[0x5570] = (None + 0x4985e31) - PC
+[0807] OP_0: Sym=None, Addend=0x0
+[0808] PATCH_32: *[0x55c0] = (None + 0x498c912) - PC
+[0809] PATCH_32: *[0x55c8] = (None + 0x55ca) - PC
+[0810] PATCH_32: *[0x55d0] = (None + 0x49e1b0a) - PC
+[0811] OP_0: Sym=None, Addend=0x0
+[0812] PATCH_32: *[0x5620] = (None + 0x49e9293) - PC
+[0813] PATCH_32: *[0x5628] = (None + 0x562a) - PC
+[0814] PATCH_32: *[0x5630] = (None + 0x4a4040b) - PC
+[0815] OP_0: Sym=None, Addend=0x0
+[0816] PATCH_32: *[0x5680] = (None + 0x4a47c14) - PC
+[0817] PATCH_32: *[0x5688] = (None + 0x568a) - PC
+[0818] PATCH_32: *[0x5690] = (None + 0x4a9e564) - PC
+[0819] OP_0: Sym=None, Addend=0x0
+[0820] PATCH_32: *[0x56e0] = (None + 0x4aa5595) - PC
+[0821] PATCH_32: *[0x56e8] = (None + 0x56ea) - PC
+[0822] PATCH_32: *[0x56f0] = (None + 0x4afb08d) - PC
+[0823] OP_0: Sym=None, Addend=0x0
+[0824] PATCH_32: *[0x5740] = (None + 0x4b01f16) - PC
+[0825] PATCH_32: *[0x5748] = (None + 0x574a) - PC
+[0826] PATCH_32: *[0x5750] = (None + 0x4b57c06) - PC
+[0827] OP_0: Sym=None, Addend=0x0
+[0828] PATCH_32: *[0x57a0] = (None + 0x4b5e897) - PC
+[0829] PATCH_32: *[0x57a8] = (None + 0x57aa) - PC
+[0830] PATCH_32: *[0x57b0] = (None + 0x4bb48e7) - PC
+[0831] OP_0: Sym=None, Addend=0x0
+[0832] PATCH_32: *[0x5800] = (None + 0x4bbc218) - PC
+[0833] PATCH_32: *[0x5808] = (None + 0x580a) - PC
+[0834] PATCH_32: *[0x5810] = (None + 0x4c11f98) - PC
+[0835] OP_0: Sym=None, Addend=0x0
+[0836] PATCH_32: *[0x5860] = (None + 0x4c18b99) - PC
+[0837] PATCH_32: *[0x5868] = (None + 0x586a) - PC
+[0838] PATCH_32: *[0x5870] = (None + 0x4c6e061) - PC
+[0839] OP_0: Sym=None, Addend=0x0
+[0840] PATCH_32: *[0x58c0] = (None + 0x4c7551a) - PC
+[0841] PATCH_32: *[0x58c8] = (None + 0x58ca) - PC
+[0842] PATCH_32: *[0x58d0] = (None + 0x4ccb642) - PC
+[0843] OP_0: Sym=None, Addend=0x0
+[0844] PATCH_32: *[0x5920] = (None + 0x4cd2e9b) - PC
+[0845] PATCH_32: *[0x5928] = (None + 0x592a) - PC
+[0846] PATCH_32: *[0x5930] = (None + 0x4d295ab) - PC
+[0847] OP_0: Sym=None, Addend=0x0
+[0848] PATCH_32: *[0x5980] = (None + 0x4d3081c) - PC
+[0849] PATCH_32: *[0x5988] = (None + 0x598a) - PC
+[0850] PATCH_32: *[0x5990] = (None + 0x4d85e04) - PC
+[0851] OP_0: Sym=None, Addend=0x0
+[0852] PATCH_32: *[0x59e0] = (None + 0x4d8d19d) - PC
+[0853] PATCH_32: *[0x59e8] = (None + 0x59ea) - PC
+[0854] PATCH_32: *[0x59f0] = (None + 0x4de2395) - PC
+[0855] OP_0: Sym=None, Addend=0x0
+[0856] PATCH_32: *[0x5a40] = (None + 0x4de9b1e) - PC
+[0857] PATCH_32: *[0x5a48] = (None + 0x5a4a) - PC
+[0858] PATCH_32: *[0x5a50] = (None + 0x4e3f1de) - PC
+[0859] OP_0: Sym=None, Addend=0x0
+[0860] PATCH_32: *[0x5aa0] = (None + 0x4e4649f) - PC
+[0861] PATCH_32: *[0x5aa8] = (None + 0x5aaa) - PC
+[0862] PATCH_32: *[0x5ab0] = (None + 0x4e9c4ef) - PC
+[0863] OP_0: Sym=None, Addend=0x0
+[0864] PATCH_32: *[0x5b00] = (None + 0x4ea3e20) - PC
+[0865] PATCH_32: *[0x5b08] = (None + 0x5b0a) - PC
+[0866] PATCH_32: *[0x5b10] = (None + 0x4ef97f8) - PC
+[0867] OP_0: Sym=None, Addend=0x0
+[0868] PATCH_32: *[0x5b60] = (None + 0x4f007a1) - PC
+[0869] PATCH_32: *[0x5b68] = (None + 0x5b6a) - PC
+[0870] PATCH_32: *[0x5b70] = (None + 0x4f56569) - PC
+[0871] OP_0: Sym=None, Addend=0x0
+[0872] PATCH_32: *[0x5bc0] = (None + 0x4f5d122) - PC
+[0873] PATCH_32: *[0x5bc8] = (None + 0x5bca) - PC
+[0874] PATCH_32: *[0x5bd0] = (None + 0x4fb348a) - PC
+[0875] OP_0: Sym=None, Addend=0x0
+[0876] PATCH_32: *[0x5c20] = (None + 0x4fbaaa3) - PC
+[0877] PATCH_32: *[0x5c28] = (None + 0x5c2a) - PC
+[0878] PATCH_32: *[0x5c30] = (None + 0x50104c3) - PC
+[0879] OP_0: Sym=None, Addend=0x0
+[0880] PATCH_32: *[0x5c80] = (None + 0x5017424) - PC
+[0881] PATCH_32: *[0x5c88] = (None + 0x5c8a) - PC
+[0882] PATCH_32: *[0x5c90] = (None + 0x506d54c) - PC
+[0883] OP_0: Sym=None, Addend=0x0
+[0884] PATCH_32: *[0x5ce0] = (None + 0x5074da5) - PC
+[0885] PATCH_32: *[0x5ce8] = (None + 0x5cea) - PC
+[0886] PATCH_32: *[0x5cf0] = (None + 0x50cae3d) - PC
+[0887] OP_0: Sym=None, Addend=0x0
+[0888] PATCH_32: *[0x5d40] = (None + 0x50d2726) - PC
+[0889] PATCH_32: *[0x5d48] = (None + 0x5d4a) - PC
+[0890] PATCH_32: *[0x5d50] = (None + 0x5128416) - PC
+[0891] OP_0: Sym=None, Addend=0x0
+[0892] PATCH_32: *[0x5da0] = (None + 0x512f0a7) - PC
+[0893] PATCH_32: *[0x5da8] = (None + 0x5daa) - PC
+[0894] PATCH_32: *[0x5db0] = (None + 0x5185187) - PC
+[0895] OP_0: Sym=None, Addend=0x0
+[0896] PATCH_32: *[0x5e00] = (None + 0x518ca28) - PC
+[0897] PATCH_32: *[0x5e08] = (None + 0x5e0a) - PC
+[0898] PATCH_32: *[0x5e10] = (None + 0x51e2fd0) - PC
+[0899] OP_0: Sym=None, Addend=0x0
+[0900] PATCH_32: *[0x5e60] = (None + 0x51ea3a9) - PC
+[0901] PATCH_32: *[0x5e68] = (None + 0x5e6a) - PC
+[0902] PATCH_32: *[0x5e70] = (None + 0x523ffc1) - PC
+[0903] OP_0: Sym=None, Addend=0x0
+[0904] PATCH_32: *[0x5ec0] = (None + 0x5246d2a) - PC
+[0905] PATCH_32: *[0x5ec8] = (None + 0x5eca) - PC
+[0906] PATCH_32: *[0x5ed0] = (None + 0x529c792) - PC
+[0907] OP_0: Sym=None, Addend=0x0
+[0908] PATCH_32: *[0x5f20] = (None + 0x52a36ab) - PC
+[0909] PATCH_32: *[0x5f28] = (None + 0x5f2a) - PC
+[0910] PATCH_32: *[0x5f30] = (None + 0x52f9dbb) - PC
+[0911] OP_0: Sym=None, Addend=0x0
+[0912] PATCH_32: *[0x5f80] = (None + 0x530102c) - PC
+[0913] PATCH_32: *[0x5f88] = (None + 0x5f8a) - PC
+[0914] PATCH_32: *[0x5f90] = (None + 0x5356614) - PC
+[0915] OP_0: Sym=None, Addend=0x0
+[0916] PATCH_32: *[0x5fe0] = (None + 0x535d9ad) - PC
+[0917] PATCH_32: *[0x5fe8] = (None + 0x5fea) - PC
+[0918] PATCH_32: *[0x5ff0] = (None + 0x53b402d) - PC
+[0919] OP_0: Sym=None, Addend=0x0
+[0920] PATCH_32: *[0x6040] = (None + 0x53bb32e) - PC
+[0921] PATCH_32: *[0x6048] = (None + 0x604a) - PC
+[0922] PATCH_32: *[0x6050] = (None + 0x541137e) - PC
+[0923] OP_0: Sym=None, Addend=0x0
+[0924] PATCH_32: *[0x60a0] = (None + 0x5418caf) - PC
+[0925] PATCH_32: *[0x60a8] = (None + 0x60aa) - PC
+[0926] PATCH_32: *[0x60b0] = (None + 0x546ebdf) - PC
+[0927] OP_0: Sym=None, Addend=0x0
+[0928] PATCH_32: *[0x6100] = (None + 0x5475630) - PC
+[0929] PATCH_32: *[0x6108] = (None + 0x610a) - PC
+[0930] PATCH_32: *[0x6110] = (None + 0x54cb1b8) - PC
+[0931] OP_0: Sym=None, Addend=0x0
+[0932] PATCH_32: *[0x6160] = (None + 0x54d1fb1) - PC
+[0933] PATCH_32: *[0x6168] = (None + 0x616a) - PC
+[0934] PATCH_32: *[0x6170] = (None + 0x5528091) - PC
+[0935] OP_0: Sym=None, Addend=0x0
+[0936] PATCH_32: *[0x61c0] = (None + 0x552f932) - PC
+[0937] PATCH_32: *[0x61c8] = (None + 0x61ca) - PC
+[0938] PATCH_32: *[0x61d0] = (None + 0x55854ba) - PC
+[0939] OP_0: Sym=None, Addend=0x0
+[0940] PATCH_32: *[0x6220] = (None + 0x558c2b3) - PC
+[0941] PATCH_32: *[0x6228] = (None + 0x622a) - PC
+[0942] PATCH_32: *[0x6230] = (None + 0x55e1f5b) - PC
+[0943] OP_0: Sym=None, Addend=0x0
+[0944] PATCH_32: *[0x6280] = (None + 0x55e8c34) - PC
+[0945] PATCH_32: *[0x6288] = (None + 0x628a) - PC
+[0946] PATCH_32: *[0x6290] = (None + 0x563e6e4) - PC
+[0947] OP_0: Sym=None, Addend=0x0
+[0948] PATCH_32: *[0x62e0] = (None + 0x56455b5) - PC
+[0949] PATCH_32: *[0x62e8] = (None + 0x62ea) - PC
+[0950] PATCH_32: *[0x62f0] = (None + 0x569b5bd) - PC
+[0951] OP_0: Sym=None, Addend=0x0
+[0952] PATCH_32: *[0x6340] = (None + 0x56a1f36) - PC
+[0953] PATCH_32: *[0x6348] = (None + 0x634a) - PC
+[0954] PATCH_32: *[0x6350] = (None + 0x56f7446) - PC
+[0955] OP_0: Sym=None, Addend=0x0
+[0956] PATCH_32: *[0x63a0] = (None + 0x56fe8b7) - PC
+[0957] PATCH_32: *[0x63a8] = (None + 0x63aa) - PC
+[0958] PATCH_32: *[0x63b0] = (None + 0x57543f7) - PC
+[0959] OP_0: Sym=None, Addend=0x0
+[0960] PATCH_32: *[0x6400] = (None + 0x575b238) - PC
+[0961] PATCH_32: *[0x6408] = (None + 0x640a) - PC
+[0962] PATCH_32: *[0x6410] = (None + 0x57b0a18) - PC
+[0963] OP_0: Sym=None, Addend=0x0
+[0964] PATCH_32: *[0x6460] = (None + 0x57b7bb9) - PC
+[0965] PATCH_32: *[0x6468] = (None + 0x646a) - PC
+[0966] PATCH_32: *[0x6470] = (None + 0x580da11) - PC
+[0967] OP_0: Sym=None, Addend=0x0
+[0968] PATCH_32: *[0x64c0] = (None + 0x581453a) - PC
+[0969] PATCH_32: *[0x64c8] = (None + 0x64ca) - PC
+[0970] PATCH_32: *[0x64d0] = (None + 0x5869c42) - PC
+[0971] OP_0: Sym=None, Addend=0x0
+[0972] PATCH_32: *[0x6520] = (None + 0x5870ebb) - PC
+[0973] PATCH_32: *[0x6528] = (None + 0x652a) - PC
+[0974] PATCH_32: *[0x6530] = (None + 0x58c66e3) - PC
+[0975] OP_0: Sym=None, Addend=0x0
+[0976] PATCH_32: *[0x6580] = (None + 0x58cd83c) - PC
+[0977] PATCH_32: *[0x6588] = (None + 0x658a) - PC
+[0978] PATCH_32: *[0x6590] = (None + 0x5923574) - PC
+[0979] OP_0: Sym=None, Addend=0x0
+[0980] PATCH_32: *[0x65e0] = (None + 0x592a1bd) - PC
+[0981] PATCH_32: *[0x65e8] = (None + 0x65ea) - PC
+[0982] PATCH_32: *[0x65f0] = (None + 0x597fbdd) - PC
+[0983] OP_0: Sym=None, Addend=0x0
+[0984] PATCH_32: *[0x6640] = (None + 0x5986b3e) - PC
+[0985] PATCH_32: *[0x6648] = (None + 0x664a) - PC
+[0986] PATCH_32: *[0x6650] = (None + 0x59dc996) - PC
+[0987] OP_0: Sym=None, Addend=0x0
+[0988] PATCH_32: *[0x66a0] = (None + 0x59e34bf) - PC
+[0989] PATCH_32: *[0x66a8] = (None + 0x66aa) - PC
+[0990] PATCH_32: *[0x66b0] = (None + 0x5a386ff) - PC
+[0991] OP_0: Sym=None, Addend=0x0
+[0992] PATCH_32: *[0x6700] = (None + 0x5a3fe40) - PC
+[0993] PATCH_32: *[0x6708] = (None + 0x670a) - PC
+[0994] PATCH_32: *[0x6710] = (None + 0x5a96fb8) - PC
+[0995] OP_0: Sym=None, Addend=0x0
+[0996] PATCH_32: *[0x6760] = (None + 0x5a9e7c1) - PC
+[0997] PATCH_32: *[0x6768] = (None + 0x676a) - PC
+[0998] PATCH_32: *[0x6770] = (None + 0x5af4589) - PC
+[0999] OP_0: Sym=None, Addend=0x0
+[1000] PATCH_32: *[0x67c0] = (None + 0x5afb142) - PC
+[1001] PATCH_32: *[0x67c8] = (None + 0x67ca) - PC
+[1002] PATCH_32: *[0x67d0] = (None + 0x5b50da2) - PC
+[1003] OP_0: Sym=None, Addend=0x0
+[1004] PATCH_32: *[0x6820] = (None + 0x5b57ac3) - PC
+[1005] PATCH_32: *[0x6828] = (None + 0x682a) - PC
+[1006] PATCH_32: *[0x6830] = (None + 0x5bad88b) - PC
+[1007] OP_0: Sym=None, Addend=0x0
+[1008] PATCH_32: *[0x6880] = (None + 0x5bb4444) - PC
+[1009] PATCH_32: *[0x6888] = (None + 0x688a) - PC
+[1010] PATCH_32: *[0x6890] = (None + 0x5c09e64) - PC
+[1011] OP_0: Sym=None, Addend=0x0
+[1012] PATCH_32: *[0x68e0] = (None + 0x5c10dc5) - PC
+[1013] PATCH_32: *[0x68e8] = (None + 0x68ea) - PC
+[1014] PATCH_32: *[0x68f0] = (None + 0x5c677a5) - PC
+[1015] OP_0: Sym=None, Addend=0x0
+[1016] PATCH_32: *[0x6940] = (None + 0x5c6e746) - PC
+[1017] PATCH_32: *[0x6948] = (None + 0x694a) - PC
+[1018] PATCH_32: *[0x6950] = (None + 0x5cc4ca6) - PC
+[1019] OP_0: Sym=None, Addend=0x0
+[1020] PATCH_32: *[0x69a0] = (None + 0x5ccc0c7) - PC
+[1021] PATCH_32: *[0x69a8] = (None + 0x69aa) - PC
+[1022] PATCH_32: *[0x69b0] = (None + 0x5d21a0f) - PC
+[1023] OP_0: Sym=None, Addend=0x0
+[1024] PATCH_32: *[0x6a00] = (None + 0x5d28a48) - PC
+[1025] PATCH_32: *[0x6a08] = (None + 0x6a0a) - PC
+[1026] PATCH_32: *[0x6a10] = (None + 0x5d7f428) - PC
+[1027] OP_0: Sym=None, Addend=0x0
+[1028] PATCH_32: *[0x6a60] = (None + 0x5d863c9) - PC
+[1029] PATCH_32: *[0x6a68] = (None + 0x6a6a) - PC
+[1030] PATCH_32: *[0x6a70] = (None + 0x5ddbec1) - PC
+[1031] OP_0: Sym=None, Addend=0x0
+[1032] PATCH_32: *[0x6ac0] = (None + 0x5de2d4a) - PC
+[1033] PATCH_32: *[0x6ac8] = (None + 0x6aca) - PC
+[1034] PATCH_32: *[0x6ad0] = (None + 0x5e38b5a) - PC
+[1035] OP_0: Sym=None, Addend=0x0
+[1036] PATCH_32: *[0x6b20] = (None + 0x5e3f6cb) - PC
+[1037] PATCH_32: *[0x6b28] = (None + 0x6b2a) - PC
+[1038] PATCH_32: *[0x6b30] = (None + 0x5e9556b) - PC
+[1039] OP_0: Sym=None, Addend=0x0
+[1040] PATCH_32: *[0x6b80] = (None + 0x5e9c04c) - PC
+[1041] PATCH_32: *[0x6b88] = (None + 0x6b8a) - PC
+[1042] PATCH_32: *[0x6b90] = (None + 0x5ef299c) - PC
+[1043] OP_0: Sym=None, Addend=0x0
+[1044] PATCH_32: *[0x6be0] = (None + 0x5ef99cd) - PC
+[1045] PATCH_32: *[0x6be8] = (None + 0x6bea) - PC
+[1046] PATCH_32: *[0x6bf0] = (None + 0x5f50125) - PC
+[1047] OP_0: Sym=None, Addend=0x0
+[1048] PATCH_32: *[0x6c40] = (None + 0x5f5734e) - PC
+[1049] PATCH_32: *[0x6c48] = (None + 0x6c4a) - PC
+[1050] PATCH_32: *[0x6c50] = (None + 0x5face46) - PC
+[1051] OP_0: Sym=None, Addend=0x0
+[1052] PATCH_32: *[0x6ca0] = (None + 0x5fb3ccf) - PC
+[1053] PATCH_32: *[0x6ca8] = (None + 0x6caa) - PC
+[1054] PATCH_32: *[0x6cb0] = (None + 0x600a34f) - PC
+[1055] OP_0: Sym=None, Addend=0x0
+[1056] PATCH_32: *[0x6d00] = (None + 0x6011650) - PC
+[1057] PATCH_32: *[0x6d08] = (None + 0x6d0a) - PC
+[1058] PATCH_32: *[0x6d10] = (None + 0x60677c0) - PC
+[1059] OP_0: Sym=None, Addend=0x0
+[1060] PATCH_32: *[0x6d60] = (None + 0x606efd1) - PC
+[1061] PATCH_32: *[0x6d68] = (None + 0x6d6a) - PC
+[1062] PATCH_32: *[0x6d70] = (None + 0x60c4961) - PC
+[1063] OP_0: Sym=None, Addend=0x0
+[1064] PATCH_32: *[0x6dc0] = (None + 0x60cb952) - PC
+[1065] PATCH_32: *[0x6dc8] = (None + 0x6dca) - PC
+[1066] PATCH_32: *[0x6dd0] = (None + 0x6120dd2) - PC
+[1067] OP_0: Sym=None, Addend=0x0
+[1068] PATCH_32: *[0x6e20] = (None + 0x61282d3) - PC
+[1069] PATCH_32: *[0x6e28] = (None + 0x6e2a) - PC
+[1070] PATCH_32: *[0x6e30] = (None + 0x617da23) - PC
+[1071] OP_0: Sym=None, Addend=0x0
+[1072] PATCH_32: *[0x6e80] = (None + 0x6184c54) - PC
+[1073] PATCH_32: *[0x6e88] = (None + 0x6e8a) - PC
+[1074] PATCH_32: *[0x6e90] = (None + 0x61daee4) - PC
+[1075] OP_0: Sym=None, Addend=0x0
+[1076] PATCH_32: *[0x6ee0] = (None + 0x61e25d5) - PC
+[1077] PATCH_32: *[0x6ee8] = (None + 0x6eea) - PC
+[1078] PATCH_32: *[0x6ef0] = (None + 0x62386fd) - PC
+[1079] OP_0: Sym=None, Addend=0x0
+[1080] PATCH_32: *[0x6f40] = (None + 0x623ff56) - PC
+[1081] PATCH_32: *[0x6f48] = (None + 0x6f4a) - PC
+[1082] PATCH_32: *[0x6f50] = (None + 0x6296276) - PC
+[1083] OP_0: Sym=None, Addend=0x0
+[1084] PATCH_32: *[0x6fa0] = (None + 0x629d8d7) - PC
+[1085] PATCH_32: *[0x6fa8] = (None + 0x6faa) - PC
+[1086] PATCH_32: *[0x6fb0] = (None + 0x62f3e37) - PC
+[1087] OP_0: Sym=None, Addend=0x0
+[1088] PATCH_32: *[0x7000] = (None + 0x62fb258) - PC
+[1089] PATCH_32: *[0x7008] = (None + 0x700a) - PC
+[1090] PATCH_32: *[0x7010] = (None + 0x6350fd8) - PC
+[1091] OP_0: Sym=None, Addend=0x0
+[1092] PATCH_32: *[0x7060] = (None + 0x6357bd9) - PC
+[1093] PATCH_32: *[0x7068] = (None + 0x706a) - PC
+[1094] PATCH_32: *[0x7070] = (None + 0x63ad491) - PC
+[1095] OP_0: Sym=None, Addend=0x0
+[1096] PATCH_32: *[0x70c0] = (None + 0x63b455a) - PC
+[1097] PATCH_32: *[0x70c8] = (None + 0x70ca) - PC
+[1098] PATCH_32: *[0x70d0] = (None + 0x640a99a) - PC
+[1099] OP_0: Sym=None, Addend=0x0
+[1100] PATCH_32: *[0x7120] = (None + 0x6411edb) - PC
+[1101] PATCH_32: *[0x7128] = (None + 0x712a) - PC
+[1102] PATCH_32: *[0x7130] = (None + 0x6467e53) - PC
+[1103] OP_0: Sym=None, Addend=0x0
+[1104] PATCH_32: *[0x7180] = (None + 0x646e85c) - PC
+[1105] PATCH_32: *[0x7188] = (None + 0x718a) - PC
+[1106] PATCH_32: *[0x7190] = (None + 0x64c51ac) - PC
+[1107] OP_0: Sym=None, Addend=0x0
+[1108] PATCH_32: *[0x71e0] = (None + 0x64cc1dd) - PC
+[1109] PATCH_32: *[0x71e8] = (None + 0x71ea) - PC
+[1110] PATCH_32: *[0x71f0] = (None + 0x6521ecd) - PC
+[1111] OP_0: Sym=None, Addend=0x0
+[1112] PATCH_32: *[0x7240] = (None + 0x6528b5e) - PC
+[1113] PATCH_32: *[0x7248] = (None + 0x724a) - PC
+[1114] PATCH_32: *[0x7250] = (None + 0x657df4e) - PC
+[1115] OP_0: Sym=None, Addend=0x0
+[1116] PATCH_32: *[0x72a0] = (None + 0x65854df) - PC
+[1117] PATCH_32: *[0x72a8] = (None + 0x72aa) - PC
+[1118] PATCH_32: *[0x72b0] = (None + 0x65dafd7) - PC
+[1119] OP_0: Sym=None, Addend=0x0
+[1120] PATCH_32: *[0x7300] = (None + 0x65e1e60) - PC
+[1121] PATCH_32: *[0x7308] = (None + 0x730a) - PC
+[1122] PATCH_32: *[0x7310] = (None + 0x6637fd0) - PC
+[1123] OP_0: Sym=None, Addend=0x0
+[1124] PATCH_32: *[0x7360] = (None + 0x663f7e1) - PC
+[1125] PATCH_32: *[0x7368] = (None + 0x736a) - PC
+[1126] PATCH_32: *[0x7370] = (None + 0x6696179) - PC
+[1127] OP_0: Sym=None, Addend=0x0
+[1128] PATCH_32: *[0x73c0] = (None + 0x669d162) - PC
+[1129] PATCH_32: *[0x73c8] = (None + 0x73ca) - PC
+[1130] PATCH_32: *[0x73d0] = (None + 0x66f3fc2) - PC
+[1131] OP_0: Sym=None, Addend=0x0
+[1132] PATCH_32: *[0x7420] = (None + 0x66faae3) - PC
+[1133] PATCH_32: *[0x7428] = (None + 0x742a) - PC
+[1134] PATCH_32: *[0x7430] = (None + 0x674f9c3) - PC
+[1135] OP_0: Sym=None, Addend=0x0
+[1136] PATCH_32: *[0x7480] = (None + 0x6756464) - PC
+[1137] PATCH_32: *[0x7488] = (None + 0x748a) - PC
+[1138] PATCH_32: *[0x7490] = (None + 0x67ab77c) - PC
+[1139] OP_0: Sym=None, Addend=0x0
+[1140] PATCH_32: *[0x74e0] = (None + 0x67b2de5) - PC
+[1141] PATCH_32: *[0x74e8] = (None + 0x74ea) - PC
+[1142] PATCH_32: *[0x74f0] = (None + 0x6808c85) - PC
+[1143] OP_0: Sym=None, Addend=0x0
+[1144] PATCH_32: *[0x7540] = (None + 0x680f766) - PC
+[1145] PATCH_32: *[0x7548] = (None + 0x754a) - PC
+[1146] PATCH_32: *[0x7550] = (None + 0x686501e) - PC
+[1147] OP_0: Sym=None, Addend=0x0
+[1148] PATCH_32: *[0x75a0] = (None + 0x686c0e7) - PC
+[1149] PATCH_32: *[0x75a8] = (None + 0x75aa) - PC
+[1150] PATCH_32: *[0x75b0] = (None + 0x68c1297) - PC
+[1151] OP_0: Sym=None, Addend=0x0
+[1152] PATCH_32: *[0x7600] = (None + 0x68c8a68) - PC
+[1153] PATCH_32: *[0x7608] = (None + 0x760a) - PC
+[1154] PATCH_32: *[0x7610] = (None + 0x691e7a0) - PC
+[1155] OP_0: Sym=None, Addend=0x0
+[1156] PATCH_32: *[0x7660] = (None + 0x69253e9) - PC
+[1157] PATCH_32: *[0x7668] = (None + 0x766a) - PC
+[1158] PATCH_32: *[0x7670] = (None + 0x697bb41) - PC
+[1159] OP_0: Sym=None, Addend=0x0
+[1160] PATCH_32: *[0x76c0] = (None + 0x6982d6a) - PC
+[1161] PATCH_32: *[0x76c8] = (None + 0x76ca) - PC
+[1162] PATCH_32: *[0x76d0] = (None + 0x69d8d2a) - PC
+[1163] OP_0: Sym=None, Addend=0x0
+[1164] PATCH_32: *[0x7720] = (None + 0x69df6eb) - PC
+[1165] PATCH_32: *[0x7728] = (None + 0x772a) - PC
+[1166] PATCH_32: *[0x7730] = (None + 0x6a36233) - PC
+[1167] OP_0: Sym=None, Addend=0x0
+[1168] PATCH_32: *[0x7780] = (None + 0x6a3d06c) - PC
+[1169] PATCH_32: *[0x7788] = (None + 0x778a) - PC
+[1170] PATCH_32: *[0x7790] = (None + 0x6a93344) - PC
+[1171] OP_0: Sym=None, Addend=0x0
+[1172] PATCH_32: *[0x77e0] = (None + 0x6a9a9ed) - PC
+[1173] PATCH_32: *[0x77e8] = (None + 0x77ea) - PC
+[1174] PATCH_32: *[0x77f0] = (None + 0x6af0695) - PC
+[1175] OP_0: Sym=None, Addend=0x0
+[1176] PATCH_32: *[0x7840] = (None + 0x6af736e) - PC
+[1177] PATCH_32: *[0x7848] = (None + 0x784a) - PC
+[1178] PATCH_32: *[0x7850] = (None + 0x6b4cc6e) - PC
+[1179] OP_0: Sym=None, Addend=0x0
+[1180] PATCH_32: *[0x78a0] = (None + 0x6b53cef) - PC
+[1181] PATCH_32: *[0x78a8] = (None + 0x78aa) - PC
+[1182] PATCH_32: *[0x78b0] = (None + 0x6ba9d3f) - PC
+[1183] OP_0: Sym=None, Addend=0x0
+[1184] PATCH_32: *[0x7900] = (None + 0x6bb1670) - PC
+[1185] PATCH_32: *[0x7908] = (None + 0x790a) - PC
+[1186] PATCH_32: *[0x7910] = (None + 0x6c07948) - PC
+[1187] OP_0: Sym=None, Addend=0x0
+[1188] PATCH_32: *[0x7960] = (None + 0x6c0eff1) - PC
+[1189] PATCH_32: *[0x7968] = (None + 0x796a) - PC
+[1190] PATCH_32: *[0x7970] = (None + 0x6c653a1) - PC
+[1191] OP_0: Sym=None, Addend=0x0
+[1192] PATCH_32: *[0x79c0] = (None + 0x6c6c972) - PC
+[1193] PATCH_32: *[0x79c8] = (None + 0x79ca) - PC
+[1194] PATCH_32: *[0x79d0] = (None + 0x6cc258a) - PC
+[1195] OP_0: Sym=None, Addend=0x0
+[1196] PATCH_32: *[0x7a20] = (None + 0x6cc92f3) - PC
+[1197] PATCH_32: *[0x7a28] = (None + 0x7a2a) - PC
+[1198] PATCH_32: *[0x7a30] = (None + 0x6d1ead3) - PC
+[1199] OP_0: Sym=None, Addend=0x0
+[1200] PATCH_32: *[0x7a80] = (None + 0x6d25c74) - PC
+[1201] PATCH_32: *[0x7a88] = (None + 0x7a8a) - PC
+[1202] PATCH_32: *[0x7a90] = (None + 0x6d7b40c) - PC
+[1203] OP_0: Sym=None, Addend=0x0
+[1204] PATCH_32: *[0x7ae0] = (None + 0x6d825f5) - PC
+[1205] PATCH_32: *[0x7ae8] = (None + 0x7aea) - PC
+[1206] PATCH_32: *[0x7af0] = (None + 0x6dd8eb5) - PC
+[1207] OP_0: Sym=None, Addend=0x0
+[1208] PATCH_32: *[0x7b40] = (None + 0x6ddff76) - PC
+[1209] PATCH_32: *[0x7b48] = (None + 0x7b4a) - PC
+[1210] PATCH_32: *[0x7b50] = (None + 0x6e35c66) - PC
+[1211] OP_0: Sym=None, Addend=0x0
+[1212] PATCH_32: *[0x7ba0] = (None + 0x6e3c8f7) - PC
+[1213] PATCH_32: *[0x7ba8] = (None + 0x7baa) - PC
+[1214] PATCH_32: *[0x7bb0] = (None + 0x6e92a1f) - PC
+[1215] OP_0: Sym=None, Addend=0x0
+[1216] PATCH_32: *[0x7c00] = (None + 0x6e9a278) - PC
+[1217] PATCH_32: *[0x7c08] = (None + 0x7c0a) - PC
+[1218] PATCH_32: *[0x7c10] = (None + 0x6eef590) - PC
+[1219] OP_0: Sym=None, Addend=0x0
+[1220] PATCH_32: *[0x7c60] = (None + 0x6ef6bf9) - PC
+[1221] PATCH_32: *[0x7c68] = (None + 0x7c6a) - PC
+[1222] PATCH_32: *[0x7c70] = (None + 0x6f4c109) - PC
+[1223] OP_0: Sym=None, Addend=0x0
+[1224] PATCH_32: *[0x7cc0] = (None + 0x6f5357a) - PC
+[1225] PATCH_32: *[0x7cc8] = (None + 0x7cca) - PC
+[1226] PATCH_32: *[0x7cd0] = (None + 0x6fa8f9a) - PC
+[1227] OP_0: Sym=None, Addend=0x0
+[1228] PATCH_32: *[0x7d20] = (None + 0x6fafefb) - PC
+[1229] PATCH_32: *[0x7d28] = (None + 0x7d2a) - PC
+[1230] PATCH_32: *[0x7d30] = (None + 0x7006143) - PC
+[1231] OP_0: Sym=None, Addend=0x0
+[1232] PATCH_32: *[0x7d80] = (None + 0x700d87c) - PC
+[1233] PATCH_32: *[0x7d88] = (None + 0x7d8a) - PC
+[1234] PATCH_32: *[0x7d90] = (None + 0x706329c) - PC
+[1235] OP_0: Sym=None, Addend=0x0
+[1236] PATCH_32: *[0x7de0] = (None + 0x706a1fd) - PC
+[1237] PATCH_32: *[0x7de8] = (None + 0x7dea) - PC
+[1238] PATCH_32: *[0x7df0] = (None + 0x70c0a2d) - PC
+[1239] OP_0: Sym=None, Addend=0x0
+[1240] PATCH_32: *[0x7e40] = (None + 0x70c7b7e) - PC
+[1241] PATCH_32: *[0x7e48] = (None + 0x7e4a) - PC
+[1242] PATCH_32: *[0x7e50] = (None + 0x711cffe) - PC
+[1243] OP_0: Sym=None, Addend=0x0
+[1244] PATCH_32: *[0x7ea0] = (None + 0x71244ff) - PC
+[1245] PATCH_32: *[0x7ea8] = (None + 0x7eaa) - PC
+[1246] PATCH_32: *[0x7eb0] = (None + 0x7179c07) - PC
+[1247] OP_0: Sym=None, Addend=0x0
+[1248] PATCH_32: *[0x7f00] = (None + 0x7180e80) - PC
+[1249] PATCH_32: *[0x7f08] = (None + 0x7f0a) - PC
+[1250] PATCH_32: *[0x7f10] = (None + 0x71d6300) - PC
+[1251] OP_0: Sym=None, Addend=0x0
+[1252] PATCH_32: *[0x7f60] = (None + 0x71dd801) - PC
+[1253] PATCH_32: *[0x7f68] = (None + 0x7f6a) - PC
+[1254] PATCH_32: *[0x7f70] = (None + 0x7233461) - PC
+[1255] OP_0: Sym=None, Addend=0x0
+[1256] PATCH_32: *[0x7fc0] = (None + 0x723a182) - PC
+[1257] PATCH_32: *[0x7fc8] = (None + 0x7fca) - PC
+[1258] PATCH_32: *[0x7fd0] = (None + 0x728fe72) - PC
+[1259] OP_0: Sym=None, Addend=0x0
+[1260] PATCH_32: *[0x8020] = (None + 0x7296b03) - PC
+[1261] PATCH_32: *[0x8028] = (None + 0x802a) - PC
+[1262] PATCH_32: *[0x8030] = (None + 0x72ece23) - PC
+[1263] OP_0: Sym=None, Addend=0x0
+[1264] PATCH_32: *[0x8080] = (None + 0x72f4484) - PC
+[1265] PATCH_32: *[0x8088] = (None + 0x808a) - PC
+[1266] PATCH_32: *[0x8090] = (None + 0x734a51c) - PC
+[1267] OP_0: Sym=None, Addend=0x0
+[1268] PATCH_32: *[0x80e0] = (None + 0x7351e05) - PC
+[1269] PATCH_32: *[0x80e8] = (None + 0x80ea) - PC
+[1270] PATCH_32: *[0x80f0] = (None + 0x73a816d) - PC
+[1271] OP_0: Sym=None, Addend=0x0
+[1272] PATCH_32: *[0x8140] = (None + 0x73af786) - PC
+[1273] PATCH_32: *[0x8148] = (None + 0x814a) - PC
+[1274] PATCH_32: *[0x8150] = (None + 0x7405236) - PC
+[1275] OP_0: Sym=None, Addend=0x0
+[1276] PATCH_32: *[0x81a0] = (None + 0x740c107) - PC
+[1277] PATCH_32: *[0x81a8] = (None + 0x81aa) - PC
+[1278] PATCH_32: *[0x81b0] = (None + 0x7461bb7) - PC
+[1279] OP_0: Sym=None, Addend=0x0
+[1280] PATCH_32: *[0x8200] = (None + 0x7468a88) - PC
+[1281] PATCH_32: *[0x8208] = (None + 0x820a) - PC
+[1282] PATCH_32: *[0x8210] = (None + 0x74be850) - PC
+[1283] OP_0: Sym=None, Addend=0x0
+[1284] PATCH_32: *[0x8260] = (None + 0x74c5409) - PC
+[1285] PATCH_32: *[0x8268] = (None + 0x826a) - PC
+[1286] PATCH_32: *[0x8270] = (None + 0x751af91) - PC
+[1287] OP_0: Sym=None, Addend=0x0
+[1288] PATCH_32: *[0x82c0] = (None + 0x7521d8a) - PC
+[1289] PATCH_32: *[0x82c8] = (None + 0x82ca) - PC
+[1290] PATCH_32: *[0x82d0] = (None + 0x75775fa) - PC
+[1291] OP_0: Sym=None, Addend=0x0
+[1292] PATCH_32: *[0x8320] = (None + 0x757e70b) - PC
+[1293] PATCH_32: *[0x8328] = (None + 0x832a) - PC
+[1294] PATCH_32: *[0x8330] = (None + 0x75d448b) - PC
+[1295] OP_0: Sym=None, Addend=0x0
+[1296] PATCH_32: *[0x8380] = (None + 0x75db08c) - PC
+[1297] PATCH_32: *[0x8388] = (None + 0x838a) - PC
+[1298] PATCH_32: *[0x8390] = (None + 0x7630824) - PC
+[1299] OP_0: Sym=None, Addend=0x0
+[1300] PATCH_32: *[0x83e0] = (None + 0x7637a0d) - PC
+[1301] PATCH_32: *[0x83e8] = (None + 0x83ea) - PC
+[1302] PATCH_32: *[0x83f0] = (None + 0x768e165) - PC
+[1303] OP_0: Sym=None, Addend=0x0
+[1304] PATCH_32: *[0x8440] = (None + 0x769538e) - PC
+[1305] PATCH_32: *[0x8448] = (None + 0x844a) - PC
+[1306] PATCH_32: *[0x8450] = (None + 0x76eb396) - PC
+[1307] OP_0: Sym=None, Addend=0x0
+[1308] PATCH_32: *[0x84a0] = (None + 0x76f1d0f) - PC
+[1309] PATCH_32: *[0x84a8] = (None + 0x84aa) - PC
+[1310] PATCH_32: *[0x84b0] = (None + 0x774772f) - PC
+[1311] OP_0: Sym=None, Addend=0x0
+[1312] PATCH_32: *[0x8500] = (None + 0x774e690) - PC
+[1313] PATCH_32: *[0x8508] = (None + 0x850a) - PC
+[1314] PATCH_32: *[0x8510] = (None + 0x77a38d0) - PC
+[1315] OP_0: Sym=None, Addend=0x0
+[1316] PATCH_32: *[0x8560] = (None + 0x77ab011) - PC
+[1317] PATCH_32: *[0x8568] = (None + 0x856a) - PC
+[1318] PATCH_32: *[0x8570] = (None + 0x7800d01) - PC
+[1319] OP_0: Sym=None, Addend=0x0
+[1320] PATCH_32: *[0x85c0] = (None + 0x7807992) - PC
+[1321] PATCH_32: *[0x85c8] = (None + 0x85ca) - PC
+[1322] PATCH_32: *[0x85d0] = (None + 0x785dcfa) - PC
+[1323] OP_0: Sym=None, Addend=0x0
+[1324] PATCH_32: *[0x8620] = (None + 0x7865313) - PC
+[1325] PATCH_32: *[0x8628] = (None + 0x862a) - PC
+[1326] PATCH_32: *[0x8630] = (None + 0x78bb7e3) - PC
+[1327] OP_0: Sym=None, Addend=0x0
+[1328] PATCH_32: *[0x8680] = (None + 0x78c2c94) - PC
+[1329] PATCH_32: *[0x8688] = (None + 0x868a) - PC
+[1330] PATCH_32: *[0x8690] = (None + 0x7918c9c) - PC
+[1331] OP_0: Sym=None, Addend=0x0
+[1332] PATCH_32: *[0x86e0] = (None + 0x791f615) - PC
+[1333] PATCH_32: *[0x86e8] = (None + 0x86ea) - PC
+[1334] PATCH_32: *[0x86f0] = (None + 0x79754b5) - PC
+[1335] OP_0: Sym=None, Addend=0x0
+[1336] PATCH_32: *[0x8740] = (None + 0x797bf96) - PC
+[1337] PATCH_32: *[0x8748] = (None + 0x874a) - PC
+[1338] PATCH_32: *[0x8750] = (None + 0x79d1896) - PC
+[1339] OP_0: Sym=None, Addend=0x0
+[1340] PATCH_32: *[0x87a0] = (None + 0x79d8917) - PC
+[1341] PATCH_32: *[0x87a8] = (None + 0x87aa) - PC
+[1342] PATCH_32: *[0x87b0] = (None + 0x7a2f147) - PC
+[1343] OP_0: Sym=None, Addend=0x0
+[1344] PATCH_32: *[0x8800] = (None + 0x7a36298) - PC
+[1345] PATCH_32: *[0x8808] = (None + 0x880a) - PC
+[1346] PATCH_32: *[0x8810] = (None + 0x7a8bb98) - PC
+[1347] OP_0: Sym=None, Addend=0x0
+[1348] PATCH_32: *[0x8860] = (None + 0x7a92c19) - PC
+[1349] PATCH_32: *[0x8868] = (None + 0x886a) - PC
+[1350] PATCH_32: *[0x8870] = (None + 0x7ae8519) - PC
+[1351] OP_0: Sym=None, Addend=0x0
+[1352] PATCH_32: *[0x88c0] = (None + 0x7aef59a) - PC
+[1353] PATCH_32: *[0x88c8] = (None + 0x88ca) - PC
+[1354] PATCH_32: *[0x88d0] = (None + 0x7b456c2) - PC
+[1355] OP_0: Sym=None, Addend=0x0
+[1356] PATCH_32: *[0x8920] = (None + 0x7b4cf1b) - PC
+[1357] PATCH_32: *[0x8928] = (None + 0x892a) - PC
+[1358] PATCH_32: *[0x8930] = (None + 0x7ba2a5b) - PC
+[1359] OP_0: Sym=None, Addend=0x0
+[1360] PATCH_32: *[0x8980] = (None + 0x7ba989c) - PC
+[1361] PATCH_32: *[0x8988] = (None + 0x898a) - PC
+[1362] PATCH_32: *[0x8990] = (None + 0x7bff4b4) - PC
+[1363] OP_0: Sym=None, Addend=0x0
+[1364] PATCH_32: *[0x89e0] = (None + 0x7c0621d) - PC
+[1365] PATCH_32: *[0x89e8] = (None + 0x89ea) - PC
+[1366] PATCH_32: *[0x89f0] = (None + 0x7c5c465) - PC
+[1367] OP_0: Sym=None, Addend=0x0
+[1368] PATCH_32: *[0x8a40] = (None + 0x7c63b9e) - PC
+[1369] PATCH_32: *[0x8a48] = (None + 0x8a4a) - PC
+[1370] PATCH_32: *[0x8a50] = (None + 0x7cb9cc6) - PC
+[1371] OP_0: Sym=None, Addend=0x0
+[1372] PATCH_32: *[0x8aa0] = (None + 0x7cc151f) - PC
+[1373] PATCH_32: *[0x8aa8] = (None + 0x8aaa) - PC
+[1374] PATCH_32: *[0x8ab0] = (None + 0x7d175ff) - PC
+[1375] OP_0: Sym=None, Addend=0x0
+[1376] PATCH_32: *[0x8b00] = (None + 0x7d1eea0) - PC
+[1377] PATCH_32: *[0x8b08] = (None + 0x8b0a) - PC
+[1378] PATCH_32: *[0x8b10] = (None + 0x7d73e58) - PC
+[1379] OP_0: Sym=None, Addend=0x0
+[1380] PATCH_32: *[0x8b60] = (None + 0x7d7a821) - PC
+[1381] PATCH_32: *[0x8b68] = (None + 0x8b6a) - PC
+[1382] PATCH_32: *[0x8b70] = (None + 0x7dd1519) - PC
+[1383] OP_0: Sym=None, Addend=0x0
+[1384] PATCH_32: *[0x8bc0] = (None + 0x7dd81a2) - PC
+[1385] PATCH_32: *[0x8bc8] = (None + 0x8bca) - PC
+[1386] PATCH_32: *[0x8bd0] = (None + 0x7e2e312) - PC
+[1387] OP_0: Sym=None, Addend=0x0
+[1388] PATCH_32: *[0x8c20] = (None + 0x7e35b23) - PC
+[1389] PATCH_32: *[0x8c28] = (None + 0x8c2a) - PC
+[1390] PATCH_32: *[0x8c30] = (None + 0x7e8bf63) - PC
+[1391] OP_0: Sym=None, Addend=0x0
+[1392] PATCH_32: *[0x8c80] = (None + 0x7e934a4) - PC
+[1393] PATCH_32: *[0x8c88] = (None + 0x8c8a) - PC
+[1394] PATCH_32: *[0x8c90] = (None + 0x7ee8ccc) - PC
+[1395] OP_0: Sym=None, Addend=0x0
+[1396] PATCH_32: *[0x8ce0] = (None + 0x7eefe25) - PC
+[1397] PATCH_32: *[0x8ce8] = (None + 0x8cea) - PC
+[1398] PATCH_32: *[0x8cf0] = (None + 0x7f458d5) - PC
+[1399] OP_0: Sym=None, Addend=0x0
+[1400] PATCH_32: *[0x8d40] = (None + 0x7f4c7a6) - PC
+[1401] PATCH_32: *[0x8d48] = (None + 0x8d4a) - PC
+[1402] PATCH_32: *[0x8d50] = (None + 0x7fa27ae) - PC
+[1403] OP_0: Sym=None, Addend=0x0
+[1404] PATCH_32: *[0x8da0] = (None + 0x7fa9127) - PC
+[1405] PATCH_32: *[0x8da8] = (None + 0x8daa) - PC
+[1406] PATCH_32: *[0x8db0] = (None + 0x7fff327) - PC
+[1407] OP_0: Sym=None, Addend=0x0
+[1408] PATCH_32: *[0x8e00] = (None + 0x8006aa8) - PC
+[1409] PATCH_32: *[0x8e08] = (None + 0x8e0a) - PC
+[1410] PATCH_32: *[0x8e10] = (None + 0x805ca20) - PC
+[1411] OP_0: Sym=None, Addend=0x0
+[1412] PATCH_32: *[0x8e60] = (None + 0x8063429) - PC
+[1413] PATCH_32: *[0x8e68] = (None + 0x8e6a) - PC
+[1414] PATCH_32: *[0x8e70] = (None + 0x80b8c99) - PC
+[1415] OP_0: Sym=None, Addend=0x0
+[1416] PATCH_32: *[0x8ec0] = (None + 0x80bfdaa) - PC
+[1417] PATCH_32: *[0x8ec8] = (None + 0x8eca) - PC
+[1418] PATCH_32: *[0x8ed0] = (None + 0x8116622) - PC
+[1419] OP_0: Sym=None, Addend=0x0
+[1420] PATCH_32: *[0x8f20] = (None + 0x811d72b) - PC
+[1421] PATCH_32: *[0x8f28] = (None + 0x8f2a) - PC
+[1422] PATCH_32: *[0x8f30] = (None + 0x8172ec3) - PC
+[1423] OP_0: Sym=None, Addend=0x0
+[1424] PATCH_32: *[0x8f80] = (None + 0x817a0ac) - PC
+[1425] PATCH_32: *[0x8f88] = (None + 0x8f8a) - PC
+[1426] PATCH_32: *[0x8f90] = (None + 0x81d02ac) - PC
+[1427] OP_0: Sym=None, Addend=0x0
+[1428] PATCH_32: *[0x8fe0] = (None + 0x81d7a2d) - PC
+[1429] PATCH_32: *[0x8fe8] = (None + 0x8fea) - PC
+[1430] PATCH_32: *[0x8ff0] = (None + 0x822e91d) - PC
+[1431] OP_0: Sym=None, Addend=0x0
+[1432] PATCH_32: *[0x9040] = (None + 0x82353ae) - PC
+[1433] PATCH_32: *[0x9048] = (None + 0x904a) - PC
+[1434] PATCH_32: *[0x9050] = (None + 0x828a9de) - PC
+[1435] OP_0: Sym=None, Addend=0x0
+[1436] PATCH_32: *[0x90a0] = (None + 0x8291d2f) - PC
+[1437] PATCH_32: *[0x90a8] = (None + 0x90aa) - PC
+[1438] PATCH_32: *[0x90b0] = (None + 0x82e8757) - PC
+[1439] OP_0: Sym=None, Addend=0x0
+[1440] PATCH_32: *[0x9100] = (None + 0x82ef6b0) - PC
+[1441] PATCH_32: *[0x9108] = (None + 0x910a) - PC
+[1442] PATCH_32: *[0x9110] = (None + 0x8345a18) - PC
+[1443] OP_0: Sym=None, Addend=0x0
+[1444] PATCH_32: *[0x9160] = (None + 0x834d031) - PC
+[1445] PATCH_32: *[0x9168] = (None + 0x916a) - PC
+[1446] PATCH_32: *[0x9170] = (None + 0x83a2df9) - PC
+[1447] OP_0: Sym=None, Addend=0x0
+[1448] PATCH_32: *[0x91c0] = (None + 0x83a99b2) - PC
+[1449] PATCH_32: *[0x91c8] = (None + 0x91ca) - PC
+[1450] PATCH_32: *[0x91d0] = (None + 0x83ff582) - PC
+[1451] OP_0: Sym=None, Addend=0x0
+[1452] PATCH_32: *[0x9220] = (None + 0x8406333) - PC
+[1453] PATCH_32: *[0x9228] = (None + 0x922a) - PC
+[1454] PATCH_32: *[0x9230] = (None + 0x845c8db) - PC
+[1455] OP_0: Sym=None, Addend=0x0
+[1456] PATCH_32: *[0x9280] = (None + 0x8463cb4) - PC
+[1457] PATCH_32: *[0x9288] = (None + 0x928a) - PC
+[1458] PATCH_32: *[0x9290] = (None + 0x84ba13c) - PC
+[1459] OP_0: Sym=None, Addend=0x0
+[1460] PATCH_32: *[0x92e0] = (None + 0x84c1635) - PC
+[1461] PATCH_32: *[0x92e8] = (None + 0x92ea) - PC
+[1462] PATCH_32: *[0x92f0] = (None + 0x851787d) - PC
+[1463] OP_0: Sym=None, Addend=0x0
+[1464] PATCH_32: *[0x9340] = (None + 0x851efb6) - PC
+[1465] PATCH_32: *[0x9348] = (None + 0x934a) - PC
+[1466] PATCH_32: *[0x9350] = (None + 0x85748fe) - PC
+[1467] OP_0: Sym=None, Addend=0x0
+[1468] PATCH_32: *[0x93a0] = (None + 0x857b937) - PC
+[1469] PATCH_32: *[0x93a8] = (None + 0x93aa) - PC
+[1470] PATCH_32: *[0x93b0] = (None + 0x85d07cf) - PC
+[1471] OP_0: Sym=None, Addend=0x0
+[1472] PATCH_32: *[0x9400] = (None + 0x85d72b8) - PC
+[1473] PATCH_32: *[0x9408] = (None + 0x940a) - PC
+[1474] PATCH_32: *[0x9410] = (None + 0x862bdf0) - PC
+[1475] OP_0: Sym=None, Addend=0x0
+[1476] PATCH_32: *[0x9460] = (None + 0x8632c39) - PC
+[1477] PATCH_32: *[0x9468] = (None + 0x946a) - PC
+[1478] PATCH_32: *[0x9470] = (None + 0x8688611) - PC
+[1479] OP_0: Sym=None, Addend=0x0
+[1480] PATCH_32: *[0x94c0] = (None + 0x868f5ba) - PC
+[1481] PATCH_32: *[0x94c8] = (None + 0x94ca) - PC
+[1482] PATCH_32: *[0x94d0] = (None + 0x86e4a82) - PC
+[1483] OP_0: Sym=None, Addend=0x0
+[1484] PATCH_32: *[0x9520] = (None + 0x86ebf3b) - PC
+[1485] PATCH_32: *[0x9528] = (None + 0x952a) - PC
+[1486] PATCH_32: *[0x9530] = (None + 0x87420ab) - PC
+[1487] OP_0: Sym=None, Addend=0x0
+[1488] PATCH_32: *[0x9580] = (None + 0x87498bc) - PC
+[1489] PATCH_32: *[0x9588] = (None + 0x958a) - PC
+[1490] PATCH_32: *[0x9590] = (None + 0x879f714) - PC
+[1491] OP_0: Sym=None, Addend=0x0
+[1492] PATCH_32: *[0x95e0] = (None + 0x87a623d) - PC
+[1493] PATCH_32: *[0x95e8] = (None + 0x95ea) - PC
+[1494] PATCH_32: *[0x95f0] = (None + 0x87fbe9d) - PC
+[1495] OP_0: Sym=None, Addend=0x0
+[1496] PATCH_32: *[0x9640] = (None + 0x8802bbe) - PC
+[1497] PATCH_32: *[0x9648] = (None + 0x964a) - PC
+[1498] PATCH_32: *[0x9650] = (None + 0x885803e) - PC
+[1499] OP_0: Sym=None, Addend=0x0
+[1500] PATCH_32: *[0x96a0] = (None + 0x885f53f) - PC
+[1501] PATCH_32: *[0x96a8] = (None + 0x96aa) - PC
+[1502] PATCH_32: *[0x96b0] = (None + 0x88b5a57) - PC
+[1503] OP_0: Sym=None, Addend=0x0
+[1504] PATCH_32: *[0x9700] = (None + 0x88bcec0) - PC
+[1505] PATCH_32: *[0x9708] = (None + 0x970a) - PC
+[1506] PATCH_32: *[0x9710] = (None + 0x89124f0) - PC
+[1507] OP_0: Sym=None, Addend=0x0
+[1508] PATCH_32: *[0x9760] = (None + 0x8919841) - PC
+[1509] PATCH_32: *[0x9768] = (None + 0x976a) - PC
+[1510] PATCH_32: *[0x9770] = (None + 0x896f261) - PC
+[1511] OP_0: Sym=None, Addend=0x0
+[1512] PATCH_32: *[0x97c0] = (None + 0x89761c2) - PC
+[1513] PATCH_32: *[0x97c8] = (None + 0x97ca) - PC
+[1514] PATCH_32: *[0x97d0] = (None + 0x89cbe6a) - PC
+[1515] OP_0: Sym=None, Addend=0x0
+[1516] PATCH_32: *[0x9820] = (None + 0x89d2b43) - PC
+[1517] PATCH_32: *[0x9828] = (None + 0x982a) - PC
+[1518] PATCH_32: *[0x9830] = (None + 0x8a28c6b) - PC
+[1519] OP_0: Sym=None, Addend=0x0
+[1520] PATCH_32: *[0x9880] = (None + 0x8a304c4) - PC
+[1521] PATCH_32: *[0x9888] = (None + 0x988a) - PC
+[1522] PATCH_32: *[0x9890] = (None + 0x8a86c64) - PC
+[1523] OP_0: Sym=None, Addend=0x0
+[1524] PATCH_32: *[0x98e0] = (None + 0x8a8de45) - PC
+[1525] PATCH_32: *[0x98e8] = (None + 0x98ea) - PC
+[1526] PATCH_32: *[0x98f0] = (None + 0x8ae435d) - PC
+[1527] OP_0: Sym=None, Addend=0x0
+[1528] PATCH_32: *[0x9940] = (None + 0x8aeb7c6) - PC
+[1529] PATCH_32: *[0x9948] = (None + 0x994a) - PC
+[1530] PATCH_32: *[0x9950] = (None + 0x8b41e46) - PC
+[1531] OP_0: Sym=None, Addend=0x0
+[1532] PATCH_32: *[0x99a0] = (None + 0x8b49147) - PC
+[1533] PATCH_32: *[0x99a8] = (None + 0x99aa) - PC
+[1534] PATCH_32: *[0x99b0] = (None + 0x8b9e60f) - PC
+[1535] OP_0: Sym=None, Addend=0x0
+[1536] PATCH_32: *[0x9a00] = (None + 0x8ba5ac8) - PC
+[1537] PATCH_32: *[0x9a08] = (None + 0x9a0a) - PC
+[1538] PATCH_32: *[0x9a10] = (None + 0x8bfbc38) - PC
+[1539] OP_0: Sym=None, Addend=0x0
+[1540] PATCH_32: *[0x9a60] = (None + 0x8c03449) - PC
+[1541] PATCH_32: *[0x9a68] = (None + 0x9a6a) - PC
+[1542] PATCH_32: *[0x9a70] = (None + 0x8c589a1) - PC
+[1543] OP_0: Sym=None, Addend=0x0
+[1544] PATCH_32: *[0x9ac0] = (None + 0x8c5fdca) - PC
+[1545] PATCH_32: *[0x9ac8] = (None + 0x9aca) - PC
+[1546] PATCH_32: *[0x9ad0] = (None + 0x8cb61c2) - PC
+[1547] OP_0: Sym=None, Addend=0x0
+[1548] PATCH_32: *[0x9b20] = (None + 0x8cbd74b) - PC
+[1549] PATCH_32: *[0x9b28] = (None + 0x9b2a) - PC
+[1550] PATCH_32: *[0x9b30] = (None + 0x8d13b43) - PC
+[1551] OP_0: Sym=None, Addend=0x0
+[1552] PATCH_32: *[0x9b80] = (None + 0x8d1b0cc) - PC
+[1553] PATCH_32: *[0x9b88] = (None + 0x9b8a) - PC
+[1554] PATCH_32: *[0x9b90] = (None + 0x8d70edc) - PC
+[1555] OP_0: Sym=None, Addend=0x0
+[1556] PATCH_32: *[0x9be0] = (None + 0x8d77a4d) - PC
+[1557] PATCH_32: *[0x9be8] = (None + 0x9bea) - PC
+[1558] PATCH_32: *[0x9bf0] = (None + 0x8dcda55) - PC
+[1559] OP_0: Sym=None, Addend=0x0
+[1560] PATCH_32: *[0x9c40] = (None + 0x8dd43ce) - PC
+[1561] PATCH_32: *[0x9c48] = (None + 0x9c4a) - PC
+[1562] PATCH_32: *[0x9c50] = (None + 0x8e2abb6) - PC
+[1563] OP_0: Sym=None, Addend=0x0
+[1564] PATCH_32: *[0x9ca0] = (None + 0x8e31d4f) - PC
+[1565] PATCH_32: *[0x9ca8] = (None + 0x9caa) - PC
+[1566] PATCH_32: *[0x9cb0] = (None + 0x8e87cc7) - PC
+[1567] OP_0: Sym=None, Addend=0x0
+[1568] PATCH_32: *[0x9d00] = (None + 0x8e8e6d0) - PC
+[1569] PATCH_32: *[0x9d08] = (None + 0x9d0a) - PC
+[1570] PATCH_32: *[0x9d10] = (None + 0x8ee42e8) - PC
+[1571] OP_0: Sym=None, Addend=0x0
+[1572] PATCH_32: *[0x9d60] = (None + 0x8eeb051) - PC
+[1573] PATCH_32: *[0x9d68] = (None + 0x9d6a) - PC
+[1574] PATCH_32: *[0x9d70] = (None + 0x8f40dd1) - PC
+[1575] OP_0: Sym=None, Addend=0x0
+[1576] PATCH_32: *[0x9dc0] = (None + 0x8f479d2) - PC
+[1577] PATCH_32: *[0x9dc8] = (None + 0x9dca) - PC
+[1578] PATCH_32: *[0x9dd0] = (None + 0x8f9d002) - PC
+[1579] OP_0: Sym=None, Addend=0x0
+[1580] PATCH_32: *[0x9e20] = (None + 0x8fa4353) - PC
+[1581] PATCH_32: *[0x9e28] = (None + 0x9e2a) - PC
+[1582] PATCH_32: *[0x9e30] = (None + 0x8ff9aa3) - PC
+[1583] OP_0: Sym=None, Addend=0x0
+[1584] PATCH_32: *[0x9e80] = (None + 0x9000cd4) - PC
+[1585] PATCH_32: *[0x9e88] = (None + 0x9e8a) - PC
+[1586] PATCH_32: *[0x9e90] = (None + 0x9055d64) - PC
+[1587] OP_0: Sym=None, Addend=0x0
+[1588] PATCH_32: *[0x9ee0] = (None + 0x905d655) - PC
+[1589] PATCH_32: *[0x9ee8] = (None + 0x9eea) - PC
+[1590] PATCH_32: *[0x9ef0] = (None + 0x90b3615) - PC
+[1591] OP_0: Sym=None, Addend=0x0
+[1592] PATCH_32: *[0x9f40] = (None + 0x90b9fd6) - PC
+[1593] PATCH_32: *[0x9f48] = (None + 0x9f4a) - PC
+[1594] PATCH_32: *[0x9f50] = (None + 0x910f576) - PC
+[1595] OP_0: Sym=None, Addend=0x0
+[1596] PATCH_32: *[0x9fa0] = (None + 0x9116957) - PC
+[1597] PATCH_32: *[0x9fa8] = (None + 0x9faa) - PC
+[1598] PATCH_32: *[0x9fb0] = (None + 0x916bd47) - PC
+[1599] OP_0: Sym=None, Addend=0x0
+[1600] PATCH_32: *[0xa000] = (None + 0x91732d8) - PC
+[1601] PATCH_32: *[0xa008] = (None + 0xa00a) - PC
+[1602] PATCH_32: *[0xa010] = (None + 0x91c8518) - PC
+[1603] OP_0: Sym=None, Addend=0x0
+[1604] PATCH_32: *[0xa060] = (None + 0x91cfc59) - PC
+[1605] PATCH_32: *[0xa068] = (None + 0xa06a) - PC
+[1606] PATCH_32: *[0xa070] = (None + 0x9225949) - PC
+[1607] OP_0: Sym=None, Addend=0x0
+[1608] PATCH_32: *[0xa0c0] = (None + 0x922c5da) - PC
+[1609] PATCH_32: *[0xa0c8] = (None + 0xa0ca) - PC
+[1610] PATCH_32: *[0xa0d0] = (None + 0x9282b3a) - PC
+[1611] OP_0: Sym=None, Addend=0x0
+[1612] PATCH_32: *[0xa120] = (None + 0x9289f5b) - PC
+[1613] PATCH_32: *[0xa128] = (None + 0xa12a) - PC
+[1614] PATCH_32: *[0xa130] = (None + 0x92e07d3) - PC
+[1615] OP_0: Sym=None, Addend=0x0
+[1616] PATCH_32: *[0xa180] = (None + 0x92e78dc) - PC
+[1617] PATCH_32: *[0xa188] = (None + 0xa18a) - PC
+[1618] PATCH_32: *[0xa190] = (None + 0x933cf54) - PC
+[1619] OP_0: Sym=None, Addend=0x0
+[1620] PATCH_32: *[0xa1e0] = (None + 0x934425d) - PC
+[1621] PATCH_32: *[0xa1e8] = (None + 0xa1ea) - PC
+[1622] PATCH_32: *[0xa1f0] = (None + 0x939a4ed) - PC
+[1623] OP_0: Sym=None, Addend=0x0
+[1624] PATCH_32: *[0xa240] = (None + 0x93a1bde) - PC
+[1625] PATCH_32: *[0xa248] = (None + 0xa24a) - PC
+[1626] PATCH_32: *[0xa250] = (None + 0x93f7dde) - PC
+[1627] OP_0: Sym=None, Addend=0x0
+[1628] PATCH_32: *[0xa2a0] = (None + 0x93ff55f) - PC
+[1629] PATCH_32: *[0xa2a8] = (None + 0xa2aa) - PC
+[1630] PATCH_32: *[0xa2b0] = (None + 0x94555f7) - PC
+[1631] OP_0: Sym=None, Addend=0x0
+[1632] PATCH_32: *[0xa300] = (None + 0x945cee0) - PC
+[1633] PATCH_32: *[0xa308] = (None + 0xa30a) - PC
+[1634] PATCH_32: *[0xa310] = (None + 0x94b3170) - PC
+[1635] OP_0: Sym=None, Addend=0x0
+[1636] PATCH_32: *[0xa360] = (None + 0x94ba861) - PC
+[1637] PATCH_32: *[0xa368] = (None + 0xa36a) - PC
+[1638] PATCH_32: *[0xa370] = (None + 0x9510749) - PC
+[1639] OP_0: Sym=None, Addend=0x0
+[1640] PATCH_32: *[0xa3c0] = (None + 0x95171e2) - PC
+[1641] PATCH_32: *[0xa3c8] = (None + 0xa3ca) - PC
+[1642] PATCH_32: *[0xa3d0] = (None + 0x956d592) - PC
+[1643] OP_0: Sym=None, Addend=0x0
+[1644] PATCH_32: *[0xa420] = (None + 0x9574b63) - PC
+[1645] PATCH_32: *[0xa428] = (None + 0xa42a) - PC
+[1646] PATCH_32: *[0xa430] = (None + 0x95c9f53) - PC
+[1647] OP_0: Sym=None, Addend=0x0
+[1648] PATCH_32: *[0xa480] = (None + 0x95d14e4) - PC
+[1649] PATCH_32: *[0xa488] = (None + 0xa48a) - PC
+[1650] PATCH_32: *[0xa490] = (None + 0x9627a8c) - PC
+[1651] OP_0: Sym=None, Addend=0x0
+[1652] PATCH_32: *[0xa4e0] = (None + 0x962ee65) - PC
+[1653] PATCH_32: *[0xa4e8] = (None + 0xa4ea) - PC
+[1654] PATCH_32: *[0xa4f0] = (None + 0x968501d) - PC
+[1655] OP_0: Sym=None, Addend=0x0
+[1656] PATCH_32: *[0xa540] = (None + 0x968c7e6) - PC
+[1657] PATCH_32: *[0xa548] = (None + 0xa54a) - PC
+[1658] PATCH_32: *[0xa550] = (None + 0x96e35b6) - PC
+[1659] OP_0: Sym=None, Addend=0x0
+[1660] PATCH_32: *[0xa5a0] = (None + 0x96ea167) - PC
+[1661] PATCH_32: *[0xa5a8] = (None + 0xa5aa) - PC
+[1662] PATCH_32: *[0xa5b0] = (None + 0x973fcef) - PC
+[1663] OP_0: Sym=None, Addend=0x0
+[1664] PATCH_32: *[0xa600] = (None + 0x9746ae8) - PC
+[1665] PATCH_32: *[0xa608] = (None + 0xa60a) - PC
+[1666] PATCH_32: *[0xa610] = (None + 0x979c820) - PC
+[1667] OP_0: Sym=None, Addend=0x0
+[1668] PATCH_32: *[0xa660] = (None + 0x97a3469) - PC
+[1669] PATCH_32: *[0xa668] = (None + 0xa66a) - PC
+[1670] PATCH_32: *[0xa670] = (None + 0x97f92c1) - PC
+[1671] OP_0: Sym=None, Addend=0x0
+[1672] PATCH_32: *[0xa6c0] = (None + 0x97ffdea) - PC
+[1673] PATCH_32: *[0xa6c8] = (None + 0xa6ca) - PC
+[1674] PATCH_32: *[0xa6d0] = (None + 0x985646a) - PC
+[1675] OP_0: Sym=None, Addend=0x0
+[1676] PATCH_32: *[0xa720] = (None + 0x985d76b) - PC
+[1677] PATCH_32: *[0xa728] = (None + 0xa72a) - PC
+[1678] PATCH_32: *[0xa730] = (None + 0x98b3773) - PC
+[1679] OP_0: Sym=None, Addend=0x0
+[1680] PATCH_32: *[0xa780] = (None + 0x98ba0ec) - PC
+[1681] PATCH_32: *[0xa788] = (None + 0xa78a) - PC
+[1682] PATCH_32: *[0xa790] = (None + 0x990f7ac) - PC
+[1683] OP_0: Sym=None, Addend=0x0
+[1684] PATCH_32: *[0xa7e0] = (None + 0x9916a6d) - PC
+[1685] PATCH_32: *[0xa7e8] = (None + 0xa7ea) - PC
+[1686] PATCH_32: *[0xa7f0] = (None + 0x996cf85) - PC
+[1687] OP_0: Sym=None, Addend=0x0
+[1688] PATCH_32: *[0xa840] = (None + 0x99743ee) - PC
+[1689] PATCH_32: *[0xa848] = (None + 0xa84a) - PC
+[1690] PATCH_32: *[0xa850] = (None + 0x99c9c16) - PC
+[1691] OP_0: Sym=None, Addend=0x0
+[1692] PATCH_32: *[0xa8a0] = (None + 0x99d0d6f) - PC
+[1693] PATCH_32: *[0xa8a8] = (None + 0xa8aa) - PC
+[1694] PATCH_32: *[0xa8b0] = (None + 0x9a2654f) - PC
+[1695] OP_0: Sym=None, Addend=0x0
+[1696] PATCH_32: *[0xa900] = (None + 0x9a2d6f0) - PC
+[1697] PATCH_32: *[0xa908] = (None + 0xa90a) - PC
+[1698] PATCH_32: *[0xa910] = (None + 0x9a83980) - PC
+[1699] OP_0: Sym=None, Addend=0x0
+[1700] PATCH_32: *[0xa960] = (None + 0x9a8b071) - PC
+[1701] PATCH_32: *[0xa968] = (None + 0xa96a) - PC
+[1702] PATCH_32: *[0xa970] = (None + 0x9ae0bb1) - PC
+[1703] OP_0: Sym=None, Addend=0x0
+[1704] PATCH_32: *[0xa9c0] = (None + 0x9ae79f2) - PC
+[1705] PATCH_32: *[0xa9c8] = (None + 0xa9ca) - PC
+[1706] PATCH_32: *[0xa9d0] = (None + 0x9b3d772) - PC
+[1707] OP_0: Sym=None, Addend=0x0
+[1708] PATCH_32: *[0xaa20] = (None + 0x9b44373) - PC
+[1709] PATCH_32: *[0xaa28] = (None + 0xaa2a) - PC
+[1710] PATCH_32: *[0xaa30] = (None + 0x9b997ab) - PC
+[1711] OP_0: Sym=None, Addend=0x0
+[1712] PATCH_32: *[0xaa80] = (None + 0x9ba0cf4) - PC
+[1713] PATCH_32: *[0xaa88] = (None + 0xaa8a) - PC
+[1714] PATCH_32: *[0xaa90] = (None + 0x9bf65f4) - PC
+[1715] OP_0: Sym=None, Addend=0x0
+[1716] PATCH_32: *[0xaae0] = (None + 0x9bfd675) - PC
+[1717] PATCH_32: *[0xaae8] = (None + 0xaaea) - PC
+[1718] PATCH_32: *[0xaaf0] = (None + 0x9c538bd) - PC
+[1719] OP_0: Sym=None, Addend=0x0
+[1720] PATCH_32: *[0xab40] = (None + 0x9c5aff6) - PC
+[1721] PATCH_32: *[0xab48] = (None + 0xab4a) - PC
+[1722] PATCH_32: *[0xab50] = (None + 0x9cb1166) - PC
+[1723] OP_0: Sym=None, Addend=0x0
+[1724] PATCH_32: *[0xaba0] = (None + 0x9cb8977) - PC
+[1725] PATCH_32: *[0xaba8] = (None + 0xabaa) - PC
+[1726] PATCH_32: *[0xabb0] = (None + 0x9d0f03f) - PC
+[1727] OP_0: Sym=None, Addend=0x0
+[1728] PATCH_32: *[0xac00] = (None + 0x9d162f8) - PC
+[1729] PATCH_32: *[0xac08] = (None + 0xac0a) - PC
+[1730] PATCH_32: *[0xac10] = (None + 0x9d6c228) - PC
+[1731] OP_0: Sym=None, Addend=0x0
+[1732] PATCH_32: *[0xac60] = (None + 0x9d72c79) - PC
+[1733] PATCH_32: *[0xac68] = (None + 0xac6a) - PC
+[1734] PATCH_32: *[0xac70] = (None + 0x9dc80f9) - PC
+[1735] OP_0: Sym=None, Addend=0x0
+[1736] PATCH_32: *[0xacc0] = (None + 0x9dcf5fa) - PC
+[1737] PATCH_32: *[0xacc8] = (None + 0xacca) - PC
+[1738] PATCH_32: *[0xacd0] = (None + 0x9e24b0a) - PC
+[1739] OP_0: Sym=None, Addend=0x0
+[1740] PATCH_32: *[0xad20] = (None + 0x9e2bf7b) - PC
+[1741] PATCH_32: *[0xad28] = (None + 0xad2a) - PC
+[1742] PATCH_32: *[0xad30] = (None + 0x9e8109b) - PC
+[1743] OP_0: Sym=None, Addend=0x0
+[1744] PATCH_32: *[0xad80] = (None + 0x9e888fc) - PC
+[1745] PATCH_32: *[0xad88] = (None + 0xad8a) - PC
+[1746] PATCH_32: *[0xad90] = (None + 0x9ede364) - PC
+[1747] OP_0: Sym=None, Addend=0x0
+[1748] PATCH_32: *[0xade0] = (None + 0x9ee527d) - PC
+[1749] PATCH_32: *[0xade8] = (None + 0xadea) - PC
+[1750] PATCH_32: *[0xadf0] = (None + 0x9f3b9d5) - PC
+[1751] OP_0: Sym=None, Addend=0x0
+[1752] PATCH_32: *[0xae40] = (None + 0x9f42bfe) - PC
+[1753] PATCH_32: *[0xae48] = (None + 0xae4a) - PC
+[1754] PATCH_32: *[0xae50] = (None + 0x9f97c8e) - PC
+[1755] OP_0: Sym=None, Addend=0x0
+[1756] PATCH_32: *[0xaea0] = (None + 0x9f9f57f) - PC
+[1757] PATCH_32: *[0xaea8] = (None + 0xaeaa) - PC
+[1758] PATCH_32: *[0xaeb0] = (None + 0x9ff53d7) - PC
+[1759] OP_0: Sym=None, Addend=0x0
+[1760] PATCH_32: *[0xaf00] = (None + 0x9ffbf00) - PC
+[1761] PATCH_32: *[0xaf08] = (None + 0xaf0a) - PC
+[1762] PATCH_32: *[0xaf10] = (None + 0xa051f98) - PC
+[1763] OP_0: Sym=None, Addend=0x0
+[1764] PATCH_32: *[0xaf60] = (None + 0xa059881) - PC
+[1765] PATCH_32: *[0xaf68] = (None + 0xaf6a) - PC
+[1766] PATCH_32: *[0xaf70] = (None + 0xa0afd99) - PC
+[1767] OP_0: Sym=None, Addend=0x0
+[1768] PATCH_32: *[0xafc0] = (None + 0xa0b7202) - PC
+[1769] PATCH_32: *[0xafc8] = (None + 0xafca) - PC
+[1770] PATCH_32: *[0xafd0] = (None + 0xa10d44a) - PC
+[1771] OP_0: Sym=None, Addend=0x0
+[1772] PATCH_32: *[0xb020] = (None + 0xa114b83) - PC
+[1773] PATCH_32: *[0xb028] = (None + 0xb02a) - PC
+[1774] PATCH_32: *[0xb030] = (None + 0xa16a8bb) - PC
+[1775] OP_0: Sym=None, Addend=0x0
+[1776] PATCH_32: *[0xb080] = (None + 0xa171504) - PC
+[1777] PATCH_32: *[0xb088] = (None + 0xb08a) - PC
+[1778] PATCH_32: *[0xb090] = (None + 0xa1c7044) - PC
+[1779] OP_0: Sym=None, Addend=0x0
+[1780] PATCH_32: *[0xb0e0] = (None + 0xa1cde85) - PC
+[1781] PATCH_32: *[0xb0e8] = (None + 0xb0ea) - PC
+[1782] PATCH_32: *[0xb0f0] = (None + 0xa224ce5) - PC
+[1783] OP_0: Sym=None, Addend=0x0
+[1784] PATCH_32: *[0xb140] = (None + 0xa22b806) - PC
+[1785] PATCH_32: *[0xb148] = (None + 0xb14a) - PC
+[1786] PATCH_32: *[0xb150] = (None + 0xa28141e) - PC
+[1787] OP_0: Sym=None, Addend=0x0
+[1788] PATCH_32: *[0xb1a0] = (None + 0xa288187) - PC
+[1789] PATCH_32: *[0xb1a8] = (None + 0xb1aa) - PC
+[1790] PATCH_32: *[0xb1b0] = (None + 0xa2de18f) - PC
+[1791] OP_0: Sym=None, Addend=0x0
+[1792] PATCH_32: *[0xb200] = (None + 0xa2e4b08) - PC
+[1793] PATCH_32: *[0xb208] = (None + 0xb20a) - PC
+[1794] PATCH_32: *[0xb210] = (None + 0xa339f88) - PC
+[1795] OP_0: Sym=None, Addend=0x0
+[1796] PATCH_32: *[0xb260] = (None + 0xa341489) - PC
+[1797] PATCH_32: *[0xb268] = (None + 0xb26a) - PC
+[1798] PATCH_32: *[0xb270] = (None + 0xa397be1) - PC
+[1799] OP_0: Sym=None, Addend=0x0
+[1800] PATCH_32: *[0xb2c0] = (None + 0xa39ee0a) - PC
+[1801] PATCH_32: *[0xb2c8] = (None + 0xb2ca) - PC
+[1802] PATCH_32: *[0xb2d0] = (None + 0xa3f4d82) - PC
+[1803] OP_0: Sym=None, Addend=0x0
+[1804] PATCH_32: *[0xb320] = (None + 0xa3fb78b) - PC
+[1805] PATCH_32: *[0xb328] = (None + 0xb32a) - PC
+[1806] PATCH_32: *[0xb330] = (None + 0xa451af3) - PC
+[1807] OP_0: Sym=None, Addend=0x0
+[1808] PATCH_32: *[0xb380] = (None + 0xa45910c) - PC
+[1809] PATCH_32: *[0xb388] = (None + 0xb38a) - PC
+[1810] PATCH_32: *[0xb390] = (None + 0xa4aec04) - PC
+[1811] OP_0: Sym=None, Addend=0x0
+[1812] PATCH_32: *[0xb3e0] = (None + 0xa4b5a8d) - PC
+[1813] PATCH_32: *[0xb3e8] = (None + 0xb3ea) - PC
+[1814] PATCH_32: *[0xb3f0] = (None + 0xa50ad15) - PC
+[1815] OP_0: Sym=None, Addend=0x0
+[1816] PATCH_32: *[0xb440] = (None + 0xa51240e) - PC
+[1817] PATCH_32: *[0xb448] = (None + 0xb44a) - PC
+[1818] PATCH_32: *[0xb450] = (None + 0xa5682f6) - PC
+[1819] OP_0: Sym=None, Addend=0x0
+[1820] PATCH_32: *[0xb4a0] = (None + 0xa56ed8f) - PC
+[1821] PATCH_32: *[0xb4a8] = (None + 0xb4aa) - PC
+[1822] PATCH_32: *[0xb4b0] = (None + 0xa5c471f) - PC
+[1823] OP_0: Sym=None, Addend=0x0
+[1824] PATCH_32: *[0xb500] = (None + 0xa5cb710) - PC
+[1825] PATCH_32: *[0xb508] = (None + 0xb50a) - PC
+[1826] PATCH_32: *[0xb510] = (None + 0xa621130) - PC
+[1827] OP_0: Sym=None, Addend=0x0
+[1828] PATCH_32: *[0xb560] = (None + 0xa628091) - PC
+[1829] PATCH_32: *[0xb568] = (None + 0xb56a) - PC
+[1830] PATCH_32: *[0xb570] = (None + 0xa67dbd1) - PC
+[1831] OP_0: Sym=None, Addend=0x0
+[1832] PATCH_32: *[0xb5c0] = (None + 0xa684a12) - PC
+[1833] PATCH_32: *[0xb5c8] = (None + 0xb5ca) - PC
+[1834] PATCH_32: *[0xb5d0] = (None + 0xa6d9e92) - PC
+[1835] OP_0: Sym=None, Addend=0x0
+[1836] PATCH_32: *[0xb620] = (None + 0xa6e1393) - PC
+[1837] PATCH_32: *[0xb628] = (None + 0xb62a) - PC
+[1838] PATCH_32: *[0xb630] = (None + 0xa736f63) - PC
+[1839] OP_0: Sym=None, Addend=0x0
+[1840] PATCH_32: *[0xb680] = (None + 0xa73dd14) - PC
+[1841] PATCH_32: *[0xb688] = (None + 0xb68a) - PC
+[1842] PATCH_32: *[0xb690] = (None + 0xa79365c) - PC
+[1843] OP_0: Sym=None, Addend=0x0
+[1844] PATCH_32: *[0xb6e0] = (None + 0xa79a695) - PC
+[1845] PATCH_32: *[0xb6e8] = (None + 0xb6ea) - PC
+[1846] PATCH_32: *[0xb6f0] = (None + 0xa7f09fd) - PC
+[1847] OP_0: Sym=None, Addend=0x0
+[1848] PATCH_32: *[0xb740] = (None + 0xa7f8016) - PC
+[1849] PATCH_32: *[0xb748] = (None + 0xb74a) - PC
+[1850] PATCH_32: *[0xb750] = (None + 0xa84e01e) - PC
+[1851] OP_0: Sym=None, Addend=0x0
+[1852] PATCH_32: *[0xb7a0] = (None + 0xa854997) - PC
+[1853] PATCH_32: *[0xb7a8] = (None + 0xb7aa) - PC
+[1854] PATCH_32: *[0xb7b0] = (None + 0xa8aaa2f) - PC
+[1855] OP_0: Sym=None, Addend=0x0
+[1856] PATCH_32: *[0xb800] = (None + 0xa8b2318) - PC
+[1857] PATCH_32: *[0xb808] = (None + 0xb80a) - PC
+[1858] PATCH_32: *[0xb810] = (None + 0xa907d38) - PC
+[1859] OP_0: Sym=None, Addend=0x0
+[1860] PATCH_32: *[0xb860] = (None + 0xa90ec99) - PC
+[1861] PATCH_32: *[0xb868] = (None + 0xb86a) - PC
+[1862] PATCH_32: *[0xb870] = (None + 0xa964119) - PC
+[1863] OP_0: Sym=None, Addend=0x0
+[1864] PATCH_32: *[0xb8c0] = (None + 0xa96b61a) - PC
+[1865] PATCH_32: *[0xb8c8] = (None + 0xb8ca) - PC
+[1866] PATCH_32: *[0xb8d0] = (None + 0xa9c1862) - PC
+[1867] OP_0: Sym=None, Addend=0x0
+[1868] PATCH_32: *[0xb920] = (None + 0xa9c8f9b) - PC
+[1869] PATCH_32: *[0xb928] = (None + 0xb92a) - PC
+[1870] PATCH_32: *[0xb930] = (None + 0xaa1f9c3) - PC
+[1871] OP_0: Sym=None, Addend=0x0
+[1872] PATCH_32: *[0xb980] = (None + 0xaa2691c) - PC
+[1873] PATCH_32: *[0xb988] = (None + 0xb98a) - PC
+[1874] PATCH_32: *[0xb990] = (None + 0xaa7d974) - PC
+[1875] OP_0: Sym=None, Addend=0x0
+[1876] PATCH_32: *[0xb9e0] = (None + 0xaa8529d) - PC
+[1877] PATCH_32: *[0xb9e8] = (None + 0xb9ea) - PC
+[1878] PATCH_32: *[0xb9f0] = (None + 0xaadb4e5) - PC
+[1879] OP_0: Sym=None, Addend=0x0
+[1880] PATCH_32: *[0xba40] = (None + 0xaae2c1e) - PC
+[1881] PATCH_32: *[0xba48] = (None + 0xba4a) - PC
+[1882] PATCH_32: *[0xba50] = (None + 0xab38956) - PC
+[1883] OP_0: Sym=None, Addend=0x0
+[1884] PATCH_32: *[0xbaa0] = (None + 0xab3f59f) - PC
+[1885] PATCH_32: *[0xbaa8] = (None + 0xbaaa) - PC
+[1886] PATCH_32: *[0xbab0] = (None + 0xab9504f) - PC
+[1887] OP_0: Sym=None, Addend=0x0
+[1888] PATCH_32: *[0xbb00] = (None + 0xab9bf20) - PC
+[1889] PATCH_32: *[0xbb08] = (None + 0xbb0a) - PC
+[1890] PATCH_32: *[0xbb10] = (None + 0xabf2090) - PC
+[1891] OP_0: Sym=None, Addend=0x0
+[1892] PATCH_32: *[0xbb60] = (None + 0xabf98a1) - PC
+[1893] PATCH_32: *[0xbb68] = (None + 0xbb6a) - PC
+[1894] PATCH_32: *[0xbb70] = (None + 0xac4fae9) - PC
+[1895] OP_0: Sym=None, Addend=0x0
+[1896] PATCH_32: *[0xbbc0] = (None + 0xac57222) - PC
+[1897] PATCH_32: *[0xbbc8] = (None + 0xbbca) - PC
+[1898] PATCH_32: *[0xbbd0] = (None + 0xacac8e2) - PC
+[1899] OP_0: Sym=None, Addend=0x0
+[1900] PATCH_32: *[0xbc20] = (None + 0xacb3ba3) - PC
+[1901] PATCH_32: *[0xbc28] = (None + 0xbc2a) - PC
+[1902] PATCH_32: *[0xbc30] = (None + 0xad09fe3) - PC
+[1903] OP_0: Sym=None, Addend=0x0
+[1904] PATCH_32: *[0xbc80] = (None + 0xad11524) - PC
+[1905] PATCH_32: *[0xbc88] = (None + 0xbc8a) - PC
+[1906] PATCH_32: *[0xbc90] = (None + 0xad666d4) - PC
+[1907] OP_0: Sym=None, Addend=0x0
+[1908] PATCH_32: *[0xbce0] = (None + 0xad6dea5) - PC
+[1909] PATCH_32: *[0xbce8] = (None + 0xbcea) - PC
+[1910] PATCH_32: *[0xbcf0] = (None + 0xadc363d) - PC
+[1911] OP_0: Sym=None, Addend=0x0
+[1912] PATCH_32: *[0xbd40] = (None + 0xadca826) - PC
+[1913] PATCH_32: *[0xbd48] = (None + 0xbd4a) - PC
+[1914] PATCH_32: *[0xbd50] = (None + 0xae2082e) - PC
+[1915] OP_0: Sym=None, Addend=0x0
+[1916] PATCH_32: *[0xbda0] = (None + 0xae271a7) - PC
+[1917] PATCH_32: *[0xbda8] = (None + 0xbdaa) - PC
+[1918] PATCH_32: *[0xbdb0] = (None + 0xae7e3af) - PC
+[1919] OP_0: Sym=None, Addend=0x0
+[1920] PATCH_32: *[0xbe00] = (None + 0xae85b28) - PC
+[1921] PATCH_32: *[0xbe08] = (None + 0xbe0a) - PC
+[1922] PATCH_32: *[0xbe10] = (None + 0xaedbc98) - PC
+[1923] OP_0: Sym=None, Addend=0x0
+[1924] PATCH_32: *[0xbe60] = (None + 0xaee34a9) - PC
+[1925] PATCH_32: *[0xbe68] = (None + 0xbe6a) - PC
+[1926] PATCH_32: *[0xbe70] = (None + 0xaf39979) - PC
+[1927] OP_0: Sym=None, Addend=0x0
+[1928] PATCH_32: *[0xbec0] = (None + 0xaf40e2a) - PC
+[1929] PATCH_32: *[0xbec8] = (None + 0xbeca) - PC
+[1930] PATCH_32: *[0xbed0] = (None + 0xaf9696a) - PC
+[1931] OP_0: Sym=None, Addend=0x0
+[1932] PATCH_32: *[0xbf20] = (None + 0xaf9d7ab) - PC
+[1933] PATCH_32: *[0xbf28] = (None + 0xbf2a) - PC
+[1934] PATCH_32: *[0xbf30] = (None + 0xaff34e3) - PC
+[1935] OP_0: Sym=None, Addend=0x0
+[1936] PATCH_32: *[0xbf80] = (None + 0xaffa12c) - PC
+[1937] PATCH_32: *[0xbf88] = (None + 0xbf8a) - PC
+[1938] PATCH_32: *[0xbf90] = (None + 0xb04fa74) - PC
+[1939] OP_0: Sym=None, Addend=0x0
+[1940] PATCH_32: *[0xbfe0] = (None + 0xb056aad) - PC
+[1941] PATCH_32: *[0xbfe8] = (None + 0xbfea) - PC
+[1942] PATCH_32: *[0xbff0] = (None + 0xb0acdcd) - PC
+[1943] OP_0: Sym=None, Addend=0x0
+[1944] PATCH_32: *[0xc040] = (None + 0xb0b442e) - PC
+[1945] PATCH_32: *[0xc048] = (None + 0xc04a) - PC
+[1946] PATCH_32: *[0xc050] = (None + 0xb10a796) - PC
+[1947] OP_0: Sym=None, Addend=0x0
+[1948] PATCH_32: *[0xc0a0] = (None + 0xb111daf) - PC
+[1949] PATCH_32: *[0xc0a8] = (None + 0xc0aa) - PC
+[1950] PATCH_32: *[0xc0b0] = (None + 0xb168dbf) - PC
+[1951] OP_0: Sym=None, Addend=0x0
+[1952] PATCH_32: *[0xc100] = (None + 0xb16f730) - PC
+[1953] PATCH_32: *[0xc108] = (None + 0xc10a) - PC
+[1954] PATCH_32: *[0xc110] = (None + 0xb1c5978) - PC
+[1955] OP_0: Sym=None, Addend=0x0
+[1956] PATCH_32: *[0xc160] = (None + 0xb1cd0b1) - PC
+[1957] PATCH_32: *[0xc168] = (None + 0xc16a) - PC
+[1958] PATCH_32: *[0xc170] = (None + 0xb222921) - PC
+[1959] OP_0: Sym=None, Addend=0x0
+[1960] PATCH_32: *[0xc1c0] = (None + 0xb229a32) - PC
+[1961] PATCH_32: *[0xc1c8] = (None + 0xc1ca) - PC
+[1962] PATCH_32: *[0xc1d0] = (None + 0xb27f0aa) - PC
+[1963] OP_0: Sym=None, Addend=0x0
+[1964] PATCH_32: *[0xc220] = (None + 0xb2863b3) - PC
+[1965] PATCH_32: *[0xc228] = (None + 0xc22a) - PC
+[1966] PATCH_32: *[0xc230] = (None + 0xb2dbc6b) - PC
+[1967] OP_0: Sym=None, Addend=0x0
+[1968] PATCH_32: *[0xc280] = (None + 0xb2e2d34) - PC
+[1969] PATCH_32: *[0xc288] = (None + 0xc28a) - PC
+[1970] PATCH_32: *[0xc290] = (None + 0xb33843c) - PC
+[1971] OP_0: Sym=None, Addend=0x0
+[1972] PATCH_32: *[0xc2e0] = (None + 0xb33f6b5) - PC
+[1973] PATCH_32: *[0xc2e8] = (None + 0xc2ea) - PC
+[1974] PATCH_32: *[0xc2f0] = (None + 0xb396005) - PC
+[1975] OP_0: Sym=None, Addend=0x0
+[1976] PATCH_32: *[0xc340] = (None + 0xb39d036) - PC
+[1977] PATCH_32: *[0xc348] = (None + 0xc34a) - PC
+[1978] PATCH_32: *[0xc350] = (None + 0xb3f2d26) - PC
+[1979] OP_0: Sym=None, Addend=0x0
+[1980] PATCH_32: *[0xc3a0] = (None + 0xb3f99b7) - PC
+[1981] PATCH_32: *[0xc3a8] = (None + 0xc3aa) - PC
+[1982] PATCH_32: *[0xc3b0] = (None + 0xb44ee37) - PC
+[1983] OP_0: Sym=None, Addend=0x0
+[1984] PATCH_32: *[0xc400] = (None + 0xb456338) - PC
+[1985] PATCH_32: *[0xc408] = (None + 0xc40a) - PC
+[1986] PATCH_32: *[0xc410] = (None + 0xb4abd58) - PC
+[1987] OP_0: Sym=None, Addend=0x0
+[1988] PATCH_32: *[0xc460] = (None + 0xb4b2cb9) - PC
+[1989] PATCH_32: *[0xc468] = (None + 0xc46a) - PC
+[1990] PATCH_32: *[0xc470] = (None + 0xb508529) - PC
+[1991] OP_0: Sym=None, Addend=0x0
+[1992] PATCH_32: *[0xc4c0] = (None + 0xb50f63a) - PC
+[1993] PATCH_32: *[0xc4c8] = (None + 0xc4ca) - PC
+[1994] PATCH_32: *[0xc4d0] = (None + 0xb56517a) - PC
+[1995] OP_0: Sym=None, Addend=0x0
+[1996] PATCH_32: *[0xc520] = (None + 0xb56bfbb) - PC
+[1997] PATCH_32: *[0xc528] = (None + 0xc52a) - PC
+[1998] PATCH_32: *[0xc530] = (None + 0xb5c24d3) - PC
+[1999] OP_0: Sym=None, Addend=0x0
+[2000] PATCH_32: *[0xc580] = (None + 0xb5c993c) - PC
+[2001] PATCH_32: *[0xc588] = (None + 0xc58a) - PC
+[2002] PATCH_32: *[0xc590] = (None + 0xb61ffbc) - PC
+[2003] OP_0: Sym=None, Addend=0x0
+[2004] PATCH_32: *[0xc5e0] = (None + 0xb6272bd) - PC
+[2005] PATCH_32: *[0xc5e8] = (None + 0xc5ea) - PC
+[2006] PATCH_32: *[0xc5f0] = (None + 0xb67cd25) - PC
+[2007] OP_0: Sym=None, Addend=0x0
+[2008] PATCH_32: *[0xc640] = (None + 0xb683c3e) - PC
+[2009] PATCH_32: *[0xc648] = (None + 0xc64a) - PC
+[2010] PATCH_32: *[0xc650] = (None + 0xb6da156) - PC
+[2011] OP_0: Sym=None, Addend=0x0
+[2012] PATCH_32: *[0xc6a0] = (None + 0xb6e15bf) - PC
+[2013] PATCH_32: *[0xc6a8] = (None + 0xc6aa) - PC
+[2014] PATCH_32: *[0xc6b0] = (None + 0xb73718f) - PC
+[2015] OP_0: Sym=None, Addend=0x0
+[2016] PATCH_32: *[0xc700] = (None + 0xb73df40) - PC
+[2017] PATCH_32: *[0xc708] = (None + 0xc70a) - PC
+[2018] PATCH_32: *[0xc710] = (None + 0xb793e70) - PC
+[2019] OP_0: Sym=None, Addend=0x0
+[2020] PATCH_32: *[0xc760] = (None + 0xb79a8c1) - PC
+[2021] PATCH_32: *[0xc768] = (None + 0xc76a) - PC
+[2022] PATCH_32: *[0xc770] = (None + 0xb7f1019) - PC
+[2023] OP_0: Sym=None, Addend=0x0
+[2024] PATCH_32: *[0xc7c0] = (None + 0xb7f8242) - PC
+[2025] PATCH_32: *[0xc7c8] = (None + 0xc7ca) - PC
+[2026] PATCH_32: *[0xc7d0] = (None + 0xb84d7e2) - PC
+[2027] OP_0: Sym=None, Addend=0x0
+[2028] PATCH_32: *[0xc820] = (None + 0xb854bc3) - PC
+[2029] PATCH_32: *[0xc828] = (None + 0xc82a) - PC
+[2030] PATCH_32: *[0xc830] = (None + 0xb8aa703) - PC
+[2031] OP_0: Sym=None, Addend=0x0
+[2032] PATCH_32: *[0xc880] = (None + 0xb8b1544) - PC
+[2033] PATCH_32: *[0xc888] = (None + 0xc88a) - PC
+[2034] PATCH_32: *[0xc890] = (None + 0xb90739c) - PC
+[2035] OP_0: Sym=None, Addend=0x0
+[2036] PATCH_32: *[0xc8e0] = (None + 0xb90dec5) - PC
+[2037] PATCH_32: *[0xc8e8] = (None + 0xc8ea) - PC
+[2038] PATCH_32: *[0xc8f0] = (None + 0xb9638e5) - PC
+[2039] OP_0: Sym=None, Addend=0x0
+[2040] PATCH_32: *[0xc940] = (None + 0xb96a846) - PC
+[2041] PATCH_32: *[0xc948] = (None + 0xc94a) - PC
+[2042] PATCH_32: *[0xc950] = (None + 0xb9c0b1e) - PC
+[2043] OP_0: Sym=None, Addend=0x0
+[2044] PATCH_32: *[0xc9a0] = (None + 0xb9c81c7) - PC
+[2045] PATCH_32: *[0xc9a8] = (None + 0xc9aa) - PC
+[2046] PATCH_32: *[0xc9b0] = (None + 0xba1e6df) - PC
+[2047] OP_0: Sym=None, Addend=0x0
+[2048] PATCH_32: *[0xca00] = (None + 0xba25b48) - PC
+[2049] PATCH_32: *[0xca08] = (None + 0xca0a) - PC
+[2050] PATCH_32: *[0xca10] = (None + 0xba7b9a0) - PC
+[2051] OP_0: Sym=None, Addend=0x0
+[2052] PATCH_32: *[0xca60] = (None + 0xba824c9) - PC
+[2053] PATCH_32: *[0xca68] = (None + 0xca6a) - PC
+[2054] PATCH_32: *[0xca70] = (None + 0xbad8c69) - PC
+[2055] OP_0: Sym=None, Addend=0x0
+[2056] PATCH_32: *[0xcac0] = (None + 0xbadfe4a) - PC
+[2057] PATCH_32: *[0xcac8] = (None + 0xcaca) - PC
+[2058] PATCH_32: *[0xcad0] = (None + 0xbb35ee2) - PC
+[2059] OP_0: Sym=None, Addend=0x0
+[2060] PATCH_32: *[0xcb20] = (None + 0xbb3d7cb) - PC
+[2061] PATCH_32: *[0xcb28] = (None + 0xcb2a) - PC
+[2062] PATCH_32: *[0xcb30] = (None + 0xbb926f3) - PC
+[2063] OP_0: Sym=None, Addend=0x0
+[2064] PATCH_32: *[0xcb80] = (None + 0xbb9914c) - PC
+[2065] PATCH_32: *[0xcb88] = (None + 0xcb8a) - PC
+[2066] PATCH_32: *[0xcb90] = (None + 0xbbef7cc) - PC
+[2067] OP_0: Sym=None, Addend=0x0
+[2068] PATCH_32: *[0xcbe0] = (None + 0xbbf6acd) - PC
+[2069] PATCH_32: *[0xcbe8] = (None + 0xcbea) - PC
+[2070] PATCH_32: *[0xcbf0] = (None + 0xbc4cf0d) - PC
+[2071] OP_0: Sym=None, Addend=0x0
+[2072] PATCH_32: *[0xcc40] = (None + 0xbc5444e) - PC
+[2073] PATCH_32: *[0xcc48] = (None + 0xcc4a) - PC
+[2074] PATCH_32: *[0xcc50] = (None + 0xbcaa846) - PC
+[2075] OP_0: Sym=None, Addend=0x0
+[2076] PATCH_32: *[0xcca0] = (None + 0xbcb1dcf) - PC
+[2077] PATCH_32: *[0xcca8] = (None + 0xccaa) - PC
+[2078] PATCH_32: *[0xccb0] = (None + 0xbd082e7) - PC
+[2079] OP_0: Sym=None, Addend=0x0
+[2080] PATCH_32: *[0xcd00] = (None + 0xbd0f750) - PC
+[2081] PATCH_32: *[0xcd08] = (None + 0xcd0a) - PC
+[2082] PATCH_32: *[0xcd10] = (None + 0xbd65758) - PC
+[2083] OP_0: Sym=None, Addend=0x0
+[2084] PATCH_32: *[0xcd60] = (None + 0xbd6c0d1) - PC
+[2085] PATCH_32: *[0xcd68] = (None + 0xcd6a) - PC
+[2086] PATCH_32: *[0xcd70] = (None + 0xbdc2439) - PC
+[2087] OP_0: Sym=None, Addend=0x0
+[2088] PATCH_32: *[0xcdc0] = (None + 0xbdc9a52) - PC
+[2089] PATCH_32: *[0xcdc8] = (None + 0xcdca) - PC
+[2090] PATCH_32: *[0xcdd0] = (None + 0xbe1f742) - PC
+[2091] OP_0: Sym=None, Addend=0x0
+[2092] PATCH_32: *[0xce20] = (None + 0xbe263d3) - PC
+[2093] PATCH_32: *[0xce28] = (None + 0xce2a) - PC
+[2094] PATCH_32: *[0xce30] = (None + 0xbe7c7cb) - PC
+[2095] OP_0: Sym=None, Addend=0x0
+[2096] PATCH_32: *[0xce80] = (None + 0xbe83d54) - PC
+[2097] PATCH_32: *[0xce88] = (None + 0xce8a) - PC
+[2098] PATCH_32: *[0xce90] = (None + 0xbed8ebc) - PC
+[2099] OP_0: Sym=None, Addend=0x0
+[2100] PATCH_32: *[0xcee0] = (None + 0xbee06d5) - PC
+[2101] PATCH_32: *[0xcee8] = (None + 0xceea) - PC
+[2102] PATCH_32: *[0xcef0] = (None + 0xbf35b55) - PC
+[2103] OP_0: Sym=None, Addend=0x0
+[2104] PATCH_32: *[0xcf40] = (None + 0xbf3d056) - PC
+[2105] PATCH_32: *[0xcf48] = (None + 0xcf4a) - PC
+[2106] PATCH_32: *[0xcf50] = (None + 0xbf92d8e) - PC
+[2107] OP_0: Sym=None, Addend=0x0
+[2108] PATCH_32: *[0xcfa0] = (None + 0xbf999d7) - PC
+[2109] PATCH_32: *[0xcfa8] = (None + 0xcfaa) - PC
+[2110] PATCH_32: *[0xcfb0] = (None + 0xbfef367) - PC
+[2111] OP_0: Sym=None, Addend=0x0
+[2112] PATCH_32: *[0xd000] = (None + 0xbff6358) - PC
+[2113] PATCH_32: *[0xd008] = (None + 0xd00a) - PC
+[2114] PATCH_32: *[0xd010] = (None + 0xc04c828) - PC
+[2115] OP_0: Sym=None, Addend=0x0
+[2116] PATCH_32: *[0xd060] = (None + 0xc053cd9) - PC
+[2117] PATCH_32: *[0xd068] = (None + 0xd06a) - PC
+[2118] PATCH_32: *[0xd070] = (None + 0xc0a9ae9) - PC
+[2119] OP_0: Sym=None, Addend=0x0
+[2120] PATCH_32: *[0xd0c0] = (None + 0xc0b065a) - PC
+[2121] PATCH_32: *[0xd0c8] = (None + 0xd0ca) - PC
+[2122] PATCH_32: *[0xd0d0] = (None + 0xc106a9a) - PC
+[2123] OP_0: Sym=None, Addend=0x0
+[2124] PATCH_32: *[0xd120] = (None + 0xc10dfdb) - PC
+[2125] PATCH_32: *[0xd128] = (None + 0xd12a) - PC
+[2126] PATCH_32: *[0xd130] = (None + 0xc164073) - PC
+[2127] OP_0: Sym=None, Addend=0x0
+[2128] PATCH_32: *[0xd180] = (None + 0xc16b95c) - PC
+[2129] PATCH_32: *[0xd188] = (None + 0xd18a) - PC
+[2130] PATCH_32: *[0xd190] = (None + 0xc1c1334) - PC
+[2131] OP_0: Sym=None, Addend=0x0
+[2132] PATCH_32: *[0xd1e0] = (None + 0xc1c82dd) - PC
+[2133] PATCH_32: *[0xd1e8] = (None + 0xd1ea) - PC
+[2134] PATCH_32: *[0xd1f0] = (None + 0xc21e2e5) - PC
+[2135] OP_0: Sym=None, Addend=0x0
+[2136] PATCH_32: *[0xd240] = (None + 0xc224c5e) - PC
+[2137] PATCH_32: *[0xd248] = (None + 0xd24a) - PC
+[2138] PATCH_32: *[0xd250] = (None + 0xc27a1b6) - PC
+[2139] OP_0: Sym=None, Addend=0x0
+[2140] PATCH_32: *[0xd2a0] = (None + 0xc2815df) - PC
+[2141] PATCH_32: *[0xd2a8] = (None + 0xd2aa) - PC
+[2142] PATCH_32: *[0xd2b0] = (None + 0xc2d6fff) - PC
+[2143] OP_0: Sym=None, Addend=0x0
+[2144] PATCH_32: *[0xd300] = (None + 0xc2ddf60) - PC
+[2145] PATCH_32: *[0xd308] = (None + 0xd30a) - PC
+[2146] PATCH_32: *[0xd310] = (None + 0xc333ae8) - PC
+[2147] OP_0: Sym=None, Addend=0x0
+[2148] PATCH_32: *[0xd360] = (None + 0xc33a8e1) - PC
+[2149] PATCH_32: *[0xd368] = (None + 0xd36a) - PC
+[2150] PATCH_32: *[0xd370] = (None + 0xc390421) - PC
+[2151] OP_0: Sym=None, Addend=0x0
+[2152] PATCH_32: *[0xd3c0] = (None + 0xc397262) - PC
+[2153] PATCH_32: *[0xd3c8] = (None + 0xd3ca) - PC
+[2154] PATCH_32: *[0xd3d0] = (None + 0xc3ed072) - PC
+[2155] OP_0: Sym=None, Addend=0x0
+[2156] PATCH_32: *[0xd420] = (None + 0xc3f3be3) - PC
+[2157] PATCH_32: *[0xd428] = (None + 0xd42a) - PC
+[2158] PATCH_32: *[0xd430] = (None + 0xc449e2b) - PC
+[2159] OP_0: Sym=None, Addend=0x0
+[2160] PATCH_32: *[0xd480] = (None + 0xc451564) - PC
+[2161] PATCH_32: *[0xd488] = (None + 0xd48a) - PC
+[2162] PATCH_32: *[0xd490] = (None + 0xc4a7cbc) - PC
+[2163] OP_0: Sym=None, Addend=0x0
+[2164] PATCH_32: *[0xd4e0] = (None + 0xc4aeee5) - PC
+[2165] PATCH_32: *[0xd4e8] = (None + 0xd4ea) - PC
+[2166] PATCH_32: *[0xd4f0] = (None + 0xc504875) - PC
+[2167] OP_0: Sym=None, Addend=0x0
+[2168] PATCH_32: *[0xd540] = (None + 0xc50b866) - PC
+[2169] PATCH_32: *[0xd548] = (None + 0xd54a) - PC
+[2170] PATCH_32: *[0xd550] = (None + 0xc560d76) - PC
+[2171] OP_0: Sym=None, Addend=0x0
+[2172] PATCH_32: *[0xd5a0] = (None + 0xc5681e7) - PC
+[2173] PATCH_32: *[0xd5a8] = (None + 0xd5aa) - PC
+[2174] PATCH_32: *[0xd5b0] = (None + 0xc5bed2f) - PC
+[2175] OP_0: Sym=None, Addend=0x0
+[2176] PATCH_32: *[0xd600] = (None + 0xc5c5b68) - PC
+[2177] PATCH_32: *[0xd608] = (None + 0xd60a) - PC
+[2178] PATCH_32: *[0xd610] = (None + 0xc61c1a0) - PC
+[2179] OP_0: Sym=None, Addend=0x0
+[2180] PATCH_32: *[0xd660] = (None + 0xc6234e9) - PC
+[2181] PATCH_32: *[0xd668] = (None + 0xd66a) - PC
+[2182] PATCH_32: *[0xd670] = (None + 0xc679a49) - PC
+[2183] OP_0: Sym=None, Addend=0x0
+[2184] PATCH_32: *[0xd6c0] = (None + 0xc680e6a) - PC
+[2185] PATCH_32: *[0xd6c8] = (None + 0xd6ca) - PC
+[2186] PATCH_32: *[0xd6d0] = (None + 0xc6d7802) - PC
+[2187] OP_0: Sym=None, Addend=0x0
+[2188] PATCH_32: *[0xd720] = (None + 0xc6de7eb) - PC
+[2189] PATCH_32: *[0xd728] = (None + 0xd72a) - PC
+[2190] PATCH_32: *[0xd730] = (None + 0xc734b0b) - PC
+[2191] OP_0: Sym=None, Addend=0x0
+[2192] PATCH_32: *[0xd780] = (None + 0xc73c16c) - PC
+[2193] PATCH_32: *[0xd788] = (None + 0xd78a) - PC
+[2194] PATCH_32: *[0xd790] = (None + 0xc7925ac) - PC
+[2195] OP_0: Sym=None, Addend=0x0
+[2196] PATCH_32: *[0xd7e0] = (None + 0xc799aed) - PC
+[2197] PATCH_32: *[0xd7e8] = (None + 0xd7ea) - PC
+[2198] PATCH_32: *[0xd7f0] = (None + 0xc7efd7d) - PC
+[2199] OP_0: Sym=None, Addend=0x0
+[2200] PATCH_32: *[0xd840] = (None + 0xc7f746e) - PC
+[2201] PATCH_32: *[0xd848] = (None + 0xd84a) - PC
+[2202] PATCH_32: *[0xd850] = (None + 0xc84c936) - PC
+[2203] OP_0: Sym=None, Addend=0x0
+[2204] PATCH_32: *[0xd8a0] = (None + 0xc853def) - PC
+[2205] PATCH_32: *[0xd8a8] = (None + 0xd8aa) - PC
+[2206] PATCH_32: *[0xd8b0] = (None + 0xc8a9f5f) - PC
+[2207] OP_0: Sym=None, Addend=0x0
+[2208] PATCH_32: *[0xd900] = (None + 0xc8b1770) - PC
+[2209] PATCH_32: *[0xd908] = (None + 0xd90a) - PC
+[2210] PATCH_32: *[0xd910] = (None + 0xc9076a0) - PC
+[2211] OP_0: Sym=None, Addend=0x0
+[2212] PATCH_32: *[0xd960] = (None + 0xc90e0f1) - PC
+[2213] PATCH_32: *[0xd968] = (None + 0xd96a) - PC
+[2214] PATCH_32: *[0xd970] = (None + 0xc9637b1) - PC
+[2215] OP_0: Sym=None, Addend=0x0
+[2216] PATCH_32: *[0xd9c0] = (None + 0xc96aa72) - PC
+[2217] PATCH_32: *[0xd9c8] = (None + 0xd9ca) - PC
+[2218] PATCH_32: *[0xd9d0] = (None + 0xc9c03ba) - PC
+[2219] OP_0: Sym=None, Addend=0x0
+[2220] PATCH_32: *[0xda20] = (None + 0xc9c73f3) - PC
+[2221] PATCH_32: *[0xda28] = (None + 0xda2a) - PC
+[2222] PATCH_32: *[0xda30] = (None + 0xca1da2b) - PC
+[2223] OP_0: Sym=None, Addend=0x0
+[2224] PATCH_32: *[0xda80] = (None + 0xca24d74) - PC
+[2225] PATCH_32: *[0xda88] = (None + 0xda8a) - PC
+[2226] PATCH_32: *[0xda90] = (None + 0xca7ac14) - PC
+[2227] OP_0: Sym=None, Addend=0x0
+[2228] PATCH_32: *[0xdae0] = (None + 0xca816f5) - PC
+[2229] PATCH_32: *[0xdae8] = (None + 0xdaea) - PC
+[2230] PATCH_32: *[0xdaf0] = (None + 0xcad781d) - PC
+[2231] OP_0: Sym=None, Addend=0x0
+[2232] PATCH_32: *[0xdb40] = (None + 0xcadf076) - PC
+[2233] PATCH_32: *[0xdb48] = (None + 0xdb4a) - PC
+[2234] PATCH_32: *[0xdb50] = (None + 0xcb3558e) - PC
+[2235] OP_0: Sym=None, Addend=0x0
+[2236] PATCH_32: *[0xdba0] = (None + 0xcb3c9f7) - PC
+[2237] PATCH_32: *[0xdba8] = (None + 0xdbaa) - PC
+[2238] PATCH_32: *[0xdbb0] = (None + 0xcb92a47) - PC
+[2239] OP_0: Sym=None, Addend=0x0
+[2240] PATCH_32: *[0xdc00] = (None + 0xcb9a378) - PC
+[2241] PATCH_32: *[0xdc08] = (None + 0xdc0a) - PC
+[2242] PATCH_32: *[0xdc10] = (None + 0xcbf0770) - PC
+[2243] OP_0: Sym=None, Addend=0x0
+[2244] PATCH_32: *[0xdc60] = (None + 0xcbf7cf9) - PC
+[2245] PATCH_32: *[0xdc68] = (None + 0xdc6a) - PC
+[2246] PATCH_32: *[0xdc70] = (None + 0xcc4e061) - PC
+[2247] OP_0: Sym=None, Addend=0x0
+[2248] PATCH_32: *[0xdcc0] = (None + 0xcc5567a) - PC
+[2249] PATCH_32: *[0xdcc8] = (None + 0xdcca) - PC
+[2250] PATCH_32: *[0xdcd0] = (None + 0xccab36a) - PC
+[2251] OP_0: Sym=None, Addend=0x0
+[2252] PATCH_32: *[0xdd20] = (None + 0xccb1ffb) - PC
+[2253] PATCH_32: *[0xdd28] = (None + 0xdd2a) - PC
+[2254] PATCH_32: *[0xdd30] = (None + 0xcd073eb) - PC
+[2255] OP_0: Sym=None, Addend=0x0
+[2256] PATCH_32: *[0xdd80] = (None + 0xcd0e97c) - PC
+[2257] PATCH_32: *[0xdd88] = (None + 0xdd8a) - PC
+[2258] PATCH_32: *[0xdd90] = (None + 0xcd64ffc) - PC
+[2259] OP_0: Sym=None, Addend=0x0
+[2260] PATCH_32: *[0xdde0] = (None + 0xcd6c2fd) - PC
+[2261] PATCH_32: *[0xdde8] = (None + 0xddea) - PC
+[2262] PATCH_32: *[0xddf0] = (None + 0xcdc2425) - PC
+[2263] OP_0: Sym=None, Addend=0x0
+[2264] PATCH_32: *[0xde40] = (None + 0xcdc9c7e) - PC
+[2265] PATCH_32: *[0xde48] = (None + 0xde4a) - PC
+[2266] PATCH_32: *[0xde50] = (None + 0xce1f2f6) - PC
+[2267] OP_0: Sym=None, Addend=0x0
+[2268] PATCH_32: *[0xdea0] = (None + 0xce265ff) - PC
+[2269] PATCH_32: *[0xdea8] = (None + 0xdeaa) - PC
+[2270] PATCH_32: *[0xdeb0] = (None + 0xce7dbaf) - PC
+[2271] OP_0: Sym=None, Addend=0x0
+[2272] PATCH_32: *[0xdf00] = (None + 0xce84f80) - PC
+[2273] PATCH_32: *[0xdf08] = (None + 0xdf0a) - PC
+[2274] PATCH_32: *[0xdf10] = (None + 0xcedb9f0) - PC
+[2275] OP_0: Sym=None, Addend=0x0
+[2276] PATCH_32: *[0xdf60] = (None + 0xcee2901) - PC
+[2277] PATCH_32: *[0xdf68] = (None + 0xdf6a) - PC
+[2278] PATCH_32: *[0xdf70] = (None + 0xcf38b91) - PC
+[2279] OP_0: Sym=None, Addend=0x0
+[2280] PATCH_32: *[0xdfc0] = (None + 0xcf40282) - PC
+[2281] PATCH_32: *[0xdfc8] = (None + 0xdfca) - PC
+[2282] PATCH_32: *[0xdfd0] = (None + 0xcf95fba) - PC
+[2283] OP_0: Sym=None, Addend=0x0
+[2284] PATCH_32: *[0xe020] = (None + 0xcf9cc03) - PC
+[2285] PATCH_32: *[0xe028] = (None + 0xe02a) - PC
+[2286] PATCH_32: *[0xe030] = (None + 0xcff30d3) - PC
+[2287] OP_0: Sym=None, Addend=0x0
+[2288] PATCH_32: *[0xe080] = (None + 0xcffa584) - PC
+[2289] PATCH_32: *[0xe088] = (None + 0xe08a) - PC
+[2290] PATCH_32: *[0xe090] = (None + 0xd050154) - PC
+[2291] OP_0: Sym=None, Addend=0x0
+[2292] PATCH_32: *[0xe0e0] = (None + 0xd056f05) - PC
+[2293] PATCH_32: *[0xe0e8] = (None + 0xe0ea) - PC
+[2294] PATCH_32: *[0xe0f0] = (None + 0xd0ac60d) - PC
+[2295] OP_0: Sym=None, Addend=0x0
+[2296] PATCH_32: *[0xe140] = (None + 0xd0b3886) - PC
+[2297] PATCH_32: *[0xe148] = (None + 0xe14a) - PC
+[2298] PATCH_32: *[0xe150] = (None + 0xd1090ae) - PC
+[2299] OP_0: Sym=None, Addend=0x0
+[2300] PATCH_32: *[0xe1a0] = (None + 0xd110207) - PC
+[2301] PATCH_32: *[0xe1a8] = (None + 0xe1aa) - PC
+[2302] PATCH_32: *[0xe1b0] = (None + 0xd165b97) - PC
+[2303] OP_0: Sym=None, Addend=0x0
+[2304] PATCH_32: *[0xe200] = (None + 0xd16cb88) - PC
+[2305] PATCH_32: *[0xe208] = (None + 0xe20a) - PC
+[2306] PATCH_32: *[0xe210] = (None + 0xd1c2e60) - PC
+[2307] OP_0: Sym=None, Addend=0x0
+[2308] PATCH_32: *[0xe260] = (None + 0xd1ca509) - PC
+[2309] PATCH_32: *[0xe268] = (None + 0xe26a) - PC
+[2310] PATCH_32: *[0xe270] = (None + 0xd220481) - PC
+[2311] OP_0: Sym=None, Addend=0x0
+[2312] PATCH_32: *[0xe2c0] = (None + 0xd226e8a) - PC
+[2313] PATCH_32: *[0xe2c8] = (None + 0xe2ca) - PC
+[2314] PATCH_32: *[0xe2d0] = (None + 0xd27d62a) - PC
+[2315] OP_0: Sym=None, Addend=0x0
+[2316] PATCH_32: *[0xe320] = (None + 0xd28480b) - PC
+[2317] PATCH_32: *[0xe328] = (None + 0xe32a) - PC
+[2318] PATCH_32: *[0xe330] = (None + 0xd2da22b) - PC
+[2319] OP_0: Sym=None, Addend=0x0
+[2320] PATCH_32: *[0xe380] = (None + 0xd2e118c) - PC
+[2321] PATCH_32: *[0xe388] = (None + 0xe38a) - PC
+[2322] PATCH_32: *[0xe390] = (None + 0xd337464) - PC
+[2323] OP_0: Sym=None, Addend=0x0
+[2324] PATCH_32: *[0xe3e0] = (None + 0xd33eb0d) - PC
+[2325] PATCH_32: *[0xe3e8] = (None + 0xe3ea) - PC
+[2326] PATCH_32: *[0xe3f0] = (None + 0xd394d0d) - PC
+[2327] OP_0: Sym=None, Addend=0x0
+[2328] PATCH_32: *[0xe440] = (None + 0xd39c48e) - PC
+[2329] PATCH_32: *[0xe448] = (None + 0xe44a) - PC
+[2330] PATCH_32: *[0xe450] = (None + 0xd3f1f86) - PC
+[2331] OP_0: Sym=None, Addend=0x0
+[2332] PATCH_32: *[0xe4a0] = (None + 0xd3f8e0f) - PC
+[2333] PATCH_32: *[0xe4a8] = (None + 0xe4aa) - PC
+[2334] PATCH_32: *[0xe4b0] = (None + 0xd44e637) - PC
+[2335] OP_0: Sym=None, Addend=0x0
+[2336] PATCH_32: *[0xe500] = (None + 0xd455790) - PC
+[2337] PATCH_32: *[0xe508] = (None + 0xe50a) - PC
+[2338] PATCH_32: *[0xe510] = (None + 0xd4aae50) - PC
+[2339] OP_0: Sym=None, Addend=0x0
+[2340] PATCH_32: *[0xe560] = (None + 0xd4b2111) - PC
+[2341] PATCH_32: *[0xe568] = (None + 0xe56a) - PC
+[2342] PATCH_32: *[0xe570] = (None + 0xd507741) - PC
+[2343] OP_0: Sym=None, Addend=0x0
+[2344] PATCH_32: *[0xe5c0] = (None + 0xd50ea92) - PC
+[2345] PATCH_32: *[0xe5c8] = (None + 0xe5ca) - PC
+[2346] PATCH_32: *[0xe5d0] = (None + 0xd56461a) - PC
+[2347] OP_0: Sym=None, Addend=0x0
+[2348] PATCH_32: *[0xe620] = (None + 0xd56b413) - PC
+[2349] PATCH_32: *[0xe628] = (None + 0xe62a) - PC
+[2350] PATCH_32: *[0xe630] = (None + 0xd5c0ec3) - PC
+[2351] OP_0: Sym=None, Addend=0x0
+[2352] PATCH_32: *[0xe680] = (None + 0xd5c7d94) - PC
+[2353] PATCH_32: *[0xe688] = (None + 0xe68a) - PC
+[2354] PATCH_32: *[0xe690] = (None + 0xd61dd9c) - PC
+[2355] OP_0: Sym=None, Addend=0x0
+[2356] PATCH_32: *[0xe6e0] = (None + 0xd624715) - PC
+[2357] PATCH_32: *[0xe6e8] = (None + 0xe6ea) - PC
+[2358] PATCH_32: *[0xe6f0] = (None + 0xd67a6d5) - PC
+[2359] OP_0: Sym=None, Addend=0x0
+[2360] PATCH_32: *[0xe740] = (None + 0xd681096) - PC
+[2361] PATCH_32: *[0xe748] = (None + 0xe74a) - PC
+[2362] PATCH_32: *[0xe750] = (None + 0xd6d70e6) - PC
+[2363] OP_0: Sym=None, Addend=0x0
+[2364] PATCH_32: *[0xe7a0] = (None + 0xd6dea17) - PC
+[2365] PATCH_32: *[0xe7a8] = (None + 0xe7aa) - PC
+[2366] PATCH_32: *[0xe7b0] = (None + 0xd7350df) - PC
+[2367] OP_0: Sym=None, Addend=0x0
+[2368] PATCH_32: *[0xe800] = (None + 0xd73c398) - PC
+[2369] PATCH_32: *[0xe808] = (None + 0xe80a) - PC
+[2370] PATCH_32: *[0xe810] = (None + 0xd792b38) - PC
+[2371] OP_0: Sym=None, Addend=0x0
+[2372] PATCH_32: *[0xe860] = (None + 0xd799d19) - PC
+[2373] PATCH_32: *[0xe868] = (None + 0xe86a) - PC
+[2374] PATCH_32: *[0xe870] = (None + 0xd7ef0c1) - PC
+[2375] OP_0: Sym=None, Addend=0x0
+[2376] PATCH_32: *[0xe8c0] = (None + 0xd7f669a) - PC
+[2377] PATCH_32: *[0xe8c8] = (None + 0xe8ca) - PC
+[2378] PATCH_32: *[0xe8d0] = (None + 0xd84c38a) - PC
+[2379] OP_0: Sym=None, Addend=0x0
+[2380] PATCH_32: *[0xe920] = (None + 0xd85301b) - PC
+[2381] PATCH_32: *[0xe928] = (None + 0xe92a) - PC
+[2382] PATCH_32: *[0xe930] = (None + 0xd8a918b) - PC
+[2383] OP_0: Sym=None, Addend=0x0
+[2384] PATCH_32: *[0xe980] = (None + 0xd8b099c) - PC
+[2385] PATCH_32: *[0xe988] = (None + 0xe98a) - PC
+[2386] PATCH_32: *[0xe990] = (None + 0xd9068cc) - PC
+[2387] OP_0: Sym=None, Addend=0x0
+[2388] PATCH_32: *[0xe9e0] = (None + 0xd90d31d) - PC
+[2389] PATCH_32: *[0xe9e8] = (None + 0xe9ea) - PC
+[2390] PATCH_32: *[0xe9f0] = (None + 0xd962bd5) - PC
+[2391] OP_0: Sym=None, Addend=0x0
+[2392] PATCH_32: *[0xea40] = (None + 0xd969c9e) - PC
+[2393] PATCH_32: *[0xea48] = (None + 0xea4a) - PC
+[2394] PATCH_32: *[0xea50] = (None + 0xd9c0636) - PC
+[2395] OP_0: Sym=None, Addend=0x0
+[2396] PATCH_32: *[0xeaa0] = (None + 0xd9c761f) - PC
+[2397] PATCH_32: *[0xeaa8] = (None + 0xeaaa) - PC
+[2398] PATCH_32: *[0xeab0] = (None + 0xda1d39f) - PC
+[2399] OP_0: Sym=None, Addend=0x0
+[2400] PATCH_32: *[0xeb00] = (None + 0xda23fa0) - PC
+[2401] PATCH_32: *[0xeb08] = (None + 0xeb0a) - PC
+[2402] PATCH_32: *[0xeb10] = (None + 0xda798a0) - PC
+[2403] OP_0: Sym=None, Addend=0x0
+[2404] PATCH_32: *[0xeb60] = (None + 0xda80921) - PC
+[2405] PATCH_32: *[0xeb68] = (None + 0xeb6a) - PC
+[2406] PATCH_32: *[0xeb70] = (None + 0xdad6461) - PC
+[2407] OP_0: Sym=None, Addend=0x0
+[2408] PATCH_32: *[0xebc0] = (None + 0xdadd2a2) - PC
+[2409] PATCH_32: *[0xebc8] = (None + 0xebca) - PC
+[2410] PATCH_32: *[0xebd0] = (None + 0xdb33cca) - PC
+[2411] OP_0: Sym=None, Addend=0x0
+[2412] PATCH_32: *[0xec20] = (None + 0xdb3ac23) - PC
+[2413] PATCH_32: *[0xec28] = (None + 0xec2a) - PC
+[2414] PATCH_32: *[0xec30] = (None + 0xdb9191b) - PC
+[2415] OP_0: Sym=None, Addend=0x0
+[2416] PATCH_32: *[0xec80] = (None + 0xdb985a4) - PC
+[2417] PATCH_32: *[0xec88] = (None + 0xec8a) - PC
+[2418] PATCH_32: *[0xec90] = (None + 0xdbed8bc) - PC
+[2419] OP_0: Sym=None, Addend=0x0
+[2420] PATCH_32: *[0xece0] = (None + 0xdbf4f25) - PC
+[2421] PATCH_32: *[0xece8] = (None + 0xecea) - PC
+[2422] PATCH_32: *[0xecf0] = (None + 0xdc4a9d5) - PC
+[2423] OP_0: Sym=None, Addend=0x0
+[2424] PATCH_32: *[0xed40] = (None + 0xdc518a6) - PC
+[2425] PATCH_32: *[0xed48] = (None + 0xed4a) - PC
+[2426] PATCH_32: *[0xed50] = (None + 0xdca793e) - PC
+[2427] OP_0: Sym=None, Addend=0x0
+[2428] PATCH_32: *[0xeda0] = (None + 0xdcaf227) - PC
+[2429] PATCH_32: *[0xeda8] = (None + 0xedaa) - PC
+[2430] PATCH_32: *[0xedb0] = (None + 0xdd04e3f) - PC
+[2431] OP_0: Sym=None, Addend=0x0
+[2432] PATCH_32: *[0xee00] = (None + 0xdd0bba8) - PC
+[2433] PATCH_32: *[0xee08] = (None + 0xee0a) - PC
+[2434] PATCH_32: *[0xee10] = (None + 0xdd61538) - PC
+[2435] OP_0: Sym=None, Addend=0x0
+[2436] PATCH_32: *[0xee60] = (None + 0xdd68529) - PC
+[2437] PATCH_32: *[0xee68] = (None + 0xee6a) - PC
+[2438] PATCH_32: *[0xee70] = (None + 0xddbe921) - PC
+[2439] OP_0: Sym=None, Addend=0x0
+[2440] PATCH_32: *[0xeec0] = (None + 0xddc5eaa) - PC
+[2441] PATCH_32: *[0xeec8] = (None + 0xeeca) - PC
+[2442] PATCH_32: *[0xeed0] = (None + 0xde1c5ba) - PC
+[2443] OP_0: Sym=None, Addend=0x0
+[2444] PATCH_32: *[0xef20] = (None + 0xde2382b) - PC
+[2445] PATCH_32: *[0xef28] = (None + 0xef2a) - PC
+[2446] PATCH_32: *[0xef30] = (None + 0xde79a2b) - PC
+[2447] OP_0: Sym=None, Addend=0x0
+[2448] PATCH_32: *[0xef80] = (None + 0xde811ac) - PC
+[2449] PATCH_32: *[0xef88] = (None + 0xef8a) - PC
+[2450] PATCH_32: *[0xef90] = (None + 0xded69d4) - PC
+[2451] OP_0: Sym=None, Addend=0x0
+[2452] PATCH_32: *[0xefe0] = (None + 0xdeddb2d) - PC
+[2453] PATCH_32: *[0xefe8] = (None + 0xefea) - PC
+[2454] PATCH_32: *[0xeff0] = (None + 0xdf3498d) - PC
+[2455] OP_0: Sym=None, Addend=0x0
+[2456] PATCH_32: *[0xf040] = (None + 0xdf3b4ae) - PC
+[2457] PATCH_32: *[0xf048] = (None + 0xf04a) - PC
+[2458] PATCH_32: *[0xf050] = (None + 0xdf91786) - PC
+[2459] OP_0: Sym=None, Addend=0x0
+[2460] PATCH_32: *[0xf0a0] = (None + 0xdf98e2f) - PC
+[2461] PATCH_32: *[0xf0a8] = (None + 0xf0aa) - PC
+[2462] PATCH_32: *[0xf0b0] = (None + 0xdfeea8f) - PC
+[2463] OP_0: Sym=None, Addend=0x0
+[2464] PATCH_32: *[0xf100] = (None + 0xdff57b0) - PC
+[2465] PATCH_32: *[0xf108] = (None + 0xf10a) - PC
+[2466] PATCH_32: *[0xf110] = (None + 0xe04bd58) - PC
+[2467] OP_0: Sym=None, Addend=0x0
+[2468] PATCH_32: *[0xf160] = (None + 0xe053131) - PC
+[2469] PATCH_32: *[0xf168] = (None + 0xf16a) - PC
+[2470] PATCH_32: *[0xf170] = (None + 0xe0a8eb1) - PC
+[2471] OP_0: Sym=None, Addend=0x0
+[2472] PATCH_32: *[0xf1c0] = (None + 0xe0afab2) - PC
+[2473] PATCH_32: *[0xf1c8] = (None + 0xf1ca) - PC
+[2474] PATCH_32: *[0xf1d0] = (None + 0xe105f82) - PC
+[2475] OP_0: Sym=None, Addend=0x0
+[2476] PATCH_32: *[0xf220] = (None + 0xe10d433) - PC
+[2477] PATCH_32: *[0xf228] = (None + 0xf22a) - PC
+[2478] PATCH_32: *[0xf230] = (None + 0xe162e53) - PC
+[2479] OP_0: Sym=None, Addend=0x0
+[2480] PATCH_32: *[0xf280] = (None + 0xe169db4) - PC
+[2481] PATCH_32: *[0xf288] = (None + 0xf28a) - PC
+[2482] PATCH_32: *[0xf290] = (None + 0xe1bf78c) - PC
+[2483] OP_0: Sym=None, Addend=0x0
+[2484] PATCH_32: *[0xf2e0] = (None + 0xe1c6735) - PC
+[2485] PATCH_32: *[0xf2e8] = (None + 0xf2ea) - PC
+[2486] PATCH_32: *[0xf2f0] = (None + 0xe21c6ad) - PC
+[2487] OP_0: Sym=None, Addend=0x0
+[2488] PATCH_32: *[0xf340] = (None + 0xe2230b6) - PC
+[2489] PATCH_32: *[0xf348] = (None + 0xf34a) - PC
+[2490] PATCH_32: *[0xf350] = (None + 0xe278da6) - PC
+[2491] OP_0: Sym=None, Addend=0x0
+[2492] PATCH_32: *[0xf3a0] = (None + 0xe27fa37) - PC
+[2493] PATCH_32: *[0xf3a8] = (None + 0xf3aa) - PC
+[2494] PATCH_32: *[0xf3b0] = (None + 0xe2d5967) - PC
+[2495] OP_0: Sym=None, Addend=0x0
+[2496] PATCH_32: *[0xf400] = (None + 0xe2dc3b8) - PC
+[2497] PATCH_32: *[0xf408] = (None + 0xf40a) - PC
+[2498] PATCH_32: *[0xf410] = (None + 0xe333068) - PC
+[2499] OP_0: Sym=None, Addend=0x0
+[2500] PATCH_32: *[0xf460] = (None + 0xe339d39) - PC
+[2501] PATCH_32: *[0xf468] = (None + 0xf46a) - PC
+[2502] PATCH_32: *[0xf470] = (None + 0xe38fcf9) - PC
+[2503] OP_0: Sym=None, Addend=0x0
+[2504] PATCH_32: *[0xf4c0] = (None + 0xe3966ba) - PC
+[2505] PATCH_32: *[0xf4c8] = (None + 0xf4ca) - PC
+[2506] PATCH_32: *[0xf4d0] = (None + 0xe3ec3f2) - PC
+[2507] OP_0: Sym=None, Addend=0x0
+[2508] PATCH_32: *[0xf520] = (None + 0xe3f303b) - PC
+[2509] PATCH_32: *[0xf528] = (None + 0xf52a) - PC
+[2510] PATCH_32: *[0xf530] = (None + 0xe448c0b) - PC
+[2511] OP_0: Sym=None, Addend=0x0
+[2512] PATCH_32: *[0xf580] = (None + 0xe44f9bc) - PC
+[2513] PATCH_32: *[0xf588] = (None + 0xf58a) - PC
+[2514] PATCH_32: *[0xf590] = (None + 0xe4a5c94) - PC
+[2515] OP_0: Sym=None, Addend=0x0
+[2516] PATCH_32: *[0xf5e0] = (None + 0xe4ad33d) - PC
+[2517] PATCH_32: *[0xf5e8] = (None + 0xf5ea) - PC
+[2518] PATCH_32: *[0xf5f0] = (None + 0xe5033d5) - PC
+[2519] OP_0: Sym=None, Addend=0x0
+[2520] PATCH_32: *[0xf640] = (None + 0xe50acbe) - PC
+[2521] PATCH_32: *[0xf648] = (None + 0xf64a) - PC
+[2522] PATCH_32: *[0xf650] = (None + 0xe561386) - PC
+[2523] OP_0: Sym=None, Addend=0x0
+[2524] PATCH_32: *[0xf6a0] = (None + 0xe56863f) - PC
+[2525] PATCH_32: *[0xf6a8] = (None + 0xf6aa) - PC
+[2526] PATCH_32: *[0xf6b0] = (None + 0xe5bd7ef) - PC
+[2527] OP_0: Sym=None, Addend=0x0
+[2528] PATCH_32: *[0xf700] = (None + 0xe5c4fc0) - PC
+[2529] PATCH_32: *[0xf708] = (None + 0xf70a) - PC
+[2530] PATCH_32: *[0xf710] = (None + 0xe61b520) - PC
+[2531] OP_0: Sym=None, Addend=0x0
+[2532] PATCH_32: *[0xf760] = (None + 0xe622941) - PC
+[2533] PATCH_32: *[0xf768] = (None + 0xf76a) - PC
+[2534] PATCH_32: *[0xf770] = (None + 0xe678ee9) - PC
+[2535] OP_0: Sym=None, Addend=0x0
+[2536] PATCH_32: *[0xf7c0] = (None + 0xe6802c2) - PC
+[2537] PATCH_32: *[0xf7c8] = (None + 0xf7ca) - PC
+[2538] PATCH_32: *[0xf7d0] = (None + 0xe6d5f22) - PC
+[2539] OP_0: Sym=None, Addend=0x0
+[2540] PATCH_32: *[0xf820] = (None + 0xe6dcc43) - PC
+[2541] PATCH_32: *[0xf828] = (None + 0xf82a) - PC
+[2542] PATCH_32: *[0xf830] = (None + 0xe7322bb) - PC
+[2543] OP_0: Sym=None, Addend=0x0
+[2544] PATCH_32: *[0xf880] = (None + 0xe7395c4) - PC
+[2545] PATCH_32: *[0xf888] = (None + 0xf88a) - PC
+[2546] PATCH_32: *[0xf890] = (None + 0xe78ed14) - PC
+[2547] OP_0: Sym=None, Addend=0x0
+[2548] PATCH_32: *[0xf8e0] = (None + 0xe795f45) - PC
+[2549] PATCH_32: *[0xf8e8] = (None + 0xf8ea) - PC
+[2550] PATCH_32: *[0xf8f0] = (None + 0xe7eb01d) - PC
+[2551] OP_0: Sym=None, Addend=0x0
+[2552] PATCH_32: *[0xf940] = (None + 0xe7f28c6) - PC
+[2553] PATCH_32: *[0xf948] = (None + 0xf94a) - PC
+[2554] PATCH_32: *[0xf950] = (None + 0xe849b5e) - PC
+[2555] OP_0: Sym=None, Addend=0x0
+[2556] PATCH_32: *[0xf9a0] = (None + 0xe851247) - PC
+[2557] PATCH_32: *[0xf9a8] = (None + 0xf9aa) - PC
+[2558] PATCH_32: *[0xf9b0] = (None + 0xe8a7a2f) - PC
+[2559] OP_0: Sym=None, Addend=0x0
+[2560] PATCH_32: *[0xfa00] = (None + 0xe8aebc8) - PC
+[2561] PATCH_32: *[0xfa08] = (None + 0xfa0a) - PC
+[2562] PATCH_32: *[0xfa10] = (None + 0xe904fc0) - PC
+[2563] OP_0: Sym=None, Addend=0x0
+[2564] PATCH_32: *[0xfa60] = (None + 0xe90c549) - PC
+[2565] PATCH_32: *[0xfa68] = (None + 0xfa6a) - PC
+[2566] PATCH_32: *[0xfa70] = (None + 0xe963481) - PC
+[2567] OP_0: Sym=None, Addend=0x0
+[2568] PATCH_32: *[0xfac0] = (None + 0xe969eca) - PC
+[2569] PATCH_32: *[0xfac8] = (None + 0xfaca) - PC
+[2570] PATCH_32: *[0xfad0] = (None + 0xe9c030a) - PC
+[2571] OP_0: Sym=None, Addend=0x0
+[2572] PATCH_32: *[0xfb20] = (None + 0xe9c784b) - PC
+[2573] PATCH_32: *[0xfb28] = (None + 0xfb2a) - PC
+[2574] PATCH_32: *[0xfb30] = (None + 0xea1e34b) - PC
+[2575] OP_0: Sym=None, Addend=0x0
+[2576] PATCH_32: *[0xfb80] = (None + 0xea251cc) - PC
+[2577] PATCH_32: *[0xfb88] = (None + 0xfb8a) - PC
+[2578] PATCH_32: *[0xfb90] = (None + 0xea7a964) - PC
+[2579] OP_0: Sym=None, Addend=0x0
+[2580] PATCH_32: *[0xfbe0] = (None + 0xea81b4d) - PC
+[2581] PATCH_32: *[0xfbe8] = (None + 0xfbea) - PC
+[2582] PATCH_32: *[0xfbf0] = (None + 0xead768d) - PC
+[2583] OP_0: Sym=None, Addend=0x0
+[2584] PATCH_32: *[0xfc40] = (None + 0xeade4ce) - PC
+[2585] PATCH_32: *[0xfc48] = (None + 0xfc4a) - PC
+[2586] PATCH_32: *[0xfc50] = (None + 0xeb32e9e) - PC
+[2587] OP_0: Sym=None, Addend=0x0
+[2588] PATCH_32: *[0xfca0] = (None + 0xeb39e4f) - PC
+[2589] PATCH_32: *[0xfca8] = (None + 0xfcaa) - PC
+[2590] PATCH_32: *[0xfcb0] = (None + 0xeb8f707) - PC
+[2591] OP_0: Sym=None, Addend=0x0
+[2592] PATCH_32: *[0xfd00] = (None + 0xeb967d0) - PC
+[2593] PATCH_32: *[0xfd08] = (None + 0xfd0a) - PC
+[2594] PATCH_32: *[0xfd10] = (None + 0xebeb620) - PC
+[2595] OP_0: Sym=None, Addend=0x0
+[2596] PATCH_32: *[0xfd60] = (None + 0xebf2151) - PC
+[2597] PATCH_32: *[0xfd68] = (None + 0xfd6a) - PC
+[2598] PATCH_32: *[0xfd70] = (None + 0xec47ed1) - PC
+[2599] OP_0: Sym=None, Addend=0x0
+[2600] PATCH_32: *[0xfdc0] = (None + 0xec4ead2) - PC
+[2601] PATCH_32: *[0xfdc8] = (None + 0xfdca) - PC
+[2602] PATCH_32: *[0xfdd0] = (None + 0xeca3a8a) - PC
+[2603] OP_0: Sym=None, Addend=0x0
+[2604] PATCH_32: *[0xfe20] = (None + 0xecaa453) - PC
+[2605] PATCH_32: *[0xfe28] = (None + 0xfe2a) - PC
+[2606] PATCH_32: *[0xfe30] = (None + 0xed0057b) - PC
+[2607] OP_0: Sym=None, Addend=0x0
+[2608] PATCH_32: *[0xfe80] = (None + 0xed07dd4) - PC
+[2609] PATCH_32: *[0xfe88] = (None + 0xfe8a) - PC
+[2610] PATCH_32: *[0xfe90] = (None + 0xed5eba4) - PC
+[2611] OP_0: Sym=None, Addend=0x0
+[2612] PATCH_32: *[0xfee0] = (None + 0xed65755) - PC
+[2613] PATCH_32: *[0xfee8] = (None + 0xfeea) - PC
+[2614] PATCH_32: *[0xfef0] = (None + 0xedbb715) - PC
+[2615] OP_0: Sym=None, Addend=0x0
+[2616] PATCH_32: *[0xff40] = (None + 0xedc20d6) - PC
+[2617] PATCH_32: *[0xff48] = (None + 0xff4a) - PC
+[2618] PATCH_32: *[0xff50] = (None + 0xee1747e) - PC
+[2619] OP_0: Sym=None, Addend=0x0
+[2620] PATCH_32: *[0xffa0] = (None + 0xee1ea57) - PC
+[2621] PATCH_32: *[0xffa8] = (None + 0xffaa) - PC
+[2622] PATCH_32: *[0xffb0] = (None + 0xee74c9f) - PC
+[2623] OP_0: Sym=None, Addend=0x0
+[2624] PATCH_32: *[0x10000] = (None + 0xee7c3d8) - PC
+[2625] PATCH_32: *[0x10008] = (None + 0x1000a) - PC
+[2626] PATCH_32: *[0x10010] = (None + 0xeed18a0) - PC
+[2627] OP_0: Sym=None, Addend=0x0
+[2628] PATCH_32: *[0x10060] = (None + 0xeed8d59) - PC
+[2629] PATCH_32: *[0x10068] = (None + 0x1006a) - PC
+[2630] PATCH_32: *[0x10070] = (None + 0xef2efe9) - PC
+[2631] OP_0: Sym=None, Addend=0x0
+[2632] PATCH_32: *[0x100c0] = (None + 0xef366da) - PC
+[2633] PATCH_32: *[0x100c8] = (None + 0x100ca) - PC
+[2634] PATCH_32: *[0x100d0] = (None + 0xef8d2b2) - PC
+[2635] OP_0: Sym=None, Addend=0x0
+[2636] PATCH_32: *[0x10120] = (None + 0xef9405b) - PC
+[2637] PATCH_32: *[0x10128] = (None + 0x1012a) - PC
+[2638] PATCH_32: *[0x10130] = (None + 0xefe99a3) - PC
+[2639] OP_0: Sym=None, Addend=0x0
+[2640] PATCH_32: *[0x10180] = (None + 0xeff09dc) - PC
+[2641] PATCH_32: *[0x10188] = (None + 0x1018a) - PC
+[2642] PATCH_32: *[0x10190] = (None + 0xf046f84) - PC
+[2643] OP_0: Sym=None, Addend=0x0
+[2644] PATCH_32: *[0x101e0] = (None + 0xf04e35d) - PC
+[2645] PATCH_32: *[0x101e8] = (None + 0x101ea) - PC
+[2646] PATCH_32: *[0x101f0] = (None + 0xf0a53fd) - PC
+[2647] OP_0: Sym=None, Addend=0x0
+[2648] PATCH_32: *[0x10240] = (None + 0xf0accde) - PC
+[2649] PATCH_32: *[0x10248] = (None + 0x1024a) - PC
+[2650] PATCH_32: *[0x10250] = (None + 0xf102ce6) - PC
+[2651] OP_0: Sym=None, Addend=0x0
+[2652] PATCH_32: *[0x102a0] = (None + 0xf10965f) - PC
+[2653] PATCH_32: *[0x102a8] = (None + 0x102aa) - PC
+[2654] PATCH_32: *[0x102b0] = (None + 0xf15fb2f) - PC
+[2655] OP_0: Sym=None, Addend=0x0
+[2656] PATCH_32: *[0x10300] = (None + 0xf166fe0) - PC
+[2657] PATCH_32: *[0x10308] = (None + 0x1030a) - PC
+[2658] PATCH_32: *[0x10310] = (None + 0xf1bd780) - PC
+[2659] OP_0: Sym=None, Addend=0x0
+[2660] PATCH_32: *[0x10360] = (None + 0xf1c4961) - PC
+[2661] PATCH_32: *[0x10368] = (None + 0x1036a) - PC
+[2662] PATCH_32: *[0x10370] = (None + 0xf21aa41) - PC
+[2663] OP_0: Sym=None, Addend=0x0
+[2664] PATCH_32: *[0x103c0] = (None + 0xf2222e2) - PC
+[2665] PATCH_32: *[0x103c8] = (None + 0x103ca) - PC
+[2666] PATCH_32: *[0x103d0] = (None + 0xf277642) - PC
+[2667] OP_0: Sym=None, Addend=0x0
+[2668] PATCH_32: *[0x10420] = (None + 0xf27ec63) - PC
+[2669] PATCH_32: *[0x10428] = (None + 0x1042a) - PC
+[2670] PATCH_32: *[0x10430] = (None + 0xf2d475b) - PC
+[2671] OP_0: Sym=None, Addend=0x0
+[2672] PATCH_32: *[0x10480] = (None + 0xf2db5e4) - PC
+[2673] PATCH_32: *[0x10488] = (None + 0x1048a) - PC
+[2674] PATCH_32: *[0x10490] = (None + 0xf3317e4) - PC
+[2675] OP_0: Sym=None, Addend=0x0
+[2676] PATCH_32: *[0x104e0] = (None + 0xf338f65) - PC
+[2677] PATCH_32: *[0x104e8] = (None + 0x104ea) - PC
+[2678] PATCH_32: *[0x104f0] = (None + 0xf38e78d) - PC
+[2679] OP_0: Sym=None, Addend=0x0
+[2680] PATCH_32: *[0x10540] = (None + 0xf3958e6) - PC
+[2681] PATCH_32: *[0x10548] = (None + 0x1054a) - PC
+[2682] PATCH_32: *[0x10550] = (None + 0xf3eb2be) - PC
+[2683] OP_0: Sym=None, Addend=0x0
+[2684] PATCH_32: *[0x105a0] = (None + 0xf3f2267) - PC
+[2685] PATCH_32: *[0x105a8] = (None + 0x105aa) - PC
+[2686] PATCH_32: *[0x105b0] = (None + 0xf447a8f) - PC
+[2687] OP_0: Sym=None, Addend=0x0
+[2688] PATCH_32: *[0x10600] = (None + 0xf44ebe8) - PC
+[2689] PATCH_32: *[0x10608] = (None + 0x1060a) - PC
+[2690] PATCH_32: *[0x10610] = (None + 0xf4a4068) - PC
+[2691] OP_0: Sym=None, Addend=0x0
+[2692] PATCH_32: *[0x10660] = (None + 0xf4ab569) - PC
+[2693] PATCH_32: *[0x10668] = (None + 0x1066a) - PC
+[2694] PATCH_32: *[0x10670] = (None + 0xf502381) - PC
+[2695] OP_0: Sym=None, Addend=0x0
+[2696] PATCH_32: *[0x106c0] = (None + 0xf508eea) - PC
+[2697] PATCH_32: *[0x106c8] = (None + 0x106ca) - PC
+[2698] PATCH_32: *[0x106d0] = (None + 0xf55f0a2) - PC
+[2699] OP_0: Sym=None, Addend=0x0
+[2700] PATCH_32: *[0x10720] = (None + 0xf56686b) - PC
+[2701] PATCH_32: *[0x10728] = (None + 0x1072a) - PC
+[2702] PATCH_32: *[0x10730] = (None + 0xf5bc093) - PC
+[2703] OP_0: Sym=None, Addend=0x0
+[2704] PATCH_32: *[0x10780] = (None + 0xf5c31ec) - PC
+[2705] PATCH_32: *[0x10788] = (None + 0x1078a) - PC
+[2706] PATCH_32: *[0x10790] = (None + 0xf618c54) - PC
+[2707] OP_0: Sym=None, Addend=0x0
+[2708] PATCH_32: *[0x107e0] = (None + 0xf61fb6d) - PC
+[2709] PATCH_32: *[0x107e8] = (None + 0x107ea) - PC
+[2710] PATCH_32: *[0x107f0] = (None + 0xf6765dd) - PC
+[2711] OP_0: Sym=None, Addend=0x0
+[2712] PATCH_32: *[0x10840] = (None + 0xf67d4ee) - PC
+[2713] PATCH_32: *[0x10848] = (None + 0x1084a) - PC
+[2714] PATCH_32: *[0x10850] = (None + 0xf6d2e36) - PC
+[2715] OP_0: Sym=None, Addend=0x0
+[2716] PATCH_32: *[0x108a0] = (None + 0xf6d9e6f) - PC
+[2717] PATCH_32: *[0x108a8] = (None + 0x108aa) - PC
+[2718] PATCH_32: *[0x108b0] = (None + 0xf72f7ff) - PC
+[2719] OP_0: Sym=None, Addend=0x0
+[2720] PATCH_32: *[0x10900] = (None + 0xf7367f0) - PC
+[2721] PATCH_32: *[0x10908] = (None + 0x1090a) - PC
+[2722] PATCH_32: *[0x10910] = (None + 0xf78c648) - PC
+[2723] OP_0: Sym=None, Addend=0x0
+[2724] PATCH_32: *[0x10960] = (None + 0xf793171) - PC
+[2725] PATCH_32: *[0x10968] = (None + 0x1096a) - PC
+[2726] PATCH_32: *[0x10970] = (None + 0xf7e9dd9) - PC
+[2727] OP_0: Sym=None, Addend=0x0
+[2728] PATCH_32: *[0x109c0] = (None + 0xf7f0af2) - PC
+[2729] PATCH_32: *[0x109c8] = (None + 0x109ca) - PC
+[2730] PATCH_32: *[0x109d0] = (None + 0xf84724a) - PC
+[2731] OP_0: Sym=None, Addend=0x0
+[2732] PATCH_32: *[0x10a20] = (None + 0xf84e473) - PC
+[2733] PATCH_32: *[0x10a28] = (None + 0x10a2a) - PC
+[2734] PATCH_32: *[0x10a30] = (None + 0xf8a41f3) - PC
+[2735] OP_0: Sym=None, Addend=0x0
+[2736] PATCH_32: *[0x10a80] = (None + 0xf8aadf4) - PC
+[2737] PATCH_32: *[0x10a88] = (None + 0x10a8a) - PC
+[2738] PATCH_32: *[0x10a90] = (None + 0xf9007cc) - PC
+[2739] OP_0: Sym=None, Addend=0x0
+[2740] PATCH_32: *[0x10ae0] = (None + 0xf907775) - PC
+[2741] PATCH_32: *[0x10ae8] = (None + 0x10aea) - PC
+[2742] PATCH_32: *[0x10af0] = (None + 0xf95cbf5) - PC
+[2743] OP_0: Sym=None, Addend=0x0
+[2744] PATCH_32: *[0x10b40] = (None + 0xf9640f6) - PC
+[2745] PATCH_32: *[0x10b48] = (None + 0x10b4a) - PC
+[2746] PATCH_32: *[0x10b50] = (None + 0xf9ba06e) - PC
+[2747] OP_0: Sym=None, Addend=0x0
+[2748] PATCH_32: *[0x10ba0] = (None + 0xf9c0a77) - PC
+[2749] PATCH_32: *[0x10ba8] = (None + 0x10baa) - PC
+[2750] PATCH_32: *[0x10bb0] = (None + 0xfa167f7) - PC
+[2751] OP_0: Sym=None, Addend=0x0
+[2752] PATCH_32: *[0x10c00] = (None + 0xfa1d3f8) - PC
+[2753] PATCH_32: *[0x10c08] = (None + 0x10c0a) - PC
+[2754] PATCH_32: *[0x10c10] = (None + 0xfa72e60) - PC
+[2755] OP_0: Sym=None, Addend=0x0
+[2756] PATCH_32: *[0x10c60] = (None + 0xfa79d79) - PC
+[2757] PATCH_32: *[0x10c68] = (None + 0x10c6a) - PC
+[2758] PATCH_32: *[0x10c70] = (None + 0xfacf559) - PC
+[2759] OP_0: Sym=None, Addend=0x0
+[2760] PATCH_32: *[0x10cc0] = (None + 0xfad66fa) - PC
+[2761] PATCH_32: *[0x10cc8] = (None + 0x10cca) - PC
+[2762] PATCH_32: *[0x10cd0] = (None + 0xfb2caf2) - PC
+[2763] OP_0: Sym=None, Addend=0x0
+[2764] PATCH_32: *[0x10d20] = (None + 0xfb3407b) - PC
+[2765] PATCH_32: *[0x10d28] = (None + 0x10d2a) - PC
+[2766] PATCH_32: *[0x10d30] = (None + 0xfb8aedb) - PC
+[2767] OP_0: Sym=None, Addend=0x0
+[2768] PATCH_32: *[0x10d80] = (None + 0xfb919fc) - PC
+[2769] PATCH_32: *[0x10d88] = (None + 0x10d8a) - PC
+[2770] PATCH_32: *[0x10d90] = (None + 0xfbe8934) - PC
+[2771] OP_0: Sym=None, Addend=0x0
+[2772] PATCH_32: *[0x10de0] = (None + 0xfbef37d) - PC
+[2773] PATCH_32: *[0x10de8] = (None + 0x10dea) - PC
+[2774] PATCH_32: *[0x10df0] = (None + 0xfc448d5) - PC
+[2775] OP_0: Sym=None, Addend=0x0
+[2776] PATCH_32: *[0x10e40] = (None + 0xfc4bcfe) - PC
+[2777] PATCH_32: *[0x10e48] = (None + 0x10e4a) - PC
+[2778] PATCH_32: *[0x10e50] = (None + 0xfca1fd6) - PC
+[2779] OP_0: Sym=None, Addend=0x0
+[2780] PATCH_32: *[0x10ea0] = (None + 0xfca967f) - PC
+[2781] PATCH_32: *[0x10ea8] = (None + 0x10eaa) - PC
+[2782] PATCH_32: *[0x10eb0] = (None + 0xfcff7ef) - PC
+[2783] OP_0: Sym=None, Addend=0x0
+[2784] PATCH_32: *[0x10f00] = (None + 0xfd07000) - PC
+[2785] PATCH_32: *[0x10f08] = (None + 0x10f0a) - PC
+[2786] PATCH_32: *[0x10f10] = (None + 0xfd5cc60) - PC
+[2787] OP_0: Sym=None, Addend=0x0
+[2788] PATCH_32: *[0x10f60] = (None + 0xfd63981) - PC
+[2789] PATCH_32: *[0x10f68] = (None + 0x10f6a) - PC
+[2790] PATCH_32: *[0x10f70] = (None + 0xfdb85d9) - PC
+[2791] OP_0: Sym=None, Addend=0x0
+[2792] PATCH_32: *[0x10fc0] = (None + 0xfdbf302) - PC
+[2793] PATCH_32: *[0x10fc8] = (None + 0x10fca) - PC
+[2794] PATCH_32: *[0x10fd0] = (None + 0xfe15862) - PC
+[2795] OP_0: Sym=None, Addend=0x0
+[2796] PATCH_32: *[0x11020] = (None + 0xfe1cc83) - PC
+[2797] PATCH_32: *[0x11028] = (None + 0x1102a) - PC
+[2798] PATCH_32: *[0x11030] = (None + 0xfe726a3) - PC
+[2799] OP_0: Sym=None, Addend=0x0
+[2800] PATCH_32: *[0x11080] = (None + 0xfe79604) - PC
+[2801] PATCH_32: *[0x11088] = (None + 0x1108a) - PC
+[2802] PATCH_32: *[0x11090] = (None + 0xfecef4c) - PC
+[2803] OP_0: Sym=None, Addend=0x0
+[2804] PATCH_32: *[0x110e0] = (None + 0xfed5f85) - PC
+[2805] PATCH_32: *[0x110e8] = (None + 0x110ea) - PC
+[2806] PATCH_32: *[0x110f0] = (None + 0xff2c49d) - PC
+[2807] OP_0: Sym=None, Addend=0x0
+[2808] PATCH_32: *[0x11140] = (None + 0xff33906) - PC
+[2809] PATCH_32: *[0x11148] = (None + 0x1114a) - PC
+[2810] PATCH_32: *[0x11150] = (None + 0xff88bd6) - PC
+[2811] OP_0: Sym=None, Addend=0x0
+[2812] PATCH_32: *[0x111a0] = (None + 0xff90287) - PC
+[2813] PATCH_32: *[0x111a8] = (None + 0x111aa) - PC
+[2814] PATCH_32: *[0x111b0] = (None + 0xffe6097) - PC
+[2815] OP_0: Sym=None, Addend=0x0
+[2816] PATCH_32: *[0x11200] = (None + 0xffecc08) - PC
+[2817] PATCH_32: *[0x11208] = (None + 0x1120a) - PC
+[2818] PATCH_32: *[0x11210] = (None + 0x10043990) - PC
+[2819] OP_0: Sym=None, Addend=0x0
+[2820] PATCH_32: *[0x11260] = (None + 0x1004a589) - PC
+[2821] PATCH_32: *[0x11268] = (None + 0x1126a) - PC
+[2822] PATCH_32: *[0x11270] = (None + 0x100a08f1) - PC
+[2823] OP_0: Sym=None, Addend=0x0
+[2824] PATCH_32: *[0x112c0] = (None + 0x100a7f0a) - PC
+[2825] PATCH_32: *[0x112c8] = (None + 0x112ca) - PC
+[2826] PATCH_32: *[0x112d0] = (None + 0x100fd38a) - PC
+[2827] OP_0: Sym=None, Addend=0x0
+[2828] PATCH_32: *[0x11320] = (None + 0x1010488b) - PC
+[2829] PATCH_32: *[0x11328] = (None + 0x1132a) - PC
+[2830] PATCH_32: *[0x11330] = (None + 0x1015ad5b) - PC
+[2831] OP_0: Sym=None, Addend=0x0
+[2832] PATCH_32: *[0x11380] = (None + 0x1016220c) - PC
+[2833] PATCH_32: *[0x11388] = (None + 0x1138a) - PC
+[2834] PATCH_32: *[0x11390] = (None + 0x101b8574) - PC
+[2835] OP_0: Sym=None, Addend=0x0
+[2836] PATCH_32: *[0x113e0] = (None + 0x101bfb8d) - PC
+[2837] PATCH_32: *[0x113e8] = (None + 0x113ea) - PC
+[2838] PATCH_32: *[0x113f0] = (None + 0x10215a2d) - PC
+[2839] OP_0: Sym=None, Addend=0x0
+[2840] PATCH_32: *[0x11440] = (None + 0x1021c50e) - PC
+[2841] PATCH_32: *[0x11448] = (None + 0x1144a) - PC
+[2842] PATCH_32: *[0x11450] = (None + 0x10271c5e) - PC
+[2843] OP_0: Sym=None, Addend=0x0
+[2844] PATCH_32: *[0x114a0] = (None + 0x10278e8f) - PC
+[2845] PATCH_32: *[0x114a8] = (None + 0x114aa) - PC
+[2846] PATCH_32: *[0x114b0] = (None + 0x102ce477) - PC
+[2847] OP_0: Sym=None, Addend=0x0
+[2848] PATCH_32: *[0x11500] = (None + 0x102d5810) - PC
+[2849] PATCH_32: *[0x11508] = (None + 0x1150a) - PC
+[2850] PATCH_32: *[0x11510] = (None + 0x1032aae0) - PC
+[2851] OP_0: Sym=None, Addend=0x0
+[2852] PATCH_32: *[0x11560] = (None + 0x10332191) - PC
+[2853] PATCH_32: *[0x11568] = (None + 0x1156a) - PC
+[2854] PATCH_32: *[0x11570] = (None + 0x10387df1) - PC
+[2855] OP_0: Sym=None, Addend=0x0
+[2856] PATCH_32: *[0x115c0] = (None + 0x1038eb12) - PC
+[2857] PATCH_32: *[0x115c8] = (None + 0x115ca) - PC
+[2858] PATCH_32: *[0x115d0] = (None + 0x103e421a) - PC
+[2859] OP_0: Sym=None, Addend=0x0
+[2860] PATCH_32: *[0x11620] = (None + 0x103eb493) - PC
+[2861] PATCH_32: *[0x11628] = (None + 0x1162a) - PC
+[2862] PATCH_32: *[0x11630] = (None + 0x10440f43) - PC
+[2863] OP_0: Sym=None, Addend=0x0
+[2864] PATCH_32: *[0x11680] = (None + 0x10447e14) - PC
+[2865] PATCH_32: *[0x11688] = (None + 0x1168a) - PC
+[2866] PATCH_32: *[0x11690] = (None + 0x1049c5ec) - PC
+[2867] OP_0: Sym=None, Addend=0x0
+[2868] PATCH_32: *[0x116e0] = (None + 0x104a3795) - PC
+[2869] PATCH_32: *[0x116e8] = (None + 0x116ea) - PC
+[2870] PATCH_32: *[0x116f0] = (None + 0x104f9d3d) - PC
+[2871] OP_0: Sym=None, Addend=0x0
+[2872] PATCH_32: *[0x11740] = (None + 0x10501116) - PC
+[2873] PATCH_32: *[0x11748] = (None + 0x1174a) - PC
+[2874] PATCH_32: *[0x11750] = (None + 0x105566b6) - PC
+[2875] OP_0: Sym=None, Addend=0x0
+[2876] PATCH_32: *[0x117a0] = (None + 0x1055da97) - PC
+[2877] PATCH_32: *[0x117a8] = (None + 0x117aa) - PC
+[2878] PATCH_32: *[0x117b0] = (None + 0x105b3b77) - PC
+[2879] OP_0: Sym=None, Addend=0x0
+[2880] PATCH_32: *[0x11800] = (None + 0x105bb418) - PC
+[2881] PATCH_32: *[0x11808] = (None + 0x1180a) - PC
+[2882] PATCH_32: *[0x11810] = (None + 0x10610a00) - PC
+[2883] OP_0: Sym=None, Addend=0x0
+[2884] PATCH_32: *[0x11860] = (None + 0x10617d99) - PC
+[2885] PATCH_32: *[0x11868] = (None + 0x1186a) - PC
+[2886] PATCH_32: *[0x11870] = (None + 0x1066dfe1) - PC
+[2887] OP_0: Sym=None, Addend=0x0
+[2888] PATCH_32: *[0x118c0] = (None + 0x1067571a) - PC
+[2889] PATCH_32: *[0x118c8] = (None + 0x118ca) - PC
+[2890] PATCH_32: *[0x118d0] = (None + 0x106cb88a) - PC
+[2891] OP_0: Sym=None, Addend=0x0
+[2892] PATCH_32: *[0x11920] = (None + 0x106d309b) - PC
+[2893] PATCH_32: *[0x11928] = (None + 0x1192a) - PC
+[2894] PATCH_32: *[0x11930] = (None + 0x10728ef3) - PC
+[2895] OP_0: Sym=None, Addend=0x0
+[2896] PATCH_32: *[0x11980] = (None + 0x1072fa1c) - PC
+[2897] PATCH_32: *[0x11988] = (None + 0x1198a) - PC
+[2898] PATCH_32: *[0x11990] = (None + 0x107863b4) - PC
+[2899] OP_0: Sym=None, Addend=0x0
+[2900] PATCH_32: *[0x119e0] = (None + 0x1078d39d) - PC
+[2901] PATCH_32: *[0x119e8] = (None + 0x119ea) - PC
+[2902] PATCH_32: *[0x119f0] = (None + 0x107e2a15) - PC
+[2903] OP_0: Sym=None, Addend=0x0
+[2904] PATCH_32: *[0x11a40] = (None + 0x107e9d1e) - PC
+[2905] PATCH_32: *[0x11a48] = (None + 0x11a4a) - PC
+[2906] PATCH_32: *[0x11a50] = (None + 0x1084030e) - PC
+[2907] OP_0: Sym=None, Addend=0x0
+[2908] PATCH_32: *[0x11aa0] = (None + 0x1084769f) - PC
+[2909] PATCH_32: *[0x11aa8] = (None + 0x11aaa) - PC
+[2910] PATCH_32: *[0x11ab0] = (None + 0x1089d89f) - PC
+[2911] OP_0: Sym=None, Addend=0x0
+[2912] PATCH_32: *[0x11b00] = (None + 0x108a5020) - PC
+[2913] PATCH_32: *[0x11b08] = (None + 0x11b0a) - PC
+[2914] PATCH_32: *[0x11b10] = (None + 0x108fb418) - PC
+[2915] OP_0: Sym=None, Addend=0x0
+[2916] PATCH_32: *[0x11b60] = (None + 0x109029a1) - PC
+[2917] PATCH_32: *[0x11b68] = (None + 0x11b6a) - PC
+[2918] PATCH_32: *[0x11b70] = (None + 0x10958a81) - PC
+[2919] OP_0: Sym=None, Addend=0x0
+[2920] PATCH_32: *[0x11bc0] = (None + 0x10960322) - PC
+[2921] PATCH_32: *[0x11bc8] = (None + 0x11bca) - PC
+[2922] PATCH_32: *[0x11bd0] = (None + 0x109b6b9a) - PC
+[2923] OP_0: Sym=None, Addend=0x0
+[2924] PATCH_32: *[0x11c20] = (None + 0x109bdca3) - PC
+[2925] PATCH_32: *[0x11c28] = (None + 0x11c2a) - PC
+[2926] PATCH_32: *[0x11c30] = (None + 0x10a1259b) - PC
+[2927] OP_0: Sym=None, Addend=0x0
+[2928] PATCH_32: *[0x11c80] = (None + 0x10a19624) - PC
+[2929] PATCH_32: *[0x11c88] = (None + 0x11c8a) - PC
+[2930] PATCH_32: *[0x11c90] = (None + 0x10a6ec9c) - PC
+[2931] OP_0: Sym=None, Addend=0x0
+[2932] PATCH_32: *[0x11ce0] = (None + 0x10a75fa5) - PC
+[2933] PATCH_32: *[0x11ce8] = (None + 0x11cea) - PC
+[2934] PATCH_32: *[0x11cf0] = (None + 0x10acbfad) - PC
+[2935] OP_0: Sym=None, Addend=0x0
+[2936] PATCH_32: *[0x11d40] = (None + 0x10ad2926) - PC
+[2937] PATCH_32: *[0x11d48] = (None + 0x11d4a) - PC
+[2938] PATCH_32: *[0x11d50] = (None + 0x10b28a4e) - PC
+[2939] OP_0: Sym=None, Addend=0x0
+[2940] PATCH_32: *[0x11da0] = (None + 0x10b302a7) - PC
+[2941] PATCH_32: *[0x11da8] = (None + 0x11daa) - PC
+[2942] PATCH_32: *[0x11db0] = (None + 0x10b864ef) - PC
+[2943] OP_0: Sym=None, Addend=0x0
+[2944] PATCH_32: *[0x11e00] = (None + 0x10b8dc28) - PC
+[2945] PATCH_32: *[0x11e08] = (None + 0x11e0a) - PC
+[2946] PATCH_32: *[0x11e10] = (None + 0x10be3768) - PC
+[2947] OP_0: Sym=None, Addend=0x0
+[2948] PATCH_32: *[0x11e60] = (None + 0x10bea5a9) - PC
+[2949] PATCH_32: *[0x11e68] = (None + 0x11e6a) - PC
+[2950] PATCH_32: *[0x11e70] = (None + 0x10c3ff39) - PC
+[2951] OP_0: Sym=None, Addend=0x0
+[2952] PATCH_32: *[0x11ec0] = (None + 0x10c46f2a) - PC
+[2953] PATCH_32: *[0x11ec8] = (None + 0x11eca) - PC
+[2954] PATCH_32: *[0x11ed0] = (None + 0x10c9c7e2) - PC
+[2955] OP_0: Sym=None, Addend=0x0
+[2956] PATCH_32: *[0x11f20] = (None + 0x10ca38ab) - PC
+[2957] PATCH_32: *[0x11f28] = (None + 0x11f2a) - PC
+[2958] PATCH_32: *[0x11f30] = (None + 0x10cf854b) - PC
+[2959] OP_0: Sym=None, Addend=0x0
+[2960] PATCH_32: *[0x11f80] = (None + 0x10cff22c) - PC
+[2961] PATCH_32: *[0x11f88] = (None + 0x11f8a) - PC
+[2962] PATCH_32: *[0x11f90] = (None + 0x10d54a0c) - PC
+[2963] OP_0: Sym=None, Addend=0x0
+[2964] PATCH_32: *[0x11fe0] = (None + 0x10d5bbad) - PC
+[2965] PATCH_32: *[0x11fe8] = (None + 0x11fea) - PC
+[2966] PATCH_32: *[0x11ff0] = (None + 0x10db0b1d) - PC
+[2967] OP_0: Sym=None, Addend=0x0
+[2968] PATCH_32: *[0x12040] = (None + 0x10db752e) - PC
+[2969] PATCH_32: *[0x12048] = (None + 0x1204a) - PC
+[2970] PATCH_32: *[0x12050] = (None + 0x10e0dc3e) - PC
+[2971] OP_0: Sym=None, Addend=0x0
+[2972] PATCH_32: *[0x120a0] = (None + 0x10e14eaf) - PC
+[2973] PATCH_32: *[0x120a8] = (None + 0x120aa) - PC
+[2974] PATCH_32: *[0x120b0] = (None + 0x10e6ba3f) - PC
+[2975] OP_0: Sym=None, Addend=0x0
+[2976] PATCH_32: *[0x12100] = (None + 0x10e72830) - PC
+[2977] PATCH_32: *[0x12108] = (None + 0x1210a) - PC
+[2978] PATCH_32: *[0x12110] = (None + 0x10ec8130) - PC
+[2979] OP_0: Sym=None, Addend=0x0
+[2980] PATCH_32: *[0x12160] = (None + 0x10ecf1b1) - PC
+[2981] PATCH_32: *[0x12168] = (None + 0x1216a) - PC
+[2982] PATCH_32: *[0x12170] = (None + 0x10f24c61) - PC
+[2983] OP_0: Sym=None, Addend=0x0
+[2984] PATCH_32: *[0x121c0] = (None + 0x10f2bb32) - PC
+[2985] PATCH_32: *[0x121c8] = (None + 0x121ca) - PC
+[2986] PATCH_32: *[0x121d0] = (None + 0x10f82752) - PC
+[2987] OP_0: Sym=None, Addend=0x0
+[2988] PATCH_32: *[0x12220] = (None + 0x10f894b3) - PC
+[2989] PATCH_32: *[0x12228] = (None + 0x1222a) - PC
+[2990] PATCH_32: *[0x12230] = (None + 0x10fdf863) - PC
+[2991] OP_0: Sym=None, Addend=0x0
+[2992] PATCH_32: *[0x12280] = (None + 0x10fe6e34) - PC
+[2993] PATCH_32: *[0x12288] = (None + 0x1228a) - PC
+[2994] PATCH_32: *[0x12290] = (None + 0x1103cd64) - PC
+[2995] OP_0: Sym=None, Addend=0x0
+[2996] PATCH_32: *[0x122e0] = (None + 0x110437b5) - PC
+[2997] PATCH_32: *[0x122e8] = (None + 0x122ea) - PC
+[2998] PATCH_32: *[0x122f0] = (None + 0x1109969d) - PC
+[2999] OP_0: Sym=None, Addend=0x0
+[3000] PATCH_32: *[0x12340] = (None + 0x110a0136) - PC
+[3001] PATCH_32: *[0x12348] = (None + 0x1234a) - PC
+[3002] PATCH_32: *[0x12350] = (None + 0x110f5a7e) - PC
+[3003] OP_0: Sym=None, Addend=0x0
+[3004] PATCH_32: *[0x123a0] = (None + 0x110fcab7) - PC
+[3005] PATCH_32: *[0x123a8] = (None + 0x123aa) - PC
+[3006] PATCH_32: *[0x123b0] = (None + 0x1115251f) - PC
+[3007] OP_0: Sym=None, Addend=0x0
+[3008] PATCH_32: *[0x12400] = (None + 0x11159438) - PC
+[3009] PATCH_32: *[0x12408] = (None + 0x1240a) - PC
+[3010] PATCH_32: *[0x12410] = (None + 0x111aec60) - PC
+[3011] OP_0: Sym=None, Addend=0x0
+[3012] PATCH_32: *[0x12460] = (None + 0x111b5db9) - PC
+[3013] PATCH_32: *[0x12468] = (None + 0x1246a) - PC
+[3014] PATCH_32: *[0x12470] = (None + 0x1120b791) - PC
+[3015] OP_0: Sym=None, Addend=0x0
+[3016] PATCH_32: *[0x124c0] = (None + 0x1121273a) - PC
+[3017] PATCH_32: *[0x124c8] = (None + 0x124ca) - PC
+[3018] PATCH_32: *[0x124d0] = (None + 0x11268a5a) - PC
+[3019] OP_0: Sym=None, Addend=0x0
+[3020] PATCH_32: *[0x12520] = (None + 0x112700bb) - PC
+[3021] PATCH_32: *[0x12528] = (None + 0x1252a) - PC
+[3022] PATCH_32: *[0x12530] = (None + 0x112c646b) - PC
+[3023] OP_0: Sym=None, Addend=0x0
+[3024] PATCH_32: *[0x12580] = (None + 0x112cda3c) - PC
+[3025] PATCH_32: *[0x12588] = (None + 0x1258a) - PC
+[3026] PATCH_32: *[0x12590] = (None + 0x11323144) - PC
+[3027] OP_0: Sym=None, Addend=0x0
+[3028] PATCH_32: *[0x125e0] = (None + 0x1132a3bd) - PC
+[3029] PATCH_32: *[0x125e8] = (None + 0x125ea) - PC
+[3030] PATCH_32: *[0x125f0] = (None + 0x1137f915) - PC
+[3031] OP_0: Sym=None, Addend=0x0
+[3032] PATCH_32: *[0x12640] = (None + 0x11386d3e) - PC
+[3033] PATCH_32: *[0x12648] = (None + 0x1264a) - PC
+[3034] PATCH_32: *[0x12650] = (None + 0x113dccb6) - PC
+[3035] OP_0: Sym=None, Addend=0x0
+[3036] PATCH_32: *[0x126a0] = (None + 0x113e36bf) - PC
+[3037] PATCH_32: *[0x126a8] = (None + 0x126aa) - PC
+[3038] PATCH_32: *[0x126b0] = (None + 0x11439517) - PC
+[3039] OP_0: Sym=None, Addend=0x0
+[3040] PATCH_32: *[0x12700] = (None + 0x11440040) - PC
+[3041] PATCH_32: *[0x12708] = (None + 0x1270a) - PC
+[3042] PATCH_32: *[0x12710] = (None + 0x11495868) - PC
+[3043] OP_0: Sym=None, Addend=0x0
+[3044] PATCH_32: *[0x12760] = (None + 0x1149c9c1) - PC
+[3045] PATCH_32: *[0x12768] = (None + 0x1276a) - PC
+[3046] PATCH_32: *[0x12770] = (None + 0x114f2e01) - PC
+[3047] OP_0: Sym=None, Addend=0x0
+[3048] PATCH_32: *[0x127c0] = (None + 0x114fa342) - PC
+[3049] PATCH_32: *[0x127c8] = (None + 0x127ca) - PC
+[3050] PATCH_32: *[0x127d0] = (None + 0x1155010a) - PC
+[3051] OP_0: Sym=None, Addend=0x0
+[3052] PATCH_32: *[0x12820] = (None + 0x11556cc3) - PC
+[3053] PATCH_32: *[0x12828] = (None + 0x1282a) - PC
+[3054] PATCH_32: *[0x12830] = (None + 0x115ac4a3) - PC
+[3055] OP_0: Sym=None, Addend=0x0
+[3056] PATCH_32: *[0x12880] = (None + 0x115b3644) - PC
+[3057] PATCH_32: *[0x12888] = (None + 0x1288a) - PC
+[3058] PATCH_32: *[0x12890] = (None + 0x11609bec) - PC
+[3059] OP_0: Sym=None, Addend=0x0
+[3060] PATCH_32: *[0x128e0] = (None + 0x11610fc5) - PC
+[3061] PATCH_32: *[0x128e8] = (None + 0x128ea) - PC
+[3062] PATCH_32: *[0x128f0] = (None + 0x11667015) - PC
+[3063] OP_0: Sym=None, Addend=0x0
+[3064] PATCH_32: *[0x12940] = (None + 0x1166e946) - PC
+[3065] PATCH_32: *[0x12948] = (None + 0x1294a) - PC
+[3066] PATCH_32: *[0x12950] = (None + 0x116c509e) - PC
+[3067] OP_0: Sym=None, Addend=0x0
+[3068] PATCH_32: *[0x129a0] = (None + 0x116cc2c7) - PC
+[3069] PATCH_32: *[0x129a8] = (None + 0x129aa) - PC
+[3070] PATCH_32: *[0x129b0] = (None + 0x117216b7) - PC
+[3071] OP_0: Sym=None, Addend=0x0
+[3072] PATCH_32: *[0x12a00] = (None + 0x11728c48) - PC
+[3073] PATCH_32: *[0x12a08] = (None + 0x12a0a) - PC
+[3074] PATCH_32: *[0x12a10] = (None + 0x1177e620) - PC
+[3075] OP_0: Sym=None, Addend=0x0
+[3076] PATCH_32: *[0x12a60] = (None + 0x117855c9) - PC
+[3077] PATCH_32: *[0x12a68] = (None + 0x12a6a) - PC
+[3078] PATCH_32: *[0x12a70] = (None + 0x117dab21) - PC
+[3079] OP_0: Sym=None, Addend=0x0
+[3080] PATCH_32: *[0x12ac0] = (None + 0x117e1f4a) - PC
+[3081] PATCH_32: *[0x12ac8] = (None + 0x12aca) - PC
+[3082] PATCH_32: *[0x12ad0] = (None + 0x11837892) - PC
+[3083] OP_0: Sym=None, Addend=0x0
+[3084] PATCH_32: *[0x12b20] = (None + 0x1183e8cb) - PC
+[3085] PATCH_32: *[0x12b28] = (None + 0x12b2a) - PC
+[3086] PATCH_32: *[0x12b30] = (None + 0x11894c7b) - PC
+[3087] OP_0: Sym=None, Addend=0x0
+[3088] PATCH_32: *[0x12b80] = (None + 0x1189c24c) - PC
+[3089] PATCH_32: *[0x12b88] = (None + 0x12b8a) - PC
+[3090] PATCH_32: *[0x12b90] = (None + 0x118f229c) - PC
+[3091] OP_0: Sym=None, Addend=0x0
+[3092] PATCH_32: *[0x12be0] = (None + 0x118f9bcd) - PC
+[3093] PATCH_32: *[0x12be8] = (None + 0x12bea) - PC
+[3094] PATCH_32: *[0x12bf0] = (None + 0x1194f875) - PC
+[3095] OP_0: Sym=None, Addend=0x0
+[3096] PATCH_32: *[0x12c40] = (None + 0x1195654e) - PC
+[3097] PATCH_32: *[0x12c48] = (None + 0x12c4a) - PC
+[3098] PATCH_32: *[0x12c50] = (None + 0x119acca6) - PC
+[3099] OP_0: Sym=None, Addend=0x0
+[3100] PATCH_32: *[0x12ca0] = (None + 0x119b3ecf) - PC
+[3101] PATCH_32: *[0x12ca8] = (None + 0x12caa) - PC
+[3102] PATCH_32: *[0x12cb0] = (None + 0x11a096af) - PC
+[3103] OP_0: Sym=None, Addend=0x0
+[3104] PATCH_32: *[0x12d00] = (None + 0x11a10850) - PC
+[3105] PATCH_32: *[0x12d08] = (None + 0x12d0a) - PC
+[3106] PATCH_32: *[0x12d10] = (None + 0x11a65460) - PC
+[3107] OP_0: Sym=None, Addend=0x0
+[3108] PATCH_32: *[0x12d60] = (None + 0x11a6c1d1) - PC
+[3109] PATCH_32: *[0x12d68] = (None + 0x12d6a) - PC
+[3110] PATCH_32: *[0x12d70] = (None + 0x11ac1261) - PC
+[3111] OP_0: Sym=None, Addend=0x0
+[3112] PATCH_32: *[0x12dc0] = (None + 0x11ac8b52) - PC
+[3113] PATCH_32: *[0x12dc8] = (None + 0x12dca) - PC
+[3114] PATCH_32: *[0x12dd0] = (None + 0x11b1f0b2) - PC
+[3115] OP_0: Sym=None, Addend=0x0
+[3116] PATCH_32: *[0x12e20] = (None + 0x11b264d3) - PC
+[3117] PATCH_32: *[0x12e28] = (None + 0x12e2a) - PC
+[3118] PATCH_32: *[0x12e30] = (None + 0x11b7c883) - PC
+[3119] OP_0: Sym=None, Addend=0x0
+[3120] PATCH_32: *[0x12e80] = (None + 0x11b83e54) - PC
+[3121] PATCH_32: *[0x12e88] = (None + 0x12e8a) - PC
+[3122] PATCH_32: *[0x12e90] = (None + 0x11bd9a6c) - PC
+[3123] OP_0: Sym=None, Addend=0x0
+[3124] PATCH_32: *[0x12ee0] = (None + 0x11be07d5) - PC
+[3125] PATCH_32: *[0x12ee8] = (None + 0x12eea) - PC
+[3126] PATCH_32: *[0x12ef0] = (None + 0x11c3635d) - PC
+[3127] OP_0: Sym=None, Addend=0x0
+[3128] PATCH_32: *[0x12f40] = (None + 0x11c3d156) - PC
+[3129] PATCH_32: *[0x12f48] = (None + 0x12f4a) - PC
+[3130] PATCH_32: *[0x12f50] = (None + 0x11c927ce) - PC
+[3131] OP_0: Sym=None, Addend=0x0
+[3132] PATCH_32: *[0x12fa0] = (None + 0x11c99ad7) - PC
+[3133] PATCH_32: *[0x12fa8] = (None + 0x12faa) - PC
+[3134] PATCH_32: *[0x12fb0] = (None + 0x11cef26f) - PC
+[3135] OP_0: Sym=None, Addend=0x0
+[3136] PATCH_32: *[0x13000] = (None + 0x11cf6458) - PC
+[3137] PATCH_32: *[0x13008] = (None + 0x1300a) - PC
+[3138] PATCH_32: *[0x13010] = (None + 0x11d4c268) - PC
+[3139] OP_0: Sym=None, Addend=0x0
+[3140] PATCH_32: *[0x13060] = (None + 0x11d52dd9) - PC
+[3141] PATCH_32: *[0x13068] = (None + 0x1306a) - PC
+[3142] PATCH_32: *[0x13070] = (None + 0x11da9261) - PC
+[3143] OP_0: Sym=None, Addend=0x0
+[3144] PATCH_32: *[0x130c0] = (None + 0x11db075a) - PC
+[3145] PATCH_32: *[0x130c8] = (None + 0x130ca) - PC
+[3146] PATCH_32: *[0x130d0] = (None + 0x11e06522) - PC
+[3147] OP_0: Sym=None, Addend=0x0
+[3148] PATCH_32: *[0x13120] = (None + 0x11e0d0db) - PC
+[3149] PATCH_32: *[0x13128] = (None + 0x1312a) - PC
+[3150] PATCH_32: *[0x13130] = (None + 0x11e622d3) - PC
+[3151] OP_0: Sym=None, Addend=0x0
+[3152] PATCH_32: *[0x13180] = (None + 0x11e69a5c) - PC
+[3153] PATCH_32: *[0x13188] = (None + 0x1318a) - PC
+[3154] PATCH_32: *[0x13190] = (None + 0x11ec028c) - PC
+[3155] OP_0: Sym=None, Addend=0x0
+[3156] PATCH_32: *[0x131e0] = (None + 0x11ec73dd) - PC
+[3157] PATCH_32: *[0x131e8] = (None + 0x131ea) - PC
+[3158] PATCH_32: *[0x131f0] = (None + 0x11f1ca0d) - PC
+[3159] OP_0: Sym=None, Addend=0x0
+[3160] PATCH_32: *[0x13240] = (None + 0x11f23d5e) - PC
+[3161] PATCH_32: *[0x13248] = (None + 0x1324a) - PC
+[3162] PATCH_32: *[0x13250] = (None + 0x11f79d1e) - PC
+[3163] OP_0: Sym=None, Addend=0x0
+[3164] PATCH_32: *[0x132a0] = (None + 0x11f806df) - PC
+[3165] PATCH_32: *[0x132a8] = (None + 0x132aa) - PC
+[3166] PATCH_32: *[0x132b0] = (None + 0x11fd6d5f) - PC
+[3167] OP_0: Sym=None, Addend=0x0
+[3168] PATCH_32: *[0x13300] = (None + 0x11fde060) - PC
+[3169] PATCH_32: *[0x13308] = (None + 0x1330a) - PC
+[3170] PATCH_32: *[0x13310] = (None + 0x12033d08) - PC
+[3171] OP_0: Sym=None, Addend=0x0
+[3172] PATCH_32: *[0x13360] = (None + 0x1203a9e1) - PC
+[3173] PATCH_32: *[0x13368] = (None + 0x1336a) - PC
+[3174] PATCH_32: *[0x13370] = (None + 0x12090569) - PC
+[3175] OP_0: Sym=None, Addend=0x0
+[3176] PATCH_32: *[0x133c0] = (None + 0x12097362) - PC
+[3177] PATCH_32: *[0x133c8] = (None + 0x133ca) - PC
+[3178] PATCH_32: *[0x133d0] = (None + 0x120ed202) - PC
+[3179] OP_0: Sym=None, Addend=0x0
+[3180] PATCH_32: *[0x13420] = (None + 0x120f3ce3) - PC
+[3181] PATCH_32: *[0x13428] = (None + 0x1342a) - PC
+[3182] PATCH_32: *[0x13430] = (None + 0x121496bb) - PC
+[3183] OP_0: Sym=None, Addend=0x0
+[3184] PATCH_32: *[0x13480] = (None + 0x12150664) - PC
+[3185] PATCH_32: *[0x13488] = (None + 0x1348a) - PC
+[3186] PATCH_32: *[0x13490] = (None + 0x121a66fc) - PC
+[3187] OP_0: Sym=None, Addend=0x0
+[3188] PATCH_32: *[0x134e0] = (None + 0x121adfe5) - PC
+[3189] PATCH_32: *[0x134e8] = (None + 0x134ea) - PC
+[3190] PATCH_32: *[0x134f0] = (None + 0x1220392d) - PC
+[3191] OP_0: Sym=None, Addend=0x0
+[3192] PATCH_32: *[0x13540] = (None + 0x1220a966) - PC
+[3193] PATCH_32: *[0x13548] = (None + 0x1354a) - PC
+[3194] PATCH_32: *[0x13550] = (None + 0x12260896) - PC
+[3195] OP_0: Sym=None, Addend=0x0
+[3196] PATCH_32: *[0x135a0] = (None + 0x122672e7) - PC
+[3197] PATCH_32: *[0x135a8] = (None + 0x135aa) - PC
+[3198] PATCH_32: *[0x135b0] = (None + 0x122bd7b7) - PC
+[3199] OP_0: Sym=None, Addend=0x0
+[3200] PATCH_32: *[0x13600] = (None + 0x122c4c68) - PC
+[3201] PATCH_32: *[0x13608] = (None + 0x1360a) - PC
+[3202] PATCH_32: *[0x13610] = (None + 0x1231b648) - PC
+[3203] OP_0: Sym=None, Addend=0x0
+[3204] PATCH_32: *[0x13660] = (None + 0x123225e9) - PC
+[3205] PATCH_32: *[0x13668] = (None + 0x1366a) - PC
+[3206] PATCH_32: *[0x13670] = (None + 0x123784d1) - PC
+[3207] OP_0: Sym=None, Addend=0x0
+[3208] PATCH_32: *[0x136c0] = (None + 0x1237ef6a) - PC
+[3209] PATCH_32: *[0x136c8] = (None + 0x136ca) - PC
+[3210] PATCH_32: *[0x136d0] = (None + 0x123d4e52) - PC
+[3211] OP_0: Sym=None, Addend=0x0
+[3212] PATCH_32: *[0x13720] = (None + 0x123db8eb) - PC
+[3213] PATCH_32: *[0x13728] = (None + 0x1372a) - PC
+[3214] PATCH_32: *[0x13730] = (None + 0x12432a1b) - PC
+[3215] OP_0: Sym=None, Addend=0x0
+[3216] PATCH_32: *[0x13780] = (None + 0x1243a26c) - PC
+[3217] PATCH_32: *[0x13788] = (None + 0x1378a) - PC
+[3218] PATCH_32: *[0x13790] = (None + 0x1248f464) - PC
+[3219] OP_0: Sym=None, Addend=0x0
+[3220] PATCH_32: *[0x137e0] = (None + 0x12496bed) - PC
+[3221] PATCH_32: *[0x137e8] = (None + 0x137ea) - PC
+[3222] PATCH_32: *[0x137f0] = (None + 0x124ecbf5) - PC
+[3223] OP_0: Sym=None, Addend=0x0
+[3224] PATCH_32: *[0x13840] = (None + 0x124f356e) - PC
+[3225] PATCH_32: *[0x13848] = (None + 0x1384a) - PC
+[3226] PATCH_32: *[0x13850] = (None + 0x12547abe) - PC
+[3227] OP_0: Sym=None, Addend=0x0
+[3228] PATCH_32: *[0x138a0] = (None + 0x1254eeef) - PC
+[3229] PATCH_32: *[0x138a8] = (None + 0x138aa) - PC
+[3230] PATCH_32: *[0x138b0] = (None + 0x125a4f3f) - PC
+[3231] OP_0: Sym=None, Addend=0x0
+[3232] PATCH_32: *[0x13900] = (None + 0x125ac870) - PC
+[3233] PATCH_32: *[0x13908] = (None + 0x1390a) - PC
+[3234] PATCH_32: *[0x13910] = (None + 0x126030e8) - PC
+[3235] OP_0: Sym=None, Addend=0x0
+[3236] PATCH_32: *[0x13960] = (None + 0x1260a1f1) - PC
+[3237] PATCH_32: *[0x13968] = (None + 0x1396a) - PC
+[3238] PATCH_32: *[0x13970] = (None + 0x1265f3e9) - PC
+[3239] OP_0: Sym=None, Addend=0x0
+[3240] PATCH_32: *[0x139c0] = (None + 0x12666b72) - PC
+[3241] PATCH_32: *[0x139c8] = (None + 0x139ca) - PC
+[3242] PATCH_32: *[0x139d0] = (None + 0x126bd312) - PC
+[3243] OP_0: Sym=None, Addend=0x0
+[3244] PATCH_32: *[0x13a20] = (None + 0x126c44f3) - PC
+[3245] PATCH_32: *[0x13a28] = (None + 0x13a2a) - PC
+[3246] PATCH_32: *[0x13a30] = (None + 0x12719a03) - PC
+[3247] OP_0: Sym=None, Addend=0x0
+[3248] PATCH_32: *[0x13a80] = (None + 0x12720e74) - PC
+[3249] PATCH_32: *[0x13a88] = (None + 0x13a8a) - PC
+[3250] PATCH_32: *[0x13a90] = (None + 0x127764ec) - PC
+[3251] OP_0: Sym=None, Addend=0x0
+[3252] PATCH_32: *[0x13ae0] = (None + 0x1277d7f5) - PC
+[3253] PATCH_32: *[0x13ae8] = (None + 0x13aea) - PC
+[3254] PATCH_32: *[0x13af0] = (None + 0x127d3b15) - PC
+[3255] OP_0: Sym=None, Addend=0x0
+[3256] PATCH_32: *[0x13b40] = (None + 0x127db176) - PC
+[3257] PATCH_32: *[0x13b48] = (None + 0x13b4a) - PC
+[3258] PATCH_32: *[0x13b50] = (None + 0x12830eae) - PC
+[3259] OP_0: Sym=None, Addend=0x0
+[3260] PATCH_32: *[0x13ba0] = (None + 0x12837af7) - PC
+[3261] PATCH_32: *[0x13ba8] = (None + 0x13baa) - PC
+[3262] PATCH_32: *[0x13bb0] = (None + 0x1288d6c7) - PC
+[3263] OP_0: Sym=None, Addend=0x0
+[3264] PATCH_32: *[0x13c00] = (None + 0x12894478) - PC
+[3265] PATCH_32: *[0x13c08] = (None + 0x13c0a) - PC
+[3266] PATCH_32: *[0x13c10] = (None + 0x128ea240) - PC
+[3267] OP_0: Sym=None, Addend=0x0
+[3268] PATCH_32: *[0x13c60] = (None + 0x128f0df9) - PC
+[3269] PATCH_32: *[0x13c68] = (None + 0x13c6a) - PC
+[3270] PATCH_32: *[0x13c70] = (None + 0x129470d1) - PC
+[3271] OP_0: Sym=None, Addend=0x0
+[3272] PATCH_32: *[0x13cc0] = (None + 0x1294e77a) - PC
+[3273] PATCH_32: *[0x13cc8] = (None + 0x13cca) - PC
+[3274] PATCH_32: *[0x13cd0] = (None + 0x129a4b72) - PC
+[3275] OP_0: Sym=None, Addend=0x0
+[3276] PATCH_32: *[0x13d20] = (None + 0x129ac0fb) - PC
+[3277] PATCH_32: *[0x13d28] = (None + 0x13d2a) - PC
+[3278] PATCH_32: *[0x13d30] = (None + 0x12a01e7b) - PC
+[3279] OP_0: Sym=None, Addend=0x0
+[3280] PATCH_32: *[0x13d80] = (None + 0x12a08a7c) - PC
+[3281] PATCH_32: *[0x13d88] = (None + 0x13d8a) - PC
+[3282] PATCH_32: *[0x13d90] = (None + 0x12a5ed9c) - PC
+[3283] OP_0: Sym=None, Addend=0x0
+[3284] PATCH_32: *[0x13de0] = (None + 0x12a663fd) - PC
+[3285] PATCH_32: *[0x13de8] = (None + 0x13dea) - PC
+[3286] PATCH_32: *[0x13df0] = (None + 0x12abcddd) - PC
+[3287] OP_0: Sym=None, Addend=0x0
+[3288] PATCH_32: *[0x13e40] = (None + 0x12ac3d7e) - PC
+[3289] PATCH_32: *[0x13e48] = (None + 0x13e4a) - PC
+[3290] PATCH_32: *[0x13e50] = (None + 0x12b1ac26) - PC
+[3291] OP_0: Sym=None, Addend=0x0
+[3292] PATCH_32: *[0x13ea0] = (None + 0x12b216ff) - PC
+[3293] PATCH_32: *[0x13ea8] = (None + 0x13eaa) - PC
+[3294] PATCH_32: *[0x13eb0] = (None + 0x12b78367) - PC
+[3295] OP_0: Sym=None, Addend=0x0
+[3296] PATCH_32: *[0x13f00] = (None + 0x12b7f080) - PC
+[3297] PATCH_32: *[0x13f08] = (None + 0x13f0a) - PC
+[3298] PATCH_32: *[0x13f10] = (None + 0x12bd3d20) - PC
+[3299] OP_0: Sym=None, Addend=0x0
+[3300] PATCH_32: *[0x13f60] = (None + 0x12bdaa01) - PC
+[3301] PATCH_32: *[0x13f68] = (None + 0x13f6a) - PC
+[3302] PATCH_32: *[0x13f70] = (None + 0x12c306f1) - PC
+[3303] OP_0: Sym=None, Addend=0x0
+[3304] PATCH_32: *[0x13fc0] = (None + 0x12c37382) - PC
+[3305] PATCH_32: *[0x13fc8] = (None + 0x13fca) - PC
+[3306] PATCH_32: *[0x13fd0] = (None + 0x12c8d6ea) - PC
+[3307] OP_0: Sym=None, Addend=0x0
+[3308] PATCH_32: *[0x14020] = (None + 0x12c94d03) - PC
+[3309] PATCH_32: *[0x14028] = (None + 0x1402a) - PC
+[3310] PATCH_32: *[0x14030] = (None + 0x12ceb18b) - PC
+[3311] OP_0: Sym=None, Addend=0x0
+[3312] PATCH_32: *[0x14080] = (None + 0x12cf2684) - PC
+[3313] PATCH_32: *[0x14088] = (None + 0x1408a) - PC
+[3314] PATCH_32: *[0x14090] = (None + 0x12d48884) - PC
+[3315] OP_0: Sym=None, Addend=0x0
+[3316] PATCH_32: *[0x140e0] = (None + 0x12d50005) - PC
+[3317] PATCH_32: *[0x140e8] = (None + 0x140ea) - PC
+[3318] PATCH_32: *[0x140f0] = (None + 0x12da5515) - PC
+[3319] OP_0: Sym=None, Addend=0x0
+[3320] PATCH_32: *[0x14140] = (None + 0x12dac986) - PC
+[3321] PATCH_32: *[0x14148] = (None + 0x1414a) - PC
+[3322] PATCH_32: *[0x14150] = (None + 0x12e018f6) - PC
+[3323] OP_0: Sym=None, Addend=0x0
+[3324] PATCH_32: *[0x141a0] = (None + 0x12e08307) - PC
+[3325] PATCH_32: *[0x141a8] = (None + 0x141aa) - PC
+[3326] PATCH_32: *[0x141b0] = (None + 0x12e5d937) - PC
+[3327] OP_0: Sym=None, Addend=0x0
+[3328] PATCH_32: *[0x14200] = (None + 0x12e64c88) - PC
+[3329] PATCH_32: *[0x14208] = (None + 0x1420a) - PC
+[3330] PATCH_32: *[0x14210] = (None + 0x12ebb428) - PC
+[3331] OP_0: Sym=None, Addend=0x0
+[3332] PATCH_32: *[0x14260] = (None + 0x12ec2609) - PC
+[3333] PATCH_32: *[0x14268] = (None + 0x1426a) - PC
+[3334] PATCH_32: *[0x14270] = (None + 0x12f18a49) - PC
+[3335] OP_0: Sym=None, Addend=0x0
+[3336] PATCH_32: *[0x142c0] = (None + 0x12f1ff8a) - PC
+[3337] PATCH_32: *[0x142c8] = (None + 0x142ca) - PC
+[3338] PATCH_32: *[0x142d0] = (None + 0x12f75a3a) - PC
+[3339] OP_0: Sym=None, Addend=0x0
+[3340] PATCH_32: *[0x14320] = (None + 0x12f7c90b) - PC
+[3341] PATCH_32: *[0x14328] = (None + 0x1432a) - PC
+[3342] PATCH_32: *[0x14330] = (None + 0x12fd23bb) - PC
+[3343] OP_0: Sym=None, Addend=0x0
+[3344] PATCH_32: *[0x14380] = (None + 0x12fd928c) - PC
+[3345] PATCH_32: *[0x14388] = (None + 0x1438a) - PC
+[3346] PATCH_32: *[0x14390] = (None + 0x1302e634) - PC
+[3347] OP_0: Sym=None, Addend=0x0
+[3348] PATCH_32: *[0x143e0] = (None + 0x13035c0d) - PC
+[3349] PATCH_32: *[0x143e8] = (None + 0x143ea) - PC
+[3350] PATCH_32: *[0x143f0] = (None + 0x1308b74d) - PC
+[3351] OP_0: Sym=None, Addend=0x0
+[3352] PATCH_32: *[0x14440] = (None + 0x1309258e) - PC
+[3353] PATCH_32: *[0x14448] = (None + 0x1444a) - PC
+[3354] PATCH_32: *[0x14450] = (None + 0x130e8596) - PC
+[3355] OP_0: Sym=None, Addend=0x0
+[3356] PATCH_32: *[0x144a0] = (None + 0x130eef0f) - PC
+[3357] PATCH_32: *[0x144a8] = (None + 0x144aa) - PC
+[3358] PATCH_32: *[0x144b0] = (None + 0x13144857) - PC
+[3359] OP_0: Sym=None, Addend=0x0
+[3360] PATCH_32: *[0x14500] = (None + 0x1314b890) - PC
+[3361] PATCH_32: *[0x14508] = (None + 0x1450a) - PC
+[3362] PATCH_32: *[0x14510] = (None + 0x131a1778) - PC
+[3363] OP_0: Sym=None, Addend=0x0
+[3364] PATCH_32: *[0x14560] = (None + 0x131a8211) - PC
+[3365] PATCH_32: *[0x14568] = (None + 0x1456a) - PC
+[3366] PATCH_32: *[0x14570] = (None + 0x131fdf49) - PC
+[3367] OP_0: Sym=None, Addend=0x0
+[3368] PATCH_32: *[0x145c0] = (None + 0x13204b92) - PC
+[3369] PATCH_32: *[0x145c8] = (None + 0x145ca) - PC
+[3370] PATCH_32: *[0x145d0] = (None + 0x1325a71a) - PC
+[3371] OP_0: Sym=None, Addend=0x0
+[3372] PATCH_32: *[0x14620] = (None + 0x13261513) - PC
+[3373] PATCH_32: *[0x14628] = (None + 0x1462a) - PC
+[3374] PATCH_32: *[0x14630] = (None + 0x132b6f33) - PC
+[3375] OP_0: Sym=None, Addend=0x0
+[3376] PATCH_32: *[0x14680] = (None + 0x132bde94) - PC
+[3377] PATCH_32: *[0x14688] = (None + 0x1468a) - PC
+[3378] PATCH_32: *[0x14690] = (None + 0x133132cc) - PC
+[3379] OP_0: Sym=None, Addend=0x0
+[3380] PATCH_32: *[0x146e0] = (None + 0x1331a815) - PC
+[3381] PATCH_32: *[0x146e8] = (None + 0x146ea) - PC
+[3382] PATCH_32: *[0x146f0] = (None + 0x13370e05) - PC
+[3383] OP_0: Sym=None, Addend=0x0
+[3384] PATCH_32: *[0x14740] = (None + 0x13378196) - PC
+[3385] PATCH_32: *[0x14748] = (None + 0x1474a) - PC
+[3386] PATCH_32: *[0x14750] = (None + 0x133ce786) - PC
+[3387] OP_0: Sym=None, Addend=0x0
+[3388] PATCH_32: *[0x147a0] = (None + 0x133d5b17) - PC
+[3389] PATCH_32: *[0x147a8] = (None + 0x147aa) - PC
+[3390] PATCH_32: *[0x147b0] = (None + 0x1342a52f) - PC
+[3391] OP_0: Sym=None, Addend=0x0
+[3392] PATCH_32: *[0x14800] = (None + 0x13431498) - PC
+[3393] PATCH_32: *[0x14808] = (None + 0x1480a) - PC
+[3394] PATCH_32: *[0x14810] = (None + 0x13487ad0) - PC
+[3395] OP_0: Sym=None, Addend=0x0
+[3396] PATCH_32: *[0x14860] = (None + 0x1348ee19) - PC
+[3397] PATCH_32: *[0x14868] = (None + 0x1486a) - PC
+[3398] PATCH_32: *[0x14870] = (None + 0x134e3ab9) - PC
+[3399] OP_0: Sym=None, Addend=0x0
+[3400] PATCH_32: *[0x148c0] = (None + 0x134ea79a) - PC
+[3401] PATCH_32: *[0x148c8] = (None + 0x148ca) - PC
+[3402] PATCH_32: *[0x148d0] = (None + 0x13540dd2) - PC
+[3403] OP_0: Sym=None, Addend=0x0
+[3404] PATCH_32: *[0x14920] = (None + 0x1354811b) - PC
+[3405] PATCH_32: *[0x14928] = (None + 0x1492a) - PC
+[3406] PATCH_32: *[0x14930] = (None + 0x1359e28b) - PC
+[3407] OP_0: Sym=None, Addend=0x0
+[3408] PATCH_32: *[0x14980] = (None + 0x135a5a9c) - PC
+[3409] PATCH_32: *[0x14988] = (None + 0x1498a) - PC
+[3410] PATCH_32: *[0x14990] = (None + 0x135fb81c) - PC
+[3411] OP_0: Sym=None, Addend=0x0
+[3412] PATCH_32: *[0x149e0] = (None + 0x1360241d) - PC
+[3413] PATCH_32: *[0x149e8] = (None + 0x149ea) - PC
+[3414] PATCH_32: *[0x149f0] = (None + 0x13658395) - PC
+[3415] OP_0: Sym=None, Addend=0x0
+[3416] PATCH_32: *[0x14a40] = (None + 0x1365ed9e) - PC
+[3417] PATCH_32: *[0x14a48] = (None + 0x14a4a) - PC
+[3418] PATCH_32: *[0x14a50] = (None + 0x136b4bae) - PC
+[3419] OP_0: Sym=None, Addend=0x0
+[3420] PATCH_32: *[0x14aa0] = (None + 0x136bb71f) - PC
+[3421] PATCH_32: *[0x14aa8] = (None + 0x14aaa) - PC
+[3422] PATCH_32: *[0x14ab0] = (None + 0x1371101f) - PC
+[3423] OP_0: Sym=None, Addend=0x0
+[3424] PATCH_32: *[0x14b00] = (None + 0x137180a0) - PC
+[3425] PATCH_32: *[0x14b08] = (None + 0x14b0a) - PC
+[3426] PATCH_32: *[0x14b10] = (None + 0x1376db08) - PC
+[3427] OP_0: Sym=None, Addend=0x0
+[3428] PATCH_32: *[0x14b60] = (None + 0x13774a21) - PC
+[3429] PATCH_32: *[0x14b68] = (None + 0x14b6a) - PC
+[3430] PATCH_32: *[0x14b70] = (None + 0x137cab01) - PC
+[3431] OP_0: Sym=None, Addend=0x0
+[3432] PATCH_32: *[0x14bc0] = (None + 0x137d23a2) - PC
+[3433] PATCH_32: *[0x14bc8] = (None + 0x14bca) - PC
+[3434] PATCH_32: *[0x14bd0] = (None + 0x138285a2) - PC
+[3435] OP_0: Sym=None, Addend=0x0
+[3436] PATCH_32: *[0x14c20] = (None + 0x1382fd23) - PC
+[3437] PATCH_32: *[0x14c28] = (None + 0x14c2a) - PC
+[3438] PATCH_32: *[0x14c30] = (None + 0x1388515b) - PC
+[3439] OP_0: Sym=None, Addend=0x0
+[3440] PATCH_32: *[0x14c80] = (None + 0x1388c6a4) - PC
+[3441] PATCH_32: *[0x14c88] = (None + 0x14c8a) - PC
+[3442] PATCH_32: *[0x14c90] = (None + 0x138e3594) - PC
+[3443] OP_0: Sym=None, Addend=0x0
+[3444] PATCH_32: *[0x14ce0] = (None + 0x138ea025) - PC
+[3445] PATCH_32: *[0x14ce8] = (None + 0x14cea) - PC
+[3446] PATCH_32: *[0x14cf0] = (None + 0x1393f775) - PC
+[3447] OP_0: Sym=None, Addend=0x0
+[3448] PATCH_32: *[0x14d40] = (None + 0x139469a6) - PC
+[3449] PATCH_32: *[0x14d48] = (None + 0x14d4a) - PC
+[3450] PATCH_32: *[0x14d50] = (None + 0x1399c6de) - PC
+[3451] OP_0: Sym=None, Addend=0x0
+[3452] PATCH_32: *[0x14da0] = (None + 0x139a3327) - PC
+[3453] PATCH_32: *[0x14da8] = (None + 0x14daa) - PC
+[3454] PATCH_32: *[0x14db0] = (None + 0x139f8ef7) - PC
+[3455] OP_0: Sym=None, Addend=0x0
+[3456] PATCH_32: *[0x14e00] = (None + 0x139ffca8) - PC
+[3457] PATCH_32: *[0x14e08] = (None + 0x14e0a) - PC
+[3458] PATCH_32: *[0x14e10] = (None + 0x13a55cf8) - PC
+[3459] OP_0: Sym=None, Addend=0x0
+[3460] PATCH_32: *[0x14e60] = (None + 0x13a5d629) - PC
+[3461] PATCH_32: *[0x14e68] = (None + 0x14e6a) - PC
+[3462] PATCH_32: *[0x14e70] = (None + 0x13ab3799) - PC
+[3463] OP_0: Sym=None, Addend=0x0
+[3464] PATCH_32: *[0x14ec0] = (None + 0x13abafaa) - PC
+[3465] PATCH_32: *[0x14ec8] = (None + 0x14eca) - PC
+[3466] PATCH_32: *[0x14ed0] = (None + 0x13b104ba) - PC
+[3467] OP_0: Sym=None, Addend=0x0
+[3468] PATCH_32: *[0x14f20] = (None + 0x13b1792b) - PC
+[3469] PATCH_32: *[0x14f28] = (None + 0x14f2a) - PC
+[3470] PATCH_32: *[0x14f30] = (None + 0x13b6d783) - PC
+[3471] OP_0: Sym=None, Addend=0x0
+[3472] PATCH_32: *[0x14f80] = (None + 0x13b742ac) - PC
+[3473] PATCH_32: *[0x14f88] = (None + 0x14f8a) - PC
+[3474] PATCH_32: *[0x14f90] = (None + 0x13bc9ec4) - PC
+[3475] OP_0: Sym=None, Addend=0x0
+[3476] PATCH_32: *[0x14fe0] = (None + 0x13bd0c2d) - PC
+[3477] PATCH_32: *[0x14fe8] = (None + 0x14fea) - PC
+[3478] PATCH_32: *[0x14ff0] = (None + 0x13c26ebd) - PC
+[3479] OP_0: Sym=None, Addend=0x0
+[3480] PATCH_32: *[0x15040] = (None + 0x13c2e5ae) - PC
+[3481] PATCH_32: *[0x15048] = (None + 0x1504a) - PC
+[3482] PATCH_32: *[0x15050] = (None + 0x13c84256) - PC
+[3483] OP_0: Sym=None, Addend=0x0
+[3484] PATCH_32: *[0x150a0] = (None + 0x13c8af2f) - PC
+[3485] PATCH_32: *[0x150a8] = (None + 0x150aa) - PC
+[3486] PATCH_32: *[0x150b0] = (None + 0x13ce082f) - PC
+[3487] OP_0: Sym=None, Addend=0x0
+[3488] PATCH_32: *[0x15100] = (None + 0x13ce78b0) - PC
+[3489] PATCH_32: *[0x15108] = (None + 0x1510a) - PC
+[3490] PATCH_32: *[0x15110] = (None + 0x13d3c868) - PC
+[3491] OP_0: Sym=None, Addend=0x0
+[3492] PATCH_32: *[0x15160] = (None + 0x13d43231) - PC
+[3493] PATCH_32: *[0x15168] = (None + 0x1516a) - PC
+[3494] PATCH_32: *[0x15170] = (None + 0x13d98e01) - PC
+[3495] OP_0: Sym=None, Addend=0x0
+[3496] PATCH_32: *[0x151c0] = (None + 0x13d9fbb2) - PC
+[3497] PATCH_32: *[0x151c8] = (None + 0x151ca) - PC
+[3498] PATCH_32: *[0x151d0] = (None + 0x13df585a) - PC
+[3499] OP_0: Sym=None, Addend=0x0
+[3500] PATCH_32: *[0x15220] = (None + 0x13dfc533) - PC
+[3501] PATCH_32: *[0x15228] = (None + 0x1522a) - PC
+[3502] PATCH_32: *[0x15230] = (None + 0x13e5289b) - PC
+[3503] OP_0: Sym=None, Addend=0x0
+[3504] PATCH_32: *[0x15280] = (None + 0x13e59eb4) - PC
+[3505] PATCH_32: *[0x15288] = (None + 0x1528a) - PC
+[3506] PATCH_32: *[0x15290] = (None + 0x13eafc7c) - PC
+[3507] OP_0: Sym=None, Addend=0x0
+[3508] PATCH_32: *[0x152e0] = (None + 0x13eb6835) - PC
+[3509] PATCH_32: *[0x152e8] = (None + 0x152ea) - PC
+[3510] PATCH_32: *[0x152f0] = (None + 0x13f0ccbd) - PC
+[3511] OP_0: Sym=None, Addend=0x0
+[3512] PATCH_32: *[0x15340] = (None + 0x13f141b6) - PC
+[3513] PATCH_32: *[0x15348] = (None + 0x1534a) - PC
+[3514] PATCH_32: *[0x15350] = (None + 0x13f69c1e) - PC
+[3515] OP_0: Sym=None, Addend=0x0
+[3516] PATCH_32: *[0x153a0] = (None + 0x13f70b37) - PC
+[3517] PATCH_32: *[0x153a8] = (None + 0x153aa) - PC
+[3518] PATCH_32: *[0x153b0] = (None + 0x13fc7097) - PC
+[3519] OP_0: Sym=None, Addend=0x0
+[3520] PATCH_32: *[0x15400] = (None + 0x13fce4b8) - PC
+[3521] PATCH_32: *[0x15408] = (None + 0x1540a) - PC
+[3522] PATCH_32: *[0x15410] = (None + 0x14024af0) - PC
+[3523] OP_0: Sym=None, Addend=0x0
+[3524] PATCH_32: *[0x15460] = (None + 0x1402be39) - PC
+[3525] PATCH_32: *[0x15468] = (None + 0x1546a) - PC
+[3526] PATCH_32: *[0x15470] = (None + 0x140814b1) - PC
+[3527] OP_0: Sym=None, Addend=0x0
+[3528] PATCH_32: *[0x154c0] = (None + 0x140887ba) - PC
+[3529] PATCH_32: *[0x154c8] = (None + 0x154ca) - PC
+[3530] PATCH_32: *[0x154d0] = (None + 0x140deb22) - PC
+[3531] OP_0: Sym=None, Addend=0x0
+[3532] PATCH_32: *[0x15520] = (None + 0x140e613b) - PC
+[3533] PATCH_32: *[0x15528] = (None + 0x1552a) - PC
+[3534] PATCH_32: *[0x15530] = (None + 0x1413bebb) - PC
+[3535] OP_0: Sym=None, Addend=0x0
+[3536] PATCH_32: *[0x15580] = (None + 0x14142abc) - PC
+[3537] PATCH_32: *[0x15588] = (None + 0x1558a) - PC
+[3538] PATCH_32: *[0x15590] = (None + 0x14197f84) - PC
+[3539] OP_0: Sym=None, Addend=0x0
+[3540] PATCH_32: *[0x155e0] = (None + 0x1419f43d) - PC
+[3541] PATCH_32: *[0x155e8] = (None + 0x155ea) - PC
+[3542] PATCH_32: *[0x155f0] = (None + 0x141f50e5) - PC
+[3543] OP_0: Sym=None, Addend=0x0
+[3544] PATCH_32: *[0x15640] = (None + 0x141fbdbe) - PC
+[3545] PATCH_32: *[0x15648] = (None + 0x1564a) - PC
+[3546] PATCH_32: *[0x15650] = (None + 0x14251e9e) - PC
+[3547] OP_0: Sym=None, Addend=0x0
+[3548] PATCH_32: *[0x156a0] = (None + 0x1425973f) - PC
+[3549] PATCH_32: *[0x156a8] = (None + 0x156aa) - PC
+[3550] PATCH_32: *[0x156b0] = (None + 0x142b01f7) - PC
+[3551] OP_0: Sym=None, Addend=0x0
+[3552] PATCH_32: *[0x15700] = (None + 0x142b70c0) - PC
+[3553] PATCH_32: *[0x15708] = (None + 0x1570a) - PC
+[3554] PATCH_32: *[0x15710] = (None + 0x1430d8f0) - PC
+[3555] OP_0: Sym=None, Addend=0x0
+[3556] PATCH_32: *[0x15760] = (None + 0x14314a41) - PC
+[3557] PATCH_32: *[0x15768] = (None + 0x1576a) - PC
+[3558] PATCH_32: *[0x15770] = (None + 0x1436a899) - PC
+[3559] OP_0: Sym=None, Addend=0x0
+[3560] PATCH_32: *[0x157c0] = (None + 0x143713c2) - PC
+[3561] PATCH_32: *[0x157c8] = (None + 0x157ca) - PC
+[3562] PATCH_32: *[0x157d0] = (None + 0x143c637a) - PC
+[3563] OP_0: Sym=None, Addend=0x0
+[3564] PATCH_32: *[0x15820] = (None + 0x143ccd43) - PC
+[3565] PATCH_32: *[0x15828] = (None + 0x1582a) - PC
+[3566] PATCH_32: *[0x15830] = (None + 0x14423063) - PC
+[3567] OP_0: Sym=None, Addend=0x0
+[3568] PATCH_32: *[0x15880] = (None + 0x1442a6c4) - PC
+[3569] PATCH_32: *[0x15888] = (None + 0x1588a) - PC
+[3570] PATCH_32: *[0x15890] = (None + 0x1448024c) - PC
+[3571] OP_0: Sym=None, Addend=0x0
+[3572] PATCH_32: *[0x158e0] = (None + 0x14487045) - PC
+[3573] PATCH_32: *[0x158e8] = (None + 0x158ea) - PC
+[3574] PATCH_32: *[0x158f0] = (None + 0x144dc315) - PC
+[3575] OP_0: Sym=None, Addend=0x0
+[3576] PATCH_32: *[0x15940] = (None + 0x144e39c6) - PC
+[3577] PATCH_32: *[0x15948] = (None + 0x1594a) - PC
+[3578] PATCH_32: *[0x15950] = (None + 0x145398ae) - PC
+[3579] OP_0: Sym=None, Addend=0x0
+[3580] PATCH_32: *[0x159a0] = (None + 0x14540347) - PC
+[3581] PATCH_32: *[0x159a8] = (None + 0x159aa) - PC
+[3582] PATCH_32: *[0x159b0] = (None + 0x14595fef) - PC
+[3583] OP_0: Sym=None, Addend=0x0
+[3584] PATCH_32: *[0x15a00] = (None + 0x1459ccc8) - PC
+[3585] PATCH_32: *[0x15a08] = (None + 0x15a0a) - PC
+[3586] PATCH_32: *[0x15a10] = (None + 0x145f2c40) - PC
+[3587] OP_0: Sym=None, Addend=0x0
+[3588] PATCH_32: *[0x15a60] = (None + 0x145f9649) - PC
+[3589] PATCH_32: *[0x15a68] = (None + 0x15a6a) - PC
+[3590] PATCH_32: *[0x15a70] = (None + 0x1464f2a9) - PC
+[3591] OP_0: Sym=None, Addend=0x0
+[3592] PATCH_32: *[0x15ac0] = (None + 0x14655fca) - PC
+[3593] PATCH_32: *[0x15ac8] = (None + 0x15aca) - PC
+[3594] PATCH_32: *[0x15ad0] = (None + 0x146ac842) - PC
+[3595] OP_0: Sym=None, Addend=0x0
+[3596] PATCH_32: *[0x15b20] = (None + 0x146b394b) - PC
+[3597] PATCH_32: *[0x15b28] = (None + 0x15b2a) - PC
+[3598] PATCH_32: *[0x15b30] = (None + 0x1470a013) - PC
+[3599] OP_0: Sym=None, Addend=0x0
+[3600] PATCH_32: *[0x15b80] = (None + 0x147112cc) - PC
+[3601] PATCH_32: *[0x15b88] = (None + 0x15b8a) - PC
+[3602] PATCH_32: *[0x15b90] = (None + 0x14766e9c) - PC
+[3603] OP_0: Sym=None, Addend=0x0
+[3604] PATCH_32: *[0x15be0] = (None + 0x1476dc4d) - PC
+[3605] PATCH_32: *[0x15be8] = (None + 0x15bea) - PC
+[3606] PATCH_32: *[0x15bf0] = (None + 0x147c411d) - PC
+[3607] OP_0: Sym=None, Addend=0x0
+[3608] PATCH_32: *[0x15c40] = (None + 0x147cb5ce) - PC
+[3609] PATCH_32: *[0x15c48] = (None + 0x15c4a) - PC
+[3610] PATCH_32: *[0x15c50] = (None + 0x14821306) - PC
+[3611] OP_0: Sym=None, Addend=0x0
+[3612] PATCH_32: *[0x15ca0] = (None + 0x14827f4f) - PC
+[3613] PATCH_32: *[0x15ca8] = (None + 0x15caa) - PC
+[3614] PATCH_32: *[0x15cb0] = (None + 0x1487e8e7) - PC
+[3615] OP_0: Sym=None, Addend=0x0
+[3616] PATCH_32: *[0x15d00] = (None + 0x148858d0) - PC
+[3617] PATCH_32: *[0x15d08] = (None + 0x15d0a) - PC
+[3618] PATCH_32: *[0x15d10] = (None + 0x148db800) - PC
+[3619] OP_0: Sym=None, Addend=0x0
+[3620] PATCH_32: *[0x15d60] = (None + 0x148e2251) - PC
+[3621] PATCH_32: *[0x15d68] = (None + 0x15d6a) - PC
+[3622] PATCH_32: *[0x15d70] = (None + 0x14938649) - PC
+[3623] OP_0: Sym=None, Addend=0x0
+[3624] PATCH_32: *[0x15dc0] = (None + 0x1493fbd2) - PC
+[3625] PATCH_32: *[0x15dc8] = (None + 0x15dca) - PC
+[3626] PATCH_32: *[0x15dd0] = (None + 0x149952da) - PC
+[3627] OP_0: Sym=None, Addend=0x0
+[3628] PATCH_32: *[0x15e20] = (None + 0x1499c553) - PC
+[3629] PATCH_32: *[0x15e28] = (None + 0x15e2a) - PC
+[3630] PATCH_32: *[0x15e30] = (None + 0x149f23ab) - PC
+[3631] OP_0: Sym=None, Addend=0x0
+[3632] PATCH_32: *[0x15e80] = (None + 0x149f8ed4) - PC
+[3633] PATCH_32: *[0x15e88] = (None + 0x15e8a) - PC
+[3634] PATCH_32: *[0x15e90] = (None + 0x14a4e9cc) - PC
+[3635] OP_0: Sym=None, Addend=0x0
+[3636] PATCH_32: *[0x15ee0] = (None + 0x14a55855) - PC
+[3637] PATCH_32: *[0x15ee8] = (None + 0x15eea) - PC
+[3638] PATCH_32: *[0x15ef0] = (None + 0x14aab275) - PC
+[3639] OP_0: Sym=None, Addend=0x0
+[3640] PATCH_32: *[0x15f40] = (None + 0x14ab21d6) - PC
+[3641] PATCH_32: *[0x15f48] = (None + 0x15f4a) - PC
+[3642] PATCH_32: *[0x15f50] = (None + 0x14b08226) - PC
+[3643] OP_0: Sym=None, Addend=0x0
+[3644] PATCH_32: *[0x15fa0] = (None + 0x14b0fb57) - PC
+[3645] PATCH_32: *[0x15fa8] = (None + 0x15faa) - PC
+[3646] PATCH_32: *[0x15fb0] = (None + 0x14b65c37) - PC
+[3647] OP_0: Sym=None, Addend=0x0
+[3648] PATCH_32: *[0x16000] = (None + 0x14b6d4d8) - PC
+[3649] PATCH_32: *[0x16008] = (None + 0x1600a) - PC
+[3650] PATCH_32: *[0x16010] = (None + 0x14bc2ac0) - PC
+[3651] OP_0: Sym=None, Addend=0x0
+[3652] PATCH_32: *[0x16060] = (None + 0x14bc9e59) - PC
+[3653] PATCH_32: *[0x16068] = (None + 0x1606a) - PC
+[3654] PATCH_32: *[0x16070] = (None + 0x14c1f7a1) - PC
+[3655] OP_0: Sym=None, Addend=0x0
+[3656] PATCH_32: *[0x160c0] = (None + 0x14c267da) - PC
+[3657] PATCH_32: *[0x160c8] = (None + 0x160ca) - PC
+[3658] PATCH_32: *[0x160d0] = (None + 0x14c7c5a2) - PC
+[3659] OP_0: Sym=None, Addend=0x0
+[3660] PATCH_32: *[0x16120] = (None + 0x14c8315b) - PC
+[3661] PATCH_32: *[0x16128] = (None + 0x1612a) - PC
+[3662] PATCH_32: *[0x16130] = (None + 0x14cd8ce3) - PC
+[3663] OP_0: Sym=None, Addend=0x0
+[3664] PATCH_32: *[0x16180] = (None + 0x14cdfadc) - PC
+[3665] PATCH_32: *[0x16188] = (None + 0x1618a) - PC
+[3666] PATCH_32: *[0x16190] = (None + 0x14d35a0c) - PC
+[3667] OP_0: Sym=None, Addend=0x0
+[3668] PATCH_32: *[0x161e0] = (None + 0x14d3c45d) - PC
+[3669] PATCH_32: *[0x161e8] = (None + 0x161ea) - PC
+[3670] PATCH_32: *[0x161f0] = (None + 0x14d91e7d) - PC
+[3671] OP_0: Sym=None, Addend=0x0
+[3672] PATCH_32: *[0x16240] = (None + 0x14d98dde) - PC
+[3673] PATCH_32: *[0x16248] = (None + 0x1624a) - PC
+[3674] PATCH_32: *[0x16250] = (None + 0x14dee76e) - PC
+[3675] OP_0: Sym=None, Addend=0x0
+[3676] PATCH_32: *[0x162a0] = (None + 0x14df575f) - PC
+[3677] PATCH_32: *[0x162a8] = (None + 0x162aa) - PC
+[3678] PATCH_32: *[0x162b0] = (None + 0x14e4b0ef) - PC
+[3679] OP_0: Sym=None, Addend=0x0
+[3680] PATCH_32: *[0x16300] = (None + 0x14e520e0) - PC
+[3681] PATCH_32: *[0x16308] = (None + 0x1630a) - PC
+[3682] PATCH_32: *[0x16310] = (None + 0x14ea8eb0) - PC
+[3683] OP_0: Sym=None, Addend=0x0
+[3684] PATCH_32: *[0x16360] = (None + 0x14eafa61) - PC
+[3685] PATCH_32: *[0x16368] = (None + 0x1636a) - PC
+[3686] PATCH_32: *[0x16370] = (None + 0x14f04aa9) - PC
+[3687] OP_0: Sym=None, Addend=0x0
+[3688] PATCH_32: *[0x163c0] = (None + 0x14f0c3e2) - PC
+[3689] PATCH_32: *[0x163c8] = (None + 0x163ca) - PC
+[3690] PATCH_32: *[0x163d0] = (None + 0x14f61eda) - PC
+[3691] OP_0: Sym=None, Addend=0x0
+[3692] PATCH_32: *[0x16420] = (None + 0x14f68d63) - PC
+[3693] PATCH_32: *[0x16428] = (None + 0x1642a) - PC
+[3694] PATCH_32: *[0x16430] = (None + 0x14fbe9c3) - PC
+[3695] OP_0: Sym=None, Addend=0x0
+[3696] PATCH_32: *[0x16480] = (None + 0x14fc56e4) - PC
+[3697] PATCH_32: *[0x16488] = (None + 0x1648a) - PC
+[3698] PATCH_32: *[0x16490] = (None + 0x1501b344) - PC
+[3699] OP_0: Sym=None, Addend=0x0
+[3700] PATCH_32: *[0x164e0] = (None + 0x15022065) - PC
+[3701] PATCH_32: *[0x164e8] = (None + 0x164ea) - PC
+[3702] PATCH_32: *[0x164f0] = (None + 0x1507725d) - PC
+[3703] OP_0: Sym=None, Addend=0x0
+[3704] PATCH_32: *[0x16540] = (None + 0x1507e9e6) - PC
+[3705] PATCH_32: *[0x16548] = (None + 0x1654a) - PC
+[3706] PATCH_32: *[0x16550] = (None + 0x150d588e) - PC
+[3707] OP_0: Sym=None, Addend=0x0
+[3708] PATCH_32: *[0x165a0] = (None + 0x150dc367) - PC
+[3709] PATCH_32: *[0x165a8] = (None + 0x165aa) - PC
+[3710] PATCH_32: *[0x165b0] = (None + 0x15131757) - PC
+[3711] OP_0: Sym=None, Addend=0x0
+[3712] PATCH_32: *[0x16600] = (None + 0x15138ce8) - PC
+[3713] PATCH_32: *[0x16608] = (None + 0x1660a) - PC
+[3714] PATCH_32: *[0x16610] = (None + 0x1518f3f8) - PC
+[3715] OP_0: Sym=None, Addend=0x0
+[3716] PATCH_32: *[0x16660] = (None + 0x15196669) - PC
+[3717] PATCH_32: *[0x16668] = (None + 0x1666a) - PC
+[3718] PATCH_32: *[0x16670] = (None + 0x151ec479) - PC
+[3719] OP_0: Sym=None, Addend=0x0
+[3720] PATCH_32: *[0x166c0] = (None + 0x151f2fea) - PC
+[3721] PATCH_32: *[0x166c8] = (None + 0x166ca) - PC
+[3722] PATCH_32: *[0x166d0] = (None + 0x15248f62) - PC
+[3723] OP_0: Sym=None, Addend=0x0
+[3724] PATCH_32: *[0x16720] = (None + 0x1524f96b) - PC
+[3725] PATCH_32: *[0x16728] = (None + 0x1672a) - PC
+[3726] PATCH_32: *[0x16730] = (None + 0x152a502b) - PC
+[3727] OP_0: Sym=None, Addend=0x0
+[3728] PATCH_32: *[0x16780] = (None + 0x152ac2ec) - PC
+[3729] PATCH_32: *[0x16788] = (None + 0x1678a) - PC
+[3730] PATCH_32: *[0x16790] = (None + 0x1530296c) - PC
+[3731] OP_0: Sym=None, Addend=0x0
+[3732] PATCH_32: *[0x167e0] = (None + 0x15309c6d) - PC
+[3733] PATCH_32: *[0x167e8] = (None + 0x167ea) - PC
+[3734] PATCH_32: *[0x167f0] = (None + 0x1535fac5) - PC
+[3735] OP_0: Sym=None, Addend=0x0
+[3736] PATCH_32: *[0x16840] = (None + 0x153665ee) - PC
+[3737] PATCH_32: *[0x16848] = (None + 0x1684a) - PC
+[3738] PATCH_32: *[0x16850] = (None + 0x153bbeee) - PC
+[3739] OP_0: Sym=None, Addend=0x0
+[3740] PATCH_32: *[0x168a0] = (None + 0x153c2f6f) - PC
+[3741] PATCH_32: *[0x168a8] = (None + 0x168aa) - PC
+[3742] PATCH_32: *[0x168b0] = (None + 0x15419127) - PC
+[3743] OP_0: Sym=None, Addend=0x0
+[3744] PATCH_32: *[0x16900] = (None + 0x154208f0) - PC
+[3745] PATCH_32: *[0x16908] = (None + 0x1690a) - PC
+[3746] PATCH_32: *[0x16910] = (None + 0x154769d0) - PC
+[3747] OP_0: Sym=None, Addend=0x0
+[3748] PATCH_32: *[0x16960] = (None + 0x1547e271) - PC
+[3749] PATCH_32: *[0x16968] = (None + 0x1696a) - PC
+[3750] PATCH_32: *[0x16970] = (None + 0x154d4819) - PC
+[3751] OP_0: Sym=None, Addend=0x0
+[3752] PATCH_32: *[0x169c0] = (None + 0x154dbbf2) - PC
+[3753] PATCH_32: *[0x169c8] = (None + 0x169ca) - PC
+[3754] PATCH_32: *[0x169d0] = (None + 0x155328a2) - PC
+[3755] OP_0: Sym=None, Addend=0x0
+[3756] PATCH_32: *[0x16a20] = (None + 0x15539573) - PC
+[3757] PATCH_32: *[0x16a28] = (None + 0x16a2a) - PC
+[3758] PATCH_32: *[0x16a30] = (None + 0x1558e91b) - PC
+[3759] OP_0: Sym=None, Addend=0x0
+[3760] PATCH_32: *[0x16a80] = (None + 0x15595ef4) - PC
+[3761] PATCH_32: *[0x16a88] = (None + 0x16a8a) - PC
+[3762] PATCH_32: *[0x16a90] = (None + 0x155ec7fc) - PC
+[3763] OP_0: Sym=None, Addend=0x0
+[3764] PATCH_32: *[0x16ae0] = (None + 0x155f3875) - PC
+[3765] PATCH_32: *[0x16ae8] = (None + 0x16aea) - PC
+[3766] PATCH_32: *[0x16af0] = (None + 0x15649a75) - PC
+[3767] OP_0: Sym=None, Addend=0x0
+[3768] PATCH_32: *[0x16b40] = (None + 0x156511f6) - PC
+[3769] PATCH_32: *[0x16b48] = (None + 0x16b4a) - PC
+[3770] PATCH_32: *[0x16b50] = (None + 0x156a74ce) - PC
+[3771] OP_0: Sym=None, Addend=0x0
+[3772] PATCH_32: *[0x16ba0] = (None + 0x156aeb77) - PC
+[3773] PATCH_32: *[0x16ba8] = (None + 0x16baa) - PC
+[3774] PATCH_32: *[0x16bb0] = (None + 0x1570493f) - PC
+[3775] OP_0: Sym=None, Addend=0x0
+[3776] PATCH_32: *[0x16c00] = (None + 0x1570b4f8) - PC
+[3777] PATCH_32: *[0x16c08] = (None + 0x16c0a) - PC
+[3778] PATCH_32: *[0x16c10] = (None + 0x15760c00) - PC
+[3779] OP_0: Sym=None, Addend=0x0
+[3780] PATCH_32: *[0x16c60] = (None + 0x15767e79) - PC
+[3781] PATCH_32: *[0x16c68] = (None + 0x16c6a) - PC
+[3782] PATCH_32: *[0x16c70] = (None + 0x157bd929) - PC
+[3783] OP_0: Sym=None, Addend=0x0
+[3784] PATCH_32: *[0x16cc0] = (None + 0x157c47fa) - PC
+[3785] PATCH_32: *[0x16cc8] = (None + 0x16cca) - PC
+[3786] PATCH_32: *[0x16cd0] = (None + 0x1581a96a) - PC
+[3787] OP_0: Sym=None, Addend=0x0
+[3788] PATCH_32: *[0x16d20] = (None + 0x1582217b) - PC
+[3789] PATCH_32: *[0x16d28] = (None + 0x16d2a) - PC
+[3790] PATCH_32: *[0x16d30] = (None + 0x158783c3) - PC
+[3791] OP_0: Sym=None, Addend=0x0
+[3792] PATCH_32: *[0x16d80] = (None + 0x1587fafc) - PC
+[3793] PATCH_32: *[0x16d88] = (None + 0x16d8a) - PC
+[3794] PATCH_32: *[0x16d90] = (None + 0x158d55ac) - PC
+[3795] OP_0: Sym=None, Addend=0x0
+[3796] PATCH_32: *[0x16de0] = (None + 0x158dc47d) - PC
+[3797] PATCH_32: *[0x16de8] = (None + 0x16dea) - PC
+[3798] PATCH_32: *[0x16df0] = (None + 0x15931dc5) - PC
+[3799] OP_0: Sym=None, Addend=0x0
+[3800] PATCH_32: *[0x16e40] = (None + 0x15938dfe) - PC
+[3801] PATCH_32: *[0x16e48] = (None + 0x16e4a) - PC
+[3802] PATCH_32: *[0x16e50] = (None + 0x1598ee06) - PC
+[3803] OP_0: Sym=None, Addend=0x0
+[3804] PATCH_32: *[0x16ea0] = (None + 0x1599577f) - PC
+[3805] PATCH_32: *[0x16ea8] = (None + 0x16eaa) - PC
+[3806] PATCH_32: *[0x16eb0] = (None + 0x159eb07f) - PC
+[3807] OP_0: Sym=None, Addend=0x0
+[3808] PATCH_32: *[0x16f00] = (None + 0x159f2100) - PC
+[3809] PATCH_32: *[0x16f08] = (None + 0x16f0a) - PC
+[3810] PATCH_32: *[0x16f10] = (None + 0x15a47ad8) - PC
+[3811] OP_0: Sym=None, Addend=0x0
+[3812] PATCH_32: *[0x16f60] = (None + 0x15a4ea81) - PC
+[3813] PATCH_32: *[0x16f68] = (None + 0x16f6a) - PC
+[3814] PATCH_32: *[0x16f70] = (None + 0x15aa5389) - PC
+[3815] OP_0: Sym=None, Addend=0x0
+[3816] PATCH_32: *[0x16fc0] = (None + 0x15aac402) - PC
+[3817] PATCH_32: *[0x16fc8] = (None + 0x16fca) - PC
+[3818] PATCH_32: *[0x16fd0] = (None + 0x15b01d92) - PC
+[3819] OP_0: Sym=None, Addend=0x0
+[3820] PATCH_32: *[0x17020] = (None + 0x15b08d83) - PC
+[3821] PATCH_32: *[0x17028] = (None + 0x1702a) - PC
+[3822] PATCH_32: *[0x17030] = (None + 0x15b5e5f3) - PC
+[3823] OP_0: Sym=None, Addend=0x0
+[3824] PATCH_32: *[0x17080] = (None + 0x15b65704) - PC
+[3825] PATCH_32: *[0x17088] = (None + 0x1708a) - PC
+[3826] PATCH_32: *[0x17090] = (None + 0x15bbc5f4) - PC
+[3827] OP_0: Sym=None, Addend=0x0
+[3828] PATCH_32: *[0x170e0] = (None + 0x15bc3085) - PC
+[3829] PATCH_32: *[0x170e8] = (None + 0x170ea) - PC
+[3830] PATCH_32: *[0x170f0] = (None + 0x15c19aad) - PC
+[3831] OP_0: Sym=None, Addend=0x0
+[3832] PATCH_32: *[0x17140] = (None + 0x15c20a06) - PC
+[3833] PATCH_32: *[0x17148] = (None + 0x1714a) - PC
+[3834] PATCH_32: *[0x17150] = (None + 0x15c76276) - PC
+[3835] OP_0: Sym=None, Addend=0x0
+[3836] PATCH_32: *[0x171a0] = (None + 0x15c7d387) - PC
+[3837] PATCH_32: *[0x171a8] = (None + 0x171aa) - PC
+[3838] PATCH_32: *[0x171b0] = (None + 0x15cd2baf) - PC
+[3839] OP_0: Sym=None, Addend=0x0
+[3840] PATCH_32: *[0x17200] = (None + 0x15cd9d08) - PC
+[3841] PATCH_32: *[0x17208] = (None + 0x1720a) - PC
+[3842] PATCH_32: *[0x17210] = (None + 0x15d2f2a8) - PC
+[3843] OP_0: Sym=None, Addend=0x0
+[3844] PATCH_32: *[0x17260] = (None + 0x15d36689) - PC
+[3845] PATCH_32: *[0x17268] = (None + 0x1726a) - PC
+[3846] PATCH_32: *[0x17270] = (None + 0x15d8d609) - PC
+[3847] OP_0: Sym=None, Addend=0x0
+[3848] PATCH_32: *[0x172c0] = (None + 0x15d9400a) - PC
+[3849] PATCH_32: *[0x172c8] = (None + 0x172ca) - PC
+[3850] PATCH_32: *[0x172d0] = (None + 0x15deab0a) - PC
+[3851] OP_0: Sym=None, Addend=0x0
+[3852] PATCH_32: *[0x17320] = (None + 0x15df198b) - PC
+[3853] PATCH_32: *[0x17328] = (None + 0x1732a) - PC
+[3854] PATCH_32: *[0x17330] = (None + 0x15e47c1b) - PC
+[3855] OP_0: Sym=None, Addend=0x0
+[3856] PATCH_32: *[0x17380] = (None + 0x15e4f30c) - PC
+[3857] PATCH_32: *[0x17388] = (None + 0x1738a) - PC
+[3858] PATCH_32: *[0x17390] = (None + 0x15ea4ffc) - PC
+[3859] OP_0: Sym=None, Addend=0x0
+[3860] PATCH_32: *[0x173e0] = (None + 0x15eabc8d) - PC
+[3861] PATCH_32: *[0x173e8] = (None + 0x173ea) - PC
+[3862] PATCH_32: *[0x173f0] = (None + 0x15f01dfd) - PC
+[3863] OP_0: Sym=None, Addend=0x0
+[3864] PATCH_32: *[0x17440] = (None + 0x15f0960e) - PC
+[3865] PATCH_32: *[0x17448] = (None + 0x1744a) - PC
+[3866] PATCH_32: *[0x17450] = (None + 0x15f5fa96) - PC
+[3867] OP_0: Sym=None, Addend=0x0
+[3868] PATCH_32: *[0x174a0] = (None + 0x15f66f8f) - PC
+[3869] PATCH_32: *[0x174a8] = (None + 0x174aa) - PC
+[3870] PATCH_32: *[0x174b0] = (None + 0x15fbcb5f) - PC
+[3871] OP_0: Sym=None, Addend=0x0
+[3872] PATCH_32: *[0x17500] = (None + 0x15fc3910) - PC
+[3873] PATCH_32: *[0x17508] = (None + 0x1750a) - PC
+[3874] PATCH_32: *[0x17510] = (None + 0x16019018) - PC
+[3875] OP_0: Sym=None, Addend=0x0
+[3876] PATCH_32: *[0x17560] = (None + 0x16020291) - PC
+[3877] PATCH_32: *[0x17568] = (None + 0x1756a) - PC
+[3878] PATCH_32: *[0x17570] = (None + 0x160772a1) - PC
+[3879] OP_0: Sym=None, Addend=0x0
+[3880] PATCH_32: *[0x175c0] = (None + 0x1607dc12) - PC
+[3881] PATCH_32: *[0x175c8] = (None + 0x175ca) - PC
+[3882] PATCH_32: *[0x175d0] = (None + 0x160d3bd2) - PC
+[3883] OP_0: Sym=None, Addend=0x0
+[3884] PATCH_32: *[0x17620] = (None + 0x160da593) - PC
+[3885] PATCH_32: *[0x17628] = (None + 0x1762a) - PC
+[3886] PATCH_32: *[0x17630] = (None + 0x16130793) - PC
+[3887] OP_0: Sym=None, Addend=0x0
+[3888] PATCH_32: *[0x17680] = (None + 0x16137f14) - PC
+[3889] PATCH_32: *[0x17688] = (None + 0x1768a) - PC
+[3890] PATCH_32: *[0x17690] = (None + 0x1618e504) - PC
+[3891] OP_0: Sym=None, Addend=0x0
+[3892] PATCH_32: *[0x176e0] = (None + 0x16195895) - PC
+[3893] PATCH_32: *[0x176e8] = (None + 0x176ea) - PC
+[3894] PATCH_32: *[0x176f0] = (None + 0x161eada5) - PC
+[3895] OP_0: Sym=None, Addend=0x0
+[3896] PATCH_32: *[0x17740] = (None + 0x161f2216) - PC
+[3897] PATCH_32: *[0x17748] = (None + 0x1774a) - PC
+[3898] PATCH_32: *[0x17750] = (None + 0x16247696) - PC
+[3899] OP_0: Sym=None, Addend=0x0
+[3900] PATCH_32: *[0x177a0] = (None + 0x1624eb97) - PC
+[3901] PATCH_32: *[0x177a8] = (None + 0x177aa) - PC
+[3902] PATCH_32: *[0x177b0] = (None + 0x162a41c7) - PC
+[3903] OP_0: Sym=None, Addend=0x0
+[3904] PATCH_32: *[0x17800] = (None + 0x162ab518) - PC
+[3905] PATCH_32: *[0x17808] = (None + 0x1780a) - PC
+[3906] PATCH_32: *[0x17810] = (None + 0x16300950) - PC
+[3907] OP_0: Sym=None, Addend=0x0
+[3908] PATCH_32: *[0x17860] = (None + 0x16307e99) - PC
+[3909] PATCH_32: *[0x17868] = (None + 0x1786a) - PC
+[3910] PATCH_32: *[0x17870] = (None + 0x1635dc19) - PC
+[3911] OP_0: Sym=None, Addend=0x0
+[3912] PATCH_32: *[0x178c0] = (None + 0x1636481a) - PC
+[3913] PATCH_32: *[0x178c8] = (None + 0x178ca) - PC
+[3914] PATCH_32: *[0x178d0] = (None + 0x163ba2ca) - PC
+[3915] OP_0: Sym=None, Addend=0x0
+[3916] PATCH_32: *[0x17920] = (None + 0x163c119b) - PC
+[3917] PATCH_32: *[0x17928] = (None + 0x1792a) - PC
+[3918] PATCH_32: *[0x17930] = (None + 0x164166f3) - PC
+[3919] OP_0: Sym=None, Addend=0x0
+[3920] PATCH_32: *[0x17980] = (None + 0x1641db1c) - PC
+[3921] PATCH_32: *[0x17988] = (None + 0x1798a) - PC
+[3922] PATCH_32: *[0x17990] = (None + 0x16473b6c) - PC
+[3923] OP_0: Sym=None, Addend=0x0
+[3924] PATCH_32: *[0x179e0] = (None + 0x1647b49d) - PC
+[3925] PATCH_32: *[0x179e8] = (None + 0x179ea) - PC
+[3926] PATCH_32: *[0x179f0] = (None + 0x164d169d) - PC
+[3927] OP_0: Sym=None, Addend=0x0
+[3928] PATCH_32: *[0x17a40] = (None + 0x164d8e1e) - PC
+[3929] PATCH_32: *[0x17a48] = (None + 0x17a4a) - PC
+[3930] PATCH_32: *[0x17a50] = (None + 0x1652ec2e) - PC
+[3931] OP_0: Sym=None, Addend=0x0
+[3932] PATCH_32: *[0x17aa0] = (None + 0x1653579f) - PC
+[3933] PATCH_32: *[0x17aa8] = (None + 0x17aaa) - PC
+[3934] PATCH_32: *[0x17ab0] = (None + 0x1658b09f) - PC
+[3935] OP_0: Sym=None, Addend=0x0
+[3936] PATCH_32: *[0x17b00] = (None + 0x16592120) - PC
+[3937] PATCH_32: *[0x17b08] = (None + 0x17b0a) - PC
+[3938] PATCH_32: *[0x17b10] = (None + 0x165e7f30) - PC
+[3939] OP_0: Sym=None, Addend=0x0
+[3940] PATCH_32: *[0x17b60] = (None + 0x165eeaa1) - PC
+[3941] PATCH_32: *[0x17b68] = (None + 0x17b6a) - PC
+[3942] PATCH_32: *[0x17b70] = (None + 0x166440d1) - PC
+[3943] OP_0: Sym=None, Addend=0x0
+[3944] PATCH_32: *[0x17bc0] = (None + 0x1664b422) - PC
+[3945] PATCH_32: *[0x17bc8] = (None + 0x17bca) - PC
+[3946] PATCH_32: *[0x17bd0] = (None + 0x166a115a) - PC
+[3947] OP_0: Sym=None, Addend=0x0
+[3948] PATCH_32: *[0x17c20] = (None + 0x166a7da3) - PC
+[3949] PATCH_32: *[0x17c28] = (None + 0x17c2a) - PC
+[3950] PATCH_32: *[0x17c30] = (None + 0x166fe46b) - PC
+[3951] OP_0: Sym=None, Addend=0x0
+[3952] PATCH_32: *[0x17c80] = (None + 0x16705724) - PC
+[3953] PATCH_32: *[0x17c88] = (None + 0x17c8a) - PC
+[3954] PATCH_32: *[0x17c90] = (None + 0x1675bccc) - PC
+[3955] OP_0: Sym=None, Addend=0x0
+[3956] PATCH_32: *[0x17ce0] = (None + 0x167630a5) - PC
+[3957] PATCH_32: *[0x17ce8] = (None + 0x17cea) - PC
+[3958] PATCH_32: *[0x17cf0] = (None + 0x167b8e6d) - PC
+[3959] OP_0: Sym=None, Addend=0x0
+[3960] PATCH_32: *[0x17d40] = (None + 0x167bfa26) - PC
+[3961] PATCH_32: *[0x17d48] = (None + 0x17d4a) - PC
+[3962] PATCH_32: *[0x17d50] = (None + 0x16815b96) - PC
+[3963] OP_0: Sym=None, Addend=0x0
+[3964] PATCH_32: *[0x17da0] = (None + 0x1681d3a7) - PC
+[3965] PATCH_32: *[0x17da8] = (None + 0x17daa) - PC
+[3966] PATCH_32: *[0x17db0] = (None + 0x16873bd7) - PC
+[3967] OP_0: Sym=None, Addend=0x0
+[3968] PATCH_32: *[0x17e00] = (None + 0x1687ad28) - PC
+[3969] PATCH_32: *[0x17e08] = (None + 0x17e0a) - PC
+[3970] PATCH_32: *[0x17e10] = (None + 0x168d0478) - PC
+[3971] OP_0: Sym=None, Addend=0x0
+[3972] PATCH_32: *[0x17e60] = (None + 0x168d76a9) - PC
+[3973] PATCH_32: *[0x17e68] = (None + 0x17e6a) - PC
+[3974] PATCH_32: *[0x17e70] = (None + 0x1692d309) - PC
+[3975] OP_0: Sym=None, Addend=0x0
+[3976] PATCH_32: *[0x17ec0] = (None + 0x1693402a) - PC
+[3977] PATCH_32: *[0x17ec8] = (None + 0x17eca) - PC
+[3978] PATCH_32: *[0x17ed0] = (None + 0x16989daa) - PC
+[3979] OP_0: Sym=None, Addend=0x0
