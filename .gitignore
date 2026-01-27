@@ -68,3 +68,5 @@ done# Large binary files
 *.dll
 /Dreamhack/2689/main
 "2689/main" 
+2689/main
+1872/optimized_trace.jsonl
