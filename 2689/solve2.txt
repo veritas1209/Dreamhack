@@ -1,0 +1,2598 @@
+root@7b35b88d6432:/app# python3 diff_ldso.py
+[*] Clean LD: /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+[*] Dirty LD: ld_hacked.bin
+[*] Scanning for code patches...
+[+] Found 265 patched regions.
+
+[!] Patch Detected @ Offset 0x36371 (Size: 5 bytes)
+    Original: f002000000
+    Patched : 40fff7ff7f
+    Disassembly:
+      0000000000036371 <.data+0x36371>:
+         36371: 40 ff f7                rex push %rdi
+         36374: ff                      (bad)
+         36375: 7f                      jg     0x36377
+
+[!] Patch Detected @ Offset 0x363a0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : e061daf7ff7f
+    Disassembly:
+      00000000000363a0 <.data+0x363a0>:
+         363a0: e0 61                   loopne 0x36403
+         363a2: da f7                   (bad)
+         363a4: ff                      (bad)
+         363a5: 7f                      jg     0x363a7
+
+[!] Patch Detected @ Offset 0x363b0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : d8e2fff7ff7f
+    Disassembly:
+      00000000000363b0 <.data+0x363b0>:
+         363b0: d8 e2                   fsub   %st(2),%st
+         363b2: ff f7                   push   %rdi
+         363b4: ff                      (bad)
+         363b5: 7f                      jg     0x363b7
+
+[!] Patch Detected @ Offset 0x363c1 (Size: 5 bytes)
+    Original: 0000000000
+    Patched : 4055555555
+    Disassembly:
+      00000000000363c1 <.data+0x363c1>:
+         363c1: 40 55                   rex push %rbp
+         363c3: 55                      push   %rbp
+         363c4: 55                      push   %rbp
+         363c5: 55                      push   %rbp
+
+[!] Patch Detected @ Offset 0x363c8 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 909bec6b5555
+    Disassembly:
+      00000000000363c8 <.data+0x363c8>:
+         363c8: 90                      nop
+         363c9: 9b                      fwait
+         363ca: ec                      in     (%dx),%al
+         363cb: 6b 55 55                imul   $0x0,0x55(%rbp),%edx
+
+[!] Patch Detected @ Offset 0x363d0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : e0e2fff7ff7f
+    Disassembly:
+      00000000000363d0 <.data+0x363d0>:
+         363d0: e0 e2                   loopne 0x363b4
+         363d2: ff f7                   push   %rdi
+         363d4: ff                      (bad)
+         363d5: 7f                      jg     0x363d7
+
+[!] Patch Detected @ Offset 0x363d8 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : b81f57555555
+    Disassembly:
+      00000000000363d8 <.data+0x363d8>:
+         363d8: b8 1f 57 55 55          mov    $0x5555571f,%eax
+         363dd: 55                      push   %rbp
+
+[!] Patch Detected @ Offset 0x363e0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 60effff7ff7f
+    Disassembly:
+      00000000000363e0 <.data+0x363e0>:
+         363e0: 60                      (bad)
+         363e1: ef                      out    %eax,(%dx)
+         363e2: ff f7                   push   %rdi
+         363e4: ff                      (bad)
+         363e5: 7f                      jg     0x363e7
+
+[!] Patch Detected @ Offset 0x36400 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : d0eefff7ff7f
+    Disassembly:
+      0000000000036400 <.data+0x36400>:
+         36400: d0 ee                   shr    $1,%dh
+         36402: ff f7                   push   %rdi
+         36404: ff                      (bad)
+         36405: 7f                      jg     0x36407
+
+[!] Patch Detected @ Offset 0x36410 (Size: 8 bytes)
+    Original: 0000000000000000
+    Patched : ffffffffffffffff
+    Disassembly:
+      0000000000036410 <.data+0x36410>:
+         36410: ff                      (bad)
+         36411: ff                      (bad)
+         36412: ff                      (bad)
+         36413: ff                      (bad)
+         36414: ff                      (bad)
+         36415: ff                      (bad)
+         36416: ff                      (bad)
+         36417: ff                      incl   (%rax)
+
+[!] Patch Detected @ Offset 0x37a08 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : a060e5f7ff7f
+    Disassembly:
+      0000000000037a08 <.data+0x37a08>:
+         37a08: a0 60 e5 f7 ff 7f       movabs 0x5000007ffff7e560,%al
+         37a0f:
+
+[!] Patch Detected @ Offset 0x37a10 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 5056e5f7ff7f
+    Disassembly:
+      0000000000037a10 <.data+0x37a10>:
+         37a10: 50                      push   %rax
+         37a11: 56                      push   %rsi
+         37a12: e5 f7                   in     $0xf7,%eax
+         37a14: ff                      (bad)
+         37a15: 7f                      jg     0x37a17
+
+[!] Patch Detected @ Offset 0x37a18 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 305de5f7ff7f
+    Disassembly:
+      0000000000037a18 <.data+0x37a18>:
+         37a18: 30 5d e5                xor    %bl,-0x1b(%rbp)
+         37a1b: f7 ff                   idiv   %edi
+         37a1d: 7f                      jg     0x37a1f
+
+[!] Patch Detected @ Offset 0x37a20 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : a067e5f7ff7f
+    Disassembly:
+      0000000000037a20 <.data+0x37a20>:
+         37a20: a0 67 e5 f7 ff 7f       movabs 0x7000007ffff7e567,%al
+         37a27:
+
+[!] Patch Detected @ Offset 0x37a28 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 709ae4f7ff7f
+    Disassembly:
+      0000000000037a28 <.data+0x37a28>:
+         37a28: 70 9a                   jo     0x379c4
+         37a2a: e4 f7                   in     $0xf7,%al
+         37a2c: ff                      (bad)
+         37a2d: 7f                      jg     0x37a2f
+
+[!] Patch Detected @ Offset 0x37a30 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : f07fe4f7ff7f
+    Disassembly:
+      0000000000037a30 <.data+0x37a30>:
+         37a30: f0 7f e4                lock jg 0x37a17
+         37a33: f7 ff                   idiv   %edi
+         37a35: 7f                      jg     0x37a37
+
+[!] Patch Detected @ Offset 0x37a40 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 30e6ffffff7f
+    Disassembly:
+      0000000000037a40 <.data+0x37a40>:
+         37a40: 30 e6                   xor    %ah,%dh
+         37a42: ff                      (bad)
+         37a43: ff                      (bad)
+         37a44: ff                      (bad)
+         37a45: 7f                      jg     0x37a47
+
+[!] Patch Detected @ Offset 0x37a60 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : eedfea8ee079
+    Disassembly:
+      0000000000037a60 <.data+0x37a60>:
+         37a60: ee                      out    %al,(%dx)
+         37a61: df ea                   fucomip %st(2),%st
+         37a63: 8e e0                   mov    %eax,%fs
+         37a65: 79                      jns    0x37a67
+
+[!] Patch Detected @ Offset 0x37a68 (Size: 3 bytes)
+    Original: 000000
+    Patched : ce7204
+    Disassembly:
+      0000000000037a68 <.data+0x37a68>:
+         37a68: ce                      (bad)
+         37a69: 72 04                   jb     0x37a6f
+
+[!] Patch Detected @ Offset 0x37a70 (Size: 14 bytes)
+    Original: 0000000000000000000000000000
+    Patched : 17f0692574479c9038e6ffffff7f
+    Disassembly:
+      0000000000037a70 <.data+0x37a70>:
+         37a70: 17                      (bad)
+         37a71: f0 69 25 74 47 9c 90    lock imul $0xffffe638,-0x6f63b88c(%rip),%esp        # 0xffffffff909fc1f0
+         37a78: 38 e6 ff ff
+         37a7c: ff                      (bad)
+         37a7d: 7f                      jg     0x37a7f
+
+[!] Patch Detected @ Offset 0x37aa8 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 4534fff7ff7f
+    Disassembly:
+      0000000000037aa8 <.data+0x37aa8>:
+         37aa8: 45 34 ff                rex.RB xor $0xff,%al
+         37aab: f7 ff                   idiv   %edi
+         37aad: 7f                      jg     0x37aaf
+
+[!] Patch Detected @ Offset 0x37ad0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : c0d6fbf7ff7f
+    Disassembly:
+      0000000000037ad0 <.data+0x37ad0>:
+         37ad0: c0 d6 fb                rcl    $0xfb,%dh
+         37ad3: f7 ff                   idiv   %edi
+         37ad5: 7f                      jg     0x37ad7
+
+[!] Patch Detected @ Offset 0x37b08 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : a8e6ffffff7f
+    Disassembly:
+      0000000000037b08 <.data+0x37b08>:
+         37b08: a8 e6                   test   $0xe6,%al
+         37b0a: ff                      (bad)
+         37b0b: ff                      (bad)
+         37b0c: ff                      (bad)
+         37b0d: 7f                      jg     0x37b0f
+
+[!] Patch Detected @ Offset 0x37b24 (Size: 3 bytes)
+    Original: 000000
+    Patched : c10608
+    Disassembly:
+      0000000000037b24 <.data+0x37b24>:
+         37b24: c1 06 08                roll   $0x8,(%rsi)
+
+[!] Patch Detected @ Offset 0x37b2c (Size: 8 bytes)
+    Original: 0000000000000000
+    Patched : 23b2fafffffb8b1f
+    Disassembly:
+      0000000000037b2c <.data+0x37b2c>:
+         37b2c: 23 b2 fa ff ff fb       and    -0x4000006(%rdx),%esi
+         37b32: 8b 1f                   mov    (%rdi),%ebx
+
+[!] Patch Detected @ Offset 0x37b3c (Size: 8 bytes)
+    Original: 0000000000000000
+    Patched : 0332d87e10818817
+    Disassembly:
+      0000000000037b3c <.data+0x37b3c>:
+         37b3c: 03 32                   add    (%rdx),%esi
+         37b3e: d8 7e 10                fdivrs 0x10(%rsi)
+         37b41: 81 88 17        orl    $0xbf27ab00,0x17(%rax)
+         37b48:
+
+[!] Patch Detected @ Offset 0x37b48 (Size: 12 bytes)
+    Original: 000000000000000000000000
+    Patched : ab27bff1c65f4018100510bc
+    Disassembly:
+      0000000000037b48 <.data+0x37b48>:
+         37b48: ab                      stos   %eax,%es:(%rdi)
+         37b49: 27                      (bad)
+         37b4a: bf f1 c6 5f 40          mov    $0x405fc6f1,%edi
+         37b4f: 18 10                   sbb    %dl,(%rax)
+         37b51: 05 10 bc                add    $0xbc10,%eax
+
+[!] Patch Detected @ Offset 0x37b58 (Size: 10 bytes)
+    Original: 00000000000000000000
+    Patched : 2903aff1425f40181001
+    Disassembly:
+      0000000000037b58 <.data+0x37b58>:
+         37b58: 29 03                   sub    %eax,(%rbx)
+         37b5a: af                      scas   %es:(%rdi),%eax
+         37b5b: f1                      int1
+         37b5c: 42 5f                   rex.X pop %rdi
+         37b5e: 40 18 10                rex sbb %dl,(%rax)
+         37b61: 01                      add    %eax,(%rax)
+
+[!] Patch Detected @ Offset 0x37b71 (Size: 3 bytes)
+    Original: 000000
+    Patched : 08102c
+    Disassembly:
+      0000000000037b71 <.data+0x37b71>:
+         37b71: 08 10                   or     %dl,(%rax)
+         37b73: 2c                      sub    $0x0,%al
+
+[!] Patch Detected @ Offset 0x37c64 (Size: 3 bytes)
+    Original: 000000
+    Patched : f92201
+    Disassembly:
+      0000000000037c64 <.data+0x37c64>:
+         37c64: f9                      stc
+         37c65: 22 01                   and    (%rcx),%al
+
+[!] Patch Detected @ Offset 0x37d08 (Size: 9 bytes)
+    Original: 000000000000000000
+    Patched : ffffffffffffffff02
+    Disassembly:
+      0000000000037d08 <.data+0x37d08>:
+         37d08: ff                      (bad)
+         37d09: ff                      (bad)
+         37d0a: ff                      (bad)
+         37d0b: ff                      (bad)
+         37d0c: ff                      (bad)
+         37d0d: ff                      (bad)
+         37d0e: ff                      (bad)
+         37d0f: ff 02                   incl   (%rdx)
+
+[!] Patch Detected @ Offset 0x37d89 (Size: 5 bytes)
+    Original: f002000000
+    Patched : 40fff7ff7f
+    Disassembly:
+      0000000000037d89 <.data+0x37d89>:
+         37d89: 40 ff f7                rex push %rdi
+         37d8c: ff                      (bad)
+         37d8d: 7f                      jg     0x37d8f
+
+[!] Patch Detected @ Offset 0x37d91 (Size: 5 bytes)
+    Original: 0000000000
+    Patched : d0fbf7ff7f
+    Disassembly:
+      0000000000037d91 <.data+0x37d91>:
+         37d91: d0 fb                   sar    $1,%bl
+         37d93: f7 ff                   idiv   %edi
+         37d95: 7f                      jg     0x37d97
+
+[!] Patch Detected @ Offset 0x37d99 (Size: 5 bytes)
+    Original: 0000000000
+    Patched : 30fcf7ff7f
+    Disassembly:
+      0000000000037d99 <.data+0x37d99>:
+         37d99: 30 fc                   xor    %bh,%ah
+         37d9b: f7 ff                   idiv   %edi
+         37d9d: 7f                      jg     0x37d9f
+
+[!] Patch Detected @ Offset 0x37da0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : c0e8fff7ff7f
+    Disassembly:
+      0000000000037da0 <.data+0x37da0>:
+         37da0: c0 e8 ff                shr    $0xff,%al
+         37da3: f7 ff                   idiv   %edi
+         37da5: 7f                      jg     0x37da7
+
+[!] Patch Detected @ Offset 0x37da8 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : c038fcf7ff7f
+    Disassembly:
+      0000000000037da8 <.data+0x37da8>:
+         37da8: c0 38 fc                sarb   $0xfc,(%rax)
+         37dab: f7 ff                   idiv   %edi
+         37dad: 7f                      jg     0x37daf
+
+[!] Patch Detected @ Offset 0x37db0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 8036fcf7ff7f
+    Disassembly:
+      0000000000037db0 <.data+0x37db0>:
+         37db0: 80 36 fc                xorb   $0xfc,(%rsi)
+         37db3: f7 ff                   idiv   %edi
+         37db5: 7f                      jg     0x37db7
+
+[!] Patch Detected @ Offset 0x37db8 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 9038fcf7ff7f
+    Disassembly:
+      0000000000037db8 <.data+0x37db8>:
+         37db8: 90                      nop
+         37db9: 38 fc                   cmp    %bh,%ah
+         37dbb: f7 ff                   idiv   %edi
+         37dbd: 7f                      jg     0x37dbf
+
+[!] Patch Detected @ Offset 0x37dc0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : f03bfcf7ff7f
+    Disassembly:
+      0000000000037dc0 <.data+0x37dc0>:
+         37dc0: f0 3b fc                lock cmp %esp,%edi
+         37dc3: f7 ff                   idiv   %edi
+         37dc5: 7f                      jg     0x37dc7
+
+[!] Patch Detected @ Offset 0x37dc8 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 903bfcf7ff7f
+    Disassembly:
+      0000000000037dc8 <.data+0x37dc8>:
+         37dc8: 90                      nop
+         37dc9: 3b fc                   cmp    %esp,%edi
+         37dcb: f7 ff                   idiv   %edi
+         37dcd: 7f                      jg     0x37dcf
+
+[!] Patch Detected @ Offset 0x37df1 (Size: 5 bytes)
+    Original: eb00000000
+    Patched : 3bfdf7ff7f
+    Disassembly:
+      0000000000037df1 <.data+0x37df1>:
+         37df1: 3b fd                   cmp    %ebp,%edi
+         37df3: f7 ff                   idiv   %edi
+         37df5: 7f                      jg     0x37df7
+
+[!] Patch Detected @ Offset 0x37df9 (Size: 5 bytes)
+    Original: df01000000
+    Patched : 2ffef7ff7f
+    Disassembly:
+      0000000000037df9 <.data+0x37df9>:
+         37df9: 2f                      (bad)
+         37dfa: fe                      (bad)
+         37dfb: f7 ff                   idiv   %edi
+         37dfd: 7f                      jg     0x37dff
+
+[!] Patch Detected @ Offset 0x37e01 (Size: 5 bytes)
+    Original: b000000000
+    Patched : 00fdf7ff7f
+    Disassembly:
+      0000000000037e01 <.data+0x37e01>:
+         37e01: 00 fd                   add    %bh,%ch
+         37e03: f7 ff                   idiv   %edi
+         37e05: 7f                      jg     0x37e07
+
+[!] Patch Detected @ Offset 0x37e09 (Size: 5 bytes)
+    Original: d000000000
+    Patched : 20fdf7ff7f
+    Disassembly:
+      0000000000037e09 <.data+0x37e09>:
+         37e09: 20 fd                   and    %bh,%ch
+         37e0b: f7 ff                   idiv   %edi
+         37e0d: 7f                      jg     0x37e0f
+
+[!] Patch Detected @ Offset 0x37e11 (Size: 5 bytes)
+    Original: 2700000000
+    Patched : 77fcf7ff7f
+    Disassembly:
+      0000000000037e11 <.data+0x37e11>:
+         37e11: 77 fc                   ja     0x37e0f
+         37e13: f7 ff                   idiv   %edi
+         37e15: 7f                      jg     0x37e17
+
+[!] Patch Detected @ Offset 0x37e19 (Size: 5 bytes)
+    Original: 1600000000
+    Patched : 66fcf7ff7f
+    Disassembly:
+      0000000000037e19 <.data+0x37e19>:
+         37e19: 66 fc                   data16 cld
+         37e1b: f7 ff                   idiv   %edi
+         37e1d: 7f                      jg     0x37e1f
+
+[!] Patch Detected @ Offset 0x37e21 (Size: 5 bytes)
+    Original: 3b00000000
+    Patched : 8bfcf7ff7f
+    Disassembly:
+      0000000000037e21 <.data+0x37e21>:
+         37e21: 8b fc                   mov    %esp,%edi
+         37e23: f7 ff                   idiv   %edi
+         37e25: 7f                      jg     0x37e27
+
+[!] Patch Detected @ Offset 0x37e29 (Size: 5 bytes)
+    Original: 4b01000000
+    Patched : 9bfdf7ff7f
+    Disassembly:
+      0000000000037e29 <.data+0x37e29>:
+         37e29: 9b                      fwait
+         37e2a: fd                      std
+         37e2b: f7 ff                   idiv   %edi
+         37e2d: 7f                      jg     0x37e2f
+
+[!] Patch Detected @ Offset 0x37e31 (Size: 5 bytes)
+    Original: d101000000
+    Patched : 21fef7ff7f
+    Disassembly:
+      0000000000037e31 <.data+0x37e31>:
+         37e31: 21 fe                   and    %edi,%esi
+         37e33: f7 ff                   idiv   %edi
+         37e35: 7f                      jg     0x37e37
+
+[!] Patch Detected @ Offset 0x37e38 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 4097fcf7ff7f
+    Disassembly:
+      0000000000037e38 <.data+0x37e38>:
+         37e38: 40 97                   rex xchg %eax,%edi
+         37e3a: fc                      cld
+         37e3b: f7 ff                   idiv   %edi
+         37e3d: 7f                      jg     0x37e3f
+
+[!] Patch Detected @ Offset 0x37e71 (Size: 5 bytes)
+    Original: 0200000000
+    Patched : 52fcf7ff7f
+    Disassembly:
+      0000000000037e71 <.data+0x37e71>:
+         37e71: 52                      push   %rdx
+         37e72: fc                      cld
+         37e73: f7 ff                   idiv   %edi
+         37e75: 7f                      jg     0x37e77
+
+[!] Patch Detected @ Offset 0x37e81 (Size: 5 bytes)
+    Original: 0400000000
+    Patched : 54fcf7ff7f
+    Disassembly:
+      0000000000037e81 <.data+0x37e81>:
+         37e81: 54                      push   %rsp
+         37e82: fc                      cld
+         37e83: f7 ff                   idiv   %edi
+         37e85: 7f                      jg     0x37e87
+
+[!] Patch Detected @ Offset 0x37e91 (Size: 5 bytes)
+    Original: 0900000000
+    Patched : 59fcf7ff7f
+    Disassembly:
+      0000000000037e91 <.data+0x37e91>:
+         37e91: 59                      pop    %rcx
+         37e92: fc                      cld
+         37e93: f7 ff                   idiv   %edi
+         37e95: 7f                      jg     0x37e97
+
+[!] Patch Detected @ Offset 0x37ea1 (Size: 5 bytes)
+    Original: 0500000000
+    Patched : 55fcf7ff7f
+    Disassembly:
+      0000000000037ea1 <.data+0x37ea1>:
+         37ea1: 55                      push   %rbp
+         37ea2: fc                      cld
+         37ea3: f7 ff                   idiv   %edi
+         37ea5: 7f                      jg     0x37ea7
+
+[!] Patch Detected @ Offset 0x37ed1 (Size: 5 bytes)
+    Original: 0d00000000
+    Patched : 5dfcf7ff7f
+    Disassembly:
+      0000000000037ed1 <.data+0x37ed1>:
+         37ed1: 5d                      pop    %rbp
+         37ed2: fc                      cld
+         37ed3: f7 ff                   idiv   %edi
+         37ed5: 7f                      jg     0x37ed7
+
+[!] Patch Detected @ Offset 0x37f41 (Size: 5 bytes)
+    Original: 0c00000000
+    Patched : 5cfcf7ff7f
+    Disassembly:
+      0000000000037f41 <.data+0x37f41>:
+         37f41: 5c                      pop    %rsp
+         37f42: fc                      cld
+         37f43: f7 ff                   idiv   %edi
+         37f45: 7f                      jg     0x37f47
+
+[!] Patch Detected @ Offset 0x37f51 (Size: 5 bytes)
+    Original: 0d00000000
+    Patched : 5dfcf7ff7f
+    Disassembly:
+      0000000000037f51 <.data+0x37f51>:
+         37f51: 5d                      pop    %rbp
+         37f52: fc                      cld
+         37f53: f7 ff                   idiv   %edi
+         37f55: 7f                      jg     0x37f57
+
+[!] Patch Detected @ Offset 0x37ff0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 28b4fff7ff7f
+    Disassembly:
+      0000000000037ff0 <.data+0x37ff0>:
+         37ff0: 28 b4 ff f7 ff 7f       sub    %dh,0x7ffff7(%rdi,%rdi,8)
+
+[!] Patch Detected @ Offset 0x37ff8 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 30b4fff7ff7f
+    Disassembly:
+      0000000000037ff8 <.data+0x37ff8>:
+         37ff8: 30 b4 ff f7 ff 7f       xor    %dh,0x7ffff7(%rdi,%rdi,8)
+
+[!] Patch Detected @ Offset 0x38000 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : e0e2fff7ff7f
+    Disassembly:
+      0000000000038000 <.data+0x38000>:
+         38000: e0 e2                   loopne 0x37fe4
+         38002: ff f7                   push   %rdi
+         38004: ff                      (bad)
+         38005: 7f                      jg     0x38007
+
+[!] Patch Detected @ Offset 0x38010 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : d8e5fff7ff7f
+    Disassembly:
+      0000000000038010 <.data+0x38010>:
+         38010: d8 e5                   fsub   %st(5),%st
+         38012: ff f7                   push   %rdi
+         38014: ff                      (bad)
+         38015: 7f                      jg     0x38017
+
+[!] Patch Detected @ Offset 0x38020 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 60d1fbf7ff7f
+    Disassembly:
+      0000000000038020 <.data+0x38020>:
+         38020: 60                      (bad)
+         38021: d1 fb                   sar    $1,%ebx
+         38023: f7 ff                   idiv   %edi
+         38025: 7f                      jg     0x38027
+
+[!] Patch Detected @ Offset 0x38aa9 (Size: 5 bytes)
+    Original: 0000000000
+    Patched : d0fbf7ff7f
+    Disassembly:
+      0000000000038aa9 <.data+0x38aa9>:
+         38aa9: d0 fb                   sar    $1,%bl
+         38aab: f7 ff                   idiv   %edi
+         38aad: 7f                      jg     0x38aaf
+
+[!] Patch Detected @ Offset 0x38ab1 (Size: 5 bytes)
+    Original: 0000000000
+    Patched : 50fcf7ff7f
+    Disassembly:
+      0000000000038ab1 <.data+0x38ab1>:
+         38ab1: 50                      push   %rax
+         38ab2: fc                      cld
+         38ab3: f7 ff                   idiv   %edi
+         38ab5: 7f                      jg     0x38ab7
+
+[!] Patch Detected @ Offset 0x38ab8 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 184355555555
+    Disassembly:
+      0000000000038ab8 <.data+0x38ab8>:
+         38ab8: 18 43 55                sbb    %al,0x55(%rbx)
+         38abb: 55                      push   %rbp
+         38abc: 55                      push   %rbp
+         38abd: 55                      push   %rbp
+
+[!] Patch Detected @ Offset 0x38ac0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 58cefff7ff7f
+    Disassembly:
+      0000000000038ac0 <.data+0x38ac0>:
+         38ac0: 58                      pop    %rax
+         38ac1: ce                      (bad)
+         38ac2: ff f7                   push   %rdi
+         38ac4: ff                      (bad)
+         38ac5: 7f                      jg     0x38ac7
+
+[!] Patch Detected @ Offset 0x38ad0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 60d1fbf7ff7f
+    Disassembly:
+      0000000000038ad0 <.data+0x38ad0>:
+         38ad0: 60                      (bad)
+         38ad1: d1 fb                   sar    $1,%ebx
+         38ad3: f7 ff                   idiv   %edi
+         38ad5: 7f                      jg     0x38ad7
+
+[!] Patch Detected @ Offset 0x38ad8 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : b0dafff7ff7f
+    Disassembly:
+      0000000000038ad8 <.data+0x38ad8>:
+         38ad8: b0 da                   mov    $0xda,%al
+         38ada: ff f7                   push   %rdi
+         38adc: ff                      (bad)
+         38add: 7f                      jg     0x38adf
+
+[!] Patch Detected @ Offset 0x38ae8 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 80e2fff7ff7f
+    Disassembly:
+      0000000000038ae8 <.data+0x38ae8>:
+         38ae8: 80 e2 ff                and    $0xff,%dl
+         38aeb: f7 ff                   idiv   %edi
+         38aed: 7f                      jg     0x38aef
+
+[!] Patch Detected @ Offset 0x38b10 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 68cefff7ff7f
+    Disassembly:
+      0000000000038b10 <.data+0x38b10>:
+         38b10: 68 ce ff f7 ff          push   $0xfffffffffff7ffce
+         38b15: 7f                      jg     0x38b17
+
+[!] Patch Detected @ Offset 0x38b18 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 88cefff7ff7f
+    Disassembly:
+      0000000000038b18 <.data+0x38b18>:
+         38b18: 88 ce                   mov    %cl,%dh
+         38b1a: ff f7                   push   %rdi
+         38b1c: ff                      (bad)
+         38b1d: 7f                      jg     0x38b1f
+
+[!] Patch Detected @ Offset 0x38b20 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 98cefff7ff7f
+    Disassembly:
+      0000000000038b20 <.data+0x38b20>:
+         38b20: 98                      cwtl
+         38b21: ce                      (bad)
+         38b22: ff f7                   push   %rdi
+         38b24: ff                      (bad)
+         38b25: 7f                      jg     0x38b27
+
+[!] Patch Detected @ Offset 0x38b28 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : c8cefff7ff7f
+    Disassembly:
+      0000000000038b28 <.data+0x38b28>:
+         38b28: c8 ce ff f7             enter  $0xffce,$0xf7
+         38b2c: ff                      (bad)
+         38b2d: 7f                      jg     0x38b2f
+
+[!] Patch Detected @ Offset 0x38b30 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : d8cefff7ff7f
+    Disassembly:
+      0000000000038b30 <.data+0x38b30>:
+         38b30: d8 ce                   fmul   %st(6),%st
+         38b32: ff f7                   push   %rdi
+         38b34: ff                      (bad)
+         38b35: 7f                      jg     0x38b37
+
+[!] Patch Detected @ Offset 0x38b38 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : e8cefff7ff7f
+    Disassembly:
+      0000000000038b38 <.data+0x38b38>:
+         38b38: e8 ce ff f7 ff          call   0xfffffffffffb8b0b
+         38b3d: 7f                      jg     0x38b3f
+
+[!] Patch Detected @ Offset 0x38b40 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : a8cefff7ff7f
+    Disassembly:
+      0000000000038b40 <.data+0x38b40>:
+         38b40: a8 ce                   test   $0xce,%al
+         38b42: ff f7                   push   %rdi
+         38b44: ff                      (bad)
+         38b45: 7f                      jg     0x38b47
+
+[!] Patch Detected @ Offset 0x38b48 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : b8cefff7ff7f
+    Disassembly:
+      0000000000038b48 <.data+0x38b48>:
+         38b48: b8 ce ff f7 ff          mov    $0xfff7ffce,%eax
+         38b4d: 7f                      jg     0x38b4f
+
+[!] Patch Detected @ Offset 0x38b60 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 58cefff7ff7f
+    Disassembly:
+      0000000000038b60 <.data+0x38b60>:
+         38b60: 58                      pop    %rax
+         38b61: ce                      (bad)
+         38b62: ff f7                   push   %rdi
+         38b64: ff                      (bad)
+         38b65: 7f                      jg     0x38b67
+
+[!] Patch Detected @ Offset 0x38be0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 18cffff7ff7f
+    Disassembly:
+      0000000000038be0 <.data+0x38be0>:
+         38be0: 18 cf                   sbb    %cl,%bh
+         38be2: ff f7                   push   %rdi
+         38be4: ff                      (bad)
+         38be5: 7f                      jg     0x38be7
+
+[!] Patch Detected @ Offset 0x38c08 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 58cffff7ff7f
+    Disassembly:
+      0000000000038c08 <.data+0x38c08>:
+         38c08: 58                      pop    %rax
+         38c09: cf                      iret
+         38c0a: ff f7                   push   %rdi
+         38c0c: ff                      (bad)
+         38c0d: 7f                      jg     0x38c0f
+
+[!] Patch Detected @ Offset 0x38c10 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 48cffff7ff7f
+    Disassembly:
+      0000000000038c10 <.data+0x38c10>:
+         38c10: 48 cf                   iretq
+         38c12: ff f7                   push   %rdi
+         38c14: ff                      (bad)
+         38c15: 7f                      jg     0x38c17
+
+[!] Patch Detected @ Offset 0x38c18 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 68cffff7ff7f
+    Disassembly:
+      0000000000038c18 <.data+0x38c18>:
+         38c18: 68 cf ff f7 ff          push   $0xfffffffffff7ffcf
+         38c1d: 7f                      jg     0x38c1f
+
+[!] Patch Detected @ Offset 0x38c50 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 08cffff7ff7f
+    Disassembly:
+      0000000000038c50 <.data+0x38c50>:
+         38c50: 08 cf                   or     %cl,%bh
+         38c52: ff f7                   push   %rdi
+         38c54: ff                      (bad)
+         38c55: 7f                      jg     0x38c57
+
+[!] Patch Detected @ Offset 0x38c58 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : f8cefff7ff7f
+    Disassembly:
+      0000000000038c58 <.data+0x38c58>:
+         38c58: f8                      clc
+         38c59: ce                      (bad)
+         38c5a: ff f7                   push   %rdi
+         38c5c: ff                      (bad)
+         38c5d: 7f                      jg     0x38c5f
+
+[!] Patch Detected @ Offset 0x38c60 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 28cffff7ff7f
+    Disassembly:
+      0000000000038c60 <.data+0x38c60>:
+         38c60: 28 cf                   sub    %cl,%bh
+         38c62: ff f7                   push   %rdi
+         38c64: ff                      (bad)
+         38c65: 7f                      jg     0x38c67
+
+[!] Patch Detected @ Offset 0x38cb8 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 38cffff7ff7f
+    Disassembly:
+      0000000000038cb8 <.data+0x38cb8>:
+         38cb8: 38 cf                   cmp    %cl,%bh
+         38cba: ff f7                   push   %rdi
+         38cbc: ff                      (bad)
+         38cbd: 7f                      jg     0x38cbf
+
+[!] Patch Detected @ Offset 0x38d88 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 78cefff7ff7f
+    Disassembly:
+      0000000000038d88 <.data+0x38d88>:
+         38d88: 78 ce                   js     0x38d58
+         38d8a: ff f7                   push   %rdi
+         38d8c: ff                      (bad)
+         38d8d: 7f                      jg     0x38d8f
+
+[!] Patch Detected @ Offset 0x38d90 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 4050fcf7ff7f
+    Disassembly:
+      0000000000038d90 <.data+0x38d90>:
+         38d90: 40 50                   rex push %rax
+         38d92: fc                      cld
+         38d93: f7 ff                   idiv   %edi
+         38d95: 7f                      jg     0x38d97
+
+[!] Patch Detected @ Offset 0x38dd0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 30dcfbf7ff7f
+    Disassembly:
+      0000000000038dd0 <.data+0x38dd0>:
+         38dd0: 30 dc                   xor    %bl,%ah
+         38dd2: fb                      sti
+         38dd3: f7 ff                   idiv   %edi
+         38dd5: 7f                      jg     0x38dd7
+
+[!] Patch Detected @ Offset 0x38de8 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 4054fcf7ff7f
+    Disassembly:
+      0000000000038de8 <.data+0x38de8>:
+         38de8: 40 54                   rex push %rsp
+         38dea: fc                      cld
+         38deb: f7 ff                   idiv   %edi
+         38ded: 7f                      jg     0x38def
+
+[!] Patch Detected @ Offset 0x38df0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 6054fcf7ff7f
+    Disassembly:
+      0000000000038df0 <.data+0x38df0>:
+         38df0: 60                      (bad)
+         38df1: 54                      push   %rsp
+         38df2: fc                      cld
+         38df3: f7 ff                   idiv   %edi
+         38df5: 7f                      jg     0x38df7
+
+[!] Patch Detected @ Offset 0x38df8 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : f054fcf7ff7f
+    Disassembly:
+      0000000000038df8 <.data+0x38df8>:
+         38df8: f0 54                   lock push %rsp
+         38dfa: fc                      cld
+         38dfb: f7 ff                   idiv   %edi
+         38dfd: 7f                      jg     0x38dff
+
+[!] Patch Detected @ Offset 0x38e30 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 1a5cfcf7ff7f
+    Disassembly:
+      0000000000038e30 <.data+0x38e30>:
+         38e30: 1a 5c fc f7             sbb    -0x9(%rsp,%rdi,8),%bl
+         38e34: ff                      (bad)
+         38e35: 7f                      jg     0x38e37
+
+[!] Patch Detected @ Offset 0x38e41 (Size: 5 bytes)
+    Original: 0000000000
+    Patched : 50fcf7ff7f
+    Disassembly:
+      0000000000038e41 <.data+0x38e41>:
+         38e41: 50                      push   %rax
+         38e42: fc                      cld
+         38e43: f7 ff                   idiv   %edi
+         38e45: 7f                      jg     0x38e47
+
+[!] Patch Detected @ Offset 0x38e48 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : d8e2fff7ff7f
+    Disassembly:
+      0000000000038e48 <.data+0x38e48>:
+         38e48: d8 e2                   fsub   %st(2),%st
+         38e4a: ff f7                   push   %rdi
+         38e4c: ff                      (bad)
+         38e4d: 7f                      jg     0x38e4f
+
+[!] Patch Detected @ Offset 0x38ef0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 6058fcf7ff7f
+    Disassembly:
+      0000000000038ef0 <.data+0x38ef0>:
+         38ef0: 60                      (bad)
+         38ef1: 58                      pop    %rax
+         38ef2: fc                      cld
+         38ef3: f7 ff                   idiv   %edi
+         38ef5: 7f                      jg     0x38ef7
+
+[!] Patch Detected @ Offset 0x38f00 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : b0dafff7ff7f
+    Disassembly:
+      0000000000038f00 <.data+0x38f00>:
+         38f00: b0 da                   mov    $0xda,%al
+         38f02: ff f7                   push   %rdi
+         38f04: ff                      (bad)
+         38f05: 7f                      jg     0x38f07
+
+[!] Patch Detected @ Offset 0x38f08 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 6058fcf7ff7f
+    Disassembly:
+      0000000000038f08 <.data+0x38f08>:
+         38f08: 60                      (bad)
+         38f09: 58                      pop    %rax
+         38f0a: fc                      cld
+         38f0b: f7 ff                   idiv   %edi
+         38f0d: 7f                      jg     0x38f0f
+
+[!] Patch Detected @ Offset 0x38f50 (Size: 3 bytes)
+    Original: 000000
+    Patched : 606303
+    Disassembly:
+      0000000000038f50 <.data+0x38f50>:
+         38f50: 60                      (bad)
+         38f51: 63 03                   movsxd (%rbx),%eax
+
+[!] Patch Detected @ Offset 0x39080 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : f0dcfbf7ff7f
+    Disassembly:
+      0000000000039080 <.data+0x39080>:
+         39080: f0 dc fb                lock fdivr %st,%st(3)
+         39083: f7 ff                   idiv   %edi
+         39085: 7f                      jg     0x39087
+
+[!] Patch Detected @ Offset 0x390a0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : e060daf7ff7f
+    Disassembly:
+      00000000000390a0 <.data+0x390a0>:
+         390a0: e0 60                   loopne 0x39102
+         390a2: da f7                   (bad)
+         390a4: ff                      (bad)
+         390a5: 7f                      jg     0x390a7
+
+[!] Patch Detected @ Offset 0x390b8 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : b8e0fff7ff7f
+    Disassembly:
+      00000000000390b8 <.data+0x390b8>:
+         390b8: b8 e0 ff f7 ff          mov    $0xfff7ffe0,%eax
+         390bd: 7f                      jg     0x390bf
+
+[!] Patch Detected @ Offset 0x390c0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : b8e0fff7ff7f
+    Disassembly:
+      00000000000390c0 <.data+0x390c0>:
+         390c0: b8 e0 ff f7 ff          mov    $0xfff7ffe0,%eax
+         390c5: 7f                      jg     0x390c7
+
+[!] Patch Detected @ Offset 0x390c9 (Size: 5 bytes)
+    Original: 0000000000
+    Patched : 5adaf7ff7f
+    Disassembly:
+      00000000000390c9 <.data+0x390c9>:
+         390c9: 5a                      pop    %rdx
+         390ca: da f7                   (bad)
+         390cc: ff                      (bad)
+         390cd: 7f                      jg     0x390cf
+
+[!] Patch Detected @ Offset 0x390d1 (Size: 5 bytes)
+    Original: 0000000000
+    Patched : 5adaf7ff7f
+    Disassembly:
+      00000000000390d1 <.data+0x390d1>:
+         390d1: 5a                      pop    %rdx
+         390d2: da f7                   (bad)
+         390d4: ff                      (bad)
+         390d5: 7f                      jg     0x390d7
+
+[!] Patch Detected @ Offset 0x390d8 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : d8e0fff7ff7f
+    Disassembly:
+      00000000000390d8 <.data+0x390d8>:
+         390d8: d8 e0                   fsub   %st(0),%st
+         390da: ff f7                   push   %rdi
+         390dc: ff                      (bad)
+         390dd: 7f                      jg     0x390df
+
+[!] Patch Detected @ Offset 0x390e0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : d8e0fff7ff7f
+    Disassembly:
+      00000000000390e0 <.data+0x390e0>:
+         390e0: d8 e0                   fsub   %st(0),%st
+         390e2: ff f7                   push   %rdi
+         390e4: ff                      (bad)
+         390e5: 7f                      jg     0x390e7
+
+[!] Patch Detected @ Offset 0x39110 (Size: 7 bytes)
+    Original: 73746170736474
+    Patched : 00000000000000
+    Disassembly:
+      0000000000039110 <.data+0x39110>:
+         39110: 00 00                   add    %al,(%rax)
+         39112: 00 00                   add    %al,(%rax)
+         39114: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39120 (Size: 3 bytes)
+    Original: b02403
+    Patched : 000000
+    Disassembly:
+      0000000000039120 <.data+0x39120>:
+         39120: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39130 (Size: 16 bytes)
+    Original: 72746c6400756e6d61705f7374617274
+    Patched : e0e2fff7ff7f00002078fcf7ff7f0000
+    Disassembly:
+      0000000000039130 <.data+0x39130>:
+         39130: e0 e2                   loopne 0x39114
+         39132: ff f7                   push   %rdi
+         39134: ff                      (bad)
+         39135: 7f 00                   jg     0x39137
+         39137: 00 20                   add    %ah,(%rax)
+         39139: 78 fc                   js     0x39137
+         3913b: f7 ff                   idiv   %edi
+         3913d: 7f 00                   jg     0x3913f
+        ...
+
+[!] Patch Detected @ Offset 0x39141 (Size: 14 bytes)
+    Original: 2d38402572313520384025723132
+    Patched : 000000000000000050fcf7ff7f00
+    Disassembly:
+      0000000000039141 <.data+0x39141>:
+        ...
+         39149: 50                      push   %rax
+         3914a: fc                      cld
+         3914b: f7 ff                   idiv   %edi
+         3914d: 7f 00                   jg     0x3914f
+
+[!] Patch Detected @ Offset 0x3915c (Size: 7 bytes)
+    Original: 73746170736474
+    Patched : 00000000000000
+    Disassembly:
+      000000000003915c <.data+0x3915c>:
+         3915c: 00 00                   add    %al,(%rax)
+         3915e: 00 00                   add    %al,(%rax)
+         39160: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x3916c (Size: 3 bytes)
+    Original: b02403
+    Patched : 000000
+    Disassembly:
+      000000000003916c <.data+0x3916c>:
+         3916c: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x3917c (Size: 19 bytes)
+    Original: 72746c6400756e6d61705f636f6d706c657465
+    Patched : 000000001a00000000000000e061daf7ff7f00
+    Disassembly:
+      000000000003917c <.data+0x3917c>:
+         3917c: 00 00                   add    %al,(%rax)
+         3917e: 00 00                   add    %al,(%rax)
+         39180: 1a 00                   sbb    (%rax),%al
+         39182: 00 00                   add    %al,(%rax)
+         39184: 00 00                   add    %al,(%rax)
+         39186: 00 00                   add    %al,(%rax)
+         39188: e0 61                   loopne 0x391eb
+         3918a: da f7                   (bad)
+         3918c: ff                      (bad)
+         3918d: 7f 00                   jg     0x3918f
+
+[!] Patch Detected @ Offset 0x39190 (Size: 14 bytes)
+    Original: 2d38402572313520384025726278
+    Patched : 0080daf7ff7f00004062daf7ff7f
+    Disassembly:
+      0000000000039190 <.data+0x39190>:
+         39190: 00 80 da f7 ff 7f       add    %al,0x7ffff7da(%rax)
+         39196: 00 00                   add    %al,(%rax)
+         39198: 40 62 da f7 ff 7f       (bad)
+
+[!] Patch Detected @ Offset 0x391ac (Size: 7 bytes)
+    Original: 73746170736474
+    Patched : 00000000000000
+    Disassembly:
+      00000000000391ac <.data+0x391ac>:
+         391ac: 00 00                   add    %al,(%rax)
+         391ae: 00 00                   add    %al,(%rax)
+         391b0: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x391bc (Size: 3 bytes)
+    Original: b02403
+    Patched : 000000
+    Disassembly:
+      00000000000391bc <.data+0x391bc>:
+         391bc: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x391c9 (Size: 7 bytes)
+    Original: 00000072746c64
+    Patched : a0fbf7ff7f0000
+    Disassembly:
+      00000000000391c9 <.data+0x391c9>:
+         391c9: a0 fb f7 ff 7f 00 00    movabs 0x7ffff7fb,%al
+         391d0:
+
+[!] Patch Detected @ Offset 0x391d1 (Size: 9 bytes)
+    Original: 6d61705f7374617274
+    Patched : 000000000000000300
+    Disassembly:
+      00000000000391d1 <.data+0x391d1>:
+         391d1: 00 00                   add    %al,(%rax)
+         391d3: 00 00                   add    %al,(%rax)
+         391d5: 00 00                   add    %al,(%rax)
+         391d7: 00 03                   add    %al,(%rbx)
+        ...
+
+[!] Patch Detected @ Offset 0x391db (Size: 18 bytes)
+    Original: 2d3840343028257262702920384025726278
+    Patched : 0000000000a0eefff7ff7f00000000000000
+    Disassembly:
+      00000000000391db <.data+0x391db>:
+         391db: 00 00                   add    %al,(%rax)
+         391dd: 00 00                   add    %al,(%rax)
+         391df: 00 a0 ee ff f7 ff       add    %ah,-0x80012(%rax)
+         391e5: 7f 00                   jg     0x391e7
+         391e7: 00 00                   add    %al,(%rax)
+         391e9: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x391fc (Size: 7 bytes)
+    Original: 73746170736474
+    Patched : 00000000000000
+    Disassembly:
+      00000000000391fc <.data+0x391fc>:
+         391fc: 00 00                   add    %al,(%rax)
+         391fe: 00 00                   add    %al,(%rax)
+         39200: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x3920c (Size: 3 bytes)
+    Original: b02403
+    Patched : 000000
+    Disassembly:
+      000000000003920c <.data+0x3920c>:
+         3920c: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x3921c (Size: 4 bytes)
+    Original: 72746c64
+    Patched : 00000000
+    Disassembly:
+      000000000003921c <.data+0x3921c>:
+         3921c: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39221 (Size: 11 bytes)
+    Original: 72656c6f635f7374617274
+    Patched : 0000000000000000000000
+    Disassembly:
+      0000000000039221 <.data+0x39221>:
+        ...
+
+[!] Patch Detected @ Offset 0x3922d (Size: 18 bytes)
+    Original: 2d3840333228257261782920384025727369
+    Patched : 000000010000000000000000000000000000
+    Disassembly:
+      000000000003922d <.data+0x3922d>:
+         3922d: 00 00                   add    %al,(%rax)
+         3922f: 00 01                   add    %al,(%rcx)
+        ...
+
+[!] Patch Detected @ Offset 0x39240 (Size: 6 bytes)
+    Original: 080000004400
+    Patched : c15bfcf7ff7f
+    Disassembly:
+      0000000000039240 <.data+0x39240>:
+         39240: c1 5b fc f7             rcrl   $0xf7,-0x4(%rbx)
+         39244: ff                      (bad)
+         39245: 7f                      jg     0x39247
+
+[!] Patch Detected @ Offset 0x3924c (Size: 7 bytes)
+    Original: 73746170736474
+    Patched : 00000000010000
+    Disassembly:
+      000000000003924c <.data+0x3924c>:
+         3924c: 00 00                   add    %al,(%rax)
+         3924e: 00 00                   add    %al,(%rax)
+         39250: 01 00                   add    %eax,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39258 (Size: 7 bytes)
+    Original: 00000000b02403
+    Patched : 4a5e6001000000
+    Disassembly:
+      0000000000039258 <.data+0x39258>:
+         39258: 4a 5e                   rex.WX pop %rsi
+         3925a: 60                      (bad)
+         3925b: 01 00                   add    %eax,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x3926c (Size: 4 bytes)
+    Original: 72746c64
+    Patched : 00000000
+    Disassembly:
+      000000000003926c <.data+0x3926c>:
+         3926c: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39271 (Size: 12 bytes)
+    Original: 6d61705f636f6d706c657465
+    Patched : 000000000000000000000000
+    Disassembly:
+      0000000000039271 <.data+0x39271>:
+        ...
+
+[!] Patch Detected @ Offset 0x3927e (Size: 25 bytes)
+    Original: 2d384033322825726278292038402572313420384025723135
+    Patched : 0000184355555555000040e2fff7ff7f000000000000000000
+    Disassembly:
+      000000000003927e <.data+0x3927e>:
+         3927e: 00 00                   add    %al,(%rax)
+         39280: 18 43 55                sbb    %al,0x55(%rbx)
+         39283: 55                      push   %rbp
+         39284: 55                      push   %rbp
+         39285: 55                      push   %rbp
+         39286: 00 00                   add    %al,(%rax)
+         39288: 40 e2 ff                rex loop 0x3928a
+         3928b: f7 ff                   idiv   %edi
+         3928d: 7f 00                   jg     0x3928f
+        ...
+
+[!] Patch Detected @ Offset 0x39298 (Size: 6 bytes)
+    Original: 080000004b00
+    Patched : 00a0ec6b5555
+    Disassembly:
+      0000000000039298 <.data+0x39298>:
+         39298: 00 a0 ec 6b 55 55       add    %ah,0x55556bec(%rax)
+
+[!] Patch Detected @ Offset 0x392a4 (Size: 7 bytes)
+    Original: 73746170736474
+    Patched : 00000000000000
+    Disassembly:
+      00000000000392a4 <.data+0x392a4>:
+         392a4: 00 00                   add    %al,(%rax)
+         392a6: 00 00                   add    %al,(%rax)
+         392a8: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x392b4 (Size: 3 bytes)
+    Original: b02403
+    Patched : 000000
+    Disassembly:
+      00000000000392b4 <.data+0x392b4>:
+         392b4: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x392c4 (Size: 4 bytes)
+    Original: 72746c64
+    Patched : 00000000
+    Disassembly:
+      00000000000392c4 <.data+0x392c4>:
+         392c4: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x392c9 (Size: 14 bytes)
+    Original: 72656c6f635f636f6d706c657465
+    Patched : 0000000000000050e6ffffff7f00
+    Disassembly:
+      00000000000392c9 <.data+0x392c9>:
+         392c9: 00 00                   add    %al,(%rax)
+         392cb: 00 00                   add    %al,(%rax)
+         392cd: 00 00                   add    %al,(%rax)
+         392cf: 00 50 e6                add    %dl,-0x1a(%rax)
+         392d2: ff                      (bad)
+         392d3: ff                      (bad)
+         392d4: ff                      (bad)
+         392d5: 7f 00                   jg     0x392d7
+
+[!] Patch Detected @ Offset 0x392d8 (Size: 30 bytes)
+    Original: 2d384033322825726278292038402d373228257262702920384025723135
+    Patched : 00000000000000000040555555550000b8e8fff7ff7f0000303d57555555
+    Disassembly:
+      00000000000392d8 <.data+0x392d8>:
+        ...
+         392e0: 00 40 55                add    %al,0x55(%rax)
+         392e3: 55                      push   %rbp
+         392e4: 55                      push   %rbp
+         392e5: 55                      push   %rbp
+         392e6: 00 00                   add    %al,(%rax)
+         392e8: b8 e8 ff f7 ff          mov    $0xfff7ffe8,%eax
+         392ed: 7f 00                   jg     0x392ef
+         392ef: 00 30                   add    %dh,(%rax)
+         392f1: 3d 57 55 55 55          cmp    $0x55555557,%eax
+
+[!] Patch Detected @ Offset 0x392f8 (Size: 6 bytes)
+    Original: 080000003500
+    Patched : c0e8fff7ff7f
+    Disassembly:
+      00000000000392f8 <.data+0x392f8>:
+         392f8: c0 e8 ff                shr    $0xff,%al
+         392fb: f7 ff                   idiv   %edi
+         392fd: 7f                      jg     0x392ff
+
+[!] Patch Detected @ Offset 0x39304 (Size: 11 bytes)
+    Original: 73746170736474006c2302
+    Patched : 00000000e0e2fff7ff7f00
+    Disassembly:
+      0000000000039304 <.data+0x39304>:
+         39304: 00 00                   add    %al,(%rax)
+         39306: 00 00                   add    %al,(%rax)
+         39308: e0 e2                   loopne 0x392ec
+         3930a: ff f7                   push   %rdi
+         3930c: ff                      (bad)
+         3930d: 7f 00                   jg     0x3930f
+
+[!] Patch Detected @ Offset 0x39314 (Size: 3 bytes)
+    Original: b02403
+    Patched : 000000
+    Disassembly:
+      0000000000039314 <.data+0x39314>:
+         39314: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39318 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : a0e8fff7ff7f
+    Disassembly:
+      0000000000039318 <.data+0x39318>:
+         39318: a0 e8 ff f7 ff 7f       movabs 0x7ffff7ffe8,%al
+         3931f:
+
+[!] Patch Detected @ Offset 0x39324 (Size: 28 bytes)
+    Original: 72746c6400696e69745f7374617274002d3440243020384025723134
+    Patched : 00000000303d575555550000103e575555550000003e575555550000
+    Disassembly:
+      0000000000039324 <.data+0x39324>:
+         39324: 00 00                   add    %al,(%rax)
+         39326: 00 00                   add    %al,(%rax)
+         39328: 30 3d 57 55 55 55       xor    %bh,0x55555557(%rip)        # 0x5558e885
+         3932e: 00 00                   add    %al,(%rax)
+         39330: 10 3e                   adc    %bh,(%rsi)
+         39332: 57                      push   %rdi
+         39333: 55                      push   %rbp
+         39334: 55                      push   %rbp
+         39335: 55                      push   %rbp
+         39336: 00 00                   add    %al,(%rax)
+         39338: 00 3e                   add    %bh,(%rsi)
+         3933a: 57                      push   %rdi
+         3933b: 55                      push   %rbp
+         3933c: 55                      push   %rbp
+         3933d: 55                      push   %rbp
+        ...
+
+[!] Patch Detected @ Offset 0x39348 (Size: 6 bytes)
+    Original: 380000000300
+    Patched : b03d57555555
+    Disassembly:
+      0000000000039348 <.data+0x39348>:
+         39348: b0 3d                   mov    $0x3d,%al
+         3934a: 57                      push   %rdi
+         3934b: 55                      push   %rbp
+         3934c: 55                      push   %rbp
+         3934d: 55                      push   %rbp
+
+[!] Patch Detected @ Offset 0x39350 (Size: 7 bytes)
+    Original: 73746170736474
+    Patched : c03d5755555500
+    Disassembly:
+      0000000000039350 <.data+0x39350>:
+         39350: c0 3d 57 55 55 55 00    sarb   $0x0,0x55555557(%rip)        # 0x5558e8ae
+
+[!] Patch Detected @ Offset 0x39358 (Size: 6 bytes)
+    Original: 912802000000
+    Patched : 403e57555555
+    Disassembly:
+      0000000000039358 <.data+0x39358>:
+         39358: 40                      rex
+         39359: 3e 57                   ds push %rdi
+         3935b: 55                      push   %rbp
+         3935c: 55                      push   %rbp
+         3935d: 55                      push   %rbp
+
+[!] Patch Detected @ Offset 0x39360 (Size: 6 bytes)
+    Original: b02403000000
+    Patched : 503e57555555
+    Disassembly:
+      0000000000039360 <.data+0x39360>:
+         39360: 50                      push   %rax
+         39361: 3e 57                   ds push %rdi
+         39363: 55                      push   %rbp
+         39364: 55                      push   %rbp
+         39365: 55                      push   %rbp
+
+[!] Patch Detected @ Offset 0x39368 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 603e57555555
+    Disassembly:
+      0000000000039368 <.data+0x39368>:
+         39368: 60                      (bad)
+         39369: 3e 57                   ds push %rdi
+         3936b: 55                      push   %rbp
+         3936c: 55                      push   %rbp
+         3936d: 55                      push   %rbp
+
+[!] Patch Detected @ Offset 0x39370 (Size: 31 bytes)
+    Original: 72746c6400696e69745f636f6d706c657465002d3440243020384025726278
+    Patched : d03d575555550000e03d575555550000403d575555550000503d5755555500
+    Disassembly:
+      0000000000039370 <.data+0x39370>:
+         39370: d0 3d 57 55 55 55       sarb   $1,0x55555557(%rip)        # 0x5558e8cd
+         39376: 00 00                   add    %al,(%rax)
+         39378: e0 3d                   loopne 0x393b7
+         3937a: 57                      push   %rdi
+         3937b: 55                      push   %rbp
+         3937c: 55                      push   %rbp
+         3937d: 55                      push   %rbp
+         3937e: 00 00                   add    %al,(%rax)
+         39380: 40 3d 57 55 55 55       rex cmp $0x55555557,%eax
+         39386: 00 00                   add    %al,(%rax)
+         39388: 50                      push   %rax
+         39389: 3d 57 55 55 55          cmp    $0x55555557,%eax
+        ...
+
+[!] Patch Detected @ Offset 0x3939c (Size: 7 bytes)
+    Original: 73746170736474
+    Patched : 00000000000000
+    Disassembly:
+      000000000003939c <.data+0x3939c>:
+         3939c: 00 00                   add    %al,(%rax)
+         3939e: 00 00                   add    %al,(%rax)
+         393a0: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x393a4 (Size: 3 bytes)
+    Original: a65e02
+    Patched : 000000
+    Disassembly:
+      00000000000393a4 <.data+0x393a4>:
+         393a4: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x393ac (Size: 3 bytes)
+    Original: b02403
+    Patched : 000000
+    Disassembly:
+      00000000000393ac <.data+0x393ac>:
+         393ac: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x393bc (Size: 26 bytes)
+    Original: 72746c64006c6c6c5f6c6f636b5f776169745f70726976617465
+    Patched : 00000000203e575555550000f03d575555550000000000000000
+    Disassembly:
+      00000000000393bc <.data+0x393bc>:
+         393bc: 00 00                   add    %al,(%rax)
+         393be: 00 00                   add    %al,(%rax)
+         393c0: 20 3e                   and    %bh,(%rsi)
+         393c2: 57                      push   %rdi
+         393c3: 55                      push   %rbp
+         393c4: 55                      push   %rbp
+         393c5: 55                      push   %rbp
+         393c6: 00 00                   add    %al,(%rax)
+         393c8: f0 3d 57 55 55 55       lock cmp $0x55555557,%eax
+        ...
+
+[!] Patch Detected @ Offset 0x393d7 (Size: 7 bytes)
+    Original: 38402572646900
+    Patched : 00303e57555555
+    Disassembly:
+      00000000000393d7 <.data+0x393d7>:
+         393d7: 00 30                   add    %dh,(%rax)
+         393d9: 3e 57                   ds push %rdi
+         393db: 55                      push   %rbp
+         393dc: 55                      push   %rbp
+         393dd: 55                      push   %rbp
+
+[!] Patch Detected @ Offset 0x393e0 (Size: 6 bytes)
+    Original: 080000003200
+    Patched : 803e57555555
+    Disassembly:
+      00000000000393e0 <.data+0x393e0>:
+         393e0: 80 3e 57                cmpb   $0x57,(%rsi)
+         393e3: 55                      push   %rbp
+         393e4: 55                      push   %rbp
+         393e5: 55                      push   %rbp
+
+[!] Patch Detected @ Offset 0x393e8 (Size: 15 bytes)
+    Original: 030000007374617073647400095f02
+    Patched : 603d575555550000803d5755555500
+    Disassembly:
+      00000000000393e8 <.data+0x393e8>:
+         393e8: 60                      (bad)
+         393e9: 3d 57 55 55 55          cmp    $0x55555557,%eax
+         393ee: 00 00                   add    %al,(%rax)
+         393f0: 80 3d 57 55 55 55 00    cmpb   $0x0,0x55555557(%rip)        # 0x5558e94e
+
+[!] Patch Detected @ Offset 0x393f8 (Size: 7 bytes)
+    Original: 00000000b02403
+    Patched : 703d5755555500
+    Disassembly:
+      00000000000393f8 <.data+0x393f8>:
+         393f8: 70 3d                   jo     0x39437
+         393fa: 57                      push   %rdi
+         393fb: 55                      push   %rbp
+         393fc: 55                      push   %rbp
+         393fd: 55                      push   %rbp
+        ...
+
+[!] Patch Detected @ Offset 0x39400 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 903d57555555
+    Disassembly:
+      0000000000039400 <.data+0x39400>:
+         39400: 90                      nop
+         39401: 3d 57 55 55 55          cmp    $0x55555557,%eax
+
+[!] Patch Detected @ Offset 0x3940c (Size: 18 bytes)
+    Original: 72746c64006c6c6c5f6c6f636b5f77616974
+    Patched : 00000000703e575555550000000000000000
+    Disassembly:
+      000000000003940c <.data+0x3940c>:
+         3940c: 00 00                   add    %al,(%rax)
+         3940e: 00 00                   add    %al,(%rax)
+         39410: 70 3e                   jo     0x39450
+         39412: 57                      push   %rdi
+         39413: 55                      push   %rbp
+         39414: 55                      push   %rbp
+         39415: 55                      push   %rbp
+        ...
+
+[!] Patch Detected @ Offset 0x3941f (Size: 6 bytes)
+    Original: 384025726469
+    Patched : 000000000000
+    Disassembly:
+      000000000003941f <.data+0x3941f>:
+         3941f: 00 00                   add    %al,(%rax)
+         39421: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39434 (Size: 7 bytes)
+    Original: 73746170736474
+    Patched : 00000000000000
+    Disassembly:
+      0000000000039434 <.data+0x39434>:
+         39434: 00 00                   add    %al,(%rax)
+         39436: 00 00                   add    %al,(%rax)
+         39438: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x3943c (Size: 3 bytes)
+    Original: 416002
+    Patched : 000000
+    Disassembly:
+      000000000003943c <.data+0x3943c>:
+         3943c: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39444 (Size: 3 bytes)
+    Original: b02403
+    Patched : 000000
+    Disassembly:
+      0000000000039444 <.data+0x39444>:
+         39444: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39454 (Size: 4 bytes)
+    Original: 72746c64
+    Patched : 00000000
+    Disassembly:
+      0000000000039454 <.data+0x39454>:
+         39454: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39459 (Size: 6 bytes)
+    Original: 7365746a6d70
+    Patched : 000000000000
+    Disassembly:
+      0000000000039459 <.data+0x39459>:
+         39459: 00 00                   add    %al,(%rax)
+         3945b: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39460 (Size: 22 bytes)
+    Original: 384025726469202d3440256573692038402572617800
+    Patched : 00000000000000000000000000000000a03e57555555
+    Disassembly:
+      0000000000039460 <.data+0x39460>:
+        ...
+         39470: a0 3e 57 55 55 55       movabs 0x900000555555573e,%al
+         39477:
+
+[!] Patch Detected @ Offset 0x39478 (Size: 6 bytes)
+    Original: 080000003b00
+    Patched : 903e57555555
+    Disassembly:
+      0000000000039478 <.data+0x39478>:
+         39478: 90                      nop
+         39479: 3e 57                   ds push %rdi
+         3947b: 55                      push   %rbp
+         3947c: 55                      push   %rbp
+         3947d: 55                      push   %rbp
+
+[!] Patch Detected @ Offset 0x39484 (Size: 7 bytes)
+    Original: 73746170736474
+    Patched : 00000000000000
+    Disassembly:
+      0000000000039484 <.data+0x39484>:
+         39484: 00 00                   add    %al,(%rax)
+         39486: 00 00                   add    %al,(%rax)
+         39488: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x3948c (Size: 3 bytes)
+    Original: f16002
+    Patched : 000000
+    Disassembly:
+      000000000003948c <.data+0x3948c>:
+         3948c: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39490 (Size: 7 bytes)
+    Original: 00000000b02403
+    Patched : 803e5755555500
+    Disassembly:
+      0000000000039490 <.data+0x39490>:
+         39490: 80 3e 57                cmpb   $0x57,(%rsi)
+         39493: 55                      push   %rbp
+         39494: 55                      push   %rbp
+         39495: 55                      push   %rbp
+        ...
+
+[!] Patch Detected @ Offset 0x394a0 (Size: 8 bytes)
+    Original: 0000000072746c64
+    Patched : c03e575555550000
+    Disassembly:
+      00000000000394a0 <.data+0x394a0>:
+         394a0: c0 3e 57                sarb   $0x57,(%rsi)
+         394a3: 55                      push   %rbp
+         394a4: 55                      push   %rbp
+         394a5: 55                      push   %rbp
+        ...
+
+[!] Patch Detected @ Offset 0x394a9 (Size: 7 bytes)
+    Original: 6c6f6e676a6d70
+    Patched : 00000000000000
+    Disassembly:
+      00000000000394a9 <.data+0x394a9>:
+         394a9: 00 00                   add    %al,(%rax)
+         394ab: 00 00                   add    %al,(%rax)
+         394ad: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x394b1 (Size: 21 bytes)
+    Original: 384025726469202d34402565736920384025726478
+    Patched : 000000000000000000000000000000000000000000
+    Disassembly:
+      00000000000394b1 <.data+0x394b1>:
+        ...
+
+[!] Patch Detected @ Offset 0x394d4 (Size: 7 bytes)
+    Original: 73746170736474
+    Patched : 00000000000000
+    Disassembly:
+      00000000000394d4 <.data+0x394d4>:
+         394d4: 00 00                   add    %al,(%rax)
+         394d6: 00 00                   add    %al,(%rax)
+         394d8: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x394dc (Size: 3 bytes)
+    Original: 0d6102
+    Patched : 000000
+    Disassembly:
+      00000000000394dc <.data+0x394dc>:
+         394dc: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x394e4 (Size: 3 bytes)
+    Original: b02403
+    Patched : 000000
+    Disassembly:
+      00000000000394e4 <.data+0x394e4>:
+         394e4: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x394e8 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : b03e57555555
+    Disassembly:
+      00000000000394e8 <.data+0x394e8>:
+         394e8: b0 3e                   mov    $0x3e,%al
+         394ea: 57                      push   %rdi
+         394eb: 55                      push   %rbp
+         394ec: 55                      push   %rbp
+         394ed: 55                      push   %rbp
+
+[!] Patch Detected @ Offset 0x394f4 (Size: 4 bytes)
+    Original: 72746c64
+    Patched : 00000000
+    Disassembly:
+      00000000000394f4 <.data+0x394f4>:
+         394f4: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x394f9 (Size: 14 bytes)
+    Original: 6c6f6e676a6d705f746172676574
+    Patched : 0000000000000000000000000000
+    Disassembly:
+      00000000000394f9 <.data+0x394f9>:
+        ...
+
+[!] Patch Detected @ Offset 0x39508 (Size: 21 bytes)
+    Original: 384025726469202d34402565617820384025726478
+    Patched : 000000000000000000000000000000000000000000
+    Disassembly:
+      0000000000039508 <.data+0x39508>:
+        ...
+
+[!] Patch Detected @ Offset 0x39520 (Size: 44 bytes)
+    Original: 30653035383738323230666232666336643238666634366236336233666435643438653736332e6465627567
+    Patched : 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    Disassembly:
+      0000000000039520 <.data+0x39520>:
+        ...
+
+[!] Patch Detected @ Offset 0x39550 (Size: 4 bytes)
+    Original: c2e3640f
+    Patched : 00000000
+    Disassembly:
+      0000000000039550 <.data+0x39550>:
+         39550: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39555 (Size: 9 bytes)
+    Original: 2e7368737472746162
+    Patched : 000000000000000000
+    Disassembly:
+      0000000000039555 <.data+0x39555>:
+        ...
+
+[!] Patch Detected @ Offset 0x3955f (Size: 18 bytes)
+    Original: 2e6e6f74652e676e752e70726f7065727479
+    Patched : 000000000000000000000000000000000000
+    Disassembly:
+      000000000003955f <.data+0x3955f>:
+        ...
+
+[!] Patch Detected @ Offset 0x39572 (Size: 18 bytes)
+    Original: 2e6e6f74652e676e752e6275696c642d6964
+    Patched : 000000000000000000000000000000000000
+    Disassembly:
+      0000000000039572 <.data+0x39572>:
+        ...
+
+[!] Patch Detected @ Offset 0x39585 (Size: 9 bytes)
+    Original: 2e676e752e68617368
+    Patched : 000000000000000000
+    Disassembly:
+      0000000000039585 <.data+0x39585>:
+        ...
+
+[!] Patch Detected @ Offset 0x3958f (Size: 7 bytes)
+    Original: 2e64796e73796d
+    Patched : 00000000000000
+    Disassembly:
+      000000000003958f <.data+0x3958f>:
+         3958f: 00 00                   add    %al,(%rax)
+         39591: 00 00                   add    %al,(%rax)
+         39593: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39597 (Size: 7 bytes)
+    Original: 2e64796e737472
+    Patched : 00000000000000
+    Disassembly:
+      0000000000039597 <.data+0x39597>:
+         39597: 00 00                   add    %al,(%rax)
+         39599: 00 00                   add    %al,(%rax)
+         3959b: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x3959f (Size: 12 bytes)
+    Original: 2e676e752e76657273696f6e
+    Patched : 000000000000000000000000
+    Disassembly:
+      000000000003959f <.data+0x3959f>:
+        ...
+
+[!] Patch Detected @ Offset 0x395ac (Size: 34 bytes)
+    Original: 2e676e752e76657273696f6e5f64002e72656c612e64796e002e72656c722e64796e
+    Patched : 000000000000000000000000a03d575555550000404055555555000040d856555555
+    Disassembly:
+      00000000000395ac <.data+0x395ac>:
+        ...
+         395b8: a0 3d 57 55 55 55 00    movabs 0x400000555555573d,%al
+         395bf: 00 40
+         395c1: 40 55                   rex push %rbp
+         395c3: 55                      push   %rbp
+         395c4: 55                      push   %rbp
+         395c5: 55                      push   %rbp
+         395c6: 00 00                   add    %al,(%rax)
+         395c8: 40 d8 56 55             rex fcoms 0x55(%rsi)
+         395cc: 55                      push   %rbp
+         395cd: 55                      push   %rbp
+
+[!] Patch Detected @ Offset 0x395cf (Size: 5 bytes)
+    Original: 2e74657874
+    Patched : 000d000000
+    Disassembly:
+      00000000000395cf <.data+0x395cf>:
+         395cf: 00 0d 00 00 00          add    %cl,0x0(%rip)        # 0x395d5
+
+[!] Patch Detected @ Offset 0x395d5 (Size: 35 bytes)
+    Original: 2e726f64617461002e737461707364742e62617365002e65685f6672616d655f686472
+    Patched : 000000c0d6fbf7ff7f0000030000000000000098e8fff7ff7f00000000000000000000
+    Disassembly:
+      00000000000395d5 <.data+0x395d5>:
+         395d5: 00 00                   add    %al,(%rax)
+         395d7: 00 c0                   add    %al,%al
+         395d9: d6                      (bad)
+         395da: fb                      sti
+         395db: f7 ff                   idiv   %edi
+         395dd: 7f 00                   jg     0x395df
+         395df: 00 03                   add    %al,(%rbx)
+         395e1: 00 00                   add    %al,(%rax)
+         395e3: 00 00                   add    %al,(%rax)
+         395e5: 00 00                   add    %al,(%rax)
+         395e7: 00 98 e8 ff f7 ff       add    %bl,-0x80018(%rax)
+         395ed: 7f 00                   jg     0x395ef
+        ...
+
+[!] Patch Detected @ Offset 0x395f9 (Size: 22 bytes)
+    Original: 2e65685f6672616d65002e646174612e72656c2e726f
+    Patched : 00000000000000e0d6fbf7ff7f000008000000030000
+    Disassembly:
+      00000000000395f9 <.data+0x395f9>:
+         395f9: 00 00                   add    %al,(%rax)
+         395fb: 00 00                   add    %al,(%rax)
+         395fd: 00 00                   add    %al,(%rax)
+         395ff: 00 e0                   add    %ah,%al
+         39601: d6                      (bad)
+         39602: fb                      sti
+         39603: f7 ff                   idiv   %edi
+         39605: 7f 00                   jg     0x39607
+         39607: 00 08                   add    %cl,(%rax)
+         39609: 00 00                   add    %al,(%rax)
+         3960b: 00 03                   add    %al,(%rbx)
+        ...
+
+[!] Patch Detected @ Offset 0x39610 (Size: 53 bytes)
+    Original: 2e64796e616d6963002e676f74002e64617461002e627373002e6e6f74652e73746170736474002e676e755f64656275676c696e6b
+    Patched : 0000000006000000b043555555550000b8435555555500006043555555550000010000003802080000010200000000000100000000
+    Disassembly:
+      0000000000039610 <.data+0x39610>:
+         39610: 00 00                   add    %al,(%rax)
+         39612: 00 00                   add    %al,(%rax)
+         39614: 06                      (bad)
+         39615: 00 00                   add    %al,(%rax)
+         39617: 00 b0 43 55 55 55       add    %dh,0x55555543(%rax)
+         3961d: 55                      push   %rbp
+         3961e: 00 00                   add    %al,(%rax)
+         39620: b8 43 55 55 55          mov    $0x55555543,%eax
+         39625: 55                      push   %rbp
+         39626: 00 00                   add    %al,(%rax)
+         39628: 60                      (bad)
+         39629: 43 55                   rex.XB push %r13
+         3962b: 55                      push   %rbp
+         3962c: 55                      push   %rbp
+         3962d: 55                      push   %rbp
+         3962e: 00 00                   add    %al,(%rax)
+         39630: 01 00                   add    %eax,(%rax)
+         39632: 00 00                   add    %al,(%rax)
+         39634: 38 02                   cmp    %al,(%rdx)
+         39636: 08 00                   or     %al,(%rax)
+         39638: 00 01                   add    %al,(%rcx)
+         3963a: 02 00                   add    (%rax),%al
+         3963c: 00 00                   add    %al,(%rax)
+         3963e: 00 00                   add    %al,(%rax)
+         39640: 01 00                   add    %eax,(%rax)
+         39642: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39648 (Size: 8 bytes)
+    Original: 0000000000000000
+    Patched : ffffffffffffffff
+    Disassembly:
+      0000000000039648 <.data+0x39648>:
+         39648: ff                      (bad)
+         39649: ff                      (bad)
+         3964a: ff                      (bad)
+         3964b: ff                      (bad)
+         3964c: ff                      (bad)
+         3964d: ff                      (bad)
+         3964e: ff                      (bad)
+         3964f: ff                      incl   (%rax)
+
+[!] Patch Detected @ Offset 0x39660 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 044855555555
+    Disassembly:
+      0000000000039660 <.data+0x39660>:
+         39660: 04 48                   add    $0x48,%al
+         39662: 55                      push   %rbp
+         39663: 55                      push   %rbp
+         39664: 55                      push   %rbp
+         39665: 55                      push   %rbp
+
+[!] Patch Detected @ Offset 0x39671 (Size: 5 bytes)
+    Original: 0000000000
+    Patched : 4055555555
+    Disassembly:
+      0000000000039671 <.data+0x39671>:
+         39671: 40 55                   rex push %rbp
+         39673: 55                      push   %rbp
+         39674: 55                      push   %rbp
+         39675: 55                      push   %rbp
+
+[!] Patch Detected @ Offset 0x39678 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 909bec6b5555
+    Disassembly:
+      0000000000039678 <.data+0x39678>:
+         39678: 90                      nop
+         39679: 9b                      fwait
+         3967a: ec                      in     (%dx),%al
+         3967b: 6b 55 55                imul   $0x0,0x55(%rbp),%edx
+
+[!] Patch Detected @ Offset 0x39680 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : d8e5fff7ff7f
+    Disassembly:
+      0000000000039680 <.data+0x39680>:
+         39680: d8 e5                   fsub   %st(5),%st
+         39682: ff f7                   push   %rdi
+         39684: ff                      (bad)
+         39685: 7f                      jg     0x39687
+
+[!] Patch Detected @ Offset 0x396a8 (Size: 6 bytes)
+    Original: 200000000000
+    Patched : 80e6fff7ff7f
+    Disassembly:
+      00000000000396a8 <.data+0x396a8>:
+         396a8: 80 e6 ff                and    $0xff,%dh
+         396ab: f7 ff                   idiv   %edi
+         396ad: 7f                      jg     0x396af
+
+[!] Patch Detected @ Offset 0x396b0 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : d8e5fff7ff7f
+    Disassembly:
+      00000000000396b0 <.data+0x396b0>:
+         396b0: d8 e5                   fsub   %st(5),%st
+         396b2: ff f7                   push   %rdi
+         396b4: ff                      (bad)
+         396b5: 7f                      jg     0x396b7
+
+[!] Patch Detected @ Offset 0x396d0 (Size: 10 bytes)
+    Original: 0200000000000000c802
+    Patched : ffffffffffffffff0000
+    Disassembly:
+      00000000000396d0 <.data+0x396d0>:
+         396d0: ff                      (bad)
+         396d1: ff                      (bad)
+         396d2: ff                      (bad)
+         396d3: ff                      (bad)
+         396d4: ff                      (bad)
+         396d5: ff                      (bad)
+         396d6: ff                      (bad)
+         396d7: ff 00                   incl   (%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x396e0 (Size: 6 bytes)
+    Original: c80200000000
+    Patched : a0d6fbf7ff7f
+    Disassembly:
+      00000000000396e0 <.data+0x396e0>:
+         396e0: a0 d6 fb f7 ff 7f       movabs 0x7ffff7fbd6,%al
+         396e7:
+
+[!] Patch Detected @ Offset 0x39720 (Size: 6 bytes)
+    Original: f00200000000
+    Patched : 184655555555
+    Disassembly:
+      0000000000039720 <.data+0x39720>:
+         39720: 18 46 55                sbb    %al,0x55(%rsi)
+         39723: 55                      push   %rbp
+         39724: 55                      push   %rbp
+         39725: 55                      push   %rbp
+
+[!] Patch Detected @ Offset 0x39730 (Size: 6 bytes)
+    Original: 050000000000
+    Patched : 60d1fbf7ff7f
+    Disassembly:
+      0000000000039730 <.data+0x39730>:
+         39730: 60                      (bad)
+         39731: d1 fb                   sar    $1,%ebx
+         39733: f7 ff                   idiv   %edi
+         39735: 7f                      jg     0x39737
+
+[!] Patch Detected @ Offset 0x39738 (Size: 6 bytes)
+    Original: 080000000000
+    Patched : 687edbf7ff7f
+    Disassembly:
+      0000000000039738 <.data+0x39738>:
+         39738: 68 7e db f7 ff          push   $0xfffffffffff7db7e
+         3973d: 7f                      jg     0x3973f
+
+[!] Patch Detected @ Offset 0x3974c (Size: 5 bytes)
+    Original: f6ffff6f02
+    Patched : 0000000000
+    Disassembly:
+      000000000003974c <.data+0x3974c>:
+         3974c: 00 00                   add    %al,(%rax)
+         3974e: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39780 (Size: 3 bytes)
+    Original: 000000
+    Patched : 20fd01
+    Disassembly:
+      0000000000039780 <.data+0x39780>:
+         39780: 20 fd                   and    %bh,%ch
+         39782: 01                      add    %eax,(%rax)
+
+[!] Patch Detected @ Offset 0x39798 (Size: 6 bytes)
+    Original: 900500000000
+    Patched : e0e2fff7ff7f
+    Disassembly:
+      0000000000039798 <.data+0x39798>:
+         39798: e0 e2                   loopne 0x3977c
+         3979a: ff f7                   push   %rdi
+         3979c: ff                      (bad)
+         3979d: 7f                      jg     0x3979f
+
+[!] Patch Detected @ Offset 0x397a8 (Size: 6 bytes)
+    Original: c00300000000
+    Patched : e0e2fff7ff7f
+    Disassembly:
+      00000000000397a8 <.data+0x397a8>:
+         397a8: e0 e2                   loopne 0x3978c
+         397aa: ff f7                   push   %rdi
+         397ac: ff                      (bad)
+         397ad: 7f                      jg     0x397af
+
+[!] Patch Detected @ Offset 0x397b8 (Size: 6 bytes)
+    Original: 080000000000
+    Patched : e0e2fff7ff7f
+    Disassembly:
+      00000000000397b8 <.data+0x397b8>:
+         397b8: e0 e2                   loopne 0x3979c
+         397ba: ff f7                   push   %rdi
+         397bc: ff                      (bad)
+         397bd: 7f                      jg     0x397bf
+
+[!] Patch Detected @ Offset 0x397c8 (Size: 6 bytes)
+    Original: 430000000300
+    Patched : e0e2fff7ff7f
+    Disassembly:
+      00000000000397c8 <.data+0x397c8>:
+         397c8: e0 e2                   loopne 0x397ac
+         397ca: ff f7                   push   %rdi
+         397cc: ff                      (bad)
+         397cd: 7f                      jg     0x397cf
+
+[!] Patch Detected @ Offset 0x397d8 (Size: 6 bytes)
+    Original: 500900000000
+    Patched : e0e2fff7ff7f
+    Disassembly:
+      00000000000397d8 <.data+0x397d8>:
+         397d8: e0 e2                   loopne 0x397bc
+         397da: ff f7                   push   %rdi
+         397dc: ff                      (bad)
+         397dd: 7f                      jg     0x397df
+
+[!] Patch Detected @ Offset 0x397e8 (Size: 6 bytes)
+    Original: ca0200000000
+    Patched : e0e2fff7ff7f
+    Disassembly:
+      00000000000397e8 <.data+0x397e8>:
+         397e8: e0 e2                   loopne 0x397cc
+         397ea: ff f7                   push   %rdi
+         397ec: ff                      (bad)
+         397ed: 7f                      jg     0x397ef
+
+[!] Patch Detected @ Offset 0x397f8 (Size: 6 bytes)
+    Original: 010000000000
+    Patched : e0e2fff7ff7f
+    Disassembly:
+      00000000000397f8 <.data+0x397f8>:
+         397f8: e0 e2                   loopne 0x397dc
+         397fa: ff f7                   push   %rdi
+         397fc: ff                      (bad)
+         397fd: 7f                      jg     0x397ff
+
+[!] Patch Detected @ Offset 0x39808 (Size: 4 bytes)
+    Original: 4b000000
+    Patched : e0e2fff7
+    Disassembly:
+      0000000000039808 <.data+0x39808>:
+         39808: e0 e2                   loopne 0x397ec
+         3980a: ff f7                   push   %rdi
+
+[!] Patch Detected @ Offset 0x3980d (Size: 4 bytes)
+    Original: ffff6f02
+    Patched : 7f000000
+    Disassembly:
+      000000000003980d <.data+0x3980d>:
+         3980d: 7f 00                   jg     0x3980f
+        ...
+
+[!] Patch Detected @ Offset 0x39818 (Size: 6 bytes)
+    Original: 1a0c00000000
+    Patched : e0e2fff7ff7f
+    Disassembly:
+      0000000000039818 <.data+0x39818>:
+         39818: e0 e2                   loopne 0x397fc
+         3981a: ff f7                   push   %rdi
+         3981c: ff                      (bad)
+         3981d: 7f                      jg     0x3981f
+
+[!] Patch Detected @ Offset 0x39828 (Size: 6 bytes)
+    Original: 500000000000
+    Patched : e0e2fff7ff7f
+    Disassembly:
+      0000000000039828 <.data+0x39828>:
+         39828: e0 e2                   loopne 0x3980c
+         3982a: ff f7                   push   %rdi
+         3982c: ff                      (bad)
+         3982d: 7f                      jg     0x3982f
+
+[!] Patch Detected @ Offset 0x39838 (Size: 6 bytes)
+    Original: 020000000000
+    Patched : e0e2fff7ff7f
+    Disassembly:
+      0000000000039838 <.data+0x39838>:
+         39838: e0 e2                   loopne 0x3981c
+         3983a: ff f7                   push   %rdi
+         3983c: ff                      (bad)
+         3983d: 7f                      jg     0x3983f
+
+[!] Patch Detected @ Offset 0x39848 (Size: 9 bytes)
+    Original: 58000000fdffff6f02
+    Patched : e0e2fff7ff7f000000
+    Disassembly:
+      0000000000039848 <.data+0x39848>:
+         39848: e0 e2                   loopne 0x3982c
+         3984a: ff f7                   push   %rdi
+         3984c: ff                      (bad)
+         3984d: 7f 00                   jg     0x3984f
+        ...
+
+[!] Patch Detected @ Offset 0x39858 (Size: 6 bytes)
+    Original: 700c00000000
+    Patched : e0e2fff7ff7f
+    Disassembly:
+      0000000000039858 <.data+0x39858>:
+         39858: e0 e2                   loopne 0x3983c
+         3985a: ff f7                   push   %rdi
+         3985c: ff                      (bad)
+         3985d: 7f                      jg     0x3985f
+
+[!] Patch Detected @ Offset 0x39868 (Size: 6 bytes)
+    Original: ec0000000000
+    Patched : e0e2fff7ff7f
+    Disassembly:
+      0000000000039868 <.data+0x39868>:
+         39868: e0 e2                   loopne 0x3984c
+         3986a: ff f7                   push   %rdi
+         3986c: ff                      (bad)
+         3986d: 7f                      jg     0x3986f
+
+[!] Patch Detected @ Offset 0x39878 (Size: 6 bytes)
+    Original: 080000000000
+    Patched : e0e2fff7ff7f
+    Disassembly:
+      0000000000039878 <.data+0x39878>:
+         39878: e0 e2                   loopne 0x3985c
+         3987a: ff f7                   push   %rdi
+         3987c: ff                      (bad)
+         3987d: 7f                      jg     0x3987f
+
+[!] Patch Detected @ Offset 0x39888 (Size: 6 bytes)
+    Original: 670000000400
+    Patched : e0e2fff7ff7f
+    Disassembly:
+      0000000000039888 <.data+0x39888>:
+         39888: e0 e2                   loopne 0x3986c
+         3988a: ff f7                   push   %rdi
+         3988c: ff                      (bad)
+         3988d: 7f                      jg     0x3988f
+
+[!] Patch Detected @ Offset 0x398a0 (Size: 6 bytes)
+    Original: 600d00000000
+    Patched : b8e8fff7ff7f
+    Disassembly:
+      00000000000398a0 <.data+0x398a0>:
+         398a0: b8 e8 ff f7 ff          mov    $0xfff7ffe8,%eax
+         398a5: 7f                      jg     0x398a7
+
+[!] Patch Detected @ Offset 0x398c0 (Size: 6 bytes)
+    Original: 180000000000
+    Patched : 0030fcf7ff7f
+    Disassembly:
+      00000000000398c0 <.data+0x398c0>:
+         398c0: 00 30                   add    %dh,(%rax)
+         398c2: fc                      cld
+         398c3: f7 ff                   idiv   %edi
+         398c5: 7f                      jg     0x398c7
+
+[!] Patch Detected @ Offset 0x398c8 (Size: 6 bytes)
+    Original: 710000001300
+    Patched : 3033fcf7ff7f
+    Disassembly:
+      00000000000398c8 <.data+0x398c8>:
+         398c8: 30 33                   xor    %dh,(%rbx)
+         398ca: fc                      cld
+         398cb: f7 ff                   idiv   %edi
+         398cd: 7f                      jg     0x398cf
+
+[!] Patch Detected @ Offset 0x398d0 (Size: 6 bytes)
+    Original: 020000000000
+    Patched : a033fcf7ff7f
+    Disassembly:
+      00000000000398d0 <.data+0x398d0>:
+         398d0: a0 33 fc f7 ff 7f       movabs 0x6000007ffff7fc33,%al
+         398d7:
+
+[!] Patch Detected @ Offset 0x398d8 (Size: 6 bytes)
+    Original: a80d00000000
+    Patched : 60d1fbf7ff7f
+    Disassembly:
+      00000000000398d8 <.data+0x398d8>:
+         398d8: 60                      (bad)
+         398d9: d1 fb                   sar    $1,%ebx
+         398db: f7 ff                   idiv   %edi
+         398dd: 7f                      jg     0x398df
+
+[!] Patch Detected @ Offset 0x398e0 (Size: 6 bytes)
+    Original: a80d00000000
+    Patched : e0e2fff7ff7f
+    Disassembly:
+      00000000000398e0 <.data+0x398e0>:
+         398e0: e0 e2                   loopne 0x398c4
+         398e2: ff f7                   push   %rdi
+         398e4: ff                      (bad)
+         398e5: 7f                      jg     0x398e7
+
+[!] Patch Detected @ Offset 0x398e8 (Size: 6 bytes)
+    Original: 180000000000
+    Patched : c0e8fff7ff7f
+    Disassembly:
+      00000000000398e8 <.data+0x398e8>:
+         398e8: c0 e8 ff                shr    $0xff,%al
+         398eb: f7 ff                   idiv   %edi
+         398ed: 7f                      jg     0x398ef
+
+[!] Patch Detected @ Offset 0x398f8 (Size: 6 bytes)
+    Original: 080000000000
+    Patched : 80eefff7ff7f
+    Disassembly:
+      00000000000398f8 <.data+0x398f8>:
+         398f8: 80 ee ff                sub    $0xff,%dh
+         398fb: f7 ff                   idiv   %edi
+         398fd: 7f                      jg     0x398ff
+
+[!] Patch Detected @ Offset 0x39920 (Size: 6 bytes)
+    Original: 001000000000
+    Patched : c033fcf7ff7f
+    Disassembly:
+      0000000000039920 <.data+0x39920>:
+         39920: c0 33 fc                shlb   $0xfc,(%rbx)
+         39923: f7 ff                   idiv   %edi
+         39925: 7f                      jg     0x39927
+
+[!] Patch Detected @ Offset 0x39928 (Size: 6 bytes)
+    Original: 95a102000000
+    Patched : e033fcf7ff7f
+    Disassembly:
+      0000000000039928 <.data+0x39928>:
+         39928: e0 33                   loopne 0x3995d
+         3992a: fc                      cld
+         3992b: f7 ff                   idiv   %edi
+         3992d: 7f                      jg     0x3992f
+
+[!] Patch Detected @ Offset 0x39930 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : f033fcf7ff7f
+    Disassembly:
+      0000000000039930 <.data+0x39930>:
+         39930: f0 33 fc                lock xor %esp,%edi
+         39933: f7 ff                   idiv   %edi
+         39935: 7f                      jg     0x39937
+
+[!] Patch Detected @ Offset 0x39950 (Size: 6 bytes)
+    Original: 020000000000
+    Patched : 0034fcf7ff7f
+    Disassembly:
+      0000000000039950 <.data+0x39950>:
+         39950: 00 34 fc                add    %dh,(%rsp,%rdi,8)
+         39953: f7 ff                   idiv   %edi
+         39955: 7f                      jg     0x39957
+
+[!] Patch Detected @ Offset 0x39958 (Size: 6 bytes)
+    Original: 00c002000000
+    Patched : 1034fcf7ff7f
+    Disassembly:
+      0000000000039958 <.data+0x39958>:
+         39958: 10 34 fc                adc    %dh,(%rsp,%rdi,8)
+         3995b: f7 ff                   idiv   %edi
+         3995d: 7f                      jg     0x3995f
+
+[!] Patch Detected @ Offset 0x39970 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : a033fcf7ff7f
+    Disassembly:
+      0000000000039970 <.data+0x39970>:
+         39970: a0 33 fc f7 ff 7f       movabs 0x7ffff7fc33,%al
+         39977:
+
+[!] Patch Detected @ Offset 0x39980 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : b033fcf7ff7f
+    Disassembly:
+      0000000000039980 <.data+0x39980>:
+         39980: b0 33                   mov    $0x33,%al
+         39982: fc                      cld
+         39983: f7 ff                   idiv   %edi
+         39985: 7f                      jg     0x39987
+
+[!] Patch Detected @ Offset 0x39998 (Size: 3 bytes)
+    Original: b02403
+    Patched : 000000
+    Disassembly:
+      0000000000039998 <.data+0x39998>:
+         39998: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x399a0 (Size: 3 bytes)
+    Original: b02403
+    Patched : 000000
+    Disassembly:
+      00000000000399a0 <.data+0x399a0>:
+         399a0: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x399d8 (Size: 3 bytes)
+    Original: b42403
+    Patched : 000000
+    Disassembly:
+      00000000000399d8 <.data+0x399d8>:
+         399d8: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x399e0 (Size: 3 bytes)
+    Original: b42403
+    Patched : 000000
+    Disassembly:
+      00000000000399e0 <.data+0x399e0>:
+         399e0: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39a18 (Size: 3 bytes)
+    Original: f02d03
+    Patched : 000000
+    Disassembly:
+      0000000000039a18 <.data+0x39a18>:
+         39a18: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39a20 (Size: 3 bytes)
+    Original: f02d03
+    Patched : 000000
+    Disassembly:
+      0000000000039a20 <.data+0x39a20>:
+         39a20: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39a58 (Size: 3 bytes)
+    Original: 606303
+    Patched : 000000
+    Disassembly:
+      0000000000039a58 <.data+0x39a58>:
+         39a58: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39a60 (Size: 6 bytes)
+    Original: 606303000000
+    Patched : 3034fcf7ff7f
+    Disassembly:
+      0000000000039a60 <.data+0x39a60>:
+         39a60: 30 34 fc                xor    %dh,(%rsp,%rdi,8)
+         39a63: f7 ff                   idiv   %edi
+         39a65: 7f                      jg     0x39a67
+
+[!] Patch Detected @ Offset 0x39a68 (Size: 6 bytes)
+    Original: f81a00000000
+    Patched : 2034fcf7ff7f
+    Disassembly:
+      0000000000039a68 <.data+0x39a68>:
+         39a68: 20 34 fc                and    %dh,(%rsp,%rdi,8)
+         39a6b: f7 ff                   idiv   %edi
+         39a6d: 7f                      jg     0x39a6f
+
+[!] Patch Detected @ Offset 0x39a98 (Size: 3 bytes)
+    Original: 587e03
+    Patched : 000000
+    Disassembly:
+      0000000000039a98 <.data+0x39a98>:
+         39a98: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39aa0 (Size: 3 bytes)
+    Original: 587e03
+    Patched : 000000
+    Disassembly:
+      0000000000039aa0 <.data+0x39aa0>:
+         39aa0: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39ac8 (Size: 6 bytes)
+    Original: c50000000100
+    Patched : 4034fcf7ff7f
+    Disassembly:
+      0000000000039ac8 <.data+0x39ac8>:
+         39ac8: 40 34 fc                rex xor $0xfc,%al
+         39acb: f7 ff                   idiv   %edi
+         39acd: 7f                      jg     0x39acf
+
+[!] Patch Detected @ Offset 0x39ad8 (Size: 3 bytes)
+    Original: d87f03
+    Patched : 000000
+    Disassembly:
+      0000000000039ad8 <.data+0x39ad8>:
+         39ad8: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39ae0 (Size: 3 bytes)
+    Original: d87f03
+    Patched : 000000
+    Disassembly:
+      0000000000039ae0 <.data+0x39ae0>:
+         39ae0: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39b58 (Size: 3 bytes)
+    Original: 109103
+    Patched : 000000
+    Disassembly:
+      0000000000039b58 <.data+0x39b58>:
+         39b58: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39b60 (Size: 3 bytes)
+    Original: 049103
+    Patched : 000000
+    Disassembly:
+      0000000000039b60 <.data+0x39b60>:
+         39b60: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39b98 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : d033fcf7ff7f
+    Disassembly:
+      0000000000039b98 <.data+0x39b98>:
+         39b98: d0 33                   shlb   $1,(%rbx)
+         39b9a: fc                      cld
+         39b9b: f7 ff                   idiv   %edi
+         39b9d: 7f                      jg     0x39b9f
+
+[!] Patch Detected @ Offset 0x39ba0 (Size: 6 bytes)
+    Original: 049103000000
+    Patched : 4030fcf7ff7f
+    Disassembly:
+      0000000000039ba0 <.data+0x39ba0>:
+         39ba0: 40 30 fc                xor    %dil,%spl
+         39ba3: f7 ff                   idiv   %edi
+         39ba5: 7f                      jg     0x39ba7
+
+[!] Patch Detected @ Offset 0x39bb8 (Size: 6 bytes)
+    Original: 040000000000
+    Patched : e8e8fff7ff7f
+    Disassembly:
+      0000000000039bb8 <.data+0x39bb8>:
+         39bb8: e8 e8 ff f7 ff          call   0xfffffffffffb9ba5
+         39bbd: 7f                      jg     0x39bbf
+
+[!] Patch Detected @ Offset 0x39bc8 (Size: 6 bytes)
+    Original: e30000000100
+    Patched : 78eefff7ff7f
+    Disassembly:
+      0000000000039bc8 <.data+0x39bc8>:
+         39bc8: 78 ee                   js     0x39bb8
+         39bca: ff f7                   push   %rdi
+         39bcc: ff                      (bad)
+         39bcd: 7f                      jg     0x39bcf
+
+[!] Patch Detected @ Offset 0x39be0 (Size: 6 bytes)
+    Original: 209503000000
+    Patched : a0d7fbf7ff7f
+    Disassembly:
+      0000000000039be0 <.data+0x39be0>:
+         39be0: a0 d7 fb f7 ff 7f       movabs 0x300007ffff7fbd7,%al
+         39be7:
+
+[!] Patch Detected @ Offset 0x39bf8 (Size: 6 bytes)
+    Original: 040000000000
+    Patched : 7831fcf7ff7f
+    Disassembly:
+      0000000000039bf8 <.data+0x39bf8>:
+         39bf8: 78 31                   js     0x39c2b
+         39bfa: fc                      cld
+         39bfb: f7 ff                   idiv   %edi
+         39bfd: 7f                      jg     0x39bff
+
+[!] Patch Detected @ Offset 0x39c00 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 8031fcf7ff7f
+    Disassembly:
+      0000000000039c00 <.data+0x39c00>:
+         39c00: 80 31 fc                xorb   $0xfc,(%rcx)
+         39c03: f7 ff                   idiv   %edi
+         39c05: 7f                      jg     0x39c07
+
+[!] Patch Detected @ Offset 0x39c08 (Size: 6 bytes)
+    Original: 010000000300
+    Patched : 8831fcf7ff7f
+    Disassembly:
+      0000000000039c08 <.data+0x39c08>:
+         39c08: 88 31                   mov    %dh,(%rcx)
+         39c0a: fc                      cld
+         39c0b: f7 ff                   idiv   %edi
+         39c0d: 7f                      jg     0x39c0f
+
+[!] Patch Detected @ Offset 0x39c20 (Size: 3 bytes)
+    Original: 549503
+    Patched : 000000
+    Disassembly:
+      0000000000039c20 <.data+0x39c20>:
+         39c20: 00 00                   add    %al,(%rax)
+        ...
+
+[!] Patch Detected @ Offset 0x39c40 (Size: 6 bytes)
+    Original: 000000000000
+    Patched : 4a33fcf7ff7f
+    Disassembly:
+      0000000000039c40 <.data+0x39c40>:
+         39c40: 4a 33 fc                rex.WX xor %rsp,%rdi
+         39c43: f7 ff                   idiv   %edi
+         39c45: 7f                      jg     0x39c47
+root@7b35b88d6432:/app#
