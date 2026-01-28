@@ -1,0 +1,1383 @@
+root@7b35b88d6432:/app# gdb -q -x trace_machine_final.py /app/main
+Reading symbols from /app/main...
+(No debugging symbols found in /app/main)
+[*] Setting args to /app/trigger.png
+
+Program stopped.
+0x00007ffff7fe4540 in _start () from /lib64/ld-linux-x86-64.so.2
+[+] Base Address: 0x555555554000
+[*] Searching for DT_RELASZ in _DYNAMIC...
+[!] HACKED DT_RELASZ to: 0x20000
+[+] Setting Watchpoint on BSS Environ: 0x55556bec9b60
+Hardware read watchpoint 1: *93825371249504
+[+] Calculated Raw EnvPtr Address on Stack: 0x7fffffffe650
+Hardware read watchpoint 2: *140737488348752
+[*] Continuing... The trap is set.
+
+Hardware read watchpoint 2: *140737488348752
+
+Value = -6094
+0x00007ffff7fe3203 in _dl_sysdep_parse_arguments (start_argptr=start_argptr@entry=0x7fffffffe630,
+    args=args@entry=0x7fffffffe530) at ../sysdeps/unix/sysv/linux/dl-sysdep.c:81
+warning: 81     ../sysdeps/unix/sysv/linux/dl-sysdep.c: No such file or directory
+(gdb) x/5i $rip
+=> 0x7ffff7fe3203 <_dl_sysdep_parse_arguments+51>:      mov    %rsi,0x1b0c6(%rip)        # 0x7ffff7ffe2d0 <environ>
+   0x7ffff7fe320a <_dl_sysdep_parse_arguments+58>:      je     0x7ffff7fe321a <_dl_sysdep_parse_arguments+74>
+   0x7ffff7fe320c <_dl_sysdep_parse_arguments+60>:      nopl   0x0(%rax)
+   0x7ffff7fe3210 <_dl_sysdep_parse_arguments+64>:      add    $0x8,%rsi
+   0x7ffff7fe3214 <_dl_sysdep_parse_arguments+68>:      cmpq   $0x0,(%rsi)
+(gdb) i r
+rax            0x2                 2
+rbx            0x7ffff7fe5af0      140737354029808
+rcx            0x24                36
+rdx            0x7ffff7fc54f0      140737353897200
+rsi            0x7fffffffe650      140737488348752
+rdi            0x7fffffffe638      140737488348728
+rbp            0x7fffffffe520      0x7fffffffe520
+rsp            0x7fffffffe3d8      0x7fffffffe3d8
+r8             0x7fffffffe530      140737488348464
+r9             0x7ffff7ffcec8      140737354125000
+r10            0x36360             222048
+r11            0x0                 0
+r12            0x7fffffffe5f0      140737488348656
+r13            0x0                 0
+r14            0x7ffff7fc5000      140737353895936
+r15            0x7ffff7fc5590      140737353897360
+rip            0x7ffff7fe3203      0x7ffff7fe3203 <_dl_sysdep_parse_arguments+51>
+eflags         0x202               [ IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+k0             0x0                 0
+k1             0x0                 0
+k2             0x0                 0
+k3             0x0                 0
+k4             0x0                 0
+--Type <RET> for more, q to quit, c to continue without paging--ret
+k5             0x0                 0
+k6             0x0                 0
+k7             0x0                 0
+fs_base        0x0                 0
+gs_base        0x0                 0
+(gdb) x/s $rax
+0x2:    <error: Cannot access memory at address 0x2>
+(gdb) c
+Continuing.
+
+Hardware read watchpoint 2: *140737488348752
+
+Value = -6094
+0x00007ffff7fda8fc in get_next_env (prev_envp=<synthetic pointer>, val=<synthetic pointer>, name=<synthetic pointer>,
+    envp=<optimized out>) at ./elf/dl-tunables.c:42
+warning: 42     ./elf/dl-tunables.c: No such file or directory
+(gdb) x/5i $rip
+=> 0x7ffff7fda8fc <__GI___tunables_init+76>:    test   %r8,%r8
+   0x7ffff7fda8ff <__GI___tunables_init+79>:    je     0x7ffff7fdaa51 <__GI___tunables_init+417>
+   0x7ffff7fda905 <__GI___tunables_init+85>:    movzbl (%r8),%eax
+   0x7ffff7fda909 <__GI___tunables_init+89>:    add    $0x8,%r14
+   0x7ffff7fda90d <__GI___tunables_init+93>:    cmp    $0x3d,%al
+(gdb) i r
+rax            0x0                 0
+rbx            0x7ffff7ffb440      140737354118208
+rcx            0x55555556d840      93824992335936
+rdx            0xd                 13
+rsi            0x555555554040      93824992231488
+rdi            0x7fffffffe650      140737488348752
+rbp            0x7fffffffe520      0x7fffffffe520
+rsp            0x7fffffffe4c0      0x7fffffffe4c0
+r8             0x7fffffffe832      140737488349234
+r9             0x7fffffffe7f9      140737488349177
+r10            0x37f               895
+r11            0x64                100
+r12            0xffff800008004b57  -140737354118313
+r13            0x0                 0
+r14            0x7fffffffe650      140737488348752
+r15            0x7ffff7fc5590      140737353897360
+rip            0x7ffff7fda8fc      0x7ffff7fda8fc <__GI___tunables_init+76>
+eflags         0x206               [ PF IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+k0             0x0                 0
+k1             0x0                 0
+k2             0x0                 0
+k3             0x0                 0
+k4             0x0                 0
+--Type <RET> for more, q to quit, c to continue without paging--ret
+k5             0x0                 0
+k6             0x0                 0
+k7             0x0                 0
+fs_base        0x0                 0
+gs_base        0x0                 0
+(gdb) x/s $rax
+0x0:    <error: Cannot access memory at address 0x0>
+(gdb) c
+Continuing.
+
+Hardware read watchpoint 2: *140737488348752
+
+Value = -6094
+0x00007ffff7fe194a in _dl_next_ld_env_entry (position=position@entry=0x7fffffffe300) at ./elf/dl-environ.c:32
+warning: 32     ./elf/dl-environ.c: No such file or directory
+(gdb) x/5i $rip
+=> 0x7ffff7fe194a <_dl_next_ld_env_entry+10>:   test   %rax,%rax
+   0x7ffff7fe194d <_dl_next_ld_env_entry+13>:   jne    0x7ffff7fe195d <_dl_next_ld_env_entry+29>
+   0x7ffff7fe194f <_dl_next_ld_env_entry+15>:   ret
+   0x7ffff7fe1950 <_dl_next_ld_env_entry+16>:   mov    0x8(%rdx),%rax
+   0x7ffff7fe1954 <_dl_next_ld_env_entry+20>:   add    $0x8,%rdx
+(gdb) i r
+rax            0x7fffffffe832      140737488349234
+rbx            0x7fffffffe300      140737488347904
+rcx            0x7fffffffe6a8      140737488348840
+rdx            0x7fffffffe650      140737488348752
+rsi            0xd                 13
+rdi            0x7fffffffe300      140737488347904
+rbp            0x7fffffffe520      0x7fffffffe520
+rsp            0x7fffffffe268      0x7fffffffe268
+r8             0x0                 0
+r9             0x7ffff7ffb440      140737354118208
+r10            0x800               2048
+r11            0x1                 1
+r12            0x7ffff7ff2160      140737354080608
+r13            0x0                 0
+r14            0x7ffff7fc5000      140737353895936
+r15            0x555555554040      93824992231488
+rip            0x7ffff7fe194a      0x7ffff7fe194a <_dl_next_ld_env_entry+10>
+eflags         0x246               [ PF ZF IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+k0             0x0                 0
+k1             0x0                 0
+k2             0x0                 0
+k3             0x0                 0
+k4             0x0                 0
+--Type <RET> for more, q to quit, c to continue without paging--ret
+k5             0x0                 0
+k6             0x0                 0
+k7             0x0                 0
+fs_base        0x0                 0
+gs_base        0x0                 0
+(gdb) x/s $rax
+0x7fffffffe832: "HOSTNAME=7b35b88d6432"
+(gdb) c
+Continuing.
+
+Hardware read watchpoint 1: *93825371249504
+
+Value = 0
+memcpy () at ../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:367
+warning: 367    ../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S: No such file or directory
+(gdb) x/5i $rip
+=> 0x7ffff7feb98b <memcpy+107>: mov    %rcx,-0x8(%rdi,%rdx,1)
+   0x7ffff7feb990 <memcpy+112>: ret
+   0x7ffff7feb991 <memcpy+113>: movups -0x10(%rsi,%rdx,1),%xmm2
+   0x7ffff7feb996 <memcpy+118>: movups -0x20(%rsi,%rdx,1),%xmm3
+   0x7ffff7feb99b <memcpy+123>: movups %xmm0,(%rdi)
+(gdb) i r
+rax            0x55556bec9b60      93825371249504
+rbx            0x555555554988      93824992233864
+rcx            0x0                 0
+rdx            0x8                 8
+rsi            0x0                 0
+rdi            0x55556bec9b60      93825371249504
+rbp            0x7fffffffe260      0x7fffffffe260
+rsp            0x7fffffffe138      0x7fffffffe138
+r8             0x7ffff7ffe2e0      140737354130144
+r9             0x7ffff7fb2d58      140737353821528
+r10            0x7ffff7fbd728      140737353865000
+r11            0x7ffff7fbd160      140737353863520
+r12            0x555555554660      93824992233056
+r13            0x7ffff7ffe2e0      140737354130144
+r14            0x7ffff7dc2020      140737351786528
+r15            0x5                 5
+rip            0x7ffff7feb98b      0x7ffff7feb98b <memcpy+107>
+eflags         0x246               [ PF ZF IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+k0             0x0                 0
+k1             0x0                 0
+k2             0x0                 0
+k3             0x0                 0
+k4             0x0                 0
+--Type <RET> for more, q to quit, c to continue without paging--ret
+k5             0x0                 0
+k6             0x0                 0
+k7             0x0                 0
+fs_base        0x7ffff7da5740      140737351669568
+gs_base        0x0                 0
+(gdb) x/s $rax
+0x55556bec9b60 <environ@GLIBC_2.2.5>:   ""
+(gdb) c
+Continuing.
+
+Hardware read watchpoint 1: *93825371249504
+
+Value = 0
+memcpy () at ../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:368
+368     in ../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S
+(gdb) x/5i $rip
+=> 0x7ffff7feb990 <memcpy+112>: ret
+   0x7ffff7feb991 <memcpy+113>: movups -0x10(%rsi,%rdx,1),%xmm2
+   0x7ffff7feb996 <memcpy+118>: movups -0x20(%rsi,%rdx,1),%xmm3
+   0x7ffff7feb99b <memcpy+123>: movups %xmm0,(%rdi)
+   0x7ffff7feb99e <memcpy+126>: movups %xmm1,0x10(%rdi)
+(gdb) i r
+rax            0x55556bec9b60      93825371249504
+rbx            0x555555554988      93824992233864
+rcx            0x0                 0
+rdx            0x8                 8
+rsi            0x0                 0
+rdi            0x55556bec9b60      93825371249504
+rbp            0x7fffffffe260      0x7fffffffe260
+rsp            0x7fffffffe138      0x7fffffffe138
+r8             0x7ffff7ffe2e0      140737354130144
+r9             0x7ffff7fb2d58      140737353821528
+r10            0x7ffff7fbd728      140737353865000
+r11            0x7ffff7fbd160      140737353863520
+r12            0x555555554660      93824992233056
+r13            0x7ffff7ffe2e0      140737354130144
+r14            0x7ffff7dc2020      140737351786528
+r15            0x5                 5
+rip            0x7ffff7feb990      0x7ffff7feb990 <memcpy+112>
+eflags         0x246               [ PF ZF IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+k0             0x0                 0
+k1             0x0                 0
+k2             0x0                 0
+k3             0x0                 0
+k4             0x0                 0
+--Type <RET> for more, q to quit, c to continue without paging--ret
+k5             0x0                 0
+k6             0x0                 0
+k7             0x0                 0
+fs_base        0x7ffff7da5740      140737351669568
+gs_base        0x0                 0
+(gdb) x/s $rax
+0x55556bec9b60 <environ@GLIBC_2.2.5>:   ""
+(gdb) c
+Continuing.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Hardware read watchpoint 1: *93825371249504
+
+Value = -6576
+0x00007ffff7dd2256 in __libc_start_main_impl (main=0x55555556d180 <main>, argc=2, argv=0x7fffffffe638, init=0x0,
+    fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7fffffffe628) at ../csu/libc-start.c:340
+warning: 340    ../csu/libc-start.c: No such file or directory
+(gdb) x/5i $rip
+=> 0x7ffff7dd2256 <__libc_start_main_impl+86>:  test   %r15,%r15
+   0x7ffff7dd2259 <__libc_start_main_impl+89>:  je     0x7ffff7dd228b <__libc_start_main_impl+139>
+   0x7ffff7dd225b <__libc_start_main_impl+91>:  mov    %rbx,%rsi
+   0x7ffff7dd225e <__libc_start_main_impl+94>:  mov    %r12d,%edi
+   0x7ffff7dd2261 <__libc_start_main_impl+97>:  call   *%r15
+(gdb) i r
+rax            0x55556bec9b60      93825371249504
+rbx            0x7fffffffe638      140737488348728
+rcx            0x0                 0
+rdx            0x7fffffffe650      140737488348752
+rsi            0x7ffff7facfc0      140737353797568
+rdi            0x7ffff7facfc0      140737353797568
+rbp            0x7fffffffe610      0x7fffffffe610
+rsp            0x7fffffffe5c0      0x7fffffffe5c0
+r8             0x0                 0
+r9             0x7ffff7fca380      140737353917312
+r10            0x7fffffffe230      140737488347696
+r11            0x203               515
+r12            0x2                 2
+r13            0x0                 0
+r14            0x0                 0
+r15            0x0                 0
+rip            0x7ffff7dd2256      0x7ffff7dd2256 <__libc_start_main_impl+86>
+eflags         0x246               [ PF ZF IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+k0             0x4000200           67109376
+k1             0x4411              17425
+k2             0x0                 0
+k3             0x0                 0
+k4             0x0                 0
+--Type <RET> for more, q to quit, c to continue without paging--ret
+k5             0x0                 0
+k6             0x0                 0
+k7             0x0                 0
+fs_base        0x7ffff7da5740      140737351669568
+gs_base        0x0                 0
+(gdb) x/s $rax
+0x55556bec9b60 <environ@GLIBC_2.2.5>:   "P\346\377\377\377\177"
+(gdb) c
+Continuing.
+
+Hardware read watchpoint 1: *93825371249504
+
+Value = -6576
+0x00007ffff7dd21c4 in __libc_start_call_main (main=main@entry=0x55555556d180 <main>, argc=argc@entry=2,
+    argv=argv@entry=0x7fffffffe638) at ../sysdeps/nptl/libc_start_call_main.h:58
+warning: 58     ../sysdeps/nptl/libc_start_call_main.h: No such file or directory
+(gdb) x/5i $rip
+=> 0x7ffff7dd21c4 <__libc_start_call_main+116>: mov    -0x78(%rbp),%rax
+   0x7ffff7dd21c8 <__libc_start_call_main+120>: call   *%rax
+   0x7ffff7dd21ca <__libc_start_call_main+122>: mov    %eax,%edi
+   0x7ffff7dd21cc <__libc_start_call_main+124>: call   0x7ffff7defba0 <__GI_exit>
+   0x7ffff7dd21d1 <__libc_start_call_main+129>: call   0x7ffff7e41290 <__GI___nptl_deallocate_tsd>
+(gdb) i r
+rax            0x55556bec9b60      93825371249504
+rbx            0x7fffffffe638      140737488348728
+rcx            0x555555573d28      93824992361768
+rdx            0x7fffffffe650      140737488348752
+rsi            0x7fffffffe638      140737488348728
+rdi            0x2                 2
+rbp            0x7fffffffe5b0      0x7fffffffe5b0
+rsp            0x7fffffffe520      0x7fffffffe520
+r8             0x0                 0
+r9             0x7ffff7fca380      140737353917312
+r10            0x7fffffffe230      140737488347696
+r11            0x203               515
+r12            0x2                 2
+r13            0x0                 0
+r14            0x555555573d28      93824992361768
+r15            0x7ffff7ffd000      140737354125312
+rip            0x7ffff7dd21c4      0x7ffff7dd21c4 <__libc_start_call_main+116>
+eflags         0x246               [ PF ZF IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+k0             0x4000200           67109376
+k1             0x4411              17425
+k2             0x0                 0
+k3             0x0                 0
+k4             0x0                 0
+--Type <RET> for more, q to quit, c to continue without paging--ret
+k5             0x0                 0
+k6             0x0                 0
+k7             0x0                 0
+fs_base        0x7ffff7da5740      140737351669568
+gs_base        0x0                 0
+(gdb) x/s $rax
+0x55556bec9b60 <environ@GLIBC_2.2.5>:   "P\346\377\377\377\177"
+(gdb) c
+Continuing.
+[Detaching after fork from child process 4638]
+[Detaching after fork from child process 4639]
+[Detaching after fork from child process 4640]
+[Detaching after fork from child process 4641]
+[Detaching after fork from child process 4642]
+[Detaching after fork from child process 4643]
+[Detaching after fork from child process 4644]
+[Detaching after fork from child process 4645]
+[Detaching after fork from child process 4646]
+[Detaching after fork from child process 4647]
+[Detaching after fork from child process 4648]
+[Detaching after fork from child process 4649]
+[Detaching after fork from child process 4650]
+[Detaching after fork from child process 4651]
+[Detaching after fork from child process 4652]
+[Detaching after fork from child process 4653]
+[Detaching after fork from child process 4654]
+[Detaching after fork from child process 4655]
+[Detaching after fork from child process 4656]
+[Detaching after fork from child process 4657]
+[Detaching after fork from child process 4658]
+[Detaching after fork from child process 4659]
+[Detaching after fork from child process 4660]
+[Detaching after fork from child process 4661]
+[Detaching after fork from child process 4662]
+[Detaching after fork from child process 4663]
+[Detaching after fork from child process 4664]
+[Detaching after fork from child process 4665]
+[Detaching after fork from child process 4666]
+[Detaching after fork from child process 4667]
+[Detaching after fork from child process 4668]
+[Detaching after fork from child process 4669]
+[Detaching after fork from child process 4670]
+[Detaching after fork from child process 4671]
+[Detaching after fork from child process 4672]
+[Detaching after fork from child process 4673]
+[Detaching after fork from child process 4674]
+[Detaching after fork from child process 4675]
+[Detaching after fork from child process 4676]
+[Detaching after fork from child process 4677]
+[Detaching after fork from child process 4678]
+[Detaching after fork from child process 4679]
+[Detaching after fork from child process 4680]
+[Detaching after fork from child process 4681]
+[Detaching after fork from child process 4682]
+[Detaching after fork from child process 4683]
+[Detaching after fork from child process 4684]
+[Detaching after fork from child process 4685]
+[Detaching after fork from child process 4686]
+[Detaching after fork from child process 4687]
+[Detaching after fork from child process 4688]
+[Detaching after fork from child process 4689]
+[Detaching after fork from child process 4690]
+[Detaching after fork from child process 4691]
+[Detaching after fork from child process 4692]
+[Detaching after fork from child process 4693]
+[Detaching after fork from child process 4694]
+[Detaching after fork from child process 4695]
+[Detaching after fork from child process 4696]
+[Detaching after fork from child process 4697]
+[Detaching after fork from child process 4698]
+[Detaching after fork from child process 4699]
+[Detaching after fork from child process 4700]
+[Detaching after fork from child process 4701]
+[Detaching after fork from child process 4702]
+[Detaching after fork from child process 4703]
+[Detaching after fork from child process 4704]
+[Detaching after fork from child process 4705]
+[Detaching after fork from child process 4706]
+[Detaching after fork from child process 4707]
+[Detaching after fork from child process 4708]
+[Detaching after fork from child process 4709]
+[Detaching after fork from child process 4710]
+[Detaching after fork from child process 4711]
+[Detaching after fork from child process 4712]
+[Detaching after fork from child process 4713]
+[Detaching after fork from child process 4714]
+[Detaching after fork from child process 4715]
+[Detaching after fork from child process 4716]
+[Detaching after fork from child process 4717]
+[Detaching after fork from child process 4718]
+[Detaching after fork from child process 4719]
+[Detaching after fork from child process 4720]
+[Detaching after fork from child process 4721]
+[Detaching after fork from child process 4722]
+[Detaching after fork from child process 4723]
+[Detaching after fork from child process 4724]
+[Detaching after fork from child process 4725]
+[Detaching after fork from child process 4726]
+[Detaching after fork from child process 4727]
+[Detaching after fork from child process 4728]
+[Detaching after fork from child process 4729]
+[Detaching after fork from child process 4730]
+[Detaching after fork from child process 4731]
+[Detaching after fork from child process 4732]
+[Detaching after fork from child process 4733]
+[Detaching after fork from child process 4734]
+[Detaching after fork from child process 4735]
+[Detaching after fork from child process 4736]
+[Detaching after fork from child process 4737]
+[Detaching after fork from child process 4738]
+[Detaching after fork from child process 4739]
+[Detaching after fork from child process 4740]
+[Detaching after fork from child process 4741]
+[Detaching after fork from child process 4742]
+[Detaching after fork from child process 4743]
+[Detaching after fork from child process 4744]
+[Detaching after fork from child process 4745]
+[Detaching after fork from child process 4746]
+[Detaching after fork from child process 4747]
+[Detaching after fork from child process 4748]
+[Detaching after fork from child process 4749]
+[Detaching after fork from child process 4750]
+[Detaching after fork from child process 4751]
+[Detaching after fork from child process 4752]
+[Detaching after fork from child process 4753]
+[Detaching after fork from child process 4754]
+[Detaching after fork from child process 4755]
+[Detaching after fork from child process 4756]
+[Detaching after fork from child process 4757]
+[Detaching after fork from child process 4758]
+[Detaching after fork from child process 4759]
+[Detaching after fork from child process 4760]
+[Detaching after fork from child process 4761]
+[Detaching after fork from child process 4762]
+[Detaching after fork from child process 4763]
+[Detaching after fork from child process 4764]
+[Detaching after fork from child process 4765]
+[Detaching after fork from child process 4766]
+[Detaching after fork from child process 4767]
+[Detaching after fork from child process 4768]
+[Detaching after fork from child process 4769]
+[Detaching after fork from child process 4770]
+[Detaching after fork from child process 4771]
+[Detaching after fork from child process 4772]
+[Detaching after fork from child process 4773]
+[Detaching after fork from child process 4774]
+[Detaching after fork from child process 4775]
+[Detaching after fork from child process 4776]
+[Detaching after fork from child process 4777]
+[Detaching after fork from child process 4778]
+[Detaching after fork from child process 4779]
+[Detaching after fork from child process 4780]
+[Detaching after fork from child process 4781]
+[Detaching after fork from child process 4782]
+[Detaching after fork from child process 4783]
+[Detaching after fork from child process 4784]
+[Detaching after fork from child process 4785]
+[Detaching after fork from child process 4786]
+[Detaching after fork from child process 4787]
+[Detaching after fork from child process 4788]
+[Detaching after fork from child process 4789]
+[Detaching after fork from child process 4790]
+[Detaching after fork from child process 4791]
+[Detaching after fork from child process 4792]
+[Detaching after fork from child process 4793]
+[Detaching after fork from child process 4794]
+[Detaching after fork from child process 4795]
+[Detaching after fork from child process 4796]
+[Detaching after fork from child process 4797]
+[Detaching after fork from child process 4798]
+[Detaching after fork from child process 4799]
+[Detaching after fork from child process 4800]
+[Detaching after fork from child process 4801]
+[Detaching after fork from child process 4802]
+[Detaching after fork from child process 4803]
+[Detaching after fork from child process 4804]
+[Detaching after fork from child process 4805]
+[Detaching after fork from child process 4806]
+[Detaching after fork from child process 4807]
+[Detaching after fork from child process 4808]
+[Detaching after fork from child process 4809]
+[Detaching after fork from child process 4810]
+[Detaching after fork from child process 4811]
+[Detaching after fork from child process 4812]
+[Detaching after fork from child process 4813]
+[Detaching after fork from child process 4814]
+[Detaching after fork from child process 4815]
+[Detaching after fork from child process 4816]
+[Detaching after fork from child process 4817]
+[Detaching after fork from child process 4818]
+[Detaching after fork from child process 4819]
+[Detaching after fork from child process 4820]
+[Detaching after fork from child process 4821]
+[Detaching after fork from child process 4822]
+[Detaching after fork from child process 4823]
+[Detaching after fork from child process 4824]
+[Detaching after fork from child process 4825]
+[Detaching after fork from child process 4826]
+[Detaching after fork from child process 4827]
+[Detaching after fork from child process 4828]
+[Detaching after fork from child process 4829]
+[Detaching after fork from child process 4830]
+[Detaching after fork from child process 4831]
+[Detaching after fork from child process 4832]
+[Detaching after fork from child process 4833]
+[Detaching after fork from child process 4834]
+[Detaching after fork from child process 4835]
+[Detaching after fork from child process 4836]
+[Detaching after fork from child process 4837]
+[Detaching after fork from child process 4838]
+[Detaching after fork from child process 4839]
+[Detaching after fork from child process 4840]
+[Detaching after fork from child process 4841]
+[Detaching after fork from child process 4842]
+[Detaching after fork from child process 4843]
+[Detaching after fork from child process 4844]
+[Detaching after fork from child process 4845]
+[Detaching after fork from child process 4846]
+[Detaching after fork from child process 4847]
+[Detaching after fork from child process 4848]
+[Detaching after fork from child process 4849]
+[Detaching after fork from child process 4850]
+[Detaching after fork from child process 4851]
+[Detaching after fork from child process 4852]
+[Detaching after fork from child process 4853]
+[Detaching after fork from child process 4854]
+[Detaching after fork from child process 4855]
+[Detaching after fork from child process 4856]
+[Detaching after fork from child process 4857]
+[Detaching after fork from child process 4858]
+[Detaching after fork from child process 4859]
+[Detaching after fork from child process 4860]
+[Detaching after fork from child process 4861]
+[Detaching after fork from child process 4862]
+[Detaching after fork from child process 4863]
+[Detaching after fork from child process 4864]
+[Detaching after fork from child process 4865]
+[Detaching after fork from child process 4866]
+[Detaching after fork from child process 4867]
+[Detaching after fork from child process 4868]
+[Detaching after fork from child process 4869]
+[Detaching after fork from child process 4870]
+[Detaching after fork from child process 4871]
+[Detaching after fork from child process 4872]
+[Detaching after fork from child process 4873]
+[Detaching after fork from child process 4874]
+[Detaching after fork from child process 4875]
+[Detaching after fork from child process 4876]
+[Detaching after fork from child process 4877]
+[Detaching after fork from child process 4878]
+[Detaching after fork from child process 4879]
+[Detaching after fork from child process 4880]
+[Detaching after fork from child process 4881]
+[Detaching after fork from child process 4882]
+[Detaching after fork from child process 4883]
+[Detaching after fork from child process 4884]
+[Detaching after fork from child process 4885]
+[Detaching after fork from child process 4886]
+[Detaching after fork from child process 4887]
+[Detaching after fork from child process 4888]
+[Detaching after fork from child process 4889]
+[Detaching after fork from child process 4890]
+[Detaching after fork from child process 4891]
+[Detaching after fork from child process 4892]
+[Detaching after fork from child process 4893]
+[Detaching after fork from child process 4894]
+[Detaching after fork from child process 4895]
+[Detaching after fork from child process 4896]
+[Detaching after fork from child process 4897]
+[Detaching after fork from child process 4898]
+[Detaching after fork from child process 4899]
+[Detaching after fork from child process 4900]
+[Detaching after fork from child process 4901]
+[Detaching after fork from child process 4902]
+[Detaching after fork from child process 4903]
+[Detaching after fork from child process 4904]
+[Detaching after fork from child process 4905]
+[Detaching after fork from child process 4906]
+[Detaching after fork from child process 4907]
+[Detaching after fork from child process 4908]
+[Detaching after fork from child process 4909]
+[Detaching after fork from child process 4910]
+[Detaching after fork from child process 4911]
+[Detaching after fork from child process 4912]
+[Detaching after fork from child process 4913]
+[Detaching after fork from child process 4914]
+[Detaching after fork from child process 4915]
+[Detaching after fork from child process 4916]
+[Detaching after fork from child process 4917]
+[Detaching after fork from child process 4918]
+[Detaching after fork from child process 4919]
+[Detaching after fork from child process 4920]
+[Detaching after fork from child process 4921]
+[Detaching after fork from child process 4922]
+[Detaching after fork from child process 4923]
+[Detaching after fork from child process 4924]
+[Detaching after fork from child process 4925]
+[Detaching after fork from child process 4926]
+[Detaching after fork from child process 4927]
+[Detaching after fork from child process 4928]
+[Detaching after fork from child process 4929]
+[Detaching after fork from child process 4930]
+[Detaching after fork from child process 4931]
+[Detaching after fork from child process 4932]
+[Detaching after fork from child process 4933]
+[Detaching after fork from child process 4934]
+[Detaching after fork from child process 4935]
+[Detaching after fork from child process 4936]
+[Detaching after fork from child process 4937]
+[Detaching after fork from child process 4938]
+[Detaching after fork from child process 4939]
+[Detaching after fork from child process 4940]
+[Detaching after fork from child process 4941]
+[Detaching after fork from child process 4942]
+[Detaching after fork from child process 4943]
+[Detaching after fork from child process 4944]
+[Detaching after fork from child process 4945]
+[Detaching after fork from child process 4946]
+[Detaching after fork from child process 4947]
+[Detaching after fork from child process 4948]
+[Detaching after fork from child process 4949]
+[Detaching after fork from child process 4950]
+[Detaching after fork from child process 4951]
+[Detaching after fork from child process 4952]
+[Detaching after fork from child process 4953]
+[Detaching after fork from child process 4954]
+[Detaching after fork from child process 4955]
+[Detaching after fork from child process 4956]
+[Detaching after fork from child process 4957]
+[Detaching after fork from child process 4958]
+[Detaching after fork from child process 4959]
+[Detaching after fork from child process 4960]
+[Detaching after fork from child process 4961]
+[Detaching after fork from child process 4962]
+[Detaching after fork from child process 4963]
+[Detaching after fork from child process 4964]
+[Detaching after fork from child process 4965]
+[Detaching after fork from child process 4966]
+[Detaching after fork from child process 4967]
+[Detaching after fork from child process 4968]
+[Detaching after fork from child process 4969]
+[Detaching after fork from child process 4970]
+[Detaching after fork from child process 4971]
+[Detaching after fork from child process 4972]
+[Detaching after fork from child process 4973]
+[Detaching after fork from child process 4974]
+[Detaching after fork from child process 4975]
+[Detaching after fork from child process 4976]
+[Detaching after fork from child process 4977]
+[Detaching after fork from child process 4978]
+[Detaching after fork from child process 4979]
+[Detaching after fork from child process 4980]
+[Detaching after fork from child process 4981]
+[Detaching after fork from child process 4982]
+[Detaching after fork from child process 4983]
+[Detaching after fork from child process 4984]
+[Detaching after fork from child process 4985]
+[Detaching after fork from child process 4986]
+[Detaching after fork from child process 4987]
+[Detaching after fork from child process 4988]
+[Detaching after fork from child process 4989]
+[Detaching after fork from child process 4990]
+[Detaching after fork from child process 4991]
+[Detaching after fork from child process 4992]
+[Detaching after fork from child process 4993]
+[Detaching after fork from child process 4994]
+[Detaching after fork from child process 4995]
+[Detaching after fork from child process 4996]
+[Detaching after fork from child process 4997]
+[Detaching after fork from child process 4998]
+[Detaching after fork from child process 4999]
+[Detaching after fork from child process 5000]
+[Detaching after fork from child process 5001]
+[Detaching after fork from child process 5002]
+[Detaching after fork from child process 5003]
+[Detaching after fork from child process 5004]
+[Detaching after fork from child process 5005]
+[Detaching after fork from child process 5006]
+[Detaching after fork from child process 5007]
+[Detaching after fork from child process 5008]
+[Detaching after fork from child process 5009]
+[Detaching after fork from child process 5010]
+[Detaching after fork from child process 5011]
+[Detaching after fork from child process 5012]
+[Detaching after fork from child process 5013]
+[Detaching after fork from child process 5014]
+[Detaching after fork from child process 5015]
+[Detaching after fork from child process 5016]
+[Detaching after fork from child process 5017]
+[Detaching after fork from child process 5018]
+[Detaching after fork from child process 5019]
+[Detaching after fork from child process 5020]
+[Detaching after fork from child process 5021]
+[Detaching after fork from child process 5022]
+[Detaching after fork from child process 5023]
+[Detaching after fork from child process 5024]
+[Detaching after fork from child process 5025]
+[Detaching after fork from child process 5026]
+[Detaching after fork from child process 5027]
+[Detaching after fork from child process 5028]
+[Detaching after fork from child process 5029]
+[Detaching after fork from child process 5030]
+[Detaching after fork from child process 5031]
+[Detaching after fork from child process 5032]
+[Detaching after fork from child process 5033]
+[Detaching after fork from child process 5034]
+[Detaching after fork from child process 5035]
+[Detaching after fork from child process 5036]
+[Detaching after fork from child process 5037]
+[Detaching after fork from child process 5038]
+[Detaching after fork from child process 5039]
+[Detaching after fork from child process 5040]
+[Detaching after fork from child process 5041]
+[Detaching after fork from child process 5042]
+[Detaching after fork from child process 5043]
+[Detaching after fork from child process 5044]
+[Detaching after fork from child process 5045]
+[Detaching after fork from child process 5046]
+[Detaching after fork from child process 5047]
+[Detaching after fork from child process 5048]
+[Detaching after fork from child process 5049]
+[Detaching after fork from child process 5050]
+[Detaching after fork from child process 5051]
+[Detaching after fork from child process 5052]
+[Detaching after fork from child process 5053]
+[Detaching after fork from child process 5054]
+[Detaching after fork from child process 5055]
+[Detaching after fork from child process 5056]
+[Detaching after fork from child process 5057]
+[Detaching after fork from child process 5058]
+[Detaching after fork from child process 5059]
+[Detaching after fork from child process 5060]
+[Detaching after fork from child process 5061]
+[Detaching after fork from child process 5062]
+[Detaching after fork from child process 5063]
+[Detaching after fork from child process 5064]
+[Detaching after fork from child process 5065]
+[Detaching after fork from child process 5066]
+[Detaching after fork from child process 5067]
+[Detaching after fork from child process 5068]
+[Detaching after fork from child process 5069]
+[Detaching after fork from child process 5070]
+[Detaching after fork from child process 5071]
+[Detaching after fork from child process 5072]
+[Detaching after fork from child process 5073]
+[Detaching after fork from child process 5074]
+[Detaching after fork from child process 5075]
+[Detaching after fork from child process 5076]
+[Detaching after fork from child process 5077]
+[Detaching after fork from child process 5078]
+[Detaching after fork from child process 5079]
+[Detaching after fork from child process 5080]
+[Detaching after fork from child process 5081]
+[Detaching after fork from child process 5082]
+[Detaching after fork from child process 5083]
+[Detaching after fork from child process 5084]
+[Detaching after fork from child process 5085]
+[Detaching after fork from child process 5086]
+[Detaching after fork from child process 5087]
+[Detaching after fork from child process 5088]
+[Detaching after fork from child process 5089]
+[Detaching after fork from child process 5090]
+[Detaching after fork from child process 5091]
+[Detaching after fork from child process 5092]
+[Detaching after fork from child process 5093]
+[Detaching after fork from child process 5094]
+[Detaching after fork from child process 5095]
+[Detaching after fork from child process 5096]
+[Detaching after fork from child process 5097]
+[Detaching after fork from child process 5098]
+[Detaching after fork from child process 5099]
+[Detaching after fork from child process 5100]
+[Detaching after fork from child process 5101]
+[Detaching after fork from child process 5102]
+[Detaching after fork from child process 5103]
+[Detaching after fork from child process 5104]
+[Detaching after fork from child process 5105]
+[Detaching after fork from child process 5106]
+[Detaching after fork from child process 5107]
+[Detaching after fork from child process 5108]
+[Detaching after fork from child process 5109]
+[Detaching after fork from child process 5110]
+[Detaching after fork from child process 5111]
+[Detaching after fork from child process 5112]
+[Detaching after fork from child process 5113]
+[Detaching after fork from child process 5114]
+[Detaching after fork from child process 5115]
+[Detaching after fork from child process 5116]
+[Detaching after fork from child process 5117]
+[Detaching after fork from child process 5118]
+[Detaching after fork from child process 5119]
+[Detaching after fork from child process 5120]
+[Detaching after fork from child process 5121]
+[Detaching after fork from child process 5122]
+[Detaching after fork from child process 5123]
+[Detaching after fork from child process 5124]
+[Detaching after fork from child process 5125]
+[Detaching after fork from child process 5126]
+[Detaching after fork from child process 5127]
+[Detaching after fork from child process 5128]
+[Detaching after fork from child process 5129]
+[Detaching after fork from child process 5130]
+[Detaching after fork from child process 5131]
+[Detaching after fork from child process 5132]
+[Detaching after fork from child process 5133]
+[Detaching after fork from child process 5134]
+[Detaching after fork from child process 5135]
+[Detaching after fork from child process 5136]
+[Detaching after fork from child process 5137]
+[Detaching after fork from child process 5138]
+[Detaching after fork from child process 5139]
+[Detaching after fork from child process 5140]
+[Detaching after fork from child process 5141]
+[Detaching after fork from child process 5142]
+[Detaching after fork from child process 5143]
+[Detaching after fork from child process 5144]
+[Detaching after fork from child process 5145]
+[Detaching after fork from child process 5146]
+[Detaching after fork from child process 5147]
+[Detaching after fork from child process 5148]
+[Detaching after fork from child process 5149]
+[Detaching after fork from child process 5150]
+[Detaching after fork from child process 5151]
+[Detaching after fork from child process 5152]
+[Detaching after fork from child process 5153]
+[Detaching after fork from child process 5154]
+[Detaching after fork from child process 5155]
+[Detaching after fork from child process 5156]
+[Detaching after fork from child process 5157]
+[Detaching after fork from child process 5158]
+[Detaching after fork from child process 5159]
+[Detaching after fork from child process 5160]
+[Detaching after fork from child process 5161]
+[Detaching after fork from child process 5162]
+[Detaching after fork from child process 5163]
+[Detaching after fork from child process 5164]
+[Detaching after fork from child process 5165]
+[Detaching after fork from child process 5166]
+[Detaching after fork from child process 5167]
+[Detaching after fork from child process 5168]
+[Detaching after fork from child process 5169]
+[Detaching after fork from child process 5170]
+[Detaching after fork from child process 5171]
+[Detaching after fork from child process 5172]
+[Detaching after fork from child process 5173]
+[Detaching after fork from child process 5174]
+[Detaching after fork from child process 5175]
+[Detaching after fork from child process 5176]
+[Detaching after fork from child process 5177]
+[Detaching after fork from child process 5178]
+[Detaching after fork from child process 5179]
+[Detaching after fork from child process 5180]
+[Detaching after fork from child process 5181]
+[Detaching after fork from child process 5182]
+[Detaching after fork from child process 5183]
+[Detaching after fork from child process 5184]
+[Detaching after fork from child process 5185]
+[Detaching after fork from child process 5186]
+[Detaching after fork from child process 5187]
+[Detaching after fork from child process 5188]
+[Detaching after fork from child process 5189]
+[Detaching after fork from child process 5190]
+[Detaching after fork from child process 5191]
+[Detaching after fork from child process 5192]
+[Detaching after fork from child process 5193]
+[Detaching after fork from child process 5194]
+[Detaching after fork from child process 5195]
+[Detaching after fork from child process 5196]
+[Detaching after fork from child process 5197]
+[Detaching after fork from child process 5198]
+[Detaching after fork from child process 5199]
+[Detaching after fork from child process 5200]
+[Detaching after fork from child process 5201]
+[Detaching after fork from child process 5202]
+[Detaching after fork from child process 5203]
+[Detaching after fork from child process 5204]
+[Detaching after fork from child process 5205]
+[Detaching after fork from child process 5206]
+[Detaching after fork from child process 5207]
+[Detaching after fork from child process 5208]
+[Detaching after fork from child process 5209]
+[Detaching after fork from child process 5210]
+[Detaching after fork from child process 5211]
+[Detaching after fork from child process 5212]
+[Detaching after fork from child process 5213]
+[Detaching after fork from child process 5214]
+[Detaching after fork from child process 5215]
+[Detaching after fork from child process 5216]
+[Detaching after fork from child process 5217]
+[Detaching after fork from child process 5218]
+[Detaching after fork from child process 5219]
+[Detaching after fork from child process 5220]
+[Detaching after fork from child process 5221]
+[Detaching after fork from child process 5222]
+[Detaching after fork from child process 5223]
+[Detaching after fork from child process 5224]
+[Detaching after fork from child process 5225]
+[Detaching after fork from child process 5226]
+[Detaching after fork from child process 5227]
+[Detaching after fork from child process 5228]
+[Detaching after fork from child process 5229]
+[Detaching after fork from child process 5230]
+[Detaching after fork from child process 5231]
+[Detaching after fork from child process 5232]
+[Detaching after fork from child process 5233]
+[Detaching after fork from child process 5234]
+[Detaching after fork from child process 5235]
+[Detaching after fork from child process 5236]
+[Detaching after fork from child process 5237]
+[Detaching after fork from child process 5238]
+[Detaching after fork from child process 5239]
+[Detaching after fork from child process 5240]
+[Detaching after fork from child process 5241]
+[Detaching after fork from child process 5242]
+[Detaching after fork from child process 5243]
+[Detaching after fork from child process 5244]
+[Detaching after fork from child process 5245]
+[Detaching after fork from child process 5246]
+[Detaching after fork from child process 5247]
+[Detaching after fork from child process 5248]
+[Detaching after fork from child process 5249]
+[Detaching after fork from child process 5250]
+[Detaching after fork from child process 5251]
+[Detaching after fork from child process 5252]
+[Detaching after fork from child process 5253]
+[Detaching after fork from child process 5254]
+[Detaching after fork from child process 5255]
+[Detaching after fork from child process 5256]
+[Detaching after fork from child process 5257]
+[Detaching after fork from child process 5258]
+[Detaching after fork from child process 5259]
+[Detaching after fork from child process 5260]
+[Detaching after fork from child process 5261]
+[Detaching after fork from child process 5262]
+[Detaching after fork from child process 5263]
+[Detaching after fork from child process 5264]
+[Detaching after fork from child process 5265]
+[Detaching after fork from child process 5266]
+[Detaching after fork from child process 5267]
+[Detaching after fork from child process 5268]
+[Detaching after fork from child process 5269]
+[Detaching after fork from child process 5270]
+[Detaching after fork from child process 5271]
+[Detaching after fork from child process 5272]
+[Detaching after fork from child process 5273]
+[Detaching after fork from child process 5274]
+[Detaching after fork from child process 5275]
+[Detaching after fork from child process 5276]
+[Detaching after fork from child process 5277]
+[Detaching after fork from child process 5278]
+[Detaching after fork from child process 5279]
+[Detaching after fork from child process 5280]
+[Detaching after fork from child process 5281]
+[Detaching after fork from child process 5282]
+[Detaching after fork from child process 5283]
+[Detaching after fork from child process 5284]
+[Detaching after fork from child process 5285]
+[Detaching after fork from child process 5286]
+[Detaching after fork from child process 5287]
+[Detaching after fork from child process 5288]
+[Detaching after fork from child process 5289]
+[Detaching after fork from child process 5290]
+[Detaching after fork from child process 5291]
+[Detaching after fork from child process 5292]
+[Detaching after fork from child process 5293]
+[Detaching after fork from child process 5294]
+[Detaching after fork from child process 5295]
+[Detaching after fork from child process 5296]
+[Detaching after fork from child process 5297]
+[Detaching after fork from child process 5298]
+[Detaching after fork from child process 5299]
+[Detaching after fork from child process 5300]
+[Detaching after fork from child process 5301]
+[Detaching after fork from child process 5302]
+[Detaching after fork from child process 5303]
+[Detaching after fork from child process 5304]
+[Detaching after fork from child process 5305]
+[Detaching after fork from child process 5306]
+[Detaching after fork from child process 5307]
+[Detaching after fork from child process 5308]
+[Detaching after fork from child process 5309]
+[Detaching after fork from child process 5310]
+[Detaching after fork from child process 5311]
+[Detaching after fork from child process 5312]
+[Detaching after fork from child process 5313]
+[Detaching after fork from child process 5314]
+[Detaching after fork from child process 5315]
+[Detaching after fork from child process 5316]
+[Detaching after fork from child process 5317]
+[Detaching after fork from child process 5318]
+[Detaching after fork from child process 5319]
+[Detaching after fork from child process 5320]
+[Detaching after fork from child process 5321]
+[Detaching after fork from child process 5322]
+[Detaching after fork from child process 5323]
+[Detaching after fork from child process 5324]
+[Detaching after fork from child process 5325]
+[Detaching after fork from child process 5326]
+[Detaching after fork from child process 5327]
+[Detaching after fork from child process 5328]
+[Detaching after fork from child process 5329]
+[Detaching after fork from child process 5330]
+[Detaching after fork from child process 5331]
+[Detaching after fork from child process 5332]
+[Detaching after fork from child process 5333]
+[Detaching after fork from child process 5334]
+[Detaching after fork from child process 5335]
+[Detaching after fork from child process 5336]
+[Detaching after fork from child process 5337]
+[Detaching after fork from child process 5338]
+[Detaching after fork from child process 5339]
+[Detaching after fork from child process 5340]
+[Detaching after fork from child process 5341]
+[Detaching after fork from child process 5342]
+[Detaching after fork from child process 5343]
+[Detaching after fork from child process 5344]
+[Detaching after fork from child process 5345]
+[Detaching after fork from child process 5346]
+[Detaching after fork from child process 5347]
+[Detaching after fork from child process 5348]
+[Detaching after fork from child process 5349]
+[Detaching after fork from child process 5350]
+[Detaching after fork from child process 5351]
+[Detaching after fork from child process 5352]
+[Detaching after fork from child process 5353]
+[Detaching after fork from child process 5354]
+[Detaching after fork from child process 5355]
+[Detaching after fork from child process 5356]
+[Detaching after fork from child process 5357]
+[Detaching after fork from child process 5358]
+[Detaching after fork from child process 5359]
+[Detaching after fork from child process 5360]
+[Detaching after fork from child process 5361]
+[Detaching after fork from child process 5362]
+[Detaching after fork from child process 5363]
+[Detaching after fork from child process 5364]
+[Detaching after fork from child process 5365]
+[Detaching after fork from child process 5366]
+[Detaching after fork from child process 5367]
+[Detaching after fork from child process 5368]
+[Detaching after fork from child process 5369]
+[Detaching after fork from child process 5370]
+[Detaching after fork from child process 5371]
+[Detaching after fork from child process 5372]
+[Detaching after fork from child process 5373]
+[Detaching after fork from child process 5374]
+[Detaching after fork from child process 5375]
+[Detaching after fork from child process 5376]
+[Detaching after fork from child process 5377]
+[Detaching after fork from child process 5378]
+[Detaching after fork from child process 5379]
+[Detaching after fork from child process 5380]
+[Detaching after fork from child process 5381]
+[Detaching after fork from child process 5382]
+[Detaching after fork from child process 5383]
+[Detaching after fork from child process 5384]
+[Detaching after fork from child process 5385]
+[Detaching after fork from child process 5386]
+[Detaching after fork from child process 5387]
+[Detaching after fork from child process 5388]
+[Detaching after fork from child process 5389]
+[Detaching after fork from child process 5390]
+[Detaching after fork from child process 5391]
+[Detaching after fork from child process 5392]
+[Detaching after fork from child process 5393]
+[Detaching after fork from child process 5394]
+[Detaching after fork from child process 5395]
+[Detaching after fork from child process 5396]
+[Detaching after fork from child process 5397]
+[Detaching after fork from child process 5398]
+[Detaching after fork from child process 5399]
+[Detaching after fork from child process 5400]
+[Detaching after fork from child process 5401]
+[Detaching after fork from child process 5402]
+[Detaching after fork from child process 5403]
+[Detaching after fork from child process 5404]
+[Detaching after fork from child process 5405]
+[Detaching after fork from child process 5406]
+[Detaching after fork from child process 5407]
+[Detaching after fork from child process 5408]
+[Detaching after fork from child process 5409]
+[Detaching after fork from child process 5410]
+[Detaching after fork from child process 5411]
+[Detaching after fork from child process 5412]
+[Detaching after fork from child process 5413]
+[Detaching after fork from child process 5414]
+[Detaching after fork from child process 5415]
+[Detaching after fork from child process 5416]
+[Detaching after fork from child process 5417]
+[Detaching after fork from child process 5418]
+[Detaching after fork from child process 5419]
+[Detaching after fork from child process 5420]
+[Detaching after fork from child process 5421]
+[Detaching after fork from child process 5422]
+[Detaching after fork from child process 5423]
+[Detaching after fork from child process 5424]
+[Detaching after fork from child process 5425]
+[Detaching after fork from child process 5426]
+[Detaching after fork from child process 5427]
+[Detaching after fork from child process 5428]
+[Detaching after fork from child process 5429]
+[Detaching after fork from child process 5430]
+[Detaching after fork from child process 5431]
+[Detaching after fork from child process 5432]
+[Detaching after fork from child process 5433]
+[Detaching after fork from child process 5434]
+[Detaching after fork from child process 5435]
+[Detaching after fork from child process 5436]
+[Detaching after fork from child process 5437]
+[Detaching after fork from child process 5438]
+[Detaching after fork from child process 5439]
+[Detaching after fork from child process 5440]
+[Detaching after fork from child process 5441]
+[Detaching after fork from child process 5442]
+[Detaching after fork from child process 5443]
+[Detaching after fork from child process 5444]
+[Detaching after fork from child process 5445]
+[Detaching after fork from child process 5446]
+[Detaching after fork from child process 5447]
+[Detaching after fork from child process 5448]
+[Detaching after fork from child process 5449]
+[Detaching after fork from child process 5450]
+[Detaching after fork from child process 5451]
+[Detaching after fork from child process 5452]
+[Detaching after fork from child process 5453]
+[Detaching after fork from child process 5454]
+[Detaching after fork from child process 5455]
+[Detaching after fork from child process 5456]
+[Detaching after fork from child process 5457]
+[Detaching after fork from child process 5458]
+[Detaching after fork from child process 5459]
+[Detaching after fork from child process 5460]
+[Detaching after fork from child process 5461]
+[Detaching after fork from child process 5462]
+[Detaching after fork from child process 5463]
+[Detaching after fork from child process 5464]
+[Detaching after fork from child process 5465]
+[Detaching after fork from child process 5466]
+[Detaching after fork from child process 5467]
+[Detaching after fork from child process 5468]
+[Detaching after fork from child process 5469]
+[Detaching after fork from child process 5470]
+[Detaching after fork from child process 5471]
+[Detaching after fork from child process 5472]
+[Detaching after fork from child process 5473]
+[Detaching after fork from child process 5474]
+[Detaching after fork from child process 5475]
+[Detaching after fork from child process 5476]
+[Detaching after fork from child process 5477]
+[Detaching after fork from child process 5478]
+[Detaching after fork from child process 5479]
+[Detaching after fork from child process 5480]
+[Detaching after fork from child process 5481]
+[Detaching after fork from child process 5482]
+[Detaching after fork from child process 5483]
+[Detaching after fork from child process 5484]
+[Detaching after fork from child process 5485]
+[Detaching after fork from child process 5486]
+[Detaching after fork from child process 5487]
+[Detaching after fork from child process 5488]
+[Detaching after fork from child process 5489]
+[Detaching after fork from child process 5490]
+[Detaching after fork from child process 5491]
+[Detaching after fork from child process 5492]
+[Detaching after fork from child process 5493]
+[Detaching after fork from child process 5494]
+[Detaching after fork from child process 5495]
+[Detaching after fork from child process 5496]
+[Detaching after fork from child process 5497]
+[Detaching after fork from child process 5498]
+[Detaching after fork from child process 5499]
+[Detaching after fork from child process 5500]
+[Detaching after fork from child process 5501]
+[Detaching after fork from child process 5502]
+[Detaching after fork from child process 5503]
+[Detaching after fork from child process 5504]
+[Detaching after fork from child process 5505]
+[Detaching after fork from child process 5506]
+[Detaching after fork from child process 5507]
+[Detaching after fork from child process 5508]
+[Detaching after fork from child process 5509]
+[Detaching after fork from child process 5510]
+[Detaching after fork from child process 5511]
+[Detaching after fork from child process 5512]
+[Detaching after fork from child process 5513]
+[Detaching after fork from child process 5514]
+[Detaching after fork from child process 5515]
+[Detaching after fork from child process 5516]
+[Detaching after fork from child process 5517]
+[Detaching after fork from child process 5518]
+[Detaching after fork from child process 5519]
+[Detaching after fork from child process 5520]
+[Detaching after fork from child process 5521]
+[Detaching after fork from child process 5522]
+[Detaching after fork from child process 5523]
+[Detaching after fork from child process 5524]
+[Detaching after fork from child process 5525]
+[Detaching after fork from child process 5526]
+[Detaching after fork from child process 5527]
+[Detaching after fork from child process 5528]
+[Detaching after fork from child process 5529]
+[Detaching after fork from child process 5530]
+[Detaching after fork from child process 5531]
+[Detaching after fork from child process 5532]
+[Detaching after fork from child process 5533]
+[Detaching after fork from child process 5534]
+[Detaching after fork from child process 5535]
+[Detaching after fork from child process 5536]
+[Detaching after fork from child process 5537]
+[Detaching after fork from child process 5538]
+[Detaching after fork from child process 5539]
+[Detaching after fork from child process 5540]
+[Detaching after fork from child process 5541]
+[Detaching after fork from child process 5542]
+[Detaching after fork from child process 5543]
+[Detaching after fork from child process 5544]
+[Detaching after fork from child process 5545]
+[Detaching after fork from child process 5546]
+[Detaching after fork from child process 5547]
+[Detaching after fork from child process 5548]
+[Detaching after fork from child process 5549]
+[Detaching after fork from child process 5550]
+[Detaching after fork from child process 5551]
+[Detaching after fork from child process 5552]
+[Detaching after fork from child process 5553]
+[Detaching after fork from child process 5554]
+[Detaching after fork from child process 5555]
+[Detaching after fork from child process 5556]
+[Detaching after fork from child process 5557]
+[Detaching after fork from child process 5558]
+[Detaching after fork from child process 5559]
+[Detaching after fork from child process 5560]
+[Detaching after fork from child process 5561]
+[Detaching after fork from child process 5562]
+[Detaching after fork from child process 5563]
+[Detaching after fork from child process 5564]
+[Detaching after fork from child process 5565]
+[Detaching after fork from child process 5566]
+[Detaching after fork from child process 5567]
+[Detaching after fork from child process 5568]
+[Detaching after fork from child process 5569]
+[Detaching after fork from child process 5570]
+[Detaching after fork from child process 5571]
+[Detaching after fork from child process 5572]
+[Detaching after fork from child process 5573]
+[Detaching after fork from child process 5574]
+[Detaching after fork from child process 5575]
+[Detaching after fork from child process 5576]
+[Detaching after fork from child process 5577]
+[Detaching after fork from child process 5578]
+[Detaching after fork from child process 5579]
+[Detaching after fork from child process 5580]
+[Detaching after fork from child process 5581]
+[Detaching after fork from child process 5582]
+[Detaching after fork from child process 5583]
+[Detaching after fork from child process 5584]
+[Detaching after fork from child process 5585]
+[Detaching after fork from child process 5586]
+[Detaching after fork from child process 5587]
+[Detaching after fork from child process 5588]
+[Detaching after fork from child process 5589]
+[Detaching after fork from child process 5590]
+[Detaching after fork from child process 5591]
+[Detaching after fork from child process 5592]
+[Detaching after fork from child process 5593]
+[Detaching after fork from child process 5594]
+[Detaching after fork from child process 5595]
+[Detaching after fork from child process 5596]
+[Detaching after fork from child process 5597]
+[Detaching after fork from child process 5598]
+[Detaching after fork from child process 5599]
+[Detaching after fork from child process 5600]
+[Detaching after fork from child process 5601]
+[Detaching after fork from child process 5602]
+[Detaching after fork from child process 5603]
+[Detaching after fork from child process 5604]
+[Detaching after fork from child process 5605]
+[Detaching after fork from child process 5606]
+[Detaching after fork from child process 5607]
+[Detaching after fork from child process 5608]
+[Detaching after fork from child process 5609]
+[Detaching after fork from child process 5610]
+[Detaching after fork from child process 5611]
+[Detaching after fork from child process 5612]
+[Detaching after fork from child process 5613]
+[Detaching after fork from child process 5614]
+[Detaching after fork from child process 5615]
+[Detaching after fork from child process 5616]
+[Detaching after fork from child process 5617]
+[Detaching after fork from child process 5618]
+[Detaching after fork from child process 5619]
+[Detaching after fork from child process 5620]
+[Detaching after fork from child process 5621]
+[Detaching after fork from child process 5622]
+[Detaching after fork from child process 5623]
+[Detaching after fork from child process 5624]
+[Detaching after fork from child process 5625]
+[Detaching after fork from child process 5626]
+[Detaching after fork from child process 5627]
+[Detaching after fork from child process 5628]
+[Detaching after fork from child process 5629]
+[Detaching after fork from child process 5630]
+[Detaching after fork from child process 5631]
+[Detaching after fork from child process 5632]
+Wrong!
+[Inferior 1 (process 4635) exited normally]
+(gdb)
