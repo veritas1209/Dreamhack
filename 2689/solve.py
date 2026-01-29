@@ -1,51 +1,71 @@
-def solve():
-    # 메모리에 저장된 순서대로 바이트 배열 생성
-    # 0x3c4852 -> 52 48 3C
-    # 0x537e56 -> 56 7E 53
-    # 0x76575c -> 5C 57 76
-    encrypted = [0x52, 0x48, 0x3C, 0x56, 0x7E, 0x53, 0x5C, 0x57, 0x76]
+import struct
+import os
+
+def analyze_ld():
+    if not os.path.exists("ld_hacked.bin"):
+        print("[-] ld_hacked.bin file not found.")
+        return
+
+    with open("ld_hacked.bin", "rb") as f:
+        data = f.read()
+
+    print(f"[*] Analyzing ld_hacked.bin ({len(data)} bytes)...")
+
+    # 1. 'la_activity' 문자열 위치 찾기
+    str_offset = data.find(b"la_activity\x00")
+    if str_offset == -1:
+        print("[-] 'la_activity' string not found.")
+        return
+    print(f"[+] String 'la_activity' found at offset: {hex(str_offset)}")
+
+    # 2. 참조(Reference) 찾기 (LEA/MOV instruction scanning)
+    # x64에서 RIP-relative addressing을 주로 사용하므로,
+    # Instruction Pointer(offset) + Instruction Size + Displacement = String Offset
+    # Displacement = String Offset - (Current Offset + Instruction Size)
     
-    print("[*] Brute-forcing XOR Key...")
-    for key in range(256):
-        decrypted = ""
-        valid = True
-        for b in encrypted:
-            val = b ^ key
-            # 출력 가능한 문자 + 일반적인 변수명 문자(A-Z, 0-9, _)
-            if not (32 <= val <= 126):
-                valid = False
-                break
-            decrypted += chr(val)
+    found_ref = False
+    vm_entry = 0
+    
+    print("[*] Scanning for code references...")
+    for i in range(0, len(data) - 7):
+        # LEA RDI, [RIP + disp] (48 8d 3d ...) 길이 7바이트 가정
+        # 또는 다른 레지스터 로드
         
-        if valid:
-            # 알파벳과 언더스코어만 포함된 경우를 우선 출력
-            if all(c.isalnum() or c == '_' for c in decrypted):
-                print(f"[+] Key 0x{key:02x}: {decrypted}  <-- LIKELY!")
-            else:
-                print(f"    Key 0x{key:02x}: {decrypted}")
-
-    print("\n[*] Brute-forcing ADD/SUB Key...")
-    for key in range(256):
-        # SUB (Decrypted = Encrypted - Key)
-        sub_res = ""
-        valid_sub = True
-        for b in encrypted:
-            val = (b - key) & 0xFF
-            if not (32 <= val <= 126): valid_sub = False; break
-            sub_res += chr(val)
+        # 예상되는 Displacement 값 계산 (Instruction 끝이 i+7이라고 가정)
+        disp = str_offset - (i + 7)
         
-        if valid_sub and all(c.isalnum() or c == '_' for c in sub_res):
-            print(f"[+] SUB Key 0x{key:02x}: {sub_res}")
+        # 4바이트 범위 내인지 확인
+        if -0x80000000 <= disp <= 0x7FFFFFFF:
+            # 현재 위치(i+3)에 그 값이 있는지 확인
+            try:
+                val = struct.unpack("<i", data[i+3:i+7])[0]
+                if val == disp:
+                    # LEA opcode 확인 (48 8d ...)
+                    if data[i] == 0x48 and data[i+1] == 0x8d:
+                        print(f"[!] Found LEA reference at {hex(i)}")
+                        print(f"    Code: {data[i:i+16].hex()}")
+                        vm_entry = i
+                        found_ref = True
+            except:
+                pass
+                
+    if not found_ref:
+        print("[-] Direct reference not found. Trying 0x36371 area...")
+        vm_entry = 0x36371 # 사용자 제보 위치
+    
+    # 3. 코드 영역 덤프 (VM Main Logic)
+    # VM 진입점 주변을 덤프하여 연산자를 찾습니다.
+    # ADD (01 ..), XOR (31 ..), SUB (29 ..)
+    print(f"\n[*] Hex Dump around VM Entry ({hex(vm_entry)}):")
+    context = data[vm_entry:vm_entry+64]
+    print(context.hex())
+    
+    # 간단한 패턴 매칭으로 연산자 추측
+    # 48 01 / 48 03 -> ADD r64, r64
+    # 48 31 / 48 33 -> XOR r64, r64
+    if b'\x48\x01' in context or b'\x48\x03' in context:
+        print("\n[?] Suspicious Opcode: ADD detected!")
+    if b'\x48\x31' in context or b'\x48\x33' in context:
+        print("\n[?] Suspicious Opcode: XOR detected!")
 
-        # ADD (Decrypted = Encrypted + Key)
-        add_res = ""
-        valid_add = True
-        for b in encrypted:
-            val = (b + key) & 0xFF
-            if not (32 <= val <= 126): valid_add = False; break
-            add_res += chr(val)
-
-        if valid_add and all(c.isalnum() or c == '_' for c in add_res):
-            print(f"[+] ADD Key 0x{key:02x}: {add_res}")
-
-solve()
+analyze_ld()
