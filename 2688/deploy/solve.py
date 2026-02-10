@@ -1,70 +1,150 @@
 import struct
 
-# 1. Z3가 찾아낸 Raw Values (Trace B 기준, SAT 결과)
-# 우리는 이 값들이 "거의 정답"이라고 확신할 수 있습니다.
-raw_values = [
-    0x50, # Block 0: 'P'
-    0x63, # Block 1: 'c'
-    0x16, # Block 2: 0x16
-    0x7a, # Block 3: 'z'
-    0x72, # Block 4: 'r'
-    0xeb, # Block 5: 0xeb
-    0xc0, # Block 6: 0xc0
-    0x8b  # Block 7: 0x8b
+def rol(val, n):
+    n = n % 64
+    return ((val << n) | (val >> (64 - n))) & 0xFFFFFFFFFFFFFFFF
+
+def ror(val, n):
+    n = n % 64
+    return ((val >> n) | (val << (64 - n))) & 0xFFFFFFFFFFFFFFFF
+
+def modinv(a, m):
+    return pow(a, -1, m)
+
+# ==========================================
+# 1. 확정된 상수 (From Ghidra & GDB)
+# ==========================================
+# GDB에서 구한 "Input=0"일 때의 결과값 (필수!)
+REAL_VAL_0 = 0x12e10926bdda5dc0
+
+# Ghidra에서 확인된 Keys
+K_ADD1 = 0x0123456789abcdef
+K_ROL  = 5
+K_MUL  = 0x13               # Trace A & Ghidra 일치
+K_ADD2 = 0x0a0a0a0a0a0a0a0a # Ghidra "0xa0a0a0a" -> 64bit 확장
+K_XOR  = 0x0f0f0f0f0f0f0f0f # Ghidra "0xf0f0f0f" -> 64bit 확장
+
+# ==========================================
+# 2. 파이프라인 순서 찾기 (Logic Matcher)
+# ==========================================
+# 가능한 시나리오:
+# 1. NOT -> ADD2 -> XOR
+# 2. NOT -> XOR -> ADD2
+# (기드라에 NOT이 있었으므로 NOT은 필수 포함)
+
+print("[*] Verifying logic pipeline...")
+
+# Start Value (Input 0 -> Phase 1 -> Phase 2 MUL)
+val_start = (0 + K_ADD1) & 0xFFFFFFFFFFFFFFFF
+val_start = rol(val_start, K_ROL)
+val_after_mul = (val_start * K_MUL) & 0xFFFFFFFFFFFFFFFF
+
+correct_order = None
+
+# Case 1: NOT -> ADD -> XOR
+# 식: ((~Mul) + ADD2) ^ XOR
+temp = (~val_after_mul) & 0xFFFFFFFFFFFFFFFF
+res1 = ((temp + K_ADD2) & 0xFFFFFFFFFFFFFFFF) ^ K_XOR
+
+if res1 == REAL_VAL_0:
+    print("[!] LOGIC CONFIRMED: NOT -> ADD -> XOR")
+    correct_order = 1
+
+# Case 2: NOT -> XOR -> ADD
+# 식: ((~Mul) ^ XOR) + ADD2
+temp = (~val_after_mul) & 0xFFFFFFFFFFFFFFFF
+res2 = ((temp ^ K_XOR) + K_ADD2) & 0xFFFFFFFFFFFFFFFF
+
+if res2 == REAL_VAL_0:
+    print("[!] LOGIC CONFIRMED: NOT -> XOR -> ADD")
+    correct_order = 2
+
+# 만약 둘 다 아니라면, K_ADD2가 0xa0a0... 일 수도 있음 (리틀엔디안 해석 차이)
+if not correct_order:
+    print("[-] Standard logic failed. Checking ADD2 Padding variant (0xa0...)")
+    K_ADD2 = 0xa0a0a0a0a0a0a0a0
+    # Re-test Case 1
+    temp = (~val_after_mul) & 0xFFFFFFFFFFFFFFFF
+    res1 = ((temp + K_ADD2) & 0xFFFFFFFFFFFFFFFF) ^ K_XOR
+    if res1 == REAL_VAL_0:
+        print("[!] LOGIC CONFIRMED: NOT -> ADD -> XOR (with 0xa0 padding)")
+        correct_order = 1
+    
+if not correct_order:
+    print("[-] Critical Failure: Pipeline assumes standard ADD/XOR/NOT ops.")
+    # 그래도 진행합니다 (Case 1이 가장 유력)
+    correct_order = 1 
+    K_ADD2 = 0x0a0a0a0a0a0a0a0a # Reset
+
+# ==========================================
+# 3. 전체 복호화 (Full Decryption)
+# ==========================================
+print("\n[*] Decrypting Flag...")
+
+# Keys Setup
+add_keys_1 = [
+    0x0123456789abcdef, 0x0f0e0d0c0b0a0908, 0x1111111111111111, 0x2222222222222222,
+    0x3333333333333333, 0x4444444444444444, 0x5555555555555555, 0x6666666666666666
+]
+rol_keys = [5, 11, 17, 23, 29, 3, 7, 13]
+mul_keys = [0x13 + (i*2) for i in range(8)]
+add_keys_2 = [
+    0x0a0a0a0a0a0a0a0a, 0x1b1b1b1b1b1b1b1b, 0x2c2c2c2c2c2c2c2c, 0x3d3d3d3d3d3d3d3d,
+    0x4e4e4e4e4e4e4e4e, 0x5f5f5f5f5f5f5f5f, 0x6060606060606060, 0x7171717171717171
+]
+xor_keys = [
+    0x0f0f0f0f0f0f0f0f, 0xf0f0f0f0f0f0f0f0, 0xaaaaaaaa55555555, 0x55555555aaaaaaaa,
+    0x1234567890abcdef, 0xfedcba9876543210, 0x0f1e2d3c4b5a6978, 0x89abcdef01234567
 ]
 
-print(f"[*] Raw Z3 Values: {raw_values}")
-print(f"[*] ASCII Preview: " + "".join([chr(x) if 32 <= x <= 126 else '?' for x in raw_values]))
+# Fix Padding for Block 0 (Based on Logic Search)
+if K_ADD2 == 0xa0a0a0a0a0a0a0a0:
+    add_keys_2[0] = 0xa0a0a0a0a0a0a0a0
 
-print("\n[!] Attempting Brute-force Decoding...")
+# Fix Padding for XOR (Trace B data seems reliable for others, but Block 0/6 might need fix)
+# Ghidra says 0x0f0f... for Block 0. Trace B says 0x0f0f... Trust Trace B/Ghidra overlap.
+xor_keys[0] = 0x0f0f0f0f0f0f0f0f
+xor_keys[6] = 0x0f1e2d3c4b5a6978
 
-# 후보군 1: 단순 출력 (이미 확인됨)
-decoded = bytearray(raw_values)
-print(f"1. Raw: {decoded}")
+flag_bytes = b""
 
-# 후보군 2: Nibble Swap (0x50 -> 0x05, 0x16 -> 0x61 'a')
-# 리버싱 문제에서 자주 나오는 패턴입니다.
-swapped = bytearray([((x & 0x0F) << 4) | ((x & 0xF0) >> 4) for x in raw_values])
-print(f"2. Nibble Swap: {swapped} -> {swapped.decode('latin-1', 'ignore')}")
-
-# 후보군 3: Bit Inversion (~x)
-inverted = bytearray([(~x) & 0xFF for x in raw_values])
-print(f"3. Inverted: {inverted}")
-
-# 후보군 4: XOR Brute-force (0x00 ~ 0xFF)
-# 키가 한 바이트로 고정되어 있을 가능성
-print("\n[*] Searching for XOR Key...")
-found_flag = False
-for key in range(256):
-    xored = bytearray([x ^ key for x in raw_values])
-    try:
-        # 출력 가능한 문자열인지 확인 (DH{...}, flag{...}, convergent...)
-        text = xored.decode('utf-8')
-        if text.isprintable():
-            print(f"Key 0x{key:02x}: {text}")
-            found_flag = True
-    except:
-        pass
-
-if not found_flag:
-    print(" -> No simple XOR key found.")
-
-# 후보군 5: ADD/SUB Key 적용
-# 로그에 있던 ADD 키의 바이트들을 이용해 봅니다.
-# Block 0 ADD Key: 0x12, 0x34... 
-# Block 0 Z3 Value: 0x50 ('P')
-# 0x50 ^ 0x12 = 'B', 0x50 + 0x12 = 'b', 0x50 - 0x12 = '>'
-add_key_bytes = [0x12, 0x34, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66] # 대략적인 패턴
-
-print("\n[*] Checking specific transformations...")
-try:
-    # ADD Key와 XOR 해보기
-    attempt_xor = bytearray([r ^ k for r, k in zip(raw_values, add_key_bytes)])
-    print(f"Values ^ ADD_Key_Bytes: {attempt_xor}")
+for i in range(8):
+    # Target is the value compared against (== ADD2 Key)
+    val = add_keys_2[i]
     
-    # ADD Key 더해보기
-    attempt_add = bytearray([(r + k) & 0xFF for r, k in zip(raw_values, add_key_bytes)])
-    print(f"Values + ADD_Key_Bytes: {attempt_add}")
+    # 1. Reverse Phase 3 & 2 (Check Loop + NOT)
+    if correct_order == 1:
+        # Forward: ((~M) + ADD2) ^ XOR = Target
+        # Reverse: ~M = (Target ^ XOR) - ADD2
+        val = val ^ xor_keys[i]
+        val = (val - add_keys_2[i]) & 0xFFFFFFFFFFFFFFFF
+        val = (~val) & 0xFFFFFFFFFFFFFFFF
+    else:
+        # Forward: ((~M) ^ XOR) + ADD2 = Target
+        # Reverse: ~M = (Target - ADD2) ^ XOR
+        val = (val - add_keys_2[i]) & 0xFFFFFFFFFFFFFFFF
+        val = val ^ xor_keys[i]
+        val = (~val) & 0xFFFFFFFFFFFFFFFF
+        
+    # 2. Reverse Phase 2 (MUL)
+    try:
+        m_inv = modinv(mul_keys[i], 2**64)
+        val = (val * m_inv) & 0xFFFFFFFFFFFFFFFF
+    except:
+        print(f"[-] Error: MUL key {hex(mul_keys[i])} not invertible.")
+        continue
+        
+    # 3. Reverse Phase 1 (ROL -> ADD1)
+    val = ror(val, rol_keys[i])
+    val = (val - add_keys_1[i]) & 0xFFFFFFFFFFFFFFFF
+    
+    flag_bytes += struct.pack("<Q", val)
 
-except Exception as e:
-    print(e)
+print("\n" + "="*40)
+print("Final Flag Result:")
+print("="*40)
+print(flag_bytes)
+try:
+    print(flag_bytes.decode('utf-8'))
+except:
+    pass
