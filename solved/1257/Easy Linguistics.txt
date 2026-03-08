@@ -1,0 +1,37 @@
+아래는 일본어의 명사들을 로마자로 표기한 뒤 치환 암호화한 것이다.  알맞게 짝지으시오.
+
+1. hizese     A. 밤바람
+2. seokize    B. 불똥
+3. wiokize    C. 불장난
+4. witogu     D. 암시장
+5. woneehe    E. 야유(夜遊)
+6. wonewi     F. 어두운 밤
+
+정답이 1-A 2-B 3-C 4-D 5-E 6-F라면, 플래그는 DH{ABCDEF}이다.
+출력 예시는 정답이 아님에 유의하라.
+
+밤바람 - yokaze - 3 요 카 제
+불똥 - hinoko - 3 히 노 코
+불장난 - hiasobi - 4 히 아 소 비
+암시장 - yamiiti - 4 야 미 이 치
+야유 - yoasobi - 4 요 아 소 비
+어두운 밤 - yamihi 3야 미 히
+
+1. hi/ze/se - 3 비요 - F
+2. se/o/ki/ze - 4 요아소비 - E
+3. wi/o/ki/ze - 4 히아소비 - C
+4. wi/to/gu - 3 히노코 - B
+5. wo/n/e/e/he - 4 야미 - D
+6. wo/n/e/wi - 3 야미 - A
+
+o 아
+ki 소
+ze 비
+wi 히
+se 요
+to 노
+gu 코
+wo 야
+ne 미
+
+DH{FECBDA}

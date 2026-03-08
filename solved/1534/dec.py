@@ -1,0 +1,14 @@
+from cipher import STREAM
+import random
+
+if __name__ == "__main__":
+    while(True):
+        seed = random.getrandbits(16)
+        stream = STREAM(seed, 16)
+        cipher = '3cef03c64ac240c349971d9e4c951cc14ec4199f409249c21e964ac540c540944f901c934cc240934d96419f4b9e4d9f1cc41dc61dc34e9219c31bc11a914f9141c61ada'
+        cip_hex = bytes.fromhex(cipher)
+        plain = stream.decrypt(cip_hex)
+        if plain[:3] == b'DH{' and plain[-1:] == b'}':
+            print(seed)
+            print(plain)
+            break
