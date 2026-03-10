@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./app
+    ports:
+      - "8000:8000"
+    networks:
+      - internal_net
+    depends_on:
+      - docker_api
+  docker_api:
+    build: ./mock_docker_api
+    networks:
+      internal_net:
+        aliases:
+          - api
+    volumes:
+      - ./flag.txt:/host_flag/flag.txt:ro
+
+networks:
+  internal_net:
+    driver: bridge
