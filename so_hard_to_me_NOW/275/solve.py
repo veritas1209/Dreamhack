@@ -22,12 +22,16 @@ def get_mem_key(op):
 
 def read_mem(key, size_bits):
     if key not in mem_state:
-        # Z3 변수명에 공백이나 특수문자가 들어가면 꼬일 수 있으므로 치환
         safe_key = key.replace(" ", "_").replace("+", "p").replace("-", "m")
         var = BitVec(f'mem_{safe_key}', 64)
         mem_state[key] = var
         flag_vars[key] = var
         
+        # 💡 [핵심 팁] 초기 메모리(입력 플래그)는 아스키코드일 것이라고 Z3에 제약을 걸어줍니다!
+        for b in range(8):
+            byte_val = Extract((b * 8) + 7, b * 8, var)
+            s.add(Or(byte_val == 0, And(byte_val >= 32, byte_val <= 126)))
+            
     val = mem_state[key]
     if val.size() > size_bits:
         return Extract(size_bits - 1, 0, val)
@@ -42,6 +46,10 @@ def write_mem(key, val, size_bits):
         mem_state[key] = var
         flag_vars[key] = var
         
+        for b in range(8):
+            byte_val = Extract((b * 8) + 7, b * 8, var)
+            s.add(Or(byte_val == 0, And(byte_val >= 32, byte_val <= 126)))
+            
     current = mem_state[key]
     
     if val.size() < size_bits:
@@ -168,8 +176,8 @@ for i, line in enumerate(lines):
         elif src_val.size() < target_size: src_val = ZeroExt(target_size - src_val.size(), src_val)
         set_operand_val(dest, dest_val + src_val)
             
-    # 💡 [핵심 돌파구] test 명령어는 상태 갱신용 더미이므로 완전히 무시하고, cmp만 플래그 검증으로 사용합니다!
-    elif op == 'cmp':
+    # 💡 test 명령어와 cmp 명령어 모두 플래그 검증으로 사용!
+    elif op in ['test', 'cmp']:
         val1 = parse_operand(args[0])
         val2 = parse_operand(args[1])
         target_size = val1.size()
@@ -177,12 +185,12 @@ for i, line in enumerate(lines):
         if val2.size() > target_size: val2 = Extract(target_size - 1, 0, val2)
         elif val2.size() < target_size: val2 = ZeroExt(target_size - val2.size(), val2)
             
-        condition = (val1 == val2)
+        condition = ((val1 & val2) == 0) if op == 'test' else (val1 == val2)
         
         s.push()
         s.add(condition)
         if s.check() == unsat:
-            s.pop() # 만약 루프 카운터 검사 등 플래그와 무관한 cmp라서 모순이 나면 버림
+            s.pop() # 무관한 비교 구문이면 과감히 버리기
         else:
             s.pop()
             s.add(condition)
@@ -192,8 +200,6 @@ if s.check() == sat:
     print("[+] SAT! 플래그 복원 성공!")
     m = s.model()
     
-    print("\n[🚀] 메모리 블록별 데이터 확인:")
-    
     mem_blocks = []
     for key, bitvec in flag_vars.items():
         if 'rbp - ' in key:
@@ -201,7 +207,6 @@ if s.check() == sat:
                 offset = int(key.split('-')[1].strip(), 16)
                 val = m[bitvec]
                 if val is not None:
-                    # 8바이트(64비트) 리틀 엔디안으로 변환
                     val_bytes = val.as_long().to_bytes(8, byteorder='little')
                     mem_blocks.append((offset, key, val_bytes))
             except Exception as e:
@@ -211,18 +216,16 @@ if s.check() == sat:
     mem_blocks.sort(key=lambda x: x[0], reverse=True)
     
     flag_assembled = ""
+    print("\n[🚀] 메모리 블록별 데이터 확인:")
     for offset, key, val_bytes in mem_blocks:
         block_str = ""
         for b in val_bytes:
-            if 32 <= b <= 126: # 읽을 수 있는 아스키코드만 추출
+            if 32 <= b <= 126:
                 block_str += chr(b)
-                
-        # 가비지가 아닌 문자가 하나라도 있으면 출력
         if len(block_str) > 0:
             print(f"[{key:>14}] : {val_bytes} -> '{block_str}'")
             flag_assembled += block_str
                 
     print(f"\n[💡] 추출된 전체 문자열: {flag_assembled}")
-    print("\n(위 출력된 블록의 문자열들을 조합하여 DH{...} 플래그를 완성하세요!)")
 else:
     print("[-] UNSAT: 그래도 해결되지 않았습니다.")
