@@ -17,7 +17,7 @@ while True:
     print(f"[*] Attempt {attempts}... ", end="", flush=True)
     
     try:
-        r = remote("localhost", 5000)
+        r = remote("host8.dreamhack.games", 21215)
     except:
         print("Connection Failed. Retrying...")
         continue
@@ -88,22 +88,18 @@ while True:
     
     print("[+] Sending MSG to server perfectly synced...")
     
-    # 1. 버퍼에 남아있는 '> ' 프롬프트를 깔끔하게 읽어서 타이밍 엇갈림 방지
+    # 1. 버퍼에 쌓여있는 '> ' 프롬프트까지만 딱 깔끔하게 읽어냄
     r.recvuntil(b"> ")
     
-    # 2. 오직 정답만 전송! (뒤에 이상한 명령어 절대 금지)
+    # 2. 오직 정답 정수값 하나만 전송! (뒤에 잉여 데이터나 shutdown 절대 금지)
     r.sendline(str(m_final).encode())
-    
-    # 3. [핵심] "나 더 이상 보낼 거 없다!" TCP FIN 발송
-    # 이렇게 하면 socat이 비정상 종료(RST)를 내지 않고, 파이썬이 뱉은 플래그를 끝까지 전송해 줍니다.
-    r.shutdown('send')
     
     print("\n[🎉 SERVER RESPONSE 🎉]")
     try:
-        # 서버가 안전하게 뱉어내는 플래그를 끝까지 긁어옴
+        # 3. 서버가 플래그를 출력하고 자연스럽게 종료(EOF)될 때까지 다 긁어옴
         flag = r.recvall(timeout=5).decode('utf-8', 'ignore')
         print(flag.strip())
     except Exception as e:
         print(f"[-] Error: {e}")
         
-    break # 진짜 파밍 끝!
+    break # 플래그 따면 파밍 무한 루프 종료
