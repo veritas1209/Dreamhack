@@ -1,0 +1,12 @@
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_OAEP
+
+key = RSA.generate(2048)
+cipher = PKCS1_OAEP.new(key.publickey())
+
+flag = b"AF{Fake_Flag}"
+encrypted = cipher.encrypt(flag)
+
+print(f"N = {key.n}")
+print(f"e = {key.e}")
+print(f"c = {int.from_bytes(encrypted, 'big')}")

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Report View</title>
+
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline' http://127.0.0.1:8000; img-src * data:; font-src *; connect-src 'none'; frame-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none';">
+
+    <style>
+    {{ css | safe }}
+    </style>
+</head>
+<body>
+    <h1>Admin Review</h1>
+    <p>Reviewing report #{{ idx }}</p>
+
+    <form>
+        <input type="text" value="admin">
+        <br><br>
+        <input type="password" value="********" data-secret="{{ flag_value }}">
+    </form>
+
+    <br>
+
+    <form action="{{ url_for('report_to_admin', idx=idx) }}" method="POST">
+        <button type="submit">Report to admin</button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('index') }}">Back</a>
+</body>
+</html>
