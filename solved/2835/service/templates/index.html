@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wargame Admin Terminal</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="terminal-container">
+      <h2>OFFICIAL_UPDATE_SERVER</h2>
+      <p>> 새 문제 파일 또는 업데이트 파일을 전송하십시오...</p>
+      {% if msg %}
+      <div class="status-msg {{ status }}">> {{ msg }}</div>
+      {% endif %}
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <input type="submit" value="[ EXECUTE_UPLOAD ]" />
+      </form>
+    </div>
+  </body>
+</html>

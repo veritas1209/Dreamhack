@@ -1,0 +1,20 @@
+services:
+  wargame_site:
+    build: ./service
+    container_name: wargame
+    ports:
+      - "5000:5000"
+    networks:
+      - dreamhack-net
+
+  customer:
+    build: ./customer
+    container_name: customer
+    depends_on:
+      - wargame_site
+    networks:
+      - dreamhack-net
+
+networks:
+  dreamhack-net:
+    driver: bridge
