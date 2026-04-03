@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Unicode Buffer Challenge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>BUFFER TANK MONITOR</h1>
+            <p>1글자 입력으로 서버의 1210바이트를 채우세요.</p>
+        </header>
+
+        <section class="visual-section">
+            <div class="tank-wrapper">
+                <div class="tank">
+                    <div class="tank-fill" style="height: {{ percent }}%;"></div>
+                </div>
+                <div class="label">STORAGE TANK</div>
+            </div>
+
+            <div class="gauge-wrapper">
+                <div class="gauge-bar">
+                    <div class="gauge-fill" style="width: {{ percent }}%;"></div>
+                </div>
+                <div class="counter">{{ "{:,}".format(current_len) }} / 1,210</div>
+            </div>
+        </section>
+
+        <section class="control-section">
+            <form method="POST" autocomplete="off">
+                <input type="text" name="data">
+                <button type="submit">전송</button>
+            </form>
+            
+            <div class="message-box">
+                {% if msg %}<p>{{ msg }}</p>{% endif %}
+                {% if flag %}<div class="flag-box">{{ flag }}</div>{% endif %}
+            </div>
+        </section>
+    </div>
+</body>
+</html>
