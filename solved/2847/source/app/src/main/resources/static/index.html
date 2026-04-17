@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meridian HR Review Portal</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="background-haze"></div>
+<main class="shell">
+    <header class="hero">
+        <div class="hero-copy">
+            <p class="eyebrow">Meridian Internal // HR Review Systems</p>
+            <h1>Promotion calibration without the noise.</h1>
+            <p class="lede">
+                Review candidate readiness, watch exception lanes, and tune policy wording before sealed packets
+                move into executive approval.
+            </p>
+            <div class="hero-pills">
+                <span>FY26 Q2</span>
+                <span>Policy Lab Online</span>
+                <span>Executive Locker Monitored</span>
+            </div>
+        </div>
+        <aside class="hero-panel">
+            <span class="status-dot"></span>
+            <p class="hero-panel-label">Current cycle</p>
+            <h2>Calibration Wave 2</h2>
+            <ul>
+                <li>Roster sync completed at 08:20</li>
+                <li>Two board packets remain sealed</li>
+                <li>Narrative previews are enabled for analysts</li>
+            </ul>
+        </aside>
+    </header>
+
+    <section class="metrics-grid" id="metricsGrid"></section>
+
+    <section class="workspace-grid">
+        <section class="panel roster-panel">
+            <div class="panel-head">
+                <div>
+                    <p class="panel-kicker">Directory Lens</p>
+                    <h3>Candidate Roster</h3>
+                </div>
+                <span class="panel-chip">Live search</span>
+            </div>
+
+            <div class="filters">
+                <label>
+                    <span>Search</span>
+                    <input id="searchInput" type="text" placeholder="Name, role, or manager">
+                </label>
+                <label>
+                    <span>Department</span>
+                    <select id="departmentSelect">
+                        <option value="all">All departments</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Employee</th>
+                        <th>Department</th>
+                        <th>Score</th>
+                        <th>Risk</th>
+                        <th>Track</th>
+                    </tr>
+                    </thead>
+                    <tbody id="employeeTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel policy-panel">
+            <div class="panel-head">
+                <div>
+                    <p class="panel-kicker">Policy Lab</p>
+                    <h3>Rule Preview Studio</h3>
+                </div>
+                <span class="panel-chip accent">Analyst preview</span>
+            </div>
+
+            <p class="panel-copy">
+                Render a quick narrative from the active policy catalog before attaching a note to a review packet.
+            </p>
+
+            <form id="previewForm" class="preview-form">
+                <label>
+                    <span>Template</span>
+                    <select id="templateSelect"></select>
+                </label>
+                <label>
+                    <span>Focus Label</span>
+                    <input id="focusInput" type="text" placeholder="manager discretion">
+                </label>
+                <button type="submit">Render Preview</button>
+            </form>
+
+            <div class="preview-result">
+                <p class="trace" id="previewTrace">Policy lab idle.</p>
+                <div class="preview-output" id="previewOutput">
+                    Select a template to render a narrative preview.
+                </div>
+                <ul class="preview-checks" id="previewChecks"></ul>
+            </div>
+        </section>
+    </section>
+
+    <section class="secondary-grid">
+        <section class="panel">
+            <div class="panel-head">
+                <div>
+                    <p class="panel-kicker">Ops Notes</p>
+                    <h3>Portal Notices</h3>
+                </div>
+                <span class="panel-chip">Broadcast</span>
+            </div>
+            <div class="stack-list" id="noticesList"></div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-head">
+                <div>
+                    <p class="panel-kicker">Audit Trail</p>
+                    <h3>Recent Activity</h3>
+                </div>
+                <span class="panel-chip">Immutable</span>
+            </div>
+            <div class="stack-list" id="auditsList"></div>
+        </section>
+    </section>
+
+    <footer class="footer-note">
+        Meridian HR Review Portal // internal analyst workspace // preview lab and roster mirror remain isolated from outgoing network paths
+    </footer>
+</main>
+
+<script src="/app.js" defer></script>
+</body>
+</html>
