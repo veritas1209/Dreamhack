@@ -1,0 +1,269 @@
+(module
+  (table $table0 1 1 funcref)
+  (memory $memory (;0;) (export "memory") 2)
+  (global $global0 (mut i32) (i32.const 67104))
+  (global $__heap_base (;1;) (export "__heap_base") i32 (i32.const 67104))
+  (global $__data_end (;2;) (export "__data_end") i32 (i32.const 1568))
+  (func $__wasm_call_ctors (;0;)
+  )
+  (func $f (;1;) (export "f") (param $var0 i32) (param $var1 i32) (result i32)
+    (local $var2 i32)
+    (local $var3 i32)
+    (local $var4 i32)
+    (local $var5 i32)
+    i32.const 255
+    local.set $var2
+    block $label0
+      local.get $var1
+      i32.const 25
+      i32.ne
+      br_if $label0
+      i32.const 0
+      local.set $var2
+      loop $label3
+        local.get $var0
+        local.get $var2
+        i32.const 255
+        i32.and
+        i32.const 25
+        i32.rem_u
+        i32.add
+        local.tee $var1
+        local.get $var1
+        i32.load8_u
+        local.get $var2
+        i32.const 1056
+        i32.add
+        i32.load8_u
+        i32.xor
+        local.tee $var3
+        i32.store8
+        local.get $var2
+        i32.const 7
+        i32.and
+        local.set $var4
+        i32.const 0
+        local.get $var2
+        i32.sub
+        i32.const 7
+        i32.and
+        local.set $var5
+        block $label2
+          block $label1
+            local.get $var2
+            i32.const 1
+            i32.and
+            br_if $label1
+            local.get $var3
+            i32.const 255
+            i32.and
+            local.get $var4
+            i32.shr_u
+            local.get $var3
+            local.get $var5
+            i32.shl
+            i32.or
+            local.set $var3
+            br $label2
+          end $label1
+          local.get $var3
+          local.get $var4
+          i32.shl
+          local.get $var3
+          i32.const 255
+          i32.and
+          local.get $var5
+          i32.shr_u
+          i32.or
+          local.set $var3
+        end $label2
+        local.get $var1
+        local.get $var3
+        i32.store8
+        local.get $var1
+        local.get $var3
+        i32.const 255
+        i32.and
+        i32.const 1312
+        i32.add
+        i32.load8_u
+        i32.store8
+        local.get $var2
+        i32.const 1
+        i32.add
+        local.tee $var2
+        i32.const 256
+        i32.ne
+        br_if $label3
+      end $label3
+      local.get $var0
+      i32.load8_u
+      local.set $var2
+      local.get $var0
+      local.get $var0
+      i32.load8_u offset=24
+      i32.store8
+      local.get $var0
+      local.get $var2
+      i32.store8 offset=24
+      local.get $var0
+      i32.load8_u offset=1
+      local.set $var2
+      local.get $var0
+      local.get $var0
+      i32.load8_u offset=23
+      i32.store8 offset=1
+      local.get $var0
+      local.get $var2
+      i32.store8 offset=23
+      local.get $var0
+      i32.load8_u offset=2
+      local.set $var2
+      local.get $var0
+      local.get $var0
+      i32.load8_u offset=22
+      i32.store8 offset=2
+      local.get $var0
+      local.get $var2
+      i32.store8 offset=22
+      local.get $var0
+      i32.load8_u offset=3
+      local.set $var2
+      local.get $var0
+      local.get $var0
+      i32.load8_u offset=21
+      i32.store8 offset=3
+      local.get $var0
+      local.get $var2
+      i32.store8 offset=21
+      local.get $var0
+      i32.load8_u offset=4
+      local.set $var2
+      local.get $var0
+      local.get $var0
+      i32.load8_u offset=20
+      i32.store8 offset=4
+      local.get $var0
+      local.get $var2
+      i32.store8 offset=20
+      local.get $var0
+      i32.load8_u offset=5
+      local.set $var2
+      local.get $var0
+      local.get $var0
+      i32.load8_u offset=19
+      i32.store8 offset=5
+      local.get $var0
+      local.get $var2
+      i32.store8 offset=19
+      local.get $var0
+      i32.load8_u offset=6
+      local.set $var2
+      local.get $var0
+      local.get $var0
+      i32.load8_u offset=18
+      i32.store8 offset=6
+      local.get $var0
+      local.get $var2
+      i32.store8 offset=18
+      local.get $var0
+      i32.load8_u offset=7
+      local.set $var2
+      local.get $var0
+      local.get $var0
+      i32.load8_u offset=17
+      i32.store8 offset=7
+      local.get $var0
+      local.get $var2
+      i32.store8 offset=17
+      local.get $var0
+      i32.load8_u offset=8
+      local.set $var2
+      local.get $var0
+      local.get $var0
+      i32.load8_u offset=16
+      i32.store8 offset=8
+      local.get $var0
+      local.get $var2
+      i32.store8 offset=16
+      local.get $var0
+      i32.load8_u offset=9
+      local.set $var2
+      local.get $var0
+      local.get $var0
+      i32.load8_u offset=15
+      i32.store8 offset=9
+      local.get $var0
+      local.get $var2
+      i32.store8 offset=15
+      local.get $var0
+      i32.load8_u offset=10
+      local.set $var2
+      local.get $var0
+      local.get $var0
+      i32.load8_u offset=14
+      i32.store8 offset=10
+      local.get $var0
+      local.get $var2
+      i32.store8 offset=14
+      local.get $var0
+      i32.load8_u offset=11
+      local.set $var2
+      local.get $var0
+      local.get $var0
+      i32.load8_u offset=13
+      i32.store8 offset=11
+      local.get $var0
+      local.get $var2
+      i32.store8 offset=13
+      local.get $var0
+      i32.const 1024
+      i32.const 25
+      call $memcmp
+      local.set $var2
+    end $label0
+    local.get $var2
+    i32.const 255
+    i32.and
+  )
+  (func $memcmp (;2;) (param $var0 i32) (param $var1 i32) (param $var2 i32) (result i32)
+    (local $var3 i32)
+    (local $var4 i32)
+    block $label1
+      block $label0
+        local.get $var2
+        i32.eqz
+        br_if $label0
+        loop $label2
+          local.get $var0
+          i32.load8_u
+          local.tee $var3
+          local.get $var1
+          i32.load8_u
+          local.tee $var4
+          i32.ne
+          br_if $label1
+          local.get $var1
+          i32.const 1
+          i32.add
+          local.set $var1
+          local.get $var0
+          i32.const 1
+          i32.add
+          local.set $var0
+          local.get $var2
+          i32.const -1
+          i32.add
+          local.tee $var2
+          br_if $label2
+        end $label2
+      end $label0
+      i32.const 0
+      return
+    end $label1
+    local.get $var3
+    local.get $var4
+    i32.sub
+  )
+  (data (i32.const 1024) "-\f8\01\81m\94=\86\f1\80\a9\1f\ca3\08V\81\c5/S\e9_3\ben\00\00\00\00\00\00\00\8d\8b\de\d04\1eU/\ca\92b\fdkN$\89n\0b\ef\8aB\9a\1aP\9d\ff\d1\b4\b5\cc\a1p\e6\b0i\b8\22[{A\ae\e3\82O\dc\af\05\ee\feGqL\96J\fa!S\85\cf\c8\a2\c0\03s0\80\ber\f9\c5\d3\fb}%\14\b3\ba\f1\12\11\c1\19\a0\98\7f]\90\bc\aaZ\09\e5\06-o\ac9\0e\da#*'\01\84\91)\0c\b6=\e8\ce\c7\ab\f3Yf(\1fxQ\072\00\88\f7`\d8\ec\d4M\8e\9b\1d\1c5|\97a>F\d9\eb\e2\a86<\94\86D\99R\dd\8c7z\f5\f8^\dbu\ea\fcK\df\d2E;\17\c2\a3,\13@~V\08\873\81\93\9f1\bd+H\0a\10e\9ed\1b\04\f0\c6\ed\a4y\a9\e7\9c\a7_\f4:& \168j\cdv\c3C\e4I\f2\cb\d7mh\e0\0f\a6\e9Xw\b9t\02\c9\d5.\b1\d6\e1\95\18g?\0dW\ad\15\8f\83c\bf\bb\f6\b7T\5c\c4\b2l\a5Eg\ec\be\c5\dem#\e6\db\f9\e3\a0~z^A\e9\1f\17)\c7\84\f3\1c\d1\f2?\aee\0c\1d\e0\e8k\00\ed\181U]\95\a5Z\e1Q\d5\b5\0eP\b9\d9\9f\f72\c3\d4\ef\a9b\98\9c\c1r\bb\ea`8\d7>\01+'\a2\99\86\bda\b7{\a7\cc\f4\aa\c86\9aN;R\0f\16\d8\9e\dcH\c0*9D\c9\c4\14od\02\cfW\f5\c6\85.u\e4\08c,\afY\cbG}yx\c2\8c\ce\10I\87&K\8ew\94\03\f6\97M5\83\0a\1eq\f0:S_\e7\15i\90\cdh\04\81\9d\fbB\22$\a8/\82\b4\ab\1b\19(\07\adt0\8d\b2\e5\ca\fc\a6\8a\f1\09\0d\89\91fv\92\eb\88F\fe\d3n\eeX@l\b6\13\ac\a4\0b\b1\a1\7f<\8bT34[\b0\bf\d0\93sJp\bcC\dfL\dd7\ba\d2\ff\f8\e2\a3=\80 -\1a\05\11\5c\06\b8!\96\8f\fa\b3\12|\d6\daO\fd%\9bjV")
+)
