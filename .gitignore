@@ -7,6 +7,7 @@ cat >> .gitignore << EOF
 **/Oracle_JDK*/lib/
 **/Oracle_JDK*/
 1872/optimized_trace.jsonl
+solved/2917/model.pt
 # JDK 관련 큰 파일들
 **/jdk*/
 **/openjdk*/
