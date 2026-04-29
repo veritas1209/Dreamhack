@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DreamBank Dashboard</title>
+    <link rel="stylesheet" href="/assets/app.css">
+  </head>
+  <body>
+    <nav class="topbar">
+      <a class="brand" href="/">DreamBank</a>
+      <div class="links">
+        <a href="/">Login</a>
+        <a href="/register">Register</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/transfer">Transfer</a>
+      </div>
+    </nav>
+    <main class="wrap">
+      <section class="panel">
+        <h1>Dashboard</h1>
+        <div class="grid">
+          <div class="item">
+            <p class="label">User</p>
+            <p class="value"><%= user.username %></p>
+          </div>
+          <div class="item">
+            <p class="label">Account</p>
+            <p class="value"><%= account.number %></p>
+          </div>
+          <div class="item">
+            <p class="label">Balance</p>
+            <p class="value"><%= account.balance %></p>
+          </div>
+        </div>
+
+        <h2>Transfers</h2>
+        <% if (transfers.length === 0) { %>
+          <p class="muted">No records.</p>
+        <% } %>
+        <ul class="list">
+          <% transfers.forEach((item) => { %>
+            <li>
+              <%= item.createdAt %>
+              <%= item.sender %>
+              -> <%= item.receiver %>
+              : <%= item.amount %>
+              (<%= item.memo %>)
+            </li>
+          <% }) %>
+        </ul>
+        <a class="button" href="/transfer">New transfer</a>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DreamBank Transfer</title>
+    <link rel="stylesheet" href="/assets/app.css">
+  </head>
+  <body>
+    <nav class="topbar">
+      <a class="brand" href="/">DreamBank</a>
+      <div class="links">
+        <a href="/">Login</a>
+        <a href="/register">Register</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/transfer">Transfer</a>
+      </div>
+    </nav>
+    <main class="wrap">
+      <section class="panel">
+        <h1>Transfer</h1>
+        <p class="muted">Account: <%= account.number %></p>
+        <form method="post" action="/transfer">
+          <input name="to" placeholder="receiver account">
+          <input name="amount" placeholder="amount">
+          <input name="memo" placeholder="memo">
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

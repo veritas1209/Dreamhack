@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DreamBank Register</title>
+    <link rel="stylesheet" href="/assets/app.css">
+  </head>
+  <body>
+    <nav class="topbar">
+      <a class="brand" href="/">DreamBank</a>
+      <div class="links">
+        <a href="/">Login</a>
+        <a href="/register">Register</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/transfer">Transfer</a>
+      </div>
+    </nav>
+    <main class="wrap">
+      <section class="panel">
+        <h1>Register</h1>
+        <form method="post" action="/register">
+          <input name="username" placeholder="username">
+          <input name="password" type="password" placeholder="password">
+          <button type="submit">Register</button>
+        </form>
+        <p class="muted hint"><a href="/">Login</a></p>
+      </section>
+    </main>
+  </body>
+</html>
