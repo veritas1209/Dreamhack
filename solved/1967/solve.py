@@ -31,35 +31,46 @@ def solve_type(type_idx, outputs, skip_count):
         return None
         
     else:
-        # 1. Z3로는 '스킵이 끝난 직후(출력이 시작되는 시점)'의 상태만 구합니다.
-        S = [BitVec(f's_{i}', 32) for i in range(deg)]
-        current_S = list(S)
+        # 1. 32비트 덧셈 모델링을 완전히 버리고, 수학적 특성을 이용한 1비트(LSB) 방정식으로 변환
+        L = [BitVec(f'L_{i}', 1) for i in range(len(outputs))]
         
-        f = (sep + skip_count) % deg
-        r = skip_count % deg
-        
-        # [수정됨] 출력을 자르지 않고 전부 제약 조건으로 사용합니다.
-        # 가짜 상태(Spurious State)가 도출되는 것을 막고 완벽한 유일해를 찾습니다.
-        for out_val in outputs:
-            new_val = current_S[f] + current_S[r]
-            current_S[f] = new_val
-            solver.add(LShR(new_val, 1) == out_val)
-            f = (f + 1) % deg
-            r = (r + 1) % deg
-
+        for k in range(deg, len(outputs)):
+            # diff는 이미 알고 있는 출력값들만으로 계산 가능
+            diff = (outputs[k] - outputs[k - deg] - outputs[k - sep]) % (1 << 31)
+            
+            if diff == 1:
+                # 올림수(Carry)가 발생한 경우: 세 비트의 값이 완전히 확정됨
+                solver.add(L[k - deg] == 1)
+                solver.add(L[k - sep] == 1)
+                solver.add(L[k] == 0)
+            elif diff == 0:
+                # 올림수가 없는 경우: 완벽한 선형 XOR 관계로 떨어짐
+                solver.add(L[k] == L[k - deg] ^ L[k - sep])
+            else:
+                log.error(f"Mathematical anomaly at {k}: diff = {diff}")
+                return None
+                
         if solver.check() == sat:
             m = solver.model()
-            recovered_S = [m[S[i]].as_long() for i in range(deg)]
             
-            # 2. 구한 상태에서 스킵 횟수만큼 역연산(Rollback)하여 초기 상태를 찾습니다.
-            state = list(recovered_S)
-            f = (sep + skip_count) % deg
-            r = skip_count % deg
+            # 처음 deg개의 상태 복구
+            state = [0] * deg
+            f_0 = (sep + skip_count) % deg
+            r_0 = skip_count % deg
             
-            for _ in range(skip_count):
+            for k in range(deg):
+                lsb = m[L[k]].as_long()
+                idx = (f_0 + k) % deg
+                state[idx] = (outputs[k] << 1) | lsb
+                
+            # 2. 역연산(Rollback) 진행
+            total_rollbacks = skip_count + deg
+            f = f_0
+            r = r_0
+            
+            for _ in range(total_rollbacks):
                 f = (f - 1) % deg
                 r = (r - 1) % deg
-                # 덧셈 전이의 역연산은 뺄셈입니다.
                 state[f] = (state[f] - state[r]) & 0xFFFFFFFF
                 
             return state
@@ -67,7 +78,7 @@ def solve_type(type_idx, outputs, skip_count):
             return None
 
 def main():
-    r = remote('localhost', 5000)
+    r = remote('host8.dreamhack.games', 24086)
 
     challenges = [
         (100, 1),
