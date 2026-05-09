@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Wasm rev for beginners</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+</head>
+
+<body>
+    <main class="container">
+        <form onsubmit="return false;">
+            <fieldset>
+                <label for="input"> Input </label>
+                <input name="input" id="input" placeholder="Put your flag here" required>
+            </fieldset>
+            <input type="button" id="check_button" value="Check!">
+        </form>
+    </main>
+    <script type="module">
+        import init, { check } from "./pkg/challenge.js";
+        await init();
+        document.getElementById('check_button').addEventListener('click', function() {
+          check(document.getElementById('input').value);
+        });
+    </script>
+</body>
+
+</html>

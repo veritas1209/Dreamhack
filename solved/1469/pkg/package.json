@@ -1,0 +1,14 @@
+{
+  "name": "challenge",
+  "version": "0.1.0",
+  "files": [
+    "challenge_bg.wasm",
+    "challenge.js",
+    "challenge.d.ts"
+  ],
+  "module": "challenge.js",
+  "types": "challenge.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
