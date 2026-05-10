@@ -1,13 +1,13 @@
 import os
 from z3 import *
 
-# Ghidra에서 추출한 정확한 캐릭터셋
-CHARSET = b"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ{}.,: "
+# 어셈블리 덤프에서 확인된 정확한 69개의 캐릭터셋 (null 바이트 \x00 포함)
+CHARSET = b"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ{}.,: \x00"
 
 def solve():
     file_path = '996/output'
     if not os.path.exists(file_path):
-        print("[-] output 파일이 없습니다.")
+        print(f"[-] '{file_path}' 파일이 없습니다.")
         return
 
     with open(file_path, 'rb') as f:
@@ -16,7 +16,7 @@ def solve():
     parsed_paths = []
     curr_path = ""
     i = 0
-    # 바이너리 바이트 단위로 트리 경로 완벽 파싱
+    # 4바이트씩 끊어서 이모지를 완벽하게 파싱
     while i < len(data):
         chunk = data[i:i+4]
         if chunk == b'\xf0\x9f\x8c\xb4':   # 🌴 Insert
@@ -27,10 +27,10 @@ def solve():
             parsed_paths.append((curr_path, 'E'))
             curr_path = ""
             i += 4
-        elif chunk == b'\xf0\x9f\x8c\xb3': # 🌳 Left (curr > new)
+        elif chunk == b'\xf0\x9f\x8c\xb3': # 🌳 Left (New < Curr)
             curr_path += 'L'
             i += 4
-        elif chunk == b'\xf0\x9f\x8c\xb2': # 🌲 Right (curr < new)
+        elif chunk == b'\xf0\x9f\x8c\xb2': # 🌲 Right (New > Curr)
             curr_path += 'R'
             i += 4
         else:
@@ -39,29 +39,24 @@ def solve():
     FLAG_LEN = len(parsed_paths)
     print(f"[*] 파싱 완료! 총 문자열 길이: {FLAG_LEN}")
 
-    # C언어의 (char) 형변환 부호 비교 완벽 구현
-    def to_signed(bv):
-        val_int = BV2Int(bv)
-        return If(val_int > 127, val_int - 256, val_int)
+    if FLAG_LEN == 0:
+        print("[-] 파싱 실패: output 파일의 데이터가 올바르지 않습니다.")
+        return
 
-    print("[*] Z3 탐색 시작 (XOR Key 0~255 고속 브루트포스)...")
+    print("[*] Z3 BitVec 모델 탐색 시작 (lar_solver 버그 회피)...")
 
-    # Key를 Python 단에서 순회하여 Z3 연산 속도 극대화
+    # Python 단에서 Key를 돌려 Z3의 부담을 최소화
     for key in range(256):
         s = Solver()
-        flag = [BitVec(f'c_{idx}', 8) for idx in range(FLAG_LEN)]
         
-        # 1. 캐릭터셋 제약 조건
+        # [핵심] Int 대신 8비트 BitVec를 사용하여 SMT 엔진 크래시 원천 차단
+        V = [BitVec(f'V_{idx}', 8) for idx in range(FLAG_LEN)]
+        
+        # 1. 캐릭터셋 제약 조건 추가
         for idx in range(FLAG_LEN):
-            s.add(Or([flag[idx] == c for c in CHARSET]))
+            s.add(Or([V[idx] == c for c in CHARSET]))
         
-        # 2. 유연한 플래그 앵커: 문자열 어딘가에 "DH{" 가 반드시 포함되어 있어야 함
-        dh_match = []
-        for idx in range(FLAG_LEN - 3):
-            dh_match.append(And(flag[idx] == ord('D'), flag[idx+1] == ord('H'), flag[idx+2] == ord('{')))
-        s.add(Or(dh_match))
-        
-        # 3. 트리 구조 부등식 제약 조건
+        # 2. 이진 탐색 트리(BST) 대소 관계 부등식 적용
         tree = {}
         is_valid_tree = True
         
@@ -74,9 +69,10 @@ def solve():
                 
                 curr_idx = tree[curr_node_path]
                 
-                # XOR 결과값을 부호 있는 정수로 대소 비교
-                val_new = to_signed(flag[idx] ^ key)
-                val_curr = to_signed(flag[curr_idx] ^ key)
+                # BitVec의 ^ 연산 후 <, > 비교는 Z3 파이썬에서 자동으로
+                # C언어와 동일한 '부호 있는 대소 비교(Signed Compare)'로 동작합니다.
+                val_new = V[idx] ^ key
+                val_curr = V[curr_idx] ^ key
                 
                 if step == 'L':
                     s.add(val_new < val_curr)
@@ -92,18 +88,24 @@ def solve():
                 tree[curr_node_path] = idx
             elif term == 'E':
                 curr_idx = tree[curr_node_path]
-                s.add(flag[idx] == flag[curr_idx]) # 중복 노드 처리
+                s.add(V[idx] == V[curr_idx]) # 중복 문자 처리
         
-        # 모순된 트리면 즉시 다음 키로 패스
         if not is_valid_tree:
             continue
+            
+        # 3. 플래그 포맷(DH{) 슬라이딩 윈도우 탐색
+        dh_match = []
+        for offset in range(FLAG_LEN - 2):
+            dh_match.append(And(V[offset] == ord('D'), V[offset+1] == ord('H'), V[offset+2] == ord('{')))
+        s.add(Or(dh_match))
         
-        # 조건이 맞는 모델 탐색
+        # BitVec 기반 검증
         if s.check() == sat:
             m = s.model()
-            result = "".join(chr(m[flag[idx]].as_long()) for idx in range(FLAG_LEN))
+            result = "".join(chr(m[V[idx]].as_long()) for idx in range(FLAG_LEN))
+            
             print("\n" + "="*60)
-            print(f"[+] 성공! 플래그를 복구했습니다 🎉")
+            print(f"[+] 성공! 플래그를 완벽하게 복구했습니다 🎉")
             print(f"[*] 일치하는 XOR Key : {key:#04x}")
             print(f"\n[ 복구된 문자열 ]\n{result}")
             print("="*60 + "\n")
