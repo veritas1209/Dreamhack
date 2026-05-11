@@ -1,0 +1,67 @@
+<!doctype html>
+<th:block th:replace="~{fragments/header :: headerFragment('Header')}"></th:block>
+<script src="/js/jquery.min.js"></script>
+<link rel="stylesheet" href="/css/sign.css">
+<script>
+    $.ajax({
+        url: "/api/user/mypage",
+        method: "post",
+        success: function(obj){
+            if (typeof obj == "string") obj = JSON.parse(obj);
+            if ("error" in obj) {
+                alert(obj.error);
+                location.href = "/user/signin";
+            }
+            username = document.getElementById("username");
+            username.value += obj.username;
+
+            email = document.getElementById("email");
+            email.value += "***" + obj.email.substr(3, obj.email.length-6) + "***";
+
+            realname = document.getElementById("realname");
+            realname.value += obj.realName;
+
+            memo = document.getElementById("memo");
+            memo.value += obj.memo;
+
+            isforeigner = document.getElementById("isforeigner");
+            if (obj.countryCode == 82) isforeigner.textContent += "N";
+            else isforeigner.textContent += "Y";
+        }
+    });
+    $.ajax({
+        url: "/api/user/mypage/krwcash",
+        method: "post",
+        success: function(obj){
+            if (typeof obj == "string") obj = JSON.parse(obj);
+            if ("error" in obj) {
+                alert(obj.error);
+                location.href = "/user/signin";
+            }
+            krwaccnumber = document.getElementById("krwaccnumber");
+            krwaccnumber.value += obj.accNumber;
+        }
+    });
+</script>
+<p class="container">
+<div style="text-align: center;">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <h1>My Page</h1>
+            <hr/>
+            Username<br/><input type="text" id="username" class="fadeIn first" placeholder="username" disabled><br>
+            E-mail<br/><input type="text" id="email" class="fadeIn second" placeholder="e-mail" disabled><br><br>
+            Real name<br/><input type="text" id="realname" class="fadeIn third" placeholder="Real Name" disabled><br><br>
+            KRW Account number<br/><input type="text" id="krwaccnumber" class="fadeIn third" placeholder="KRW Account Number" disabled><br><br>
+            <p id="isforeigner">Is Foreigner?: </p>
+            <hr />
+            <h3>Memo</h3><br>
+            <input type="text" id="memo" class="fadeIn third" placeholder="KRW Account Number" disabled>
+        </div>
+    </div>
+    <!-- <textarea id="memo"></textarea>-->
+</div>
+</div> <!-- /container -->
+<th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+</html>

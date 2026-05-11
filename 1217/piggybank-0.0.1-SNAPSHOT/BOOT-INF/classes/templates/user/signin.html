@@ -1,0 +1,32 @@
+<!doctype html>
+
+<th:block th:replace="~{fragments/header :: headerFragment('Header')}"></th:block>
+<link rel="stylesheet" href="/css/sign.css">
+<p class="container">
+    <div class="wrapper fadeInDown">
+        <p th:if="${error != null}" th:text="${error}" class="alert alert-danger" role="alert" /></p>
+        <p th:if="${alert != null}" th:text="${alert}" class="alert alert-success" role="alert" /></p>
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="/img/pig_sayhi.png" id="icon" alt="User Icon" />
+            </div>
+            <!-- Login Form -->
+            <form action="/user/signin" method="post">
+                <input type="text" id="login" class="fadeIn second" name="username" pattern="[a-zA-Z0-9]([._-](?![._-])|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]" placeholder="Username" required>
+                <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" required>
+                <input type="hidden" name="next" th:if="${next != null}" th:value="${next}">
+                <input type="submit" class="fadeIn fourth" value="Log In">
+            </form>
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="/user/reset/">Forgot Password?</a>
+            </div>
+        </div>
+    </div>
+</div> <!-- /container -->
+
+<th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+</html>

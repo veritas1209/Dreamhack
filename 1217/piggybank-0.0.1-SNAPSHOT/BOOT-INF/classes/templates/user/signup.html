@@ -1,0 +1,31 @@
+<!doctype html>
+
+<th:block th:replace="~{fragments/header :: headerFragment('Header')}"></th:block>
+<link rel="stylesheet" href="/css/sign.css">
+<div class="container">
+    <div class="wrapper fadeInDown">
+        <p th:if="${error != null}" th:text="${error}" class="alert alert-danger" role="alert" /></p>
+        <p th:if="${alert != null}" th:text="${alert}" class="alert alert-success" role="alert" /></p>
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="/img/pig_sayhi.png" id="icon" alt="User Icon" />
+            </div>
+            <!-- Registration Form -->
+            <form action="/user/signup" method="post">
+                <input type="text" id="login" class="fadeIn first" name="username" placeholder="Username" required>
+                <input type="password" id="password" class="fadeIn second" name="password" placeholder="Password" required>
+                <input type="email" id="email" class="fadeIn third" name="email" pattern="[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+" placeholder="E-mail" required>
+                <input type="text" id="realName" class="fadeIn fourth" name="realName" placeholder="Your Real Name" required>
+                <input type="text" id="regNumber" class="fadeIn fourth" name="regNumber" placeholder="Your Registration Number" required>
+                <input type="text" id="memo" class="fadeIn fourth" name="memo" placeholder="Memo" required>
+                <input type="hidden" name="countryCode" value="82" />
+                <input type="submit" class="fadeIn fifth" value="Register">
+            </form>
+        </div>
+    </div>
+</div> <!-- /container -->
+<th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+</html>

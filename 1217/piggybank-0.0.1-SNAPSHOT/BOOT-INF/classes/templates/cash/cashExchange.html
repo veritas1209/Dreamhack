@@ -1,0 +1,29 @@
+<!doctype html>
+
+<th:block th:replace="~{fragments/header :: headerFragment('Header')}"></th:block>
+<link rel="stylesheet" href="/css/sign.css">
+<div class="wrapper fadeInDown">
+    <p th:if="${error != null}" th:text="${error}" class="alert alert-danger" role="alert" /></p>
+    <p th:if="${alert != null}" th:text="${alert}" class="alert alert-success" role="alert" /></p>
+    <h1>Exchange Cash</h1>
+    <div id="formContent">
+        <h2>KRW to USD</h2>
+        <form action="/cash/exchange" method="post">
+            <input type="hidden" name="srcCurrency" value="KRW" />
+            <input type="hidden" name="dstCurrency" value="USD" />
+            <b>How Many? (\ to $)</b>: <input type="number" step="0.0001" class="fadeIn second" name="amount" placeholder="Amount to Exchange" required>
+            <input type="submit" class="fadeIn third" value="Exchange Money">
+        </form>
+        <hr />
+        <h2>USD to KRW</h2>
+        <form action="/cash/exchange" method="post">
+            <input type="hidden" name="srcCurrency" value="USD" />
+            <input type="hidden" name="dstCurrency" value="KRW" />
+            <b>How Many? ($ to \)</b>: <input type="number" step="0.0001" class="fadeIn second" name="amount" placeholder="Amount to Exchange" required>
+            <input type="submit" class="fadeIn third" value="Exchange Money">
+        </form>
+    </div>
+</div>
+<th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+</html>

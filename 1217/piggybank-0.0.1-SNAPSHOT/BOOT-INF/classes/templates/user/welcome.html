@@ -1,0 +1,23 @@
+<!doctype html>
+
+<th:block th:replace="~{fragments/header :: headerFragment('Header')}"></th:block>
+<link rel="stylesheet" href="/css/sign.css">
+<div class="container">
+    <div class="wrapper fadeInDown">
+        <p th:if="${error != null}" th:text="${error}" class="alert alert-danger" role="alert" /></p>
+        <p th:if="${alert != null}" th:text="${alert}" class="alert alert-success" role="alert" /></p>
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="/img/pig_sayhi.png" id="icon" alt="User Icon" />
+            </div>
+            시큐어 코드를 안내드립니다. 시큐어 코드는 비밀번호 찾기 등에서 사용됩니다. 꼭 안전한 곳에 저장하여 주시고, 절대 다른 사람에게 알려주거나 노출되지 않도록 주의해 주세요.
+            <br><hr>
+            <textarea th:text="${secure_code}"></textarea>
+        </div>
+    </div>
+</div> <!-- /container -->
+<th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+</html>

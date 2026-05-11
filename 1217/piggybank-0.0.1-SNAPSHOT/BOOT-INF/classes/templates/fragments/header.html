@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="headerFragment(param1)">
+<head>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/non-responsive.css">
+    <title>Piggy Bank 🐷</title>
+</head>
+<body>
+<!-- Fixed navbar -->
+<div class="header">
+    <header class="navbar navbar-default navbar-fixed-top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">Piggy Bank 🐷</a>
+            </div>
+            <nav class="collapse navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav">
+                    <th:block th:if="${not #strings.isEmpty(session.id)}">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bank 🏦<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/cash/krw/getBalance">KRWCash</a></li>
+                                <li><a href="/cash/krw/transfer" >Transfer KRWCash</a></li>
+                                <li><a href="/cash/usd/getBalance" >USDCash</a></li>
+                                <li><a href="/cash/usd/transfer" >Transfer USDCash</a></li>
+                                <li><a href="/cash/exchange" >Exchange Cash</a></li>
+                                <li><a href="/cash/bank/create" >Create Bank</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/shop/purchase/1" >Shop 🛒</a></li>
+                    </th:block>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User 💳<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <th:block th:if="${#strings.isEmpty(session.id)}">
+                                <li><a href="/user/signin">Sign In</a></li>
+                                <li><a href="/user/signup">Sign Up</a></li>
+                            </th:block>
+                            <th:block th:if="${not #strings.isEmpty(session.id)}">
+                                <li><a href="/user/signout">Sign Out</a></li>
+                                <li><a href="/user/mypage">My Page</a></li>
+                            </th:block>
+                        </ul>
+                    </li>
+                    <th:block th:if="${not #strings.isEmpty(session.id)}">
+                        <li>
+                            <a href="/user/mypage" th:text="'Hello, ' + ${session.username}"></a>
+                        </li>
+                    </th:block>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</div>
+</th:block>
+</html>

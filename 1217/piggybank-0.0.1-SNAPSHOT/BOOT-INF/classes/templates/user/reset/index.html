@@ -1,0 +1,25 @@
+<!doctype html>
+
+<th:block th:replace="~{fragments/header :: headerFragment('Header')}"></th:block>
+<link rel="stylesheet" href="/css/sign.css">
+<div class="container">
+    <div class="wrapper fadeInDown">
+        <p th:if="${error != null}" th:text="${error}" class="alert alert-danger" role="alert" /></p>
+        <p th:if="${alert != null}" th:text="${alert}" class="alert alert-success" role="alert" /></p>
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="/img/pig_sayhi.png" id="icon" alt="User Icon" />
+            </div>
+            Input user id:
+            <form action="/user/reset/" method="POST">
+                <input type="text" name="username">
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+</div> <!-- /container -->
+<th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+
+<th:block th:replace="~{fragments/header :: headerFragment('Header')}"></th:block>
+<link rel="stylesheet" href="/css/sign.css">
+<div class="container">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <p th:if="${error != null}" th:text="${error}" class="alert alert-danger" role="alert" /></p>
+            <p th:if="${alert != null}" th:text="${alert}" class="alert alert-success" role="alert" /></p>
+            <h1>Shop</h1>
+            <h2><span th:text="${productName}"></span></h2>
+            <img th:src="@{/img/shop/{productId}.png(productId=${productId})}" width="100" /><br>
+            Price (in KRW): <span th:text="${productPrice}"></span>
+            <form th:action="@{/shop/purchase/{productId}(productId=${productId})}" method="post">
+                <input type="submit" value="구매하기">
+            </form>
+            <hr>
+            <h1>상품 목록</h1>
+            <span th:text="${productName}"></span>
+            <span th:text="${productDesc}"></span>
+            <hr>
+        </div>
+    </div>
+</div> <!-- /container -->
+<th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+
+<th:block th:replace="~{fragments/header :: headerFragment('Header')}"></th:block>
+<link rel="stylesheet" href="/css/sign.css">
+<p th:if="${error != null}" th:text="${error}" class="alert alert-danger" role="alert" /></p>
+<p th:if="${alert != null}" th:text="${alert}" class="alert alert-success" role="alert" /></p>
+<div class="container" style="text-align: center;">
+    <h1>Create Bank</h1>
+    <hr>
+    <form action="/cash/krw/bank/create" method="post">
+        <input type="submit" value="Create KRW Bank"/ >
+    </form>
+    <form action="/cash/usd/bank/create" method="post">
+        <input type="submit" value="Create USD Bank"/ >
+    </form>
+</div> <!-- /container -->
+<th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+</html>

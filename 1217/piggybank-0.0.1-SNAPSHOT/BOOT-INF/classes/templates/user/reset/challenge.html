@@ -1,0 +1,30 @@
+<!doctype html>
+
+<th:block th:replace="~{fragments/header :: headerFragment('Header')}"></th:block>
+<link rel="stylesheet" href="/css/sign.css">
+<div class="container">
+    <div class="wrapper fadeInDown">
+        <p th:if="${error != null}" th:text="${error}" class="alert alert-danger" role="alert" /></p>
+        <p th:if="${alert != null}" th:text="${alert}" class="alert alert-success" role="alert" /></p>
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="/img/pig_sayhi.png" id="icon" alt="User Icon" />
+            </div>
+            보안 코드를 확인하여 해당하는 문자를 입력해주세요.<br>
+            <tr th:each="chall : ${challenge}">
+                <span th:text="${chall}" class="secure_code_index"></span>
+            </tr>
+
+            <form action="/user/reset/challenge" method="POST">
+                <input type="text" name="answers" placeholder="dreamhack,theori">
+                <input type="hidden" name="challengeToken" th:value="${challenge_token}">
+                <input type="submit" />
+            </form>
+        </div>
+    </div>
+</div> <!-- /container -->
+<th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+</html>

@@ -3,8 +3,8 @@ from pwn import *
 # ==========================================
 # 드림핵 인스턴스 접속 정보 설정 (발급받은 주소로 변경하세요)
 # ==========================================
-HOST = "hostX.dreamhack.games"  # 예: "host3.dreamhack.games"
-PORT = 12345                    # 예: 12345
+HOST = "host8.dreamhack.games"  # 예: "host3.dreamhack.games"
+PORT = 12846                    # 예: 12345
 
 def main():
     print(f"[*] {HOST}:{PORT} 에 접속을 시도합니다...")

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WasMazed</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        display: grid;
+        place-content: center;
+        gap: 1rem;
+        height: 100vh;
+      }
+      #result {
+        font-weight: 600;
+        font-size: 1.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>WasMazed 🧩</h1>
+
+    <label>
+      WASD Path:<br />
+      <input id="path" type="text" placeholder="e.g. wwasdd" size="32" />
+    </label>
+    <button id="submit">Submit</button>
+
+    <div id="result"></div>
+
+    <script type="module">
+      import init, { run_path, reset } from "./pkg/wasmazed.js";
+
+      async function main() {
+        await init();
+        const input = document.getElementById("path");
+        const resultEl = document.getElementById("result");
+        document.getElementById("submit").addEventListener("click", () => {
+          const pathStr = input.value.trim();
+          reset();
+          const success = run_path(pathStr);
+          if (success) {
+            resultEl.textContent = `✅ Correct! Flag is DH{${pathStr}}`;
+          } else {
+            resultEl.textContent = "❌ Wrong";
+          }
+        });
+      }
+
+      main();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<!doctype html>
+
+<th:block th:replace="~{fragments/header :: headerFragment('Header')}"></th:block>
+<div class="container">
+    <p th:if="${error != null}" th:text="${error}" class="alert alert-danger" role="alert" /></p>
+    <p th:if="${alert != null}" th:text="${alert}" class="alert alert-success" role="alert" /></p>
+    <img src="/img/piggybank_logo.png" width="59%"  />
+    <c:if test="${empty username}">
+        <h1><a href="/user/signup"><b><span style="color: #EDC6C6;">PiggyBank 🐽</span></b>에 가입하고 싶으십니까? 여기서 가입하세요!!</a></h1>
+        <h1>지금 가입하시는 신규 회원에게는 가입 보상으로 <b>10,000원</b>을 드립니다!</h1>
+    </c:if>
+</div> <!-- /container -->
+<th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+</html>

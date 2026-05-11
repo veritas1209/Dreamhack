@@ -1,0 +1,21 @@
+<!doctype html>
+
+<th:block th:replace="~{fragments/header :: headerFragment('Header')}"></th:block>
+<link rel="stylesheet" href="/css/sign.css">
+<div class="container">
+    <div class="wrapper fadeInDown">
+        <p th:if="${error != null}" th:text="${error}" class="alert alert-danger" role="alert" /></p>
+        <p th:if="${alert != null}" th:text="${alert}" class="alert alert-success" role="alert" /></p>
+        <div id="formContent">
+            <h1>KRW (Korean Won)</h1>
+            <form action="/cash/krw/transfer" method="post">
+                <input type="text" class="fadeIn first" name="accNumber" placeholder="Account Number" required><br>
+                <b>How Many?</b>: <input type="number" step="0.0001" class="fadeIn second" name="amount" placeholder="Amount to Transfer" required>
+                <input type="submit" class="fadeIn third" value="Send Money">
+            </form>
+        </div>
+    </div>
+</div>
+<th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+</html>
