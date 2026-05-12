@@ -7,7 +7,7 @@ import time
 import uuid
 import random
 
-TARGET_URL = "http://host8.dreamhack.games:8266"
+TARGET_URL = "http://host8.dreamhack.games:18910"
 SECURE_CODE_LIST = [
     "refuse", "sector", "dentist", "release", "tenant", "lunch", "code", "partner", 
     "chicken", "ribbon", "apple", "cargo", "damage", "enjoy", "index", "theori", 
