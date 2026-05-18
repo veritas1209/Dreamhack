@@ -1,0 +1,97 @@
+=== McNie Source Code Diff Report ===
+Reference: C:\Users\hajin\Downloads\McNie\McNie\Reference_Implementation\encrypt\4Q_128_1
+CTF Source: C:\Users\hajin\IT_Projects\hacking_study\dreamhack\1901\src
+
+
+============================================================
+[FILE] conv.c
+============================================================
+--- Original/conv.c
++++ CTF/conv.c
+@@ -2,7 +2,7 @@
+ #include "gf.h"
+ #include "conv.h"
+ 
+-extern short _m;
++extern const short _m;
+ 
+ static const unsigned char sbox[256] =
+ {
+
+============================================================
+[FILE] crypt.c
+============================================================
+--- Original/crypt.c
++++ CTF/crypt.c
+@@ -6,14 +6,12 @@
+ #include "sha3.h"
+ #include "conv.h"
+ 
+-/* you may change these three parameters */
+-short blk = 15;
+-short d = 3;
+-short r = 5;
+-
+-extern short _m;
+-
+ #define CONST_LEN 5
++
++extern const short _m;
++extern const short blk;
++extern const short r;
++extern const short d;
+ 
+ const unsigned char Const_bytes[CONST_LEN] = { 0xD9, 0xA5, 0xEE, 0xA5, 0x2E };
+ 
+
+============================================================
+[FILE] crypt.h
+============================================================
+--- Original/crypt.h
++++ CTF/crypt.h
+@@ -3,9 +3,6 @@
+ 
+ #include "matrix.h"
+ #include "bin_vec.h"
+-
+-#define MESSAGE_BYTES  215
+-#define CIPHER_BYTES   422
+ 
+ /* Low rank parity check matrix */
+ struct LRP
+@@ -28,4 +25,7 @@
+ 	const unsigned char *c, unsigned long long clen,
+ 	const unsigned char *sk);
+ 
++void encrypt_one_block(unsigned char *c, const unsigned char *m, const unsigned char *pk);
++int decrypt_one_block(unsigned char *m, const unsigned char *c, const unsigned char *sk);
++
+ #endif
+
+============================================================
+[FILE] gf.c
+============================================================
+--- Original/gf.c
++++ CTF/gf.c
+@@ -3,13 +3,18 @@
+ #include "gf.h"
+ #include "rng.h"
+ 
+-/* you can change the value of this parameter */
+-const short _m = 37;
++extern const short _m;
+ 
+ /* irreducible polynomial over GF(2) */
+ const gf base_poly[65] = { 
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+-0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
++0, 0,
++0x10eb, /* x^12 + x^7 + x^6 + x^5 + x^3 + x + 1 */
++0x201b, /* x^13 + x^4 + x^3 + x + 1 */
++0, 0, 0,
++0x20009, /* x^17 + x^3 + 1 */
++0,
++0x80027, /* x^19 + x^5 + x^2 + x + 1 */
+ 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+ 0x20000005, /* x^29 + x^2 + 1 */
+ 0x400328AF, /* x^30 + x^17 + x^16 + x^13 + x^11 + x^7 + x^5 + x^3 + x^2 + x + 1 */

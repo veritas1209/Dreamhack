@@ -1,68 +1,158 @@
-import os
+import sys
 
-# 덤프된 6개의 배열 (Untagged)
-arr1 = [134, 253, 242, 215]
-arr2 = [171, 5, 27, 188, 155, 224, 211, 226, 247, 250, 204, 58, 138, 8, 27, 237]
-arr3 = [154, 43, 5, 191, 224, 186, 255, 41, 26, 160, 66, 60, 140, 104, 29, 142]
-arr4 = [245, 196, 11, 126]
-arr5 = [145, 50, 236, 24, 129, 129, 209, 11, 106, 46, 237, 89, 18, 2, 66, 66]
-arr6 = [126, 201, 174, 83, 92, 249, 129, 110, 136, 236, 65, 211, 204, 99, 149, 217]
+# 100% 순정 S-Box 생성
+def generate_sboxes():
+    exp = [1] * 256; log = [0] * 256
+    for i in range(1, 256):
+        j = (exp[i-1] << 1) ^ exp[i-1]
+        if j & 0x100: j ^= 0x11b
+        exp[i] = j
+    for i in range(1, 255): log[exp[i]] = i
 
-def get_streams(state):
-    u1 = state & 7
-    idx1 = (u1 - 1) // 2
-    u3 = (u1 * 7 - 4) & 0x1f
-    u2 = (u1 * 5 + 2) & 0x1f
+    A = [[1,0,0,0,1,1,1,1], [1,1,0,0,0,1,1,1], [1,1,1,0,0,0,1,1], [1,1,1,1,0,0,0,1],
+         [1,1,1,1,1,0,0,0], [0,1,1,1,1,1,0,0], [0,0,1,1,1,1,1,0], [0,0,0,1,1,1,1,1]]
+    B = [[0,1,0,1,1,1,1,0], [0,0,1,1,1,1,0,1], [1,1,0,1,0,1,1,1], [1,0,0,1,1,1,0,1],
+         [0,0,1,0,1,1,0,0], [1,0,0,0,0,0,0,1], [0,1,0,1,1,1,0,1], [1,1,0,1,0,0,1,1]]
+
+    S1, S2, X1, X2 = bytearray(256), bytearray(256), bytearray(256), bytearray(256)
+    for i in range(256):
+        p = 0 if i == 0 else exp[255 - log[i]]; t = 0
+        for j in range(8):
+            s = 0
+            for k in range(8):
+                if (p >> (7-k)) & 1: s ^= A[k][j]
+            t = (t << 1) ^ s
+        t ^= 0x63; S1[i] = t; X1[t] = i
+
+    for i in range(256):
+        p = 0 if i == 0 else exp[(247 * log[i]) % 255]; t = 0
+        for j in range(8):
+            s = 0
+            for k in range(8):
+                if (p >> k) & 1: s ^= B[7-j][k]
+            t = (t << 1) ^ s
+        t ^= 0xe2; S2[i] = t; X2[t] = i
+    return S1, S2, X1, X2
+
+S1, S2, X1, X2 = generate_sboxes()
+KRK = [bytes.fromhex("517cc1b727220a94fe13abe8fa9a6ee0"), bytes.fromhex("6db14acc9e21c820ff28b1d5ef5de2b0"), bytes.fromhex("db92371d2126e9700324977504e8c90e")]
+
+def xor16(a, b): return bytearray(x ^ y for x, y in zip(a, b))
+def rot128(b, bits): val = int.from_bytes(b, 'big'); val = ((val >> (bits%128)) | (val << (128 - (bits%128)))) & ((1 << 128) - 1); return val.to_bytes(16, 'big')
+
+def mix_columns(st):
+    out = bytearray(16)
+    out[0] = st[3]^st[4]^st[6]^st[8]^st[9]^st[13]^st[14]; out[1] = st[2]^st[5]^st[7]^st[8]^st[9]^st[12]^st[15]
+    out[2] = st[1]^st[4]^st[6]^st[10]^st[11]^st[12]^st[15]; out[3] = st[0]^st[5]^st[7]^st[10]^st[11]^st[13]^st[14]
+    out[4] = st[0]^st[2]^st[5]^st[8]^st[11]^st[14]^st[15]; out[5] = st[1]^st[3]^st[4]^st[9]^st[10]^st[14]^st[15]
+    out[6] = st[0]^st[2]^st[7]^st[9]^st[10]^st[12]^st[13]; out[7] = st[1]^st[3]^st[6]^st[8]^st[11]^st[12]^st[13]
+    out[8] = st[0]^st[1]^st[4]^st[7]^st[10]^st[13]^st[15]; out[9] = st[0]^st[1]^st[5]^st[6]^st[11]^st[12]^st[14]
+    out[10] = st[2]^st[3]^st[5]^st[6]^st[8]^st[13]^st[15]; out[11] = st[2]^st[3]^st[4]^st[7]^st[9]^st[12]^st[14]
+    out[12] = st[1]^st[2]^st[6]^st[7]^st[9]^st[11]^st[12]; out[13] = st[0]^st[3]^st[6]^st[7]^st[8]^st[10]^st[13]
+    out[14] = st[0]^st[3]^st[4]^st[5]^st[9]^st[11]^st[14]; out[15] = st[1]^st[2]^st[4]^st[5]^st[8]^st[10]^st[15]
+    return out
+
+def sbox_layer_t1(st):
+    out = bytearray(16)
+    for i in range(4): out[i*4]=S1[st[i*4]]; out[i*4+1]=S2[st[i*4+1]]; out[i*4+2]=X1[st[i*4+2]]; out[i*4+3]=X2[st[i*4+3]]
+    return out
+
+def sbox_layer_t2(st):
+    out = bytearray(16)
+    for i in range(4): out[i*4]=X1[st[i*4]]; out[i*4+1]=X2[st[i*4+1]]; out[i*4+2]=S1[st[i*4+2]]; out[i*4+3]=S2[st[i*4+3]]
+    return out
+
+def generate_round_keys(mk, key_size):
+    w0 = bytearray(mk[:16])
+    if key_size == 128: w1 = bytearray(16)
+    elif key_size == 256: w1 = bytearray(mk[16:32])
+    else: w1 = bytearray(16)
     
-    # Stream A (0x406da0)
-    a = (arr1[idx1 % 4] ^ arr2[u3 // 2] ^ arr3[u2 // 2])
-    # Stream B (0x406e20)
-    b = (arr4[idx1 % 4] ^ arr5[u3 // 2] ^ arr6[u2 // 2])
+    q = (key_size - 128) // 64
+    t0 = xor16(w0, KRK[q])
+    t = mix_columns(sbox_layer_t1(t0)); w1 = xor16(w1, t)
     
-    return (a * 2 + 1), (b * 2 + 1)
+    q = 0 if q == 2 else q + 1
+    t = mix_columns(sbox_layer_t2(xor16(w1, KRK[q]))); w2 = xor16(t, w0)
+    
+    q = 0 if q == 2 else q + 1
+    t = mix_columns(sbox_layer_t1(xor16(w2, KRK[q]))); w3 = xor16(t, w1)
+    
+    rk = [
+        xor16(w0, rot128(w1, 19)), xor16(w1, rot128(w2, 19)), xor16(w2, rot128(w3, 19)), xor16(w3, rot128(w0, 19)),
+        xor16(w0, rot128(w1, 31)), xor16(w1, rot128(w2, 31)), xor16(w2, rot128(w3, 31)), xor16(w3, rot128(w0, 31)),
+        xor16(w0, rot128(w1, 67)), xor16(w1, rot128(w2, 67)), xor16(w2, rot128(w3, 67)), xor16(w3, rot128(w0, 67)),
+        xor16(w0, rot128(w1, 97))
+    ]
+    if key_size > 128:
+        rk.append(xor16(w1, rot128(w2, 97)))
+        rk.append(xor16(w2, rot128(w3, 97)))
+    if key_size > 192:
+        rk.append(xor16(w3, rot128(w0, 97)))
+        rk.append(xor16(w0, rot128(w1, 109)))
+    return rk
 
-def solve():
-    with open("hello.png.enc", "rb") as f:
-        enc = f.read()
+def encrypt_block(data, ek, rounds):
+    state = bytearray(data)
+    for r in range(rounds):
+        state = xor16(state, ek[r])
+        if r % 2 == 0: state = sbox_layer_t1(state)
+        else:          state = sbox_layer_t2(state)
+        if r != rounds - 1: state = mix_columns(state)
+    return xor16(state, ek[rounds])
 
-    dec = bytearray()
-    state = 7  # Initial RAX from GDB (Integer 3)
-
-    print(f"[+] Total: {len(enc)} bytes. Logic: Assembly Clone Mode.")
-
-    for i in range(len(enc)):
-        A, B = get_streams(state)
-        
-        # 0x406637~0x40665a 구간의 어셈블리 로직 (Header/Init Phase)
-        # rdi = (State * 41 + A * 13 + B - 54) & 0x1ff
-        if i < 12: # cmp rax, 0x17 (11) 지점에 의한 분기 추정
-            comb = (state * 41 + A * 13 + B - 54) & 0x1ff
-            key = comb >> 1
-        else:
-            # 0x406740 구간의 본체 로직 (Body Phase)
-            # Magic = (State * 29 + 170) & 0x1ff
-            # Key = (A ^ B ^ Magic ^ ...)
-            magic = (state * 29 + 170) & 0x1ff
-            comb = (A ^ B ^ magic) & 0x1ff
-            key = comb >> 1
-
-        res = enc[i] ^ (key & 0xFF)
-        dec.append(res)
-
-        # 디버깅 정보 출력
-        if i < 8:
-            print(f"[{i:02x}] State:{state:02x} | A:{A:02x} B:{B:02x} | Key:{key:02x} | Dec:{res:02x}")
-
-        # 피드백 루프: 다음 State는 현재 암호문 바이트 (GDB 실측 데이터 기반)
-        state = (enc[i] * 2) + 1
-
-    with open("hello_fixed.png", "wb") as f:
-        f.write(dec)
-
-    header = dec[:4].hex().upper()
-    print(f"\n[*] Result Header: {header}")
-    if header == "89504E47":
-        print("[!!!] MISSION ACCOMPLISHED: PNG Header Matched!")
+def swap_endian(b):
+    out = bytearray(len(b))
+    for i in range(0, len(b), 4):
+        out[i] = b[i+3]; out[i+1] = b[i+2]; out[i+2] = b[i+1]; out[i+3] = b[i]
+    return out
 
 if __name__ == "__main__":
-    solve()
+    P1 = b"AAAAAAAAAAAAAAAA"
+    IV = bytes.fromhex("cc7f688734e770dec3140142ffae82ab")
+    C1_TARGET = bytes.fromhex("51b1cca1f6c3f06093962292727ddd0d")
+
+    # 모든 경우의 수를 테스트합니다.
+    keys_to_test = [
+        ("Key: cc7f... (Hex 16 bytes) ARIA-128", bytes.fromhex("cc7f688734e770dec3140142ffae82ab"), 128),
+        ("Key: cc7f... (ASCII 32 bytes) ARIA-256", b"cc7f688734e770dec3140142ffae82ab", 256),
+        ("Key: AAAA... (Hex 16 bytes = 0xaa) ARIA-128", bytes.fromhex("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"), 128),
+        ("Key: AAAA... (ASCII 32 bytes = 0x41) ARIA-256", b"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", 256)
+    ]
+
+    print("\n[🔥] 100% PURE ARIA KPA Key Bruteforcer [🔥]")
+    print(f"[*] Target Cipher : {C1_TARGET.hex().upper()}\n")
+
+    found = False
+    for name, mk, size in keys_to_test:
+        rounds = 12 if size == 128 else 16
+        
+        # Standard Endian
+        ek = generate_round_keys(mk, size)
+        c_cbc = encrypt_block(xor16(P1, IV), ek, rounds)
+        c_ecb = encrypt_block(P1, ek, rounds)
+        
+        # Little Endian
+        mk_le = swap_endian(mk)
+        ek_le = generate_round_keys(mk_le, size)
+        P1_le = swap_endian(P1)
+        IV_le = swap_endian(IV)
+        c_cbc_le = swap_endian(encrypt_block(xor16(P1_le, IV_le), ek_le, rounds))
+        c_ecb_le = swap_endian(encrypt_block(P1_le, ek_le, rounds))
+
+        results = {
+            "CBC Standard": c_cbc,
+            "ECB Standard": c_ecb,
+            "CBC Little Endian": c_cbc_le,
+            "ECB Little Endian": c_ecb_le
+        }
+
+        for mode, result in results.items():
+            if result == C1_TARGET:
+                print(f"[✅ BINGO!!!] 완벽하게 일치합니다!")
+                print(f" -> {name}")
+                print(f" -> Mode: {mode}")
+                found = True
+
+    if not found:
+        print("[-] 일치하는 키가 없습니다. 출제자가 이 중 하나를 다시 변형한 것이 틀림없습니다.")
