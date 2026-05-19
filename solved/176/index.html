@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            #container{
+                margin: 0 auto;
+                margin: 30px;
+                border-color: rgba(0, 0, 0, 0.1);
+                border-width: 1px;
+                border-style: solid;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 class="ui center aligned icon header" style="margin-top: 30px;">
+            <i class="circular users icon"></i>cat dirary
+        </h2>
+        <div id="container" class="ui link cards">
+            <div class="ui card" onclick="showtext(1);">
+                <div class="image">
+                    <img id="image_1" src="/cat1.jpg" style="width: 290px;">
+                </div>
+                <div class="content">
+                    <a class="header">rengar</a>
+                    <div class="meta">
+                        <span class="date">2016.11</span>
+                    </div>
+                    <div class="description">Very cute cat.</div>
+                </div>
+                <div class="extra content">
+                    <a><i class="like icon"></i>9367</a>
+                </div>
+            </div>
+            <div class="ui card" onclick="showtext(2);">
+                <div class="image">
+                    <img id="image_2" src="/cat2.jpg" style="width: 290px;">
+                </div>
+                <div class="content">
+                    <a class="header">the duck</a>
+                    <div class="meta">
+                        <span class="date">2016.01</span>
+                    </div>
+                    <div class="description">Powerful ori.</div>
+                </div>
+                <div class="extra content">
+                    <a><i class="like icon"></i>9195</a>
+                </div>
+            </div>
+            <div class="ui card" onclick="showtext(3);">
+                <div class="image">
+                    <img id="image_3" src="/cat3.jpg" style="width: 290px;">
+                </div>
+                <div class="content">
+                    <a class="header">dreamhack</a>
+                    <div class="meta">
+                        <span class="date">2020.04</span>
+                    </div>
+                    <div class="description">Friend of hacker.</div>
+                </div>
+                <div class="extra content">
+                    <a><i class="like icon"></i>8995</a>
+                </div>
+            </div>
+        </div>
+        <script>
+            ws = new WebSocket(`ws:///${location.host}/ws`); // global var
+            function decrypt(data){
+                // TODO: make decrypt function!
+                return data
+            }
+            ws.onmessage = function(event){
+                if(event.data.toString() == "[object Blob]"){
+                    event.data.text().then(function(e){alert(decrypt(e))})
+                }else{
+                    console.log(event)
+                }
+            }
+            ws.onopen = function(event){
+                ws.send(JSON.stringify({
+                    // encrypt with information of user
+                    "command": "set_info",
+                    "Y": 1990,
+                    "M": 7,
+                    "D": 12,
+                    "name": "dreamhack"
+                }));
+            }
+            function showtext(index){
+                ws.send(JSON.stringify({
+                    "command": "get_text",
+                    "text_index": index
+                }))
+            };
+        </script>
+    </body>
+</html>
