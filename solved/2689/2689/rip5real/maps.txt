@@ -1,0 +1,24 @@
+00400000-00401000 r--p 00000000 08:20 922946                             /host/realdump/bin_5
+00401000-00402000 r-xp 00001000 08:20 922946                             /host/realdump/bin_5
+00402000-00403000 r--p 00002000 08:20 922946                             /host/realdump/bin_5
+00403000-00404000 r--p 00002000 08:20 922946                             /host/realdump/bin_5
+00404000-00405000 rw-p 00003000 08:20 922946                             /host/realdump/bin_5
+00804000-00805000 rw-p 00004000 08:20 922946                             /host/realdump/bin_5
+01005000-0105c000 rw-p 00005000 08:20 922946                             /host/realdump/bin_5
+0205c000-0205d000 rwxp 0005c000 08:20 922946                             /host/realdump/bin_5
+7f38f20b3000-7f38f20b6000 rw-p 00000000 00:00 0 
+7f38f20b6000-7f38f20de000 r--p 00000000 08:20 244996                     /usr/lib/x86_64-linux-gnu/libc.so.6
+7f38f20de000-7f38f2266000 r-xp 00028000 08:20 244996                     /usr/lib/x86_64-linux-gnu/libc.so.6
+7f38f2266000-7f38f22b5000 r--p 001b0000 08:20 244996                     /usr/lib/x86_64-linux-gnu/libc.so.6
+7f38f22b5000-7f38f22b9000 r--p 001fe000 08:20 244996                     /usr/lib/x86_64-linux-gnu/libc.so.6
+7f38f22b9000-7f38f22bb000 rw-p 00202000 08:20 244996                     /usr/lib/x86_64-linux-gnu/libc.so.6
+7f38f22bb000-7f38f22c8000 rw-p 00000000 00:00 0 
+7f38f22ca000-7f38f22cc000 rw-p 00000000 00:00 0 
+7f38f22cc000-7f38f22cd000 r--p 00000000 08:20 244976                     /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f38f22cd000-7f38f22f8000 r-xp 00001000 08:20 244976                     /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f38f22f8000-7f38f2302000 r--p 0002c000 08:20 244976                     /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f38f2302000-7f38f2304000 r--p 00036000 08:20 244976                     /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f38f2304000-7f38f2306000 rw-p 00038000 08:20 244976                     /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7ffda5690000-7ffda56b1000 rw-p 00000000 00:00 0                          [stack]
+7ffda56eb000-7ffda56ef000 r--p 00000000 00:00 0                          [vvar]
+7ffda56ef000-7ffda56f1000 r-xp 00000000 00:00 0                          [vdso]
