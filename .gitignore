@@ -1,6 +1,7 @@
 # .gitignore 파일에 큰 파일 패턴 추가
 cat >> .gitignore << EOF
 # Large binary files
+solved/2689/2689/main
 *.jar
 */lib/modules
 */lib/
